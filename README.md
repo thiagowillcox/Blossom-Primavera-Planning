@@ -92,3 +92,26 @@ py -3.12 -m venv .venv
 ```
 
 O Excel atualizado já acompanha a pasta `output` no GitHub. Os arquivos comerciais de entrada não estão versionados. Não extraia uma nova entrega por cima de alterações locais sem preservá-las.
+
+## Interface web Blossom
+
+A interface em `app.py` permite enviar LD e manual, preencher jornada/capacidades/prazos, gerar e baixar o Excel e consultar WBS, atividades, pendências e auditoria no navegador. Campos vazios continuam pendentes. Não há login, publicação na internet, histórico persistente ou integração Oracle nesta entrega.
+
+### Windows: abrir sem digitar comandos
+
+Com Python 3.12 instalado, abra a pasta que contém `app.py` e dê dois cliques em **`Abrir_Blossom.bat`**. Na primeira execução o arquivo instala as dependências pela internet no ambiente curto `%LOCALAPPDATA%\BlossomPlanning\venv`. Depois inicia o site local e solicita ao navegador que o abra. Mantenha a janela do servidor aberta durante o uso. Se o navegador não abrir automaticamente, use `http://localhost:8501` no seu computador. Fechar a janela encerra o servidor.
+
+O iniciador Windows foi preparado, mas não foi executado em Windows neste ambiente Linux.
+
+### Iniciar manualmente
+
+```powershell
+& "$env:LOCALAPPDATA\BlossomPlanning\venv\Scripts\python.exe" -m pip install -r requirements.txt
+& "$env:LOCALAPPDATA\BlossomPlanning\venv\Scripts\python.exe" -m streamlit run app.py
+```
+
+Abra o endereço indicado no terminal. A interface aceita os nomes originais dos arquivos; não é necessário renomear ou copiar planilhas para `input`. O processamento usa diretórios temporários curtos e isolados por geração. Os downloads ficam em memória na sessão; não há histórico durável. Ao alterar entradas ou parâmetros, gere novamente para obter novos downloads.
+
+O visual usa rosa e verde da referência Blossom. Para usar o logotipo oficial com fidelidade, coloque o PNG original em `assets/logo.png`; enquanto ele não estiver presente, a tela mostra a marca em texto. A imagem anexada como referência não foi copiada automaticamente como arquivo de identidade visual.
+
+Esta é uma aplicação local. Para disponibilizá-la por uma URL à equipe, ainda é necessário escolher hospedagem e definir autenticação, acesso aos documentos e limites de processamento. Não exponha o servidor local como se já fosse um serviço publicado.
