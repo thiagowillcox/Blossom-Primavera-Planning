@@ -1,0 +1,53 @@
+{
+  "versao": "manual-rev02-observacoes-v1",
+  "regras": [
+    {
+      "id": "OBS-FEL4-001",
+      "versao": "manual-rev02-observacoes-v1",
+      "manual_sha256": "cbd1da49a5afb5f33baac8b32cb377f38ffaf6ff2d3deab5db4181515d1671ac",
+      "fase": "2.3.3 Eng. Detalhada - FEL 4",
+      "origem": "2.3.3 Eng. Detalhada - FEL 4!R140",
+      "classe": "informacao_externa",
+      "predecessora": "Cliente — normas e padrões",
+      "sucessora": "Planilha de Quantidades Multidisciplinar",
+      "status": "preliminar_sem_aprovacao",
+      "evidencia": "Imagem image89.png: cliente fornece normas e padrões ao fluxo SIPOC."
+    },
+    {
+      "id": "OBS-FEL4-002",
+      "versao": "manual-rev02-observacoes-v1",
+      "manual_sha256": "cbd1da49a5afb5f33baac8b32cb377f38ffaf6ff2d3deab5db4181515d1671ac",
+      "fase": "2.3.3 Eng. Detalhada - FEL 4",
+      "origem": "2.3.3 Eng. Detalhada - FEL 4!R140",
+      "classe": "referencia_tecnica",
+      "predecessora": "Informações de todas as disciplinas",
+      "sucessora": "Planilha de Quantidades Multidisciplinar",
+      "status": "preliminar_sem_aprovacao",
+      "evidencia": "Imagem image89.png: entradas de Civil, Mecânica, Elétrica e outras disciplinas; sem definição de marco FS."
+    },
+    {
+      "id": "OBS-FEL4-003",
+      "versao": "manual-rev02-observacoes-v1",
+      "manual_sha256": "cbd1da49a5afb5f33baac8b32cb377f38ffaf6ff2d3deab5db4181515d1671ac",
+      "fase": "2.3.3 Eng. Detalhada - FEL 4",
+      "origem": "2.3.3 Eng. Detalhada - FEL 4!R140",
+      "classe": "condicional",
+      "predecessora": "Informações consistentes e suficientes",
+      "sucessora": "Quantitativos do projeto",
+      "status": "preliminar_sem_aprovacao",
+      "evidencia": "Imagem image89.png: decisão SIM/NÃO, retorno para obtenção de informações. Não criar ciclo de cronograma."
+    },
+    {
+      "id": "OBS-FEL4-004",
+      "versao": "manual-rev02-observacoes-v1",
+      "manual_sha256": "cbd1da49a5afb5f33baac8b32cb377f38ffaf6ff2d3deab5db4181515d1671ac",
+      "fase": "2.3.3 Eng. Detalhada - FEL 4",
+      "origem": "2.3.3 Eng. Detalhada - FEL 4!R60",
+      "classe": "referencia_tecnica",
+      "predecessora": "Planilha de Quantidades",
+      "sucessora": "CAPEX/OPEX",
+      "status": "preliminar_sem_aprovacao",
+      "evidencia": "Imagem image206.png: seta da planilha ao CAPEX/OPEX; vínculo temporal obrigatório não explicitado."
+    }
+  ]
+}
