@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "projeto": "BL1120-0011 — identificação Forno III a confirmar",
+  "jornada_hh_dia": 8,
+  "capacidade_profissionais": {},
+  "duracao_cliente_dias": {"2": null, "4": null},
+  "percentuais": [0.8, 0.1, 0.2, 0.1],
+  "encadeamento": [[1, 2], [2, 3], [3, 4]],
+  "relacionamentos_aprovados": [],
+  "identidades": {}
+}
