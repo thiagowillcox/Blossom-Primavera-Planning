@@ -29,7 +29,7 @@ def extract_manual(path, assets_dir, reviewed_path=None):
     workbook = openpyxl.load_workbook(path, read_only=True, data_only=True)
     rules, issues = [], []
     manual_hash = digest(path)
-    reviewed = json.loads(reviewed_path.read_text()) if reviewed_path else {'regras': []}
+    reviewed = json.loads(reviewed_path.read_text(encoding='utf-8')) if reviewed_path else {'regras': []}
     with zipfile.ZipFile(path) as z:
         book_rels = relationships(z, 'xl/workbook.xml')
         sheets = ET.fromstring(z.read('xl/workbook.xml')).find('s:sheets', NS)
@@ -65,9 +65,10 @@ def extract_manual(path, assets_dir, reviewed_path=None):
                 rid = stable_id('MAN', sheet.title, sha, title)
                 rule = {'id': rid, 'versao': 'manual-rev02-preliminar-v1',
                         'manual_sha256': manual_hash, 'fase': sheet.title,
+                        'natureza': 'evidencia_nao_interpretada',
                         'documento': title, 'origem': f'{sheet.title}!R{row}C{col}',
                         'imagem': name, 'imagem_sha256': sha,
-                        'classe': 'a_validar', 'predecessora': None, 'sucessora': title,
+                        'classe': 'a_validar', 'predecessora': None, 'sucessora': None,
                         'status': 'revisao_humana', 'evidencia': 'Figura incorporada: leitura visual requerida; nenhuma relação obrigatória inferida.'}
                 existing = next((r for r in rules if r['id'] == rid), None)
                 if existing:
@@ -81,6 +82,7 @@ def extract_manual(path, assets_dir, reviewed_path=None):
         if observation['manual_sha256'] != manual_hash:
             issues.append(issue('REGRA_DESATUALIZADA', observation['id'], 'Hash do manual diferente; observação não aplicada.'))
         else:
+            observation = dict(observation, natureza='observacao_preliminar')
             rules.append(observation)
             issues.append(issue('REGRA_SEM_MAPEAMENTO', observation['id'], 'Observação preliminar não cria vínculo obrigatório; validar e mapear IDs.'))
     return rules, issues

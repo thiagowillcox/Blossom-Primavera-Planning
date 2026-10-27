@@ -58,15 +58,50 @@ def validate_result(tables):
     for w in tables['WBS']:
         if w['pai'] and w['pai'] not in wids:
             raise ValueError('WBS pai ausente')
+    topology([{'id': w['id']} for w in tables['WBS']],
+             [{'predecessora': w['pai'], 'sucessora': w['id']}
+              for w in tables['WBS'] if w['pai']])
     totals=defaultdict(Decimal)
+    per_role=defaultdict(Decimal)
     for a in tables['Atribuicoes_Funcoes']:
         if a['atividade_id'] not in aids:
             raise ValueError('Atribuição sem atividade')
+        if a['registro_id'] != aids[a['atividade_id']]['registro_id']:
+            raise ValueError('Atribuição vinculada ao registro errado')
+        if a['hh'] <= 0:
+            raise ValueError('Atribuição sem HH positivas')
         totals[a['atividade_id']]+=a['hh']
+        per_role[(a['atividade_id'], a['funcao'])]+=a['hh']
     for a in aids.values():
         if a['wbs_id'] not in wids or totals[a['id']] != a['hh']:
             raise ValueError('WBS ou soma de atribuições inválida')
+    grouped=defaultdict(list)
+    for activity in aids.values():
+        grouped[activity['registro_id']].append(activity)
+    audit_keys=set()
+    audited_roles=defaultdict(set)
     for r in tables['Auditoria_HH']:
-        if r['diferenca'] != 0:
+        key=(r['registro_id'], r['funcao'])
+        if key in audit_keys:
+            raise ValueError('Auditoria duplicada por registro/função')
+        audit_keys.add(key)
+        audited_roles[r['registro_id']].add(r['funcao'])
+        activities=grouped[r['registro_id']]
+        document=r['tipo']=='documento'
+        factors={1:Decimal('.8'),2:Decimal('.1'),3:Decimal('.2'),4:Decimal('.1')} if document else {0:Decimal(1)}
+        if sorted(a['etapa'] for a in activities)!=sorted(factors):
+            raise ValueError('Etapas incompletas ou duplicadas')
+        actual=Decimal(0)
+        for activity in activities:
+            hh=per_role[(activity['id'], r['funcao'])]
+            if hh != r['hh_original']*factors[activity['etapa']]:
+                raise ValueError('Distribuição de HH por etapa/função inválida')
+            actual+=hh
+        expected=r['hh_original']*(Decimal('1.2') if document else Decimal(1))
+        if (actual != expected or r['hh_planejada'] != actual or
+                r['hh_esperada'] != expected or r['diferenca'] != actual-expected):
             raise ValueError('Falha de conservação de HH por função')
+    for assignment in tables['Atribuicoes_Funcoes']:
+        if assignment['funcao'] not in audited_roles[assignment['registro_id']]:
+            raise ValueError('Função atribuída sem original auditável')
     topology(tables['Atividades'],tables['Relacionamentos'])

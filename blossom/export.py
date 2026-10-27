@@ -17,9 +17,9 @@ def serial(value):
 def save(tables, records, metadata, directory):
     directory.mkdir(parents=True,exist_ok=True)
     payload={'metadados': metadata,'tabelas':tables,'registros':records}
-    (directory/'resultado.json').write_text(json.dumps(payload,ensure_ascii=False,sort_keys=True,indent=2,default=serial)+'\n')
-    (directory/'pendencias.json').write_text(json.dumps(tables['Pendencias'],ensure_ascii=False,indent=2,default=serial)+'\n')
-    (directory/'matriz_regras.json').write_text(json.dumps(tables['Matriz_Regras'],ensure_ascii=False,sort_keys=True,indent=2,default=serial)+'\n')
+    (directory/'resultado.json').write_text(json.dumps(payload,ensure_ascii=False,sort_keys=True,indent=2,default=serial)+'\n', encoding='utf-8')
+    (directory/'pendencias.json').write_text(json.dumps(tables['Pendencias'],ensure_ascii=False,indent=2,default=serial)+'\n', encoding='utf-8')
+    (directory/'matriz_regras.json').write_text(json.dumps(tables['Matriz_Regras'],ensure_ascii=False,sort_keys=True,indent=2,default=serial)+'\n', encoding='utf-8')
     workbook=openpyxl.Workbook();workbook.remove(workbook.active)
     for name, rows in tables.items():
         sheet=workbook.create_sheet(name)

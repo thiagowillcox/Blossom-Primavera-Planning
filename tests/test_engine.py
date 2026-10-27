@@ -16,7 +16,7 @@ ROOT=Path(__file__).resolve().parents[1]
 
 @pytest.fixture
 def config():
-    return json.loads((ROOT/'config/parametros.json').read_text())
+    return json.loads((ROOT/'config/parametros.json').read_text(encoding='utf-8'))
 
 
 def record(kind='documento'):
@@ -115,6 +115,16 @@ def test_real_workbook_reproducibility(tmp_path):
     outputs=[tmp_path/'one',tmp_path/'two']
     for directory in outputs:
         tables=run(ROOT/'input/LD.xlsm',ROOT/'input/Manual.xlsx',ROOT/'config/parametros.json',directory,ROOT/'config/observacoes_manual.json')
+        assert len(tables['WBS'])==56
+        assert all(r['codigo'][0].isdigit() for r in tables['WBS'])
+        assert all('originais' not in r for r in tables['WBS'])
+        original=json.loads((directory/'resultado.json').read_text(encoding='utf-8'))['registros']
+        traced={r['registro_id'] for r in tables['Auditoria_HH']}
+        traced.update(r['registro_id'] for r in tables['Pendencias'] if 'registro_id' in r)
+        assert traced == {r['id'] for r in original}
+        assert all('originais' in r and 'cache' in r for r in tables['Auditoria_HH'])
+        assert all(r.get('predecessora') is None and r.get('sucessora') is None
+                   for r in tables['Matriz_Regras'] if r['natureza']=='evidencia_nao_interpretada')
         assert len(tables['Atividades'])==952
         assert len(tables['Relacionamentos'])==639
         assert abs(sum(a['hh_original'] for a in tables['Auditoria_HH'])-D('13442.25'))<D('0.000001')
@@ -123,8 +133,33 @@ def test_real_workbook_reproducibility(tmp_path):
         assert all(a['diferenca']==0 for a in tables['Auditoria_HH'])
         assert {r['classe'] for r in tables['Matriz_Regras']} >= {'condicional','referencia_tecnica','informacao_externa','a_validar'}
         w=openpyxl.load_workbook(directory/'pre_cronograma.xlsx',read_only=True)
+        assert w['WBS'].max_row==57
         assert w.sheetnames==list(tables)
         assert len(w.sheetnames)==8
         w.close()
     for name in ('resultado.json','pre_cronograma.xlsx','matriz_regras.json','pendencias.json'):
         assert (outputs[0]/name).read_bytes()==(outputs[1]/name).read_bytes()
+
+
+def test_mandatory_relationship_requires_known_rule(config):
+    config['relacionamentos_aprovados']=[{
+        'classe':'obrigatoria', 'aprovada':True, 'predecessora':'a',
+        'sucessora':'b', 'regra_id':'inventada'}]
+    with pytest.raises(ValueError, match='rastreável'):
+        build_links([],config,[])
+
+
+def test_validation_rejects_swapped_stage_hours(config):
+    from blossom.validation import validate_result
+    acts,assignments,audit,_=distribute([record()],config)
+    tables={'WBS':[{'id':'w','pai':None}], 'Atividades':acts,
+            'Atribuicoes_Funcoes':assignments, 'Auditoria_HH':audit,
+            'Relacionamentos':build_links(acts,config), 'Matriz_Regras':[]}
+    validate_result(tables)
+    # Preserve the overall total, but corrupt the stage mix and its activity totals.
+    assignments[0]['hh']-=1
+    assignments[2]['hh']+=1
+    acts[0]['hh']-=1
+    acts[1]['hh']+=1
+    with pytest.raises(ValueError, match='etapa/função'):
+        validate_result(tables)
