@@ -41,7 +41,7 @@ def activity_hierarchy(tables):
                 row = dict(activity)
                 row.update(tipo_linha='atividade', nivel=depth+(2 if document else 1),
                            pai_id=parent, codigo_wbs=node['codigo'], caminho_wbs=' / '.join(path))
-                row['nome'] = (STAGES[activity['etapa']-1] if document
+                row['nome'] = (f"{activity['etapa']} - {STAGES[activity['etapa']-1]}" if document
                                else activity['nome'].rsplit(' — ', 1)[0])
                 rows.append(row)
         for child in children[node['id']]:

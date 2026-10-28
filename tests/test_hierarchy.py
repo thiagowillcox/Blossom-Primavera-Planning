@@ -27,6 +27,9 @@ def test_outline_preserves_leaves_and_hours():
     assert [r['tipo_linha'] for r in rows]==['fase','agrupador','documento']+['atividade']*5
     assert [r['nivel'] for r in rows]==[0,1,2,3,3,3,3,2]
     assert rows[2]['nome']=='Documento A'
+    assert [r['nome'] for r in rows[3:7]]==[
+        '1 - Emissão Inicial', '2 - Comentários do Cliente',
+        '3 - Atendimento de Comentários', '4 - Aprovação Final']
     assert all(r['pai_id']=='doc' for r in rows[3:7])
     assert rows[-1]['nome']=='Apoio' and rows[-1]['pai_id']=='discipline'
     assert {r['id'] for r in rows if r['tipo_linha']=='atividade'}=={r['id'] for r in tables['Atividades']}
@@ -42,7 +45,7 @@ def test_excel_has_real_outline_and_indentation(tmp_path):
     name=keys.index('nome')+1
     assert sheet.sheet_properties.outlinePr.summaryBelow is False
     assert sheet.auto_filter.ref is None
-    assert sheet.cell(5,name).value=='Emissão Inicial'
+    assert sheet.cell(5,name).value=='1 - Emissão Inicial'
     assert sheet.cell(5,name).alignment.indent==3
     assert sheet.row_dimensions[5].outlineLevel==3
     assert sheet.row_dimensions[4].outlineLevel==2

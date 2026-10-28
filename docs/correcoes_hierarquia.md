@@ -17,7 +17,7 @@
 
 Validação com a LD original enviada e o manual original. O arquivo `BL1120-0011_R03 - Orcamento_JSF (4).xlsm` foi desconsiderado por solicitação do usuário; nenhuma mudança específica desse formato foi mantida e seu conteúdo não foi adicionado ao repositório.
 
-O cronograma pronto mencionado ainda não foi recebido. Portanto, não houve comparação com datas, calendários ou predecessoras de um cronograma de referência. A interpretação completa das precedências do manual permanece pendente, assim como capacidades/prazos ainda não informados. Não se declara que todos os possíveis problemas do motor foram eliminados.
+O cronograma correto foi recebido posteriormente e sua estrutura foi comparada; veja `docs/referencia_cronograma.md`. Suas datas e avanço não foram usados para preencher a LD atual, e ele não contém predecessoras para extrair. A interpretação completa das precedências do manual permanece pendente, assim como capacidades/prazos ainda não informados. Não se declara que todos os possíveis problemas do motor foram eliminados.
 
 ## Evidências desta execução
 
@@ -26,3 +26,7 @@ O cronograma pronto mencionado ainda não foi recebido. Portanto, não houve com
 - WBS com 57 linhas, incluindo cabeçalho.
 - Comparação direta dos dados JSON com o commit anterior: todas as tabelas técnicas e todos os registros originais permaneceram idênticos. Apenas a representação adicional do cronograma e sua formatação foram acrescentadas.
 - Reprodutibilidade validada em duas gerações independentes.
+
+## Referência recebida posteriormente
+
+O cronograma correto chegou durante esta correção e foi inspecionado. A comparação está em `docs/referencia_cronograma.md`. Ela confirmou documento-pai com quatro etapas-filhas e motivou a numeração explícita de 1 a 4 nos nomes apresentados. Datas, avanço e regras daquele projeto não foram importados.

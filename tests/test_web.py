@@ -34,3 +34,11 @@ def test_web_real_uploads():
     assert files['pre_cronograma.xlsx'].startswith(b'PK')
     assert len(json.loads(files['pendencias.json']))>0
     assert all(r['diferenca']==0 for r in tables['Auditoria_HH'])
+
+    app = AppTest.from_file(str(ROOT/'app.py'))
+    app.session_state['result'] = (tables, files)
+    app.run(timeout=30)
+    assert not app.exception
+    assert len(app.dataframe) == 4
+    assert app.dataframe[1].value.shape[0] == 1221
+    assert '1 - Emissão Inicial' in set(app.dataframe[1].value['nome'].str.strip())
