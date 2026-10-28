@@ -5,6 +5,7 @@ import logging
 from pathlib import Path
 import streamlit as st
 from blossom.web import generate, ROLES
+from blossom.hierarchy import activity_hierarchy
 
 ROOT = Path(__file__).resolve().parent
 st.set_page_config(page_title='Blossom | Planejamento', page_icon='🌸', layout='wide')
@@ -104,11 +105,15 @@ if 'result' in st.session_state:
                        'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', type='primary')
     tabs = st.tabs(['Estrutura WBS','Atividades','Pendências','Auditoria de horas'])
     for tab, name, columns in zip(tabs, ['WBS','Atividades','Pendencias','Auditoria_HH'],
-        [['codigo','nome','origem'],['nome','etapa','hh','duracao_dias','origem'],
+        [['codigo','nome','origem'],['nome','tipo_linha','codigo_wbs','hh','duracao_dias','origem'],
          ['codigo','origem','descricao'],['registro_id','funcao','hh_original','hh_planejada','diferenca']]):
         with tab:
+            view = activity_hierarchy(tables) if name == 'Atividades' else tables[name]
+            if name == 'Atividades':
+                view = [dict(row, nome=('　' * row['nivel']) + row['nome']) for row in view]
+                st.caption('Fase → disciplina → documento → etapas. Agrupadores não adicionam horas. Use os níveis recolhíveis no Excel baixado.')
             st.dataframe([{c:str(row.get(c)) if row.get(c) is not None else '' for c in columns}
-                          for row in tables[name]], use_container_width=True, hide_index=True)
+                          for row in view], use_container_width=True, hide_index=True)
     c1,c2 = st.columns(2)
     with c1: st.download_button('Baixar relatório de pendências', files['pendencias.json'], 'pendencias.json','application/json')
     with c2: st.download_button('Baixar matriz preliminar', files['matriz_regras.json'], 'matriz_regras.json','application/json')

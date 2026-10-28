@@ -115,3 +115,11 @@ Abra o endereço indicado no terminal. A interface aceita os nomes originais dos
 O visual usa rosa e verde da referência Blossom. Para usar o logotipo oficial com fidelidade, coloque o PNG original em `assets/logo.png`; enquanto ele não estiver presente, a tela mostra a marca em texto. A imagem anexada como referência não foi copiada automaticamente como arquivo de identidade visual.
 
 Esta é uma aplicação local. Para disponibilizá-la por uma URL à equipe, ainda é necessário escolher hospedagem e definir autenticação, acesso aos documentos e limites de processamento. Não exponha o servidor local como se já fosse um serviço publicado.
+
+## Hierarquia visual do pré-cronograma
+
+A aba `Atividades` apresenta **fase → disciplina → documento → quatro etapas**. As atividades auxiliares aparecem diretamente sob sua disciplina, com suas HH originais. Os títulos de fase, disciplina e documento são linhas de apresentação: não são novas atividades, não recebem esforço e não entram na matriz de relacionamentos. A coluna `nome` recebe indentação real no Excel; os controles de agrupamento permitem recolher/expandir os níveis. `nivel`, `pai_id`, `codigo_wbs` e `caminho_wbs` tornam a estrutura explícita.
+
+A aba WBS permanece separada, com apenas os nós hierárquicos originais (56 na LD recebida). O JSON mantém as atividades executáveis em `tabelas.Atividades` e a visão completa em `linhas_cronograma`. Os indicadores do site e a auditoria contam somente atividades com HH, sem duplicar esforços nos agrupadores.
+
+No site, a aba Atividades usa a mesma ordem hierárquica, com recuo visual e classificação da linha. O agrupamento recolhível está no Excel. Não ordene isoladamente as linhas do cronograma exportado: isso separa filhos dos pais; a tabela exportada não aplica filtro automático para preservar a sequência.
