@@ -3,7 +3,7 @@ import json
 import re
 from decimal import Decimal
 import openpyxl
-from .common import stable_id, number, issue
+from .common import stable_id, number, issue, clean_text
 from .wbs import node
 
 CODES = {'DC', 'DB', 'DD', 'AC', 'AB', 'AD'}
@@ -14,7 +14,11 @@ FORMATS = {'A4': Decimal('0.125'), 'A3': Decimal('0.25'),
 def read_ld(path, identities=None):
     raw = openpyxl.load_workbook(path, data_only=False, read_only=True)
     cached = openpyxl.load_workbook(path, data_only=True, read_only=True)
-    s, values = raw['LD'], cached['LD']
+    sheets = [name for name in raw.sheetnames if clean_text(name).casefold() == 'ld']
+    if len(sheets) != 1:
+        raw.close(); cached.close()
+        raise ValueError('Não foi possível identificar uma única aba LD. Confira o nome da aba no Excel.')
+    s, values = raw[sheets[0]], cached[sheets[0]]
     rows = [tuple(r) + (None,) * max(0, 23-len(r)) for r in s.values]
     cache = [tuple(r) + (None,) * max(0, 23-len(r)) for r in values.values]
     def resolved(row_index, col_index):
@@ -31,19 +35,26 @@ def read_ld(path, identities=None):
             if sheet in cached.sheetnames:
                 return cached[sheet][match.group(3)].value
         raise ValueError(f'Fórmula de identificação sem valor disponível: LD!{openpyxl.utils.get_column_letter(col_index+1)}{row_index+1}')
-    roles = [str(resolved(3,j)) for j in range(7,16)]
-    if len(set(roles)) != 9 or any(x == 'None' for x in roles):
+    if len(rows) < 4:
+        raw.close(); cached.close()
+        raise ValueError('A aba LD está vazia ou não contém o cabeçalho esperado na linha 4.')
+    roles = [str(clean_text(resolved(3,j))) for j in range(7,16)]
+    if len(set(roles)) != 9 or any(x in ('None', '') for x in roles):
+        raw.close(); cached.close()
         raise ValueError('Cabeçalho de funções incompatível com o layout LD')
     adjusted_layout = cache[3][21] == 'TOTAL Hh (ajustado)'
     records, wbs, issues, seen = [], [], [], set()
     current = None
     for i, (r, v) in enumerate(zip(rows, cache), 1):
-        code, eap, name = (resolved(i-1,j) for j in range(1,4))
+        code = clean_text(resolved(i-1,1))
+        eap, name = (resolved(i-1,j) for j in range(2,4))
+        if isinstance(code, str):
+            code = code.upper()
         if isinstance(code, str) and re.fullmatch(r'\d+(?:\.\d+)+', code):
             current = node(code, name, i)
             wbs.append(current)
             continue
-        if code not in CODES or not name:
+        if code not in CODES or not clean_text(name):
             continue
         source = f'LD!{i}'
         semantic = json.dumps([current['codigo'] if current else None, code, eap, name], ensure_ascii=False)
@@ -64,7 +75,9 @@ def read_ld(path, identities=None):
         try:
             # Only reproduce the documented A-format conversion when G has the
             # exact repository template formula. Unknown formulas use cached values.
-            unit = resolved(i-1,5)
+            unit = clean_text(resolved(i-1,5))
+            if isinstance(unit, str):
+                unit = unit.upper()
             rec['unidade'] = unit
             expected = (f'=IF(F{i}="A4",E{i}/8,IF(F{i}="A3",E{i}/4,IF(F{i}="A2",E{i}/2,'
                         f'IF(F{i}="A1",E{i},IF(F{i}="A0",E{i}*2,IF(F{i}="HH","",""))))))')
@@ -97,6 +110,8 @@ def read_ld(path, identities=None):
                     issues.append(issue('TOTAL_DIVERGENTE', source, 'Soma por função diverge de R; registro bloqueado.'))
                     rec['hh'] = {}; rec['total_original'] = None
             else:
+                if number(v[17]) is not None and number(v[17]) > 0:
+                    raise ValueError('Total de HH preenchido, mas HH por função ausentes; revisar o mix na LD')
                 issues.append(issue('SEM_HH', source, f'{name}: HH ausentes ou zero; não planejar horas.'))
         except ValueError as exc:
             rec['hh'] = {}; rec['total_original'] = None
@@ -105,4 +120,6 @@ def read_ld(path, identities=None):
             issues.append(issue('CICLO_A_CONFIRMAR', source, 'Reemissão/atualização: ciclo de quatro etapas aplicado; validar aplicabilidade.'))
         records.append(rec)
     raw.close(); cached.close()
+    if not records:
+        raise ValueError('Nenhum documento ou atividade auxiliar reconhecido na aba LD. Confira o layout e os códigos DC/DB/DD/AC/AB/AD.')
     return records, wbs, issues

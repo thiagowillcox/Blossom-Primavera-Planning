@@ -21,7 +21,7 @@ def run(ld, manual, config_path, output, reviewed=None):
     links=build_links(activities,config,rules)
     estimate(activities,links)
     issues+=manual_issues+hour_issues
-    issues.append(issue('IDENTIFICACAO_PROJETO','LD', 'Confirmar que BL1120-0011_R03 corresponde ao Forno III; o arquivo não contém identificação inequívoca.'))
+    issues.append(issue('IDENTIFICACAO_PROJETO','LD', 'Confirmar a identificação do projeto configurada para esta LD.'))
     issues.append(issue('SEM_NIVELAMENTO','motor','Não há nivelamento global de recursos nem calendário/data-base.'))
     params=[{'parametro':k,'valor':v} for k,v in config.items()]
     metadata={'ld_sha256':digest(ld),'manual_sha256':digest(manual),'config_sha256':digest(config_path),'versao_motor':'0.4.0'}
