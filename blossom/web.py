@@ -3,9 +3,21 @@ import json
 from pathlib import Path
 from tempfile import TemporaryDirectory
 from .__main__ import run
+from .ld import read_ld
+from .decisions import WBSDecisionRequired
 
 ROOT = Path(__file__).resolve().parents[1]
 ROLES = ['Gerente','Especialista','ESênior','EPleno','EJúnior','PSênior','PPleno','PJúnior','Desenh.']
+
+
+def inspect_wbs(ld_bytes, adjustments=None):
+    with TemporaryDirectory(prefix='blossom-check-') as name:
+        path=Path(name)/'LD.xlsm';path.write_bytes(ld_bytes)
+        try:
+            read_ld(path, wbs_adjustments=adjustments)
+        except WBSDecisionRequired as exc:
+            return exc.groups
+    return {}
 
 
 def generate(ld_bytes, manual_bytes, config):

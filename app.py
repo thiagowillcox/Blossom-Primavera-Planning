@@ -4,7 +4,7 @@ import logging
 from decimal import Decimal
 from pathlib import Path
 import streamlit as st
-from blossom.web import generate, ROLES
+from blossom.web import generate, inspect_wbs, ROLES
 from blossom.hierarchy import activity_hierarchy
 from blossom.ui import apply_theme, heading, table
 
@@ -41,6 +41,11 @@ def upload_changed(kind):
     ss[kind+'_file']=(upload.name,upload.getvalue()) if upload is not None else None
 
 
+@st.cache_data(show_spinner=False, max_entries=8)
+def check_wbs(data, adjustments=None):
+    return inspect_wbs(data, adjustments)
+
+
 with st.sidebar:
     apply_theme()
     logo=ROOT/'assets/logo-dark.png'
@@ -59,6 +64,9 @@ config.update(projeto=settings['project'].strip() or 'Projeto não identificado'
               jornada_hh_dia=settings['daily'],
               capacidade_profissionais={role:settings['cap_'+role] for role in ROLES if settings['cap_'+role] is not None},
               duracao_cliente_dias={'2':settings['comments'],'4':settings['approval']})
+ld_hash=hashlib.sha256(ss.ld_file[1]).hexdigest() if ss.get('ld_file') else None
+if ss.get('wbs_decisions',{}).get('ld_sha256') == ld_hash and ld_hash is not None:
+    config['ajustes_wbs']=ss.wbs_decisions
 fingerprint=hashlib.sha256(json.dumps(config,sort_keys=True).encode())
 for kind in ('ld','manual'):
     if ss.get(kind+'_file'):fingerprint.update(ss[kind+'_file'][1])
@@ -112,7 +120,46 @@ elif page=='Configuração':
                 st.number_input(role,min_value=0.01,value=settings[name],step=0.5,
                                 key='field_'+name,on_change=save_setting,args=(name,))
     st.markdown('<div class="notice"><strong>Distribuição por documento</strong><br>80% emissão inicial · 10% comentários · 20% atendimento · 10% aprovação.<br>Atividades auxiliares preservam 100% das HH originais.</div>',unsafe_allow_html=True)
-    if st.button('Gerar pré-cronograma →',type='primary',disabled=not ready):
+    decisions_ready=True
+    if ss.get('ld_file'):
+        try:
+            conflicts=check_wbs(ss.ld_file[1])
+            if conflicts:
+                st.subheader('Precisamos da sua escolha')
+                st.warning('Há grupos com o mesmo código WBS. Defina códigos exclusivos para continuar.')
+                st.caption('Você pode manter o código de um grupo e alterar o outro. Use códigos livres da hierarquia existente. Não agrupamos nem excluímos serviços automaticamente; a LD original permanece intacta.')
+                with st.form('wbs_choices_'+ld_hash):
+                    choices={}
+                    for code,items in conflicts.items():
+                        st.write('Código repetido: '+code)
+                        for item in items:
+                            origin=item['origem']
+                            selected=config.get('ajustes_wbs',{}).get('codigos_por_origem',{}).get(origin,code)
+                            choices[origin]=st.text_input(str(item['nome'])+' · '+origin,
+                                value=selected,key='wbs_choice_'+ld_hash+'_'+origin)
+                    confirmed=st.form_submit_button('Confirmar códigos e continuar')
+                if confirmed:
+                    adjustments={'ld_sha256':ld_hash,'codigos_por_origem':{k:v.strip() for k,v in choices.items()}}
+                    remaining=check_wbs(ss.ld_file[1],adjustments)
+                    if remaining:
+                        st.error('Ainda há códigos repetidos: '+', '.join(remaining)+'. Cada grupo precisa de um código exclusivo.')
+                    else:
+                        ss.wbs_decisions=adjustments
+                        ss.pop('result',None);ss.pop('result_key',None)
+                        st.rerun()
+                decisions_ready='ajustes_wbs' in config
+                if decisions_ready:
+                    st.success('Sua decisão foi registrada para esta LD. Você já pode gerar o pré-cronograma.')
+                    st.download_button('↓ Salvar decisões desta LD',json.dumps(config['ajustes_wbs'],ensure_ascii=False,indent=2),
+                                       'decisoes_wbs.json','application/json')
+        except ValueError as exc:
+            decisions_ready=False
+            st.error('Revise a LD: '+str(exc))
+        except Exception:
+            decisions_ready=False
+            logging.exception('Falha na conferência da LD')
+            st.error('Não foi possível conferir a LD. Verifique se o arquivo Excel está íntegro e no layout Blossom.')
+    if st.button('Gerar pré-cronograma →',type='primary',disabled=not ready or not decisions_ready):
         ss.pop('result',None)
         try:
             with st.spinner('Preparando seu planejamento e conferindo as horas…'):

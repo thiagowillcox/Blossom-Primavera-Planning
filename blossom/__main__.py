@@ -15,7 +15,7 @@ from .source_audit import reconcile_ld
 def run(ld, manual, config_path, output, reviewed=None):
     config=json.loads(config_path.read_text(encoding='utf-8'))
     validate_config(config)
-    records,wbs,issues=read_ld(ld,config.get('identidades'))
+    records,wbs,issues=read_ld(ld,config.get('identidades'),config.get('ajustes_wbs'))
     rules,manual_issues=extract_manual(manual,output/'manual_figuras',reviewed)
     activities,assignments,audit,hour_issues=distribute(records,config)
     links=build_links(activities,config,rules)

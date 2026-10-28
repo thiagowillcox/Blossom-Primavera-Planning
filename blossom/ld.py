@@ -5,13 +5,14 @@ from decimal import Decimal
 import openpyxl
 from .common import stable_id, number, issue, clean_text
 from .wbs import node
+from .decisions import resolve_wbs
 
 CODES = {'DC', 'DB', 'DD', 'AC', 'AB', 'AD'}
 FORMATS = {'A4': Decimal('0.125'), 'A3': Decimal('0.25'),
            'A2': Decimal('0.5'), 'A1': Decimal(1), 'A0': Decimal(2)}
 
 
-def read_ld(path, identities=None):
+def read_ld(path, identities=None, wbs_adjustments=None):
     raw = openpyxl.load_workbook(path, data_only=False, read_only=True)
     cached = openpyxl.load_workbook(path, data_only=True, read_only=True)
     sheets = [name for name in raw.sheetnames if clean_text(name).casefold() == 'ld']
@@ -43,6 +44,17 @@ def read_ld(path, identities=None):
         raw.close(); cached.close()
         raise ValueError('Cabeçalho de funções incompatível com o layout LD')
     adjusted_layout = cache[3][21] == 'TOTAL Hh (ajustado)'
+    source_nodes = []
+    for index in range(len(rows)):
+        code = clean_text(resolved(index,1))
+        if isinstance(code, str) and re.fullmatch(r'\d+(?:\.\d+)+', code):
+            source_nodes.append(node(code, resolved(index,3), index+1))
+    try:
+        normalized_nodes = resolve_wbs(source_nodes, wbs_adjustments, path)
+    except ValueError:
+        raw.close(); cached.close()
+        raise
+    nodes_by_origin = {n['origem']: n for n in normalized_nodes}
     records, wbs, issues, seen = [], [], [], set()
     current = None
     for i, (r, v) in enumerate(zip(rows, cache), 1):
@@ -51,8 +63,11 @@ def read_ld(path, identities=None):
         if isinstance(code, str):
             code = code.upper()
         if isinstance(code, str) and re.fullmatch(r'\d+(?:\.\d+)+', code):
-            current = node(code, name, i)
+            current = nodes_by_origin[f'LD!B{i}:D{i}']
             wbs.append(current)
+            if 'codigo_original' in current:
+                issues.append(issue('DECISAO_WBS_APLICADA', current['origem'],
+                    f"Código {current['codigo_original']} → {current['codigo']}: definido pelo usuário para {name}."))
             continue
         if code not in CODES or not clean_text(name):
             continue

@@ -2,6 +2,10 @@
 
 Versão preliminar de um motor Python de pré-cronogramas de engenharia a partir da LD comercial e do Manual de Engenharia. Primeira versão independente de Oracle Primavera Cloud e BMS; não faz chamadas de rede nem escreve na API Oracle.
 
+No site, códigos WBS repetidos agora abrem uma etapa de decisão em **Configuração**:
+defina códigos exclusivos, confirme e gere o resultado. As escolhas ficam
+registradas no Excel sem modificar a LD. Veja [Decisões do usuário](docs/decisoes_usuario.md).
+
 ## Executar
 
 Python 3.12 (validado), com `openpyxl` e `pytest`:
