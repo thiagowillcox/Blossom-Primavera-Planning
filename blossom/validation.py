@@ -6,6 +6,8 @@ import math
 def validate_config(c):
     def positive(value, zero=False):
         return isinstance(value, (int,float)) and not isinstance(value,bool) and math.isfinite(value) and (value>=0 if zero else value>0)
+    if c.get('metodo_duracao', 'capacidade_funcoes') not in ('capacidade_funcoes', 'equivalente_hh'):
+        raise ValueError('Método de duração desconhecido')
     if not positive(c['jornada_hh_dia']):
         raise ValueError('Jornada deve ser positiva')
     if [Decimal(str(x)) for x in c['percentuais']] != list(map(Decimal, ['0.8','0.1','0.2','0.1'])):

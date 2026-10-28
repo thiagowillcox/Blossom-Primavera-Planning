@@ -135,3 +135,13 @@ No site, a aba Atividades usa a mesma ordem hierárquica, com recuo visual e cla
 - Os arquivos permanecem somente durante a sessão: não é um histórico persistente nem há contas/login nesta entrega.
 
 Para atualizar, feche o servidor anterior, extraia a nova versão em pasta curta fora do OneDrive e abra `Abrir_Blossom.bat` novamente. Recarregar só o navegador não substitui arquivos antigos do projeto.
+
+## Conferência e reprocessamento da referência Wardi
+
+Foi acrescentado um modo separado para usar o cronograma auditado do Wardi como fonte de planejamento. Em **Arquivos → Referência Wardi (opcional)**, envie o `pre_cronograma_v0001.xlsx`; em **Configuração**, escolha **Reprocessar referência Wardi** e clique no botão de reprocessamento. O Excel de saída preserva estrutura, IDs, regras e rede importadas; HH, atribuições, durações e dias relativos são recalculados a partir dos caches da LD preservados na auditoria. O relatório informa diferenças nos valores recalculados.
+
+Isso **não** transforma uma LD nova automaticamente no resultado do Wardi. A geração padrão pela LD continua usando os dados realmente enviados. As entradas antigas têm hashes diferentes das entradas registradas no v0001; nenhuma hora comercial foi substituída por valores da referência.
+
+O perfil parcial `config/parametros_referencia_wardi.json` também registra os parâmetros conhecidos, mas bloqueia geração pela LD quando os hashes não coincidem. O método `equivalente_hh` calcula HH/jornada para compatibilidade; ele é identificado como homem-dia equivalente, não como prazo validado por disponibilidade de funções. O padrão continua `capacidade_funcoes`.
+
+Leia [o diagnóstico e a lista das correções](docs/diagnostico_wardi.md). A equivalência geral dos dois motores para novas LDs ainda não está demonstrada.

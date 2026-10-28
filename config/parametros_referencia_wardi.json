@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "projeto": "Humberto",
+  "jornada_hh_dia": 8,
+  "capacidade_profissionais": {},
+  "duracao_cliente_dias": {
+    "2": 3,
+    "4": 3
+  },
+  "percentuais": [
+    0.8,
+    0.1,
+    0.2,
+    0.1
+  ],
+  "encadeamento": [
+    [
+      1,
+      2
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      3,
+      4
+    ]
+  ],
+  "relacionamentos_aprovados": [],
+  "identidades": {},
+  "metodo_duracao": "equivalente_hh",
+  "fontes_esperadas": {
+    "ld": "e2937ed7362ee0edbad9d37bccf3bb1d0d188cd1483772517673106b67d80259",
+    "manual": "f403e6f9349a8a13ae1e1b74053da9968dc12ae7270fd38778abc91e73e431f6"
+  }
+}

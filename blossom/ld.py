@@ -17,14 +17,29 @@ def read_ld(path, identities=None):
     s, values = raw['LD'], cached['LD']
     rows = [tuple(r) + (None,) * max(0, 23-len(r)) for r in s.values]
     cache = [tuple(r) + (None,) * max(0, 23-len(r)) for r in values.values]
-    roles = [str(x) for x in rows[3][7:16]]
+    def resolved(row_index, col_index):
+        value = rows[row_index][col_index]
+        if not isinstance(value, str) or not value.startswith('='):
+            return value
+        value_cached = cache[row_index][col_index]
+        if value_cached is not None:
+            return value_cached
+        # Resolve only a direct local-sheet reference, never evaluate formulas.
+        match = re.fullmatch(r"=(?:'([^']+)'|([A-Za-z_][A-Za-z_0-9 ]*))!([A-Z]+[0-9]+)", value)
+        if match:
+            sheet = match.group(1) or match.group(2)
+            if sheet in cached.sheetnames:
+                return cached[sheet][match.group(3)].value
+        raise ValueError(f'Fórmula de identificação sem valor disponível: LD!{openpyxl.utils.get_column_letter(col_index+1)}{row_index+1}')
+    roles = [str(resolved(3,j)) for j in range(7,16)]
     if len(set(roles)) != 9 or any(x == 'None' for x in roles):
         raise ValueError('Cabeçalho de funções incompatível com o layout LD')
+    adjusted_layout = cache[3][21] == 'TOTAL Hh (ajustado)'
     records, wbs, issues, seen = [], [], [], set()
     current = None
     for i, (r, v) in enumerate(zip(rows, cache), 1):
-        code, eap, name = r[1:4]
-        if isinstance(code, str) and re.fullmatch(r'\d+\.\d+', code):
+        code, eap, name = (resolved(i-1,j) for j in range(1,4))
+        if isinstance(code, str) and re.fullmatch(r'\d+(?:\.\d+)+', code):
             current = node(code, name, i)
             wbs.append(current)
             continue
@@ -42,14 +57,15 @@ def read_ld(path, identities=None):
                'tipo': 'documento' if code.startswith('D') else 'auxiliar',
                'origem': source, 'linha': i, 'unidade': r[5], 'quantidade': v[4],
                'a1_equivalente': None, 'hh': {}, 'total_original': None,
-               'total_cache': v[17], 'total_ajustado_cache': v[21],
-               'fator_ajuste_original': r[19], 'identidade_semantica': semantic,
+               'total_cache': v[17], 'total_ajustado_cache': v[21] if adjusted_layout else None,
+               'fator_ajuste_original': r[19] if adjusted_layout else None, 'identidade_semantica': semantic,
                'originais': json.dumps(r, ensure_ascii=False, default=str),
                'cache': json.dumps(v, ensure_ascii=False, default=str)}
         try:
             # Only reproduce the documented A-format conversion when G has the
             # exact repository template formula. Unknown formulas use cached values.
-            unit = r[5]
+            unit = resolved(i-1,5)
+            rec['unidade'] = unit
             expected = (f'=IF(F{i}="A4",E{i}/8,IF(F{i}="A3",E{i}/4,IF(F{i}="A2",E{i}/2,'
                         f'IF(F{i}="A1",E{i},IF(F{i}="A0",E{i}*2,IF(F{i}="HH","",""))))))')
             if unit == 'HH':

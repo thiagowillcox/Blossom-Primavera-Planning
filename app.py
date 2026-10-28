@@ -7,12 +7,13 @@ import streamlit as st
 from blossom.web import generate, ROLES
 from blossom.hierarchy import activity_hierarchy
 from blossom.ui import apply_theme, heading, table
+from blossom.reference import reprocess_reference
 
 ROOT=Path(__file__).resolve().parent
 st.set_page_config(page_title='Blossom Planning',page_icon='🌸',layout='wide')
 ss=st.session_state
 if 'settings' not in ss:
-    ss.settings={'project':'','daily':8.0,'comments':None,'approval':None,
+    ss.settings={'profile':'Capacidade por função','project':'','daily':8.0,'comments':None,'approval':None,
                  **{'cap_'+role:None for role in ROLES}}
 if '_go' in ss:
     ss.navigation=ss.pop('_go')
@@ -24,6 +25,15 @@ def go(page):
 
 def save_setting(name):
     ss.settings[name]=ss['field_'+name]
+
+
+def profile_changed():
+    ss.settings['profile']=ss['field_profile']
+    if ss.settings['profile']!='Capacidade por função':
+        ss.settings.update(comments=3.0,approval=3.0,daily=8.0)
+        if not ss.settings['project']:ss.settings['project']='Humberto'
+        for name in ('comments','approval','daily','project'):
+            ss.pop('field_'+name,None)
 
 
 def upload_changed(kind):
@@ -45,18 +55,21 @@ with st.sidebar:
     st.caption('Processamento local · sem envio ao Oracle')
 
 settings=ss.settings
-config=json.loads((ROOT/'config/parametros.json').read_text(encoding='utf-8'))
+profile=settings.get('profile','Capacidade por função')
+profile_file='parametros.json' if profile=='Capacidade por função' else 'parametros_referencia_wardi.json'
+config=json.loads((ROOT/'config'/profile_file).read_text(encoding='utf-8'))
 config.update(projeto=settings['project'].strip() or 'Projeto não identificado',
               jornada_hh_dia=settings['daily'],
               capacidade_profissionais={role:settings['cap_'+role] for role in ROLES if settings['cap_'+role] is not None},
               duracao_cliente_dias={'2':settings['comments'],'4':settings['approval']})
 fingerprint=hashlib.sha256(json.dumps(config,sort_keys=True).encode())
-for kind in ('ld','manual'):
+for kind in ('ld','manual','reference'):
     if ss.get(kind+'_file'):fingerprint.update(ss[kind+'_file'][1])
 key=fingerprint.hexdigest()
 if ss.get('result_key') is not None and ss.result_key!=key:
-    ss.pop('result',None);ss.pop('result_key',None)
-ready=bool(ss.get('ld_file') and ss.get('manual_file'))
+    ss.pop('result',None);ss.pop('reference_result',None);ss.pop('result_key',None)
+reference_mode=profile=='Reprocessar referência Wardi'
+ready=bool(ss.get('reference_file')) if reference_mode else bool(ss.get('ld_file') and ss.get('manual_file'))
 
 if page=='Arquivos':
     heading('01 · ARQUIVOS','Seu planejamento começa aqui.',
@@ -74,40 +87,54 @@ if page=='Arquivos':
                 name,data=ss[kind+'_file']
                 st.success('Arquivo selecionado: '+name)
                 st.caption(f'{len(data)/1024/1024:.2f} MB · mantido nesta sessão ao navegar')
+    with st.expander('Referência Wardi (opcional)'):
+        st.caption('Para reprocessar os dados auditados do v0001 sem as entradas originais, envie o cronograma e escolha Reprocessar referência Wardi na Configuração. Isso não altera a LD enviada.')
+        st.file_uploader('Cronograma de referência auditado',type=['xlsx'],key='upload_reference',on_change=upload_changed,args=('reference',))
+        if ss.get('reference_file'):st.success('Referência selecionada: '+ss.reference_file[0])
     st.markdown('<div class="notice"><strong>Seus arquivos, preservados.</strong><br>As planilhas originais não são alteradas. O Excel gerado fica disponível para download nesta sessão.</div>',unsafe_allow_html=True)
-    st.button('Configurar projeto →',type='primary',disabled=not ready,on_click=go,args=('Configuração',))
+    st.button('Configurar projeto →',type='primary',disabled=not (ready or ss.get('reference_file')),on_click=go,args=('Configuração',))
 
 elif page=='Configuração':
     heading('02 · CONFIGURAÇÃO','Cada projeto tem seu ritmo.',
             'Ajuste as premissas do planejamento. O que ainda não estiver definido pode ficar em branco para validação posterior.')
-    if not ready:st.info('Envie as duas planilhas na seção Arquivos para liberar a geração.')
-    a,b=st.columns([1.1,1],gap='large')
-    with a,st.container(border=True,key="project_card"):
-        st.subheader('Dados do projeto')
-        st.text_input('Nome do projeto',value=settings['project'],placeholder='Ex.: Forno III',
-                      key='field_project',on_change=save_setting,args=('project',))
-        st.number_input('Jornada (HH por profissional/dia)',min_value=0.1,max_value=24.0,
-                        value=settings['daily'],step=0.5,key='field_daily',on_change=save_setting,args=('daily',))
-    with b,st.container(border=True,key="client_card"):
-        st.subheader('Prazos do cliente')
-        st.caption('Independentes das horas de acompanhamento. Deixe vazio se ainda não houver definição.')
-        for name,label in [('comments','Comentários do cliente (dias)'),('approval','Aprovação final (dias)')]:
-            st.number_input(label,min_value=0.0,value=settings[name],step=1.0,
-                            key='field_'+name,on_change=save_setting,args=(name,))
-    with st.expander('Capacidade disponível por função',expanded=False):
-        st.caption('Quantidade equivalente de profissionais por atividade. Campos vazios mantêm a duração pendente; não há nivelamento entre atividades simultâneas.')
-        columns=st.columns(3)
-        for index,role in enumerate(ROLES):
-            name='cap_'+role
-            with columns[index%3]:
-                st.number_input(role,min_value=0.01,value=settings[name],step=0.5,
+    st.selectbox('Perfil de cálculo',['Capacidade por função','Referência Wardi v0001 (parcial)','Reprocessar referência Wardi'],
+                 index=['Capacidade por função','Referência Wardi v0001 (parcial)','Reprocessar referência Wardi'].index(profile),key='field_profile',on_change=profile_changed)
+    if profile=='Referência Wardi v0001 (parcial)':
+        st.warning('Perfil parcial: reproduz HH/jornada e prazos de 3 dias observados no v0001, mas não substitui a análise de capacidade nem contém as regras completas do Wardi. Exige as mesmas LD e manual, conferidos por hash. Com os arquivos antigos, a geração será bloqueada.')
+    if not ready:st.info('Envie o cronograma auditado na seção Arquivos.' if reference_mode else 'Envie as duas planilhas na seção Arquivos para liberar a geração.')
+    if reference_mode:
+        st.warning('Fonte de planejamento: auditoria e rede do cronograma enviado. As HH, durações e dias relativos serão recalculados; estrutura, IDs, regras e restrições serão importados. Isso não reproduz o motor do Wardi para novas LDs.')
+    else:
+        a,b=st.columns([1.1,1],gap='large')
+        with a,st.container(border=True,key="project_card"):
+            st.subheader('Dados do projeto')
+            st.text_input('Nome do projeto',value=settings['project'],placeholder='Ex.: Forno III',
+                          key='field_project',on_change=save_setting,args=('project',))
+            st.number_input('Jornada (HH por profissional/dia)',min_value=0.1,max_value=24.0,
+                            value=settings['daily'],step=0.5,key='field_daily',on_change=save_setting,args=('daily',))
+        with b,st.container(border=True,key="client_card"):
+            st.subheader('Prazos do cliente')
+            st.caption('Independentes das horas de acompanhamento. Deixe vazio se ainda não houver definição.')
+            for name,label in [('comments','Comentários do cliente (dias)'),('approval','Aprovação final (dias)')]:
+                st.number_input(label,min_value=0.0,value=settings[name],step=1.0,
                                 key='field_'+name,on_change=save_setting,args=(name,))
-    st.markdown('<div class="notice"><strong>Distribuição por documento</strong><br>80% emissão inicial · 10% comentários · 20% atendimento · 10% aprovação.<br>Atividades auxiliares preservam 100% das HH originais.</div>',unsafe_allow_html=True)
-    if st.button('Gerar pré-cronograma →',type='primary',disabled=not ready):
-        ss.pop('result',None)
+        with st.expander('Capacidade disponível por função',expanded=False):
+            st.caption('Quantidade equivalente de profissionais por atividade. Campos vazios mantêm a duração pendente; não há nivelamento entre atividades simultâneas.')
+            columns=st.columns(3)
+            for index,role in enumerate(ROLES):
+                name='cap_'+role
+                with columns[index%3]:
+                    st.number_input(role,min_value=0.01,value=settings[name],step=0.5,
+                                    key='field_'+name,on_change=save_setting,args=(name,))
+        st.markdown('<div class="notice"><strong>Distribuição por documento</strong><br>80% emissão inicial · 10% comentários · 20% atendimento · 10% aprovação.<br>Atividades auxiliares preservam 100% das HH originais.</div>',unsafe_allow_html=True)
+    if st.button('Reprocessar referência →' if reference_mode else 'Gerar pré-cronograma →',type='primary',disabled=not ready):
+        ss.pop('result',None);ss.pop('reference_result',None)
         try:
             with st.spinner('Preparando seu planejamento e conferindo as horas…'):
-                ss.result=generate(ss.ld_file[1],ss.manual_file[1],config)
+                if reference_mode:
+                    ss.reference_result=reprocess_reference(ss.reference_file[1])
+                else:
+                    ss.result=generate(ss.ld_file[1],ss.manual_file[1],config)
                 ss.result_key=key
             go('Resultados');st.rerun()
         except ValueError as exc:st.error('Não foi possível gerar: '+str(exc))
@@ -118,7 +145,14 @@ elif page=='Configuração':
 else:
     heading('03 · RESULTADOS','Pronto para o próximo passo.',
             'Consulte o resumo, revise as pendências e baixe o pré-cronograma para compartilhar com a equipe.')
-    if 'result' not in ss:
+    if 'reference_result' in ss:
+        content,summary=ss.reference_result
+        st.success(f"Referência recalculada: {summary['atividades']} atividades; {summary['alteracoes_relevantes']} diferenças relevantes nos valores recalculados.")
+        st.caption(summary['fonte'])
+        st.warning(summary['observacao'])
+        st.download_button('↓ Baixar referência reprocessada',content,'pre_cronograma_wardi_reprocessado.xlsx','application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',type='primary')
+        st.download_button('↓ Relatório de conferência',json.dumps(summary,ensure_ascii=False,indent=2),'conferencia_reprocessamento.json','application/json')
+    elif 'result' not in ss:
         st.markdown('<div class="empty"><h3>Seu planejamento aparecerá aqui</h3><p>Envie os arquivos e configure o projeto para gerar o primeiro resultado.</p></div>',unsafe_allow_html=True)
         st.button('Ir para '+('Configuração' if ready else 'Arquivos'),type='primary',
                   on_click=go,args=('Configuração' if ready else 'Arquivos',))

@@ -9,11 +9,13 @@ from .relationships import build_links
 from .schedule import estimate
 from .validation import validate_config, validate_result
 from .export import save
+from .provenance import verify_sources
 
 
 def run(ld, manual, config_path, output, reviewed=None):
     config=json.loads(config_path.read_text(encoding='utf-8'))
     validate_config(config)
+    verify_sources(ld,manual,config)
     records,wbs,issues=read_ld(ld,config.get('identidades'))
     rules,manual_issues=extract_manual(manual,output/'manual_figuras',reviewed)
     activities,assignments,audit,hour_issues=distribute(records,config)
@@ -21,9 +23,11 @@ def run(ld, manual, config_path, output, reviewed=None):
     estimate(activities,links)
     issues+=manual_issues+hour_issues
     issues.append(issue('IDENTIFICACAO_PROJETO','LD', 'Confirmar que BL1120-0011_R03 corresponde ao Forno III; o arquivo não contém identificação inequívoca.'))
-    issues.append(issue('SEM_NIVELAMENTO','motor','Durações consideram funções paralelas por atividade. Não há nivelamento global de recursos nem calendário/data-base.'))
+    issues.append(issue('SEM_NIVELAMENTO','motor','Não há nivelamento global de recursos nem calendário/data-base.'))
+    if config.get('metodo_duracao') == 'equivalente_hh':
+        issues.append(issue('DURACAO_POR_ESFORCO','parametros','Modo de compatibilidade: HH/jornada é equivalente em homem-dia, não prazo decorrente validado por capacidade.'))
     params=[{'parametro':k,'valor':v} for k,v in config.items()]
-    metadata={'ld_sha256':digest(ld),'manual_sha256':digest(manual),'config_sha256':digest(config_path),'versao_motor':'0.2.0'}
+    metadata={'ld_sha256':digest(ld),'manual_sha256':digest(manual),'config_sha256':digest(config_path),'versao_motor':'0.3.0'}
     if reviewed:metadata['observacoes_sha256']=digest(reviewed)
     params += [{'parametro':k,'valor':v} for k,v in metadata.items()]
     # WBS contains hierarchy only. Traceability belongs with effort and
