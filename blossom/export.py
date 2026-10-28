@@ -7,6 +7,7 @@ from zipfile import ZipFile, ZIP_DEFLATED
 import openpyxl
 from openpyxl.styles import Font, PatternFill, Alignment
 from .hierarchy import activity_hierarchy
+from .source_audit import reconcile_ld
 
 
 def serial(value):
@@ -18,7 +19,9 @@ def serial(value):
 def save(tables, records, metadata, directory):
     directory.mkdir(parents=True,exist_ok=True)
     hierarchy = activity_hierarchy(tables)
-    payload={'linhas_cronograma': hierarchy, 'metadados': metadata,'tabelas':tables,'registros':records}
+    source_checks=reconcile_ld(records,tables['Auditoria_HH'])
+    (directory/'conferencia_ld.json').write_text(json.dumps(source_checks,ensure_ascii=False,indent=2,default=serial)+'\n',encoding='utf-8')
+    payload={'conferencia_ld':source_checks,'linhas_cronograma': hierarchy, 'metadados': metadata,'tabelas':tables,'registros':records}
     (directory/'resultado.json').write_text(json.dumps(payload,ensure_ascii=False,sort_keys=True,indent=2,default=serial)+'\n', encoding='utf-8')
     (directory/'pendencias.json').write_text(json.dumps(tables['Pendencias'],ensure_ascii=False,indent=2,default=serial)+'\n', encoding='utf-8')
     (directory/'matriz_regras.json').write_text(json.dumps(tables['Matriz_Regras'],ensure_ascii=False,sort_keys=True,indent=2,default=serial)+'\n', encoding='utf-8')

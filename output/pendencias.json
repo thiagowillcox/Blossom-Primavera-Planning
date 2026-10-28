@@ -12004,6 +12004,6 @@
   {
     "codigo": "SEM_NIVELAMENTO",
     "origem": "motor",
-    "descricao": "Durações consideram funções paralelas por atividade. Não há nivelamento global de recursos nem calendário/data-base."
+    "descricao": "Não há nivelamento global de recursos nem calendário/data-base."
   }
 ]

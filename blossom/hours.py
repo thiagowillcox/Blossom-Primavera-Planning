@@ -19,7 +19,7 @@ def distribute(records, config):
                                'nome': rec['nome']+' — '+label, 'tipo': rec['tipo'],
                                'etapa': stage, 'percentual': factor, 'hh': sum(hours.values()),
                                'duracao_dias': days,
-                               'base_duracao': 'prazo_cliente' if stage in (2,4) else config.get('metodo_duracao','capacidade_funcoes'),
+                               'base_duracao': 'prazo_cliente' if stage in (2,4) else 'capacidade_funcoes',
                                'inicio_dia': None, 'fim_dia': None,
                                'origem': rec['origem']})
             if days is None:

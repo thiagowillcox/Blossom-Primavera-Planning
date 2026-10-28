@@ -20,5 +20,5 @@ def generate(ld_bytes, manual_bytes, config):
         output = directory/'saida'
         tables = run(ld, manual, params, output, ROOT/'config/observacoes_manual.json')
         files = {filename: (output/filename).read_bytes() for filename in
-                 ['pre_cronograma.xlsx', 'pendencias.json', 'matriz_regras.json']}
+                 ['pre_cronograma.xlsx', 'pendencias.json', 'matriz_regras.json', 'conferencia_ld.json']}
         return tables, files

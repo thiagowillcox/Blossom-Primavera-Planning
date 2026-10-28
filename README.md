@@ -112,7 +112,7 @@ O iniciador Windows foi preparado, mas não foi executado em Windows neste ambie
 
 Abra o endereço indicado no terminal. A interface aceita os nomes originais dos arquivos; não é necessário renomear ou copiar planilhas para `input`. O processamento usa diretórios temporários curtos e isolados por geração. Os downloads ficam em memória na sessão; não há histórico durável. Ao alterar entradas ou parâmetros, gere novamente para obter novos downloads.
 
-O Blossom Planning usa a identidade rosa cerejeira definida com o usuário: fundo branco, cartões rosados e botões pink. O tema escuro é opcional. As versões transparentes dos logos preparados a partir das imagens enviadas estão em `assets/logo-light.png` (fundo claro) e `assets/logo-dark.png` (fundo escuro). Os arquivos podem ser substituídos pelos PNGs oficiais de alta resolução mantendo esses nomes.
+O Blossom Planning usa somente tema escuro, com fundo quase preto, cartões em rosa profundo, botões pink e logo de letras claras em `assets/logo-dark.png`. Não há alternância de tema na interface.
 
 Esta é uma aplicação local. Para disponibilizá-la por uma URL à equipe, ainda é necessário escolher hospedagem e definir autenticação, acesso aos documentos e limites de processamento. Não exponha o servidor local como se já fosse um serviço publicado.
 
@@ -129,19 +129,19 @@ No site, a aba Atividades usa a mesma ordem hierárquica, com recuo visual e cla
 - **Arquivos:** envie LD e manual pelos cartões rosados, sem renomear arquivos.
 - **Configuração:** informe projeto, jornada, capacidade e prazos; campos sem definição continuam vazios.
 - **Resultados:** veja primeiro o resumo, baixe o Excel e abra somente as tabelas desejadas. Tabelas grandes são paginadas com 100 linhas por página, preservando a sequência hierárquica.
-- O botão **Modo escuro** alterna a paleta e a versão do logo. Cada sessão começa no modo claro.
-- Arquivos e premissas permanecem durante a navegação entre seções. Alterar entradas ou parâmetros invalida o resultado anterior; trocar apenas o tema não invalida a geração.
+- O site abre diretamente no tema escuro; não há seletor de tema.
+- Arquivos e premissas permanecem durante a navegação entre seções. Alterar entradas ou parâmetros invalida o resultado anterior; navegar entre as seções não invalida a geração.
 - Fonte Nunito Sans incluída localmente, com licença em `assets/OFL.txt`. Não há busca de fontes durante o uso.
 - Os arquivos permanecem somente durante a sessão: não é um histórico persistente nem há contas/login nesta entrega.
 
 Para atualizar, feche o servidor anterior, extraia a nova versão em pasta curta fora do OneDrive e abra `Abrir_Blossom.bat` novamente. Recarregar só o navegador não substitui arquivos antigos do projeto.
 
-## Conferência e reprocessamento da referência Wardi
+## Conferência das horas pela LD
 
-Foi acrescentado um modo separado para usar o cronograma auditado do Wardi como fonte de planejamento. Em **Arquivos → Referência Wardi (opcional)**, envie o `pre_cronograma_v0001.xlsx`; em **Configuração**, escolha **Reprocessar referência Wardi** e clique no botão de reprocessamento. O Excel de saída preserva estrutura, IDs, regras e rede importadas; HH, atribuições, durações e dias relativos são recalculados a partir dos caches da LD preservados na auditoria. O relatório informa diferenças nos valores recalculados.
+A fonte de cálculo é a LD comercial enviada. O Excel do Wardi é apenas referência visual e não é usado para impor horas, prazos ou vínculos. Os modos de reprocessamento, perfil de compatibilidade e bloqueio por hash foram removidos. Hashes continuam registrados somente para rastrear os arquivos lidos.
 
-Isso **não** transforma uma LD nova automaticamente no resultado do Wardi. A geração padrão pela LD continua usando os dados realmente enviados. As entradas antigas têm hashes diferentes das entradas registradas no v0001; nenhuma hora comercial foi substituída por valores da referência.
+A aba `Auditoria_HH` mostra, para cada registro planejado, o total original R da LD, o total lido, a diferença e o status de conferência, além das horas por função. Totais de registro se repetem nas linhas de função: não devem ser somados entre linhas. O download **Conferência das horas com a LD**, em Relatórios complementares, contém uma linha por registro, incluindo registros sem HH planejadas. A mesma conferência está em `resultado.json` e em `output/conferencia_ld.json`.
 
-O perfil parcial `config/parametros_referencia_wardi.json` também registra os parâmetros conhecidos, mas bloqueia geração pela LD quando os hashes não coincidem. O método `equivalente_hh` calcula HH/jornada para compatibilidade; ele é identificado como homem-dia equivalente, não como prazo validado por disponibilidade de funções. O padrão continua `capacidade_funcoes`.
+A duração usa a capacidade das funções em paralelo. Prazos do cliente permanecem vazios até serem informados; não há prazo fixo herdado de outro projeto. O nome do projeto também começa vazio na interface.
 
-Leia [o diagnóstico e a lista das correções](docs/diagnostico_wardi.md). A equivalência geral dos dois motores para novas LDs ainda não está demonstrada.
+Leia [a revisão do diagnóstico](docs/diagnostico_wardi.md). A extração completa das precedências do manual continua pendente. O novo relatório confere esforço; não comprova a validação técnica de todos os relacionamentos.

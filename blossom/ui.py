@@ -5,11 +5,9 @@ from html import escape
 import streamlit as st
 
 
-def apply_theme(dark):
-    colors = ({'bg':'#121014','side':'#19151b','card':'#241b23','text':'#f8edf3',
-               'muted':'#bfaab7','border':'#49303e','input':'#201920','soft':'#321c2a','pink':'#ff348d'} if dark else
-              {'bg':'#ffffff','side':'#fff9fc','card':'#fff1f7','text':'#30222d',
-               'muted':'#786572','border':'#eedce5','input':'#ffffff','soft':'#ffe4ef','pink':'#e90071'})
+def apply_theme():
+    colors = {'bg':'#121014','side':'#19151b','card':'#241b23','text':'#f8edf3',
+              'muted':'#bfaab7','border':'#49303e','input':'#201920','soft':'#321c2a','pink':'#ff348d'}
     variables = ';'.join('--'+k+':'+v for k,v in colors.items())
     css = '''
     .stApp,.stApp p,.stApp label,.stApp button,.stApp input,.stApp h1,.stApp h2,.stApp h3 {font-family:"Nunito Sans","Segoe UI",Arial,sans-serif!important}
@@ -71,7 +69,7 @@ def apply_theme(dark):
     .blossom-table .summary td {background:var(--card);font-weight:650}
     @media(prefers-reduced-motion:reduce) {* {transition:none!important;animation:none!important}}
     @media(max-width:700px) {.block-container {padding:1.5rem 1rem 3rem} h1 {font-size:1.7rem!important}}
-    '''.replace('SCHEME', 'dark' if dark else 'light')
+    '''.replace('SCHEME', 'dark')
     font = base64.b64encode((Path(__file__).resolve().parents[1]/'assets/NunitoSans.ttf').read_bytes()).decode()
     css = '@font-face{font-family:"Nunito Sans";src:url(data:font/ttf;base64,'+font+');font-weight:200 1000;font-style:normal;font-display:swap}'+css
     st.markdown('<style>:root{'+variables+'}'+css+'</style>', unsafe_allow_html=True)

@@ -5,8 +5,6 @@ import pytest
 import openpyxl
 from blossom.ld import read_ld
 from blossom.duration import duration
-from blossom.provenance import verify_sources
-from blossom.common import digest
 from blossom.validation import validate_config
 from blossom.wbs import node
 
@@ -47,55 +45,38 @@ def test_nested_wbs_parent():
     assert node('3.1.0','Grupo',10)['pai']==node('3.1','Disciplina',9)['id']
 
 
-def test_reference_requires_exact_sources(tmp_path):
-    ld=tmp_path/'LD';manual=tmp_path/'manual';ld.write_bytes(b'LD');manual.write_bytes(b'manual')
-    c={'fontes_esperadas':{'ld':digest(ld),'manual':digest(manual)}}
-    verify_sources(ld,manual,c)
-    ld.write_bytes(b'outra LD')
-    with pytest.raises(ValueError,match='LD diferente da referência'):verify_sources(ld,manual,c)
 
-
-def test_equivalent_effort_is_distinct_from_parallel_capacity():
+def test_effort_is_not_elapsed_time():
     c={'jornada_hh_dia':8,'capacidade_profissionais':{'EPleno':1,'PSênior':1},'duracao_cliente_dias':{'2':3,'4':3}}
-    hours={'EPleno':D(8),'PSênior':D(8)}
-    assert duration(hours,c,1)==1
-    c['metodo_duracao']='equivalente_hh'
-    assert duration(hours,c,1)==2
-    assert duration(hours,c,2)==3
+    assert duration({'EPleno':D(8),'PSênior':D(8)},c,1)==1
 
 
-def test_bad_duration_mode_is_rejected():
-    c=json.loads(Path('config/parametros.json').read_text(encoding='utf-8'));c['metodo_duracao']='desconhecido'
-    with pytest.raises(ValueError,match='Método'):validate_config(c)
+def test_old_effort_only_mode_is_rejected():
+    c=json.loads(Path('config/parametros.json').read_text(encoding='utf-8'));c['metodo_duracao']='equivalente_hh'
+    with pytest.raises(ValueError,match='capacidade_funcoes'):validate_config(c)
 
 
-def test_all_wardi_production_durations_follow_effort():
-    p=Path(__file__).resolve().parents[1]/'input/pre_cronograma_v0001.xlsx'
-    if not p.exists():pytest.skip('Referência comercial não está no checkout')
-    w=openpyxl.load_workbook(p,read_only=True,data_only=False);rows=list(w['Atividades'].values)
-    records=[dict(zip(rows[0],r)) for r in rows[1:]];c={'jornada_hh_dia':8,'metodo_duracao':'equivalente_hh','duracao_cliente_dias':{'2':3,'4':3}}
-    for r in records:
-        stage=0 if r['tipo']=='auxiliar' else r['etapa']
-        actual=duration({'total':D(str(r['hh']))},c,stage)
-        assert abs(actual-D(str(r['duracao_dias'])))<D('0.00000001')
-    assert len(records)==952
-    w.close()
+def test_reconciliation_uses_source_total_not_reference():
+    from blossom.source_audit import reconcile_ld
+    records=[{'id':'r','nome':'Documento','origem':'LD!10','total_cache':D(100)}]
+    audit=[{'registro_id':'r','hh_original':D(60)},{'registro_id':'r','hh_original':D(40)}]
+    assert reconcile_ld(records,audit)[0]['conferencia_total_ld']=='conferido'
+    audit[1]['hh_original']=D(39)
+    result=reconcile_ld(records,audit)[0]
+    assert result['diferenca_total_ld']==-1
+    assert result['conferencia_total_ld']=='divergente'
 
 
-def test_web_reference_profile_rejects_old_sources():
-    from streamlit.testing.v1 import AppTest
-    root=Path(__file__).resolve().parents[1]
-    if not (root/'input/LD.xlsm').exists():pytest.skip('LD antiga indisponível')
-    app=AppTest.from_file(str(root/'app.py')).run(timeout=30)
-    app.session_state['ld_file']=('LD.xlsm',(root/'input/LD.xlsm').read_bytes())
-    app.session_state['manual_file']=('Manual.xlsx',(root/'input/Manual.xlsx').read_bytes())
-    app.radio[0].set_value('Configuração').run()
-    app.selectbox[0].set_value('Referência Wardi v0001 (parcial)').run()
-    assert not app.exception
-    assert app.number_input[1].value==3.0
-    assert app.number_input[2].value==3.0
-    assert app.text_input[0].value=='Humberto'
-    app.button[0].click().run(timeout=30)
-    assert not app.exception
-    assert any('LD diferente da referência' in error.value for error in app.error)
-    assert 'result' not in app.session_state
+def test_metadata_only_change_does_not_change_hours(tmp_path):
+    from zipfile import ZipFile
+    from blossom.common import digest
+    a=tmp_path/'original.xlsx';b=tmp_path/'outro.xlsx';workbook(a)
+    with ZipFile(a) as source,ZipFile(b,'w') as target:
+        for info in source.infolist():
+            data=source.read(info.filename)
+            if info.filename=='docProps/core.xml':data=data.replace(b'</cp:coreProperties>',b'<!-- Apenas metadados -->\n</cp:coreProperties>')
+            target.writestr(info,data)
+    assert digest(a)!=digest(b)
+    before,_,_=read_ld(a);after,_,_=read_ld(b)
+    assert before[0]['hh']==after[0]['hh']
+    assert before[0]['total_original']==after[0]['total_original']
