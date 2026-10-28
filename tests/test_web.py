@@ -11,12 +11,23 @@ def test_app_starts_and_requires_uploads():
     app = AppTest.from_file(str(ROOT/'app.py')).run(timeout=30)
     assert not app.exception
     assert app.button[0].disabled
+    assert not app.toggle[0].value
+    app.radio[0].set_value('Configuração').run()
+    assert not app.exception
     assert app.number_input[0].value == 8.0
     assert app.number_input[1].value is None
     assert app.number_input[2].value is None
     app.text_input[0].set_value('Projeto de teste').run()
-    assert not app.exception
+    app.number_input[0].set_value(6.0).run()
+    app.radio[0].set_value('Arquivos').run()
+    app.toggle[0].set_value(True).run()
+    app.radio[0].set_value('Configuração').run()
+    assert app.text_input[0].value == 'Projeto de teste'
+    assert app.number_input[0].value == 6.0
+    assert app.toggle[0].value
     assert app.button[0].disabled
+    assert not app.exception
+
 
 
 def test_web_requires_inputs():
@@ -37,8 +48,16 @@ def test_web_real_uploads():
 
     app = AppTest.from_file(str(ROOT/'app.py'))
     app.session_state['result'] = (tables, files)
+    app.session_state['navigation'] = 'Resultados'
     app.run(timeout=30)
     assert not app.exception
-    assert len(app.dataframe) == 4
-    assert app.dataframe[1].value.shape[0] == 1221
-    assert '1 - Emissão Inicial' in set(app.dataframe[1].value['nome'].str.strip())
+    assert len(app.expander) == 5
+    assert len(app.metric) == 4
+    app.toggle[0].set_value(True).run()
+    assert not app.exception
+    assert len(app.metric) == 4
+    assert any('1 - Emissão Inicial' in item.value for item in app.markdown)
+    app.radio[0].set_value('Arquivos').run()
+    app.radio[0].set_value('Resultados').run()
+    assert len(app.metric) == 4
+    assert not app.exception

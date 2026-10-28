@@ -112,7 +112,7 @@ O iniciador Windows foi preparado, mas não foi executado em Windows neste ambie
 
 Abra o endereço indicado no terminal. A interface aceita os nomes originais dos arquivos; não é necessário renomear ou copiar planilhas para `input`. O processamento usa diretórios temporários curtos e isolados por geração. Os downloads ficam em memória na sessão; não há histórico durável. Ao alterar entradas ou parâmetros, gere novamente para obter novos downloads.
 
-O visual usa rosa e verde da referência Blossom. Para usar o logotipo oficial com fidelidade, coloque o PNG original em `assets/logo.png`; enquanto ele não estiver presente, a tela mostra a marca em texto. A imagem anexada como referência não foi copiada automaticamente como arquivo de identidade visual.
+O Blossom Planning usa a identidade rosa cerejeira definida com o usuário: fundo branco, cartões rosados e botões pink. O tema escuro é opcional. As versões transparentes dos logos preparados a partir das imagens enviadas estão em `assets/logo-light.png` (fundo claro) e `assets/logo-dark.png` (fundo escuro). Os arquivos podem ser substituídos pelos PNGs oficiais de alta resolução mantendo esses nomes.
 
 Esta é uma aplicação local. Para disponibilizá-la por uma URL à equipe, ainda é necessário escolher hospedagem e definir autenticação, acesso aos documentos e limites de processamento. Não exponha o servidor local como se já fosse um serviço publicado.
 
@@ -123,3 +123,15 @@ A aba `Atividades` apresenta **fase → disciplina → documento → quatro etap
 A aba WBS permanece separada, com apenas os nós hierárquicos originais (56 na LD recebida). O JSON mantém as atividades executáveis em `tabelas.Atividades` e a visão completa em `linhas_cronograma`. Os indicadores do site e a auditoria contam somente atividades com HH, sem duplicar esforços nos agrupadores.
 
 No site, a aba Atividades usa a mesma ordem hierárquica, com recuo visual e classificação da linha. O agrupamento recolhível está no Excel. Não ordene isoladamente as linhas do cronograma exportado: isso separa filhos dos pais; a tabela exportada não aplica filtro automático para preservar a sequência.
+
+## Novo visual e navegação do Blossom Planning
+
+- **Arquivos:** envie LD e manual pelos cartões rosados, sem renomear arquivos.
+- **Configuração:** informe projeto, jornada, capacidade e prazos; campos sem definição continuam vazios.
+- **Resultados:** veja primeiro o resumo, baixe o Excel e abra somente as tabelas desejadas. Tabelas grandes são paginadas com 100 linhas por página, preservando a sequência hierárquica.
+- O botão **Modo escuro** alterna a paleta e a versão do logo. Cada sessão começa no modo claro.
+- Arquivos e premissas permanecem durante a navegação entre seções. Alterar entradas ou parâmetros invalida o resultado anterior; trocar apenas o tema não invalida a geração.
+- Fonte Nunito Sans incluída localmente, com licença em `assets/OFL.txt`. Não há busca de fontes durante o uso.
+- Os arquivos permanecem somente durante a sessão: não é um histórico persistente nem há contas/login nesta entrega.
+
+Para atualizar, feche o servidor anterior, extraia a nova versão em pasta curta fora do OneDrive e abra `Abrir_Blossom.bat` novamente. Recarregar só o navegador não substitui arquivos antigos do projeto.

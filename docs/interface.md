@@ -1,6 +1,6 @@
 # Interface web — primeira entrega
 
-Streamlit 1.50.0, identidade em rosa/verde, envio de LD e manual, configuração de jornada, capacidade por função e prazos independentes do cliente. Resultado com indicadores, quatro tabelas para revisão e downloads do Excel, pendências e matriz preliminar. O motor e as oito abas são preservados.
+Streamlit 1.50.0, identidade inicial em rosa/verde, posteriormente substituída pela identidade rosa descrita em `visual_blossom.md`, envio de LD e manual, configuração de jornada, capacidade por função e prazos independentes do cliente. Resultado com indicadores, quatro tabelas para revisão e downloads do Excel, pendências e matriz preliminar. O motor e as oito abas são preservados.
 
 Validação em Linux: **21 testes passaram**, nenhum skip, incluindo AppTest da tela inicial/campos vazios, bloqueio de geração sem arquivos, adaptador com as planilhas reais e todos os testes anteriores. Página e health check HTTP 200. `pip check` sem inconsistências. A dependência packaging foi ajustada para 25.0 por compatibilidade com Streamlit.
 
