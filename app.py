@@ -7,6 +7,7 @@ import streamlit as st
 from blossom.web import generate, inspect_wbs, ROLES
 from blossom.hierarchy import activity_hierarchy
 from blossom.ui import apply_theme, heading, table
+from blossom.fixed_manual import get_fixed_manual, MANUAL_NAME, MANUAL_SHA256
 
 ROOT=Path(__file__).resolve().parent
 st.set_page_config(page_title='Blossom Planning',page_icon='🌸',layout='wide')
@@ -14,16 +15,16 @@ ss=st.session_state
 if 'settings' not in ss:
     ss.settings={'project':'','daily':8.0,'comments':None,'approval':None,
                  **{'cap_'+role:None for role in ROLES}}
-if ss.get('workflow_version') != 'ld-manual-v2':
+if ss.get('workflow_version') != 'ld-fixed-manual-v3':
     previous_profile=ss.settings.pop('profile',None)
     if previous_profile and previous_profile!='Capacidade por função':
         ss.settings={'project':'','daily':8.0,'comments':None,'approval':None,
                      **{'cap_'+role:None for role in ROLES}}
         for key in list(ss):
             if key.startswith('field_'):ss.pop(key,None)
-    for legacy in ('result','result_key','reference_result','reference_file','field_profile','field_project','field_daily','field_comments','field_approval'):
+    for legacy in ('result','result_key','reference_result','reference_file','manual_file','upload_manual','field_profile','field_project','field_daily','field_comments','field_approval'):
         ss.pop(legacy,None)
-    ss.workflow_version='ld-manual-v2'
+    ss.workflow_version='ld-fixed-manual-v3'
 if '_go' in ss:
     ss.navigation=ss.pop('_go')
 
@@ -68,20 +69,23 @@ ld_hash=hashlib.sha256(ss.ld_file[1]).hexdigest() if ss.get('ld_file') else None
 if ss.get('wbs_decisions',{}).get('ld_sha256') == ld_hash and ld_hash is not None:
     config['ajustes_wbs']=ss.wbs_decisions
 fingerprint=hashlib.sha256(json.dumps(config,sort_keys=True).encode())
-for kind in ('ld','manual'):
-    if ss.get(kind+'_file'):fingerprint.update(ss[kind+'_file'][1])
+fingerprint.update(MANUAL_SHA256.encode())
+if ss.get('ld_file'):fingerprint.update(ss.ld_file[1])
 key=fingerprint.hexdigest()
 if ss.get('result_key') is not None and ss.result_key!=key:
     ss.pop('result',None);ss.pop('result_key',None)
-ready=bool(ss.get('ld_file') and ss.get('manual_file'))
+manual_error=None
+try:get_fixed_manual()
+except ValueError as exc:manual_error=str(exc)
+if manual_error:st.error(manual_error)
+ready=bool(ss.get('ld_file') and not manual_error)
 
 if page=='Arquivos':
     heading('01 · ARQUIVOS','Seu planejamento começa aqui.',
-            'Envie a lista de documentos e o manual de engenharia. Nós organizamos a estrutura para você revisar com a equipe.')
+            'Envie sua lista de documentos. O Manual de Engenharia Blossom já está configurado como referência fixa.')
     c1,c2=st.columns(2,gap='large')
     for col,kind,title,description,types in (
-        (c1,'ld','Lista de Documentos','A LD comercial com entregáveis e horas por função.',['xlsm','xlsx']),
-        (c2,'manual','Manual de Engenharia','A versão do manual usada como referência técnica.',['xlsx'])):
+        (c1,'ld','Lista de Documentos','A LD comercial com entregáveis e horas por função.',['xlsm','xlsx']),):
         with col,st.container(border=True,key="card_"+kind):
             st.subheader(title)
             st.caption(description)
@@ -91,13 +95,17 @@ if page=='Arquivos':
                 name,data=ss[kind+'_file']
                 st.success('Arquivo selecionado: '+name)
                 st.caption(f'{len(data)/1024/1024:.2f} MB · mantido nesta sessão ao navegar')
+    with c2,st.container(border=True,key='card_manual'):
+        st.subheader('Referência já configurada')
+        st.write(MANUAL_NAME)
+        st.caption('Usado automaticamente em todas as gerações. Você só precisa enviar a LD.')
     st.markdown('<div class="notice"><strong>Seus arquivos, preservados.</strong><br>As planilhas originais não são alteradas. O Excel gerado fica disponível para download nesta sessão.</div>',unsafe_allow_html=True)
     st.button('Configurar projeto →',type='primary',disabled=not ready,on_click=go,args=('Configuração',))
 
 elif page=='Configuração':
     heading('02 · CONFIGURAÇÃO','Cada projeto tem seu ritmo.',
             'Ajuste as premissas do planejamento. O que ainda não estiver definido pode ficar em branco para validação posterior.')
-    if not ready:st.info('Envie as duas planilhas na seção Arquivos para liberar a geração.')
+    if not ready:st.info('Envie a LD na seção Arquivos para liberar a geração.')
     a,b=st.columns([1.1,1],gap='large')
     with a,st.container(border=True,key="project_card"):
         st.subheader('Dados do projeto')
@@ -163,7 +171,7 @@ elif page=='Configuração':
         ss.pop('result',None)
         try:
             with st.spinner('Preparando seu planejamento e conferindo as horas…'):
-                ss.result=generate(ss.ld_file[1],ss.manual_file[1],config)
+                ss.result=generate(ss.ld_file[1],config)
                 ss.result_key=key
             go('Resultados');st.rerun()
         except ValueError as exc:st.error('Não foi possível gerar: '+str(exc))
@@ -175,7 +183,7 @@ else:
     heading('03 · RESULTADOS','Pronto para o próximo passo.',
             'Consulte o resumo, revise as pendências e baixe o pré-cronograma para compartilhar com a equipe.')
     if 'result' not in ss:
-        st.markdown('<div class="empty"><h3>Seu planejamento aparecerá aqui</h3><p>Envie os arquivos e configure o projeto para gerar o primeiro resultado.</p></div>',unsafe_allow_html=True)
+        st.markdown('<div class="empty"><h3>Seu planejamento aparecerá aqui</h3><p>Envie a LD e configure o projeto para gerar o primeiro resultado.</p></div>',unsafe_allow_html=True)
         st.button('Ir para '+('Configuração' if ready else 'Arquivos'),type='primary',
                   on_click=go,args=('Configuração' if ready else 'Arquivos',))
     else:

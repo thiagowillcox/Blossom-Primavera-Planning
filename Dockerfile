@@ -15,6 +15,7 @@ COPY --chown=blossom:blossom app.py ./
 COPY --chown=blossom:blossom blossom/ ./blossom/
 COPY --chown=blossom:blossom config/ ./config/
 COPY --chown=blossom:blossom assets/ ./assets/
+COPY --chown=blossom:blossom resources/ ./resources/
 COPY --chown=blossom:blossom .streamlit/ ./.streamlit/
 USER 10001:10001
 EXPOSE 8501

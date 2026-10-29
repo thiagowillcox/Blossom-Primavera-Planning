@@ -5,6 +5,7 @@ from tempfile import TemporaryDirectory
 from .__main__ import run
 from .ld import read_ld
 from .decisions import WBSDecisionRequired
+from .fixed_manual import get_fixed_manual
 
 ROOT = Path(__file__).resolve().parents[1]
 ROLES = ['Gerente','Especialista','ESênior','EPleno','EJúnior','PSênior','PPleno','PJúnior','Desenh.']
@@ -20,13 +21,13 @@ def inspect_wbs(ld_bytes, adjustments=None):
     return {}
 
 
-def generate(ld_bytes, manual_bytes, config):
-    if not ld_bytes or not manual_bytes:
-        raise ValueError('Envie a LD e o Manual de Engenharia.')
+def generate(ld_bytes, config):
+    if not ld_bytes:
+        raise ValueError('Envie a Lista de Documentos (LD).')
+    manual = get_fixed_manual()
     with TemporaryDirectory(prefix='blossom-') as name:
         directory = Path(name)
         ld = directory/'LD.xlsm'; ld.write_bytes(ld_bytes)
-        manual = directory/'Manual.xlsx'; manual.write_bytes(manual_bytes)
         params = directory/'parametros.json'
         params.write_text(json.dumps(config, ensure_ascii=False), encoding='utf-8')
         output = directory/'saida'

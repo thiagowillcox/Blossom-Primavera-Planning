@@ -24,15 +24,15 @@ python -m venv .venv
 Execute na raiz do repositório. Entradas locais, preservadas sem modificação:
 
 - `input/LD.xlsm`: cópia de `BL1120-0011_R03 - LD (2).xlsm`.
-- `input/Manual.xlsx`: cópia de `Mnaual de Engenharia Blossom.xlsx` (revisão 02).
+- `resources/manual_engenharia.xlsx`: manual fixo (revisão 02) já incluído na distribuição.
 
 Para outros caminhos:
 
 ```bash
-.venv/bin/python -m blossom --ld '/caminho/LD.xlsm' --manual '/caminho/manual.xlsx' --config config/parametros.json --output output
+.venv/bin/python -m blossom --ld '/caminho/LD.xlsm' --config config/parametros.json --output output
 ```
 
-Os arquivos comerciais, o ambiente virtual e as saídas são locais e ignorados pelo Git. Copie os arquivos comerciais para os caminhos acima em outra máquina. A leitura não executa macros; `openpyxl` não recalcula Excel. O motor reproduz somente a conversão A4/A3/A2/A1/A0 da fórmula conhecida, confronta A1 e totais com os valores em cache, e sinaliza inconsistências. Fórmulas não reconhecidas dependem de cache e são sinalizadas. Registros sem HH não recebem atividades com esforço inventado.
+As LDs comerciais, o ambiente virtual e as novas saídas são locais e ignorados pelo Git. Em outra máquina, forneça apenas a LD; o manual fixo acompanha o código. A leitura não executa macros; `openpyxl` não recalcula Excel. O motor reproduz somente a conversão A4/A3/A2/A1/A0 da fórmula conhecida, confronta A1 e totais com os valores em cache, e sinaliza inconsistências. Fórmulas não reconhecidas dependem de cache e são sinalizadas. Registros sem HH não recebem atividades com esforço inventado.
 
 ## Parâmetros editáveis
 
@@ -90,7 +90,7 @@ Os testes cobrem distribuição por função/etapa, auxiliares, paralelismo, pra
 
 ## Atualizar uma cópia baixada no Windows
 
-Feche o Excel antes de gerar novamente. Em uma nova extração do ZIP da branch, coloque as planilhas originais em `input/LD.xlsm` e `input/Manual.xlsx`. Na pasta que contém `requirements.txt`, execute no PowerShell:
+Feche o Excel antes de gerar novamente. Em uma nova extração do ZIP da branch, coloque a LD em `input/LD.xlsm`; o manual fixo já acompanha o projeto. Na pasta que contém `requirements.txt`, execute no PowerShell:
 
 ```powershell
 py -3.12 -m venv .venv
@@ -99,11 +99,11 @@ py -3.12 -m venv .venv
 .\.venv\Scripts\python.exe -m blossom
 ```
 
-O Excel atualizado já acompanha a pasta `output` no GitHub. Os arquivos comerciais de entrada não estão versionados. Não extraia uma nova entrega por cima de alterações locais sem preservá-las.
+O Excel atualizado já acompanha a pasta `output` no GitHub. As LDs comerciais de entrada não estão versionadas; o manual fixo está em `resources`. Não extraia uma nova entrega por cima de alterações locais sem preservá-las.
 
 ## Interface web Blossom
 
-A interface em `app.py` permite enviar LD e manual, preencher jornada/capacidades/prazos, gerar e baixar o Excel e consultar WBS, atividades, pendências e auditoria no navegador. Campos vazios continuam pendentes. Não há login, publicação na internet, histórico persistente ou integração Oracle nesta entrega.
+A interface em `app.py` permite enviar somente a LD, usar automaticamente o manual fixo, preencher jornada/capacidades/prazos, gerar e baixar o Excel e consultar WBS, atividades, pendências e auditoria no navegador. Campos vazios continuam pendentes. Não há login, publicação na internet, histórico persistente ou integração Oracle nesta entrega.
 
 ### Windows: abrir sem digitar comandos
 

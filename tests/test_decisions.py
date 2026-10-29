@@ -90,7 +90,6 @@ def test_renaming_branch_does_not_reassign_children_silently(duplicate_ld):
 def test_site_requests_choice_and_invalidates_on_new_ld(duplicate_ld):
     app=AppTest.from_file(str(ROOT/'app.py'))
     app.session_state['ld_file']=('LD.xlsx',duplicate_ld.read_bytes())
-    app.session_state['manual_file']=('Manual.xlsx',b'not-needed-for-preflight')
     app.session_state['navigation']='Configuração'
     app.run(timeout=30)
     assert not app.exception

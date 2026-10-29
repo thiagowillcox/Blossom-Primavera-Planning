@@ -8,6 +8,8 @@
 !config/**
 !assets/
 !assets/**
+!resources/
+!resources/manual_engenharia.xlsx
 !.streamlit/
 !.streamlit/config.toml
 **/__pycache__/

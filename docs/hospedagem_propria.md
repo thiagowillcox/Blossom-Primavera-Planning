@@ -29,7 +29,7 @@ Navegador → HTTPS e login (Caddy) → Blossom Planning (Streamlit)
 
 O aplicativo não tem porta publicada no servidor. Apenas o proxy recebe
 conexões externas. Ele também encaminha o WebSocket usado pelo Streamlit.
-As LDs e manuais não são incluídos na imagem Docker.
+As LDs dos usuários não são incluídas na imagem Docker. O manual de referência fixo é incluído em `resources/manual_engenharia.xlsx`.
 
 ## 1. Preparar o servidor
 
@@ -110,7 +110,7 @@ certificado não estiver válido, confira o DNS e os logs antes de enviar arquiv
 - Abra em janela anônima e confirme que o login é exigido.
 - Confira que `http://SEU_DOMINIO` redireciona para HTTPS.
 - Confira que `http://IP_DO_SERVIDOR:8501` não está acessível externamente.
-- Teste uma LD sem informações confidenciais, gere e baixe o Excel.
+- Teste uma LD sem informações confidenciais, gere e baixe o Excel. O manual fixo já está configurado.
 - Abra uma segunda sessão e confirme que os resultados da primeira não aparecem.
 - Depois de testar, retire ou restrinja a publicação antiga no Community Cloud;
   migrar o código não desliga automaticamente o site anterior.

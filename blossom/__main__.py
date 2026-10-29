@@ -10,6 +10,7 @@ from .schedule import estimate
 from .validation import validate_config, validate_result
 from .export import save
 from .source_audit import reconcile_ld
+from .fixed_manual import FIXED_MANUAL
 
 
 def run(ld, manual, config_path, output, reviewed=None):
@@ -62,7 +63,7 @@ def run(ld, manual, config_path, output, reviewed=None):
 def main():
     parser=argparse.ArgumentParser(description='Pré-cronograma Blossom; sem integração Oracle')
     parser.add_argument('--ld',type=Path,default=Path('input/LD.xlsm'))
-    parser.add_argument('--manual',type=Path,default=Path('input/Manual.xlsx'))
+    parser.add_argument('--manual',type=Path,default=FIXED_MANUAL)
     parser.add_argument('--config',type=Path,default=Path('config/parametros.json'))
     parser.add_argument('--observacoes',type=Path,default=Path('config/observacoes_manual.json'))
     parser.add_argument('--output',type=Path,default=Path('output'))

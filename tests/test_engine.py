@@ -12,6 +12,7 @@ from blossom.validation import topology, validate_config
 from blossom.schedule import estimate
 from blossom.__main__ import run
 from blossom.common import number
+from blossom.fixed_manual import get_fixed_manual
 
 ROOT=Path(__file__).resolve().parents[1]
 
@@ -193,7 +194,7 @@ def test_real_workbook_reproducibility(tmp_path):
         pytest.skip('Entradas comerciais locais não disponíveis')
     outputs=[tmp_path/'one',tmp_path/'two']
     for directory in outputs:
-        tables=run(ROOT/'input/LD.xlsm',ROOT/'input/Manual.xlsx',ROOT/'config/parametros.json',directory,ROOT/'config/observacoes_manual.json')
+        tables=run(ROOT/'input/LD.xlsm',get_fixed_manual(),ROOT/'config/parametros.json',directory,ROOT/'config/observacoes_manual.json')
         assert len(tables['WBS'])==56
         assert all(r['codigo'][0].isdigit() for r in tables['WBS'])
         assert all('originais' not in r for r in tables['WBS'])
