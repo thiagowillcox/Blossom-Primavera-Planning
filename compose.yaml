@@ -1,0 +1,44 @@
+services:
+  app:
+    build: .
+    restart: unless-stopped
+    read_only: true
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,nodev,mode=1777
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    pids_limit: 256
+    networks:
+      - blossom
+
+  proxy:
+    image: caddy:2
+    restart: unless-stopped
+    depends_on:
+      app:
+        condition: service_healthy
+    environment:
+      BLOSSOM_DOMAIN: ${BLOSSOM_DOMAIN:?Defina o domínio em .env}
+      BLOSSOM_USER: ${BLOSSOM_USER:?Defina o usuário em .env}
+      BLOSSOM_PASSWORD_HASH: ${BLOSSOM_PASSWORD_HASH:?Defina o hash da senha em .env}
+      ACME_EMAIL: ${ACME_EMAIL:?Defina o email de contato em .env}
+      NO_PROXY: app,localhost,127.0.0.1
+      no_proxy: app,localhost,127.0.0.1
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    networks:
+      - blossom
+
+networks:
+  blossom:
+
+volumes:
+  caddy_data:
+  caddy_config:

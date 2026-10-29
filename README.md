@@ -2,6 +2,10 @@
 
 Versão preliminar de um motor Python de pré-cronogramas de engenharia a partir da LD comercial e do Manual de Engenharia. Primeira versão independente de Oracle Primavera Cloud e BMS; não faz chamadas de rede nem escreve na API Oracle.
 
+Para hospedar em servidor próprio, fora do Streamlit Community Cloud, consulte
+[Hospedagem própria](docs/hospedagem_propria.md). Inclui Docker, HTTPS e uma
+primeira proteção por usuário/senha, com os limites descritos no guia.
+
 No site, códigos WBS repetidos agora abrem uma etapa de decisão em **Configuração**:
 defina códigos exclusivos, confirme e gere o resultado. As escolhas ficam
 registradas no Excel sem modificar a LD. Veja [Decisões do usuário](docs/decisoes_usuario.md).

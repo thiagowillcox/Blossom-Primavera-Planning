@@ -1,0 +1,14 @@
+*
+!Dockerfile
+!requirements.txt
+!app.py
+!blossom/
+!blossom/**
+!config/
+!config/**
+!assets/
+!assets/**
+!.streamlit/
+!.streamlit/config.toml
+**/__pycache__/
+**/*.pyc

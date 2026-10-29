@@ -6,3 +6,6 @@ input/*
 output/*
 !output/.gitkeep
 .venv-teste/
+.env
+.env.*
+.streamlit/secrets.toml

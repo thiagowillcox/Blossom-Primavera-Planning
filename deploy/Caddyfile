@@ -1,0 +1,16 @@
+{
+    email {$ACME_EMAIL}
+    admin off
+}
+
+{$BLOSSOM_DOMAIN} {
+    basic_auth {
+        {$BLOSSOM_USER} {$BLOSSOM_PASSWORD_HASH}
+    }
+    header {
+        X-Content-Type-Options nosniff
+        Referrer-Policy same-origin
+        Cache-Control no-store
+    }
+    reverse_proxy app:8501
+}
