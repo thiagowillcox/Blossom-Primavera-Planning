@@ -1,0 +1,5870 @@
+[
+  {
+    "registro_id": "REG-6b7f222b8f0abe7a6632",
+    "nome": "Gerenciamento do Projeto",
+    "origem": "LD!13",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-fe1526ae5c462f9d9357",
+    "nome": "Doc Control",
+    "origem": "LD!14",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-8222878e5ee53e457795",
+    "nome": "Medição e apoio Técnico",
+    "origem": "LD!15",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-865fdbd22329c1d78d33",
+    "nome": "Qualidade",
+    "origem": "LD!16",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-a7e9510fead09663bd92",
+    "nome": "Planejamento",
+    "origem": "LD!17",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-d452dfd67ea80f33ac2c",
+    "nome": "Lista de Documentos",
+    "origem": "LD!21",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-a2d4482687661038292e",
+    "nome": "Cronograma de Engenharia",
+    "origem": "LD!22",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-b80b49dffc232c26c3ae",
+    "nome": "Norma de Coordenação",
+    "origem": "LD!23",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-af51a2a52eee753ca7a8",
+    "nome": "Coordenação de Engenharia",
+    "origem": "LD!26",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-3e3996dbdd352109f37b",
+    "nome": "Engenharia Digital Documentos / Consultoria",
+    "origem": "LD!40",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-d71c76fdc36cf62ae41f",
+    "nome": "Engenharia Digital Desenvolvimentos",
+    "origem": "LD!41",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-18db7a4e3ca743913154",
+    "nome": "Critérios de Projeto",
+    "origem": "LD!45",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-14b212fa3006af284b20",
+    "nome": "Relatório dos Testes de Processo",
+    "origem": "LD!46",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-e8963a93900d4eedcb1f",
+    "nome": "Fluxograma de Processo - Balanço de Massa, Água e Energia",
+    "origem": "LD!47",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-17e0f33fa07b60e16639",
+    "nome": "Memória de Cálculo - Dimensionamento de Equipamentos de Processo",
+    "origem": "LD!48",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-855419f9ca71a2f56deb",
+    "nome": "Memorial Descritivo",
+    "origem": "LD!49",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-6adaafdddfec2b99e2cc",
+    "nome": "Memória de Cálculo - Regime Permanente/Transiente Hidráulico",
+    "origem": "LD!50",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-579ad8cbf0eac847c9fa",
+    "nome": "Análise da documentação existente",
+    "origem": "LD!53",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-b621ffbc9b56c85c42a8",
+    "nome": "Reuniões internas",
+    "origem": "LD!54",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-85276e3b2e2420e30a5b",
+    "nome": "Reuniões com clientes",
+    "origem": "LD!55",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-c7c743af86537536a292",
+    "nome": "Apoio ao CAPEX",
+    "origem": "LD!56",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-89f58ad956a1ec27c807",
+    "nome": "Critérios de Projeto",
+    "origem": "LD!60",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-b2e5e5c5c4a7c2583fa8",
+    "nome": "Arranjo Geral",
+    "origem": "LD!61",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-d6e36ff62574f1c0d3e3",
+    "nome": "Desenho Conceitual",
+    "origem": "LD!62",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-86cc7a710fd2aa0d4ef9",
+    "nome": "Planilha de Quantidades",
+    "origem": "LD!63",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-38b10ae866f886132771",
+    "nome": "Memorial Descritivo",
+    "origem": "LD!64",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-2b31f4a9d3d6c47e1ec2",
+    "nome": "Análise da documentação existente",
+    "origem": "LD!67",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-acf96e2f6da34531b892",
+    "nome": "Reuniões internas",
+    "origem": "LD!68",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-e797a7e5370b27526cd9",
+    "nome": "Reuniões com clientes",
+    "origem": "LD!69",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-fd29d8c5008c61806a3d",
+    "nome": "Apoio ao CAPEX",
+    "origem": "LD!70",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-51f27dddc3e1ee28dd36",
+    "nome": "Critérios de Projeto",
+    "origem": "LD!74",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-f3c07153d21613987238",
+    "nome": "Desenho Conceitual",
+    "origem": "LD!75",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-e635e6e080e91c0a5474",
+    "nome": "Planilha de Quantidades",
+    "origem": "LD!76",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-06c934f3c7631a0ae91d",
+    "nome": "Memória de Cálculo",
+    "origem": "LD!77",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-5c0d4546f87f9396e8ba",
+    "nome": "Especificação Técnica",
+    "origem": "LD!78",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-46881f439b1f4231c71f",
+    "nome": "Análise da documentação existente",
+    "origem": "LD!81",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-4f72f4ef71740836991f",
+    "nome": "Critérios de Projeto",
+    "origem": "LD!85",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-b0a7ad02490fb86593d4",
+    "nome": "Arranjo Geral",
+    "origem": "LD!86",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-ecf2766a5bdfb32bb26c",
+    "nome": "Desenho Conceitual",
+    "origem": "LD!87",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-03383441253f5f7d19e6",
+    "nome": "Memória de Cálculo",
+    "origem": "LD!88",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-932ef7f845b40e4fb251",
+    "nome": "Planilha de Quantidades",
+    "origem": "LD!89",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-b9f23c0665c0bbed40df",
+    "nome": "Análise da documentação existente",
+    "origem": "LD!92",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-8a41ce8a9dea0885b16e",
+    "nome": "Reuniões internas",
+    "origem": "LD!93",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-ca25b71e62651531129e",
+    "nome": "Reuniões com clientes",
+    "origem": "LD!94",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-71d5fd05413d0467c93d",
+    "nome": "Apoio ao CAPEX",
+    "origem": "LD!95",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-76348f13f6e6bfa88296",
+    "nome": "Critérios de Projeto",
+    "origem": "LD!99",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-c5be175dd5ec83a465c9",
+    "nome": "Memória de Cálculo",
+    "origem": "LD!100",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-93d997f9ce8af69e12d3",
+    "nome": "Planilha de Quantidades",
+    "origem": "LD!101",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-1c90af9690ef416d447a",
+    "nome": "Análise da documentação existente",
+    "origem": "LD!104",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-e701ea6dd22634f189c0",
+    "nome": "Reuniões internas",
+    "origem": "LD!105",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-4b6a3befea0fcf2a089a",
+    "nome": "Reuniões com clientes",
+    "origem": "LD!106",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-31b48507d7a313f81c22",
+    "nome": "Apoio ao CAPEX",
+    "origem": "LD!107",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-dcfe821d3c833a7738e1",
+    "nome": "Critérios de Projeto",
+    "origem": "LD!111",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-c96d15d400e57724a133",
+    "nome": "Memória de Cálculo",
+    "origem": "LD!112",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-9da60ca172544e8ab4fc",
+    "nome": "Planilha de Quantidades",
+    "origem": "LD!113",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-70fac84112a4a81dfaeb",
+    "nome": "Análise da documentação existente",
+    "origem": "LD!116",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-60ac3b741e361c49027c",
+    "nome": "Reuniões internas",
+    "origem": "LD!117",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-c3a5975c01bdc3c399c4",
+    "nome": "Reuniões com clientes",
+    "origem": "LD!118",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-3e9a79d5a44e2f4ff66e",
+    "nome": "Apoio ao CAPEX",
+    "origem": "LD!119",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-5b4bc5bd309beb8c8624",
+    "nome": "Critérios de Projeto ",
+    "origem": "LD!123",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-8b0fea1ee2c2d053c702",
+    "nome": "Relatório do Estudo de Estimativa de Demanda",
+    "origem": "LD!124",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-e7cf8af5cfefed676bff",
+    "nome": "Relatório do Estudo de Alternativas para o Suprimento de Energia Elétrica",
+    "origem": "LD!125",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-fe3d6d33b0a8fa01f94f",
+    "nome": "Memória de Cálculo do Dimensionamento de Equipamentos Elétricos",
+    "origem": "LD!126",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-ac2e17e85b8517995052",
+    "nome": "Diagrama Unifilar Geral",
+    "origem": "LD!127",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-84529324ce9d8a03679d",
+    "nome": "Arranjo da Subestação Principal",
+    "origem": "LD!128",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-62dfe92d13bcd38e74fd",
+    "nome": "Arranjos Típicos das Subestações Secundárias",
+    "origem": "LD!129",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-e273efea5f8ae6b5753b",
+    "nome": "Lista de Equipamentos Elétricos",
+    "origem": "LD!130",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-079d677deb1a1498405c",
+    "nome": "Rota da Linha de Transmissão",
+    "origem": "LD!131",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-13fb82c10ea3b25ce9ad",
+    "nome": "Rota Básica das Redes de Distribuição",
+    "origem": "LD!132",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-2fd82a726290e696dd79",
+    "nome": "Relatório de Avaliação de Alternativas – Trade-off",
+    "origem": "LD!133",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-3d4d905cbcb778eb5a29",
+    "nome": "Planilhas de Quantidades",
+    "origem": "LD!134",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-c342cca50c53694d8e27",
+    "nome": "Memória de Cálculo para Custo Operacional",
+    "origem": "LD!135",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-2e8cbe502438ee466d55",
+    "nome": "Memorial Descritivo ",
+    "origem": "LD!136",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-d3d17efe270346ed1e42",
+    "nome": "Análise da documentação existente",
+    "origem": "LD!139",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-9c0818f5c01c0872224f",
+    "nome": "Reuniões internas",
+    "origem": "LD!140",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-16163d7215a8e071fc50",
+    "nome": "Reuniões com clientes",
+    "origem": "LD!141",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-efa5e72fac76f0b1a016",
+    "nome": "Apoio ao CAPEX",
+    "origem": "LD!142",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-1ce48ba3ae1088230efc",
+    "nome": "Critérios de Projeto de Automação ",
+    "origem": "LD!146",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-1fffa44c3cf8423f1503",
+    "nome": "Critérios de Projeto de Instrumentação ",
+    "origem": "LD!147",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-e00cf70ce5965f3aea75",
+    "nome": "Lista de Equipamentos de Automação",
+    "origem": "LD!148",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-d74dd0370d0cdae6221b",
+    "nome": "Planilhas de Quantidades",
+    "origem": "LD!149",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-bd0691690ef63f690ccb",
+    "nome": "Memorial de Cálculo da Estimativa de CapEx para Automação Industrial",
+    "origem": "LD!150",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-d246491edb63737ff581",
+    "nome": "Memorial Descritivo ",
+    "origem": "LD!151",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-24e76c0c51aa9431669a",
+    "nome": "Análise da documentação existente",
+    "origem": "LD!154",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-8049579f83d3bf0ff7e1",
+    "nome": "Reuniões internas",
+    "origem": "LD!155",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-68d1a561719d6a436cf0",
+    "nome": "Reuniões com clientes",
+    "origem": "LD!156",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-48a1126c4cc8e705301a",
+    "nome": "Apoio ao CAPEX",
+    "origem": "LD!157",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-9950459c2ffbbd2c925e",
+    "nome": "Critérios de Projeto de Automação ",
+    "origem": "LD!161",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-d617bbaf13352b331e8d",
+    "nome": "Lista de Equipamentos ",
+    "origem": "LD!162",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-ccba369a4953c96eefde",
+    "nome": "Memória de Cálculo de Estimativa de Equipamentos de Telecomunicações",
+    "origem": "LD!163",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-45cbfe58862b04b64e97",
+    "nome": "Planilha de Quantidades ",
+    "origem": "LD!164",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-fc26076242e8b36c932b",
+    "nome": "Memorial Descritivo ",
+    "origem": "LD!165",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-76e4677240243436ae75",
+    "nome": "Análise da documentação existente",
+    "origem": "LD!168",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-702119692a5785d538c4",
+    "nome": "Reuniões internas",
+    "origem": "LD!169",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-ccc76cb015c0ce35267c",
+    "nome": "Reuniões com clientes",
+    "origem": "LD!170",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-c77ab7aa1ad3fbb94155",
+    "nome": "Apoio ao CAPEX",
+    "origem": "LD!171",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-833ad0d0bccf0c596747",
+    "nome": "Critérios de Projeto",
+    "origem": "LD!175",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-14c4befb9d7b466db138",
+    "nome": "Diagrama de Blocos - Sistemas de Utilidades",
+    "origem": "LD!176",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-dc1bf65f2a9e40e4d554",
+    "nome": "Fluxograma de Processo com Balanço de Massa e Energia - Sistemas de Utilidades",
+    "origem": "LD!177",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-9c038e353ef4bff1704f",
+    "nome": "Memória de Cálculo - Pré-dimensionamento de Utilidades",
+    "origem": "LD!178",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-a9fc8af93b6d24b2a33d",
+    "nome": "Memória de Cálculo - Pré-dimensionamento HVAC",
+    "origem": "LD!179",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-1600f58503cd91457286",
+    "nome": "Memorial Descritivo",
+    "origem": "LD!180",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-ba58b1a73574f0e4b38d",
+    "nome": "Análise da documentação existente",
+    "origem": "LD!183",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-efdb154ced7ffe400ada",
+    "nome": "Reuniões internas",
+    "origem": "LD!184",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-7f37f79e14e3f498d67b",
+    "nome": "Reuniões com clientes",
+    "origem": "LD!185",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-eb96998c15ec4833c6a4",
+    "nome": "Apoio ao CAPEX",
+    "origem": "LD!186",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-69c539cfe52dec6c9e3e",
+    "nome": "Critérios de Projeto",
+    "origem": "LD!190",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-f5c3f3f66e76c83d067e",
+    "nome": "Relatório de Levantamentos de Campo",
+    "origem": "LD!191",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-3351a86cae5ffa7274ce",
+    "nome": "Rotas Preliminares - Planta e Perfil",
+    "origem": "LD!192",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-4d99f8b95446c4482a45",
+    "nome": "Planilha de Quantidades",
+    "origem": "LD!193",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-e07f3bd96a0ede24e5fa",
+    "nome": "Levantamento de campo",
+    "origem": "LD!196",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-7a374c9ef7bdfc32f4d7",
+    "nome": "Análise da documentação existente",
+    "origem": "LD!197",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-c960741d935bd11b02e3",
+    "nome": "Reuniões internas",
+    "origem": "LD!198",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-b9db58a01188b0fb522a",
+    "nome": "Reuniões com clientes",
+    "origem": "LD!199",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-1efc50ef5b0792fff66c",
+    "nome": "Apoio ao CAPEX",
+    "origem": "LD!200",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-595c0dee184ed13d512b",
+    "nome": "Modelo 3D",
+    "origem": "LD!201",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-f2567913a5d646ef4059",
+    "nome": "Critérios de Projeto",
+    "origem": "LD!205",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-f725f062289e10494323",
+    "nome": "Plano Diretor",
+    "origem": "LD!206",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-5eabdcd56bb4fbc36cd2",
+    "nome": "Arranjos Gerais - Plantas e Cortes",
+    "origem": "LD!207",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-53a53845ca222cf8f89c",
+    "nome": "Arranjos - Plantas e Cortes",
+    "origem": "LD!208",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-65edd7b010abe71aa143",
+    "nome": "Memorial de Cálculo - Pré-dimensionamento de Equipamentos Mecânicos",
+    "origem": "LD!209",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-14f7c6386f3d4ebbcf3e",
+    "nome": "Planilha de Quantidades",
+    "origem": "LD!210",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-2583963a02064cb93c0c",
+    "nome": "Memorial Descritivo",
+    "origem": "LD!211",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-ab2e2c81524f288ccd41",
+    "nome": "Lista de Equipamentos",
+    "origem": "LD!212",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-e69e7e6e0fc0ac2bccce",
+    "nome": "Levantamento de campo",
+    "origem": "LD!215",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-75a102c798a156206808",
+    "nome": "Análise da documentação existente",
+    "origem": "LD!216",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-7877651c184cea584565",
+    "nome": "Reuniões internas",
+    "origem": "LD!217",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-9ad9b898b8040aedd3f9",
+    "nome": "Reuniões com clientes",
+    "origem": "LD!218",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-8f218222aabe8cb18061",
+    "nome": "Apoio ao CAPEX",
+    "origem": "LD!219",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-eac13ea13b5cd7ca6614",
+    "nome": "Modelo 3D",
+    "origem": "LD!220",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-785f6a5dc0af98f72668",
+    "nome": "Laser Scan - Aluguel de Equipamento",
+    "origem": "LD!221",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-fee4080a1dc63848765b",
+    "nome": "Laser Scan",
+    "origem": "LD!222",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-4844d102e4f935ae1494",
+    "nome": "Tratamento da Nuvem de Pontos",
+    "origem": "LD!223",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-12a79bbd72e8ef32d4c4",
+    "nome": "Modelo 3D da Nuvem de Pontos",
+    "origem": "LD!224",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-d12528550eaee4075c44",
+    "nome": "Gerenciamento do Projeto",
+    "origem": "LD!232",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-2c494d28df795bdf1510",
+    "nome": "Doc Control",
+    "origem": "LD!233",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-d181b75d86832e5f3b28",
+    "nome": "Medição e apoio Técnico",
+    "origem": "LD!234",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-a7cb45f414f607ee2023",
+    "nome": "Qualidade",
+    "origem": "LD!235",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-e5fcc02a39630d7664c7",
+    "nome": "Planejamento",
+    "origem": "LD!236",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-ad00907e67ded3deac85",
+    "nome": "Lista de Documentos",
+    "origem": "LD!240",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-236b47182e2d9bdc7da6",
+    "nome": "Cronograma de Engenharia",
+    "origem": "LD!241",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-4d26d44be1923a77028e",
+    "nome": "Norma de Coordenação",
+    "origem": "LD!242",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-f360df7e98a52e8d66fa",
+    "nome": "Coordenação de Engenharia",
+    "origem": "LD!245",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-cb31dd8ec5f84ca6ffea",
+    "nome": "Engenharia Digital Documentos / Consultoria",
+    "origem": "LD!259",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-9c199edad8fdafa3b463",
+    "nome": "Engenharia Digital Desenvolvimentos",
+    "origem": "LD!260",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-38f45c44279d4af01978",
+    "nome": "Critérios de Projeto",
+    "origem": "LD!264",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-9e6e164285c1122001eb",
+    "nome": "Fluxograma de Processo - Balanço de massa, água e energia",
+    "origem": "LD!265",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-64e6b9042c5cfcc2b0be",
+    "nome": "Fluxograma de Engenharia - P&ID",
+    "origem": "LD!266",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-f9bfc4c426d858fb8ff3",
+    "nome": "Memória de Cálculo - Dimensionamento de Equipamentos de Processo",
+    "origem": "LD!267",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-711b887c30101449d35a",
+    "nome": "Memorial Descritivo",
+    "origem": "LD!268",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-23ca94ede6985d621842",
+    "nome": "Especificação Técnica",
+    "origem": "LD!269",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-6ff3043b47b32d70273d",
+    "nome": "Folha de Dados",
+    "origem": "LD!270",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-b73a5c79fbfbe8a8f6c5",
+    "nome": "Memória de Cálculo - Regime Permanente/Transiente Hidráulico",
+    "origem": "LD!271",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-fc4b0b720c5e9495b0b9",
+    "nome": "Lista de Tie-Ins",
+    "origem": "LD!272",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-c4a51a8db82edc32f396",
+    "nome": "Relatório de Simulação Dinâmica para a Consolidação do Projeto Básico de Processo",
+    "origem": "LD!273",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-959a3b8228f85ad639ed",
+    "nome": "Análise da documentação existente",
+    "origem": "LD!276",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-a5aeebcea1ac87b7b1f0",
+    "nome": "Reuniões internas",
+    "origem": "LD!277",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-0c033fbe35720500536d",
+    "nome": "Reuniões com clientes",
+    "origem": "LD!278",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-58d85f4e5bad4e6936a2",
+    "nome": "Apoio ao CAPEX",
+    "origem": "LD!279",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-8af63b76679c9c31955c",
+    "nome": "Critérios de Projeto",
+    "origem": "LD!283",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-9314a160e7bc368b2c13",
+    "nome": "Desenho Básico",
+    "origem": "LD!284",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-389abbbe9e1873af8d13",
+    "nome": "Planilha de Quantidades",
+    "origem": "LD!285",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-3ad0f5aae18dbb919b2f",
+    "nome": "Especificações Técnicas",
+    "origem": "LD!286",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-f6b1eb15ca4ce41f9e46",
+    "nome": "Memorial Descritivo",
+    "origem": "LD!287",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-51ac48291469b0e42d2c",
+    "nome": "Análise da documentação existente",
+    "origem": "LD!290",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-fe9f619ca16a4f6b31dc",
+    "nome": "Reuniões internas",
+    "origem": "LD!291",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-118ee5a938151dbaf124",
+    "nome": "Reuniões com clientes",
+    "origem": "LD!292",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-51cbb8d2560e455af71c",
+    "nome": "Apoio ao CAPEX",
+    "origem": "LD!293",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-8a3097bc8b7947cd0c82",
+    "nome": "Critérios de Projeto",
+    "origem": "LD!297",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-6a7b687ab797e5e07020",
+    "nome": "Desenho Básico",
+    "origem": "LD!298",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-2d2d38ccfd2e94efed01",
+    "nome": "Planilha de Quantidades",
+    "origem": "LD!299",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-416dd99c601fb0e51d29",
+    "nome": "Memória de Cálculo",
+    "origem": "LD!300",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-be6c095b06c4082b25f5",
+    "nome": "Especificação Técnica",
+    "origem": "LD!301",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-cd668395ae118e3a656d",
+    "nome": "Análise da documentação existente",
+    "origem": "LD!304",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-9c32d64f48204ae2bbeb",
+    "nome": "Reuniões internas",
+    "origem": "LD!305",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-d0af2c57a4e50e5fc454",
+    "nome": "Reuniões com clientes",
+    "origem": "LD!306",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-54f28dc42942251bfc55",
+    "nome": "Critérios de Projeto",
+    "origem": "LD!310",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-aed8c99dc54bac000442",
+    "nome": "Desenho Básico (Terraplenagem, Drenagem, Pavimentação e Sinalização)",
+    "origem": "LD!311",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-9bb87c48890f1e89e34d",
+    "nome": "Memória de Cálculo - Drenagem e Pavimentação",
+    "origem": "LD!312",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-a5335eabdb7f4a6bd8ec",
+    "nome": "Memorial Descritivo",
+    "origem": "LD!313",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-216d9677a16878675a36",
+    "nome": "Planilha de Quantidades",
+    "origem": "LD!314",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-a62225021ffe61d86c3d",
+    "nome": "Levantamento de campo",
+    "origem": "LD!317",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-d8b85b2a4204cf0ed217",
+    "nome": "Análise da documentação existente",
+    "origem": "LD!318",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-6e516a2fc1d263a92f3b",
+    "nome": "Reuniões internas",
+    "origem": "LD!319",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-f05d565e1f0873755889",
+    "nome": "Reuniões com clientes",
+    "origem": "LD!320",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-b2e4b00e81cfa6e12bc6",
+    "nome": "Apoio ao CAPEX",
+    "origem": "LD!321",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-984d04e196a163f5402a",
+    "nome": "Critérios de Projeto",
+    "origem": "LD!325",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-eb8159eef98c7b0bc23c",
+    "nome": "Memória de Cálculo",
+    "origem": "LD!326",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-c8c623054faada351c60",
+    "nome": "Plano de Sondagem",
+    "origem": "LD!327",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-f5f1f68a3e9d05542f00",
+    "nome": "Desenhos Básicos",
+    "origem": "LD!328",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-5bb6722f6685678fdc46",
+    "nome": "Critério de Medição de Serviços",
+    "origem": "LD!329",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-23ae4afca39af75fe07a",
+    "nome": "Memorial Descritivo",
+    "origem": "LD!330",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-01a5e6a7d61c8cc0b95c",
+    "nome": "Especificação Técnica",
+    "origem": "LD!331",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-5d38f6c9588f6552d08a",
+    "nome": "Planilha de Quantidades",
+    "origem": "LD!332",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-a18fe07cf16d6e527417",
+    "nome": "Levantamento de campo",
+    "origem": "LD!335",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-5055f56b86f2560c2ffb",
+    "nome": "Análise da documentação existente",
+    "origem": "LD!336",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-9e8aa2f385efcff56adf",
+    "nome": "Reuniões internas",
+    "origem": "LD!337",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-88be3cb656897b8afa21",
+    "nome": "Reuniões com clientes",
+    "origem": "LD!338",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-d8732eb466f1aa6ff0ef",
+    "nome": "Apoio ao CAPEX",
+    "origem": "LD!339",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-702d858749be0831b1a7",
+    "nome": "Critérios de Projeto",
+    "origem": "LD!343",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-596cdb833bc19a130b19",
+    "nome": "Memória de Cálculo",
+    "origem": "LD!344",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-6924cfec6538fd5de852",
+    "nome": "Desenhos Básicos",
+    "origem": "LD!345",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-653cb683a902e8d4eaba",
+    "nome": "Planilha de Quantidades",
+    "origem": "LD!346",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-39b963c724edc060f787",
+    "nome": "Memorial Descritivo",
+    "origem": "LD!347",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-ba5b2be98a8ac0d02336",
+    "nome": "Levantamento de campo",
+    "origem": "LD!350",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-384b0bb388f19b09de3d",
+    "nome": "Análise da documentação existente",
+    "origem": "LD!351",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-945c27521c548946992c",
+    "nome": "Reuniões internas",
+    "origem": "LD!352",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-5b6cb35f30f8226e2545",
+    "nome": "Reuniões com clientes",
+    "origem": "LD!353",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-bc7878f2444b6cbcf799",
+    "nome": "Apoio ao CAPEX",
+    "origem": "LD!354",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-802a871c30190ee894ad",
+    "nome": "Critérios de Projeto ",
+    "origem": "LD!358",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-09dec383fd378e175235",
+    "nome": "Relatório do Estudo de Alternativas para o Suprimento de Energia Elétrica",
+    "origem": "LD!359",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-483c1f87238fb12630ae",
+    "nome": "Relatório do Estudo de Cargas e Demanda de Energia Elétrica ",
+    "origem": "LD!360",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-9db89af6f497b26e944f",
+    "nome": "Relatório do Estudo de Curto-circuito",
+    "origem": "LD!361",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-6b423ae01fd3d210b798",
+    "nome": "Memória de Cálculo do Dimensionamento de Equipamentos Elétricos ",
+    "origem": "LD!362",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-a6374119735ffb53c0de",
+    "nome": "Diagramas Unifilares",
+    "origem": "LD!363",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-1e6b8cef960f5ef01aa8",
+    "nome": "Relatório do Estudo de Fluxo de Carga",
+    "origem": "LD!364",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-fa4486112628c867a354",
+    "nome": "Arranjo da Subestação Principal ",
+    "origem": "LD!365",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-13fe49fee92111dbc903",
+    "nome": "Arranjos das Subestações Secundárias ",
+    "origem": "LD!366",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-ebaa5a4543305cb6fbc7",
+    "nome": "Lista de Equipamentos Elétricos",
+    "origem": "LD!367",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-80554c1aaf37c37164b0",
+    "nome": "Diagramas Funcionais Típicos",
+    "origem": "LD!368",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-3561e860248285efdc77",
+    "nome": "Rotas de Cabos Elétricos",
+    "origem": "LD!369",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-a1d5b607e79ea5f3e5dc",
+    "nome": "Folhas de Dados de Equipamentos Elétricos",
+    "origem": "LD!370",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-acda9ab5632da1647590",
+    "nome": "Planilha de Quantidades ",
+    "origem": "LD!371",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-42da8512ee99f0472cf8",
+    "nome": "Critério de Medição de Serviços",
+    "origem": "LD!372",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-56c2a274869678d9c70a",
+    "nome": "Requisições Técnicas de Elétrica",
+    "origem": "LD!373",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-ccbaba03cf1176f4aa81",
+    "nome": "Relatório do Estudo do Sistema de Aterramento",
+    "origem": "LD!374",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-2409604bfdc9d0c9ec22",
+    "nome": "Relatório do Estudo da Filtragem de Harmônicas e Correção do Fator de Potência",
+    "origem": "LD!375",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-a4e0e555687d69c52d1d",
+    "nome": "Especificação Técnica",
+    "origem": "LD!376",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-f7824b3c3cf679029f33",
+    "nome": "Memorial Descritivo do Projeto Básico de Elétrica",
+    "origem": "LD!377",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-d7295ad2da4a50b54a99",
+    "nome": "Listas de Cabos Elétricos ",
+    "origem": "LD!378",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-10b8601a75633e9abd4a",
+    "nome": "Levantamento de campo",
+    "origem": "LD!381",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-fefc77a7640365f74057",
+    "nome": "Análise da documentação existente",
+    "origem": "LD!382",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-b13fdf4478008836198c",
+    "nome": "Reuniões internas",
+    "origem": "LD!383",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-e1f0cb44fb341b293f79",
+    "nome": "Reuniões com clientes",
+    "origem": "LD!384",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-2c63fa49de2433a7dd5c",
+    "nome": "Apoio ao CAPEX",
+    "origem": "LD!385",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-40e5e66cce149c2a5f71",
+    "nome": "Critérios de Projeto de Automação ",
+    "origem": "LD!389",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-3d2a36e2134c7c35edfd",
+    "nome": "Critérios de Projeto de Instrumentação ",
+    "origem": "LD!390",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-2f288a373730ae3c7b0f",
+    "nome": "Locação de Instrumentos e Painéis de Campo",
+    "origem": "LD!391",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-720978f8cf4297ff3954",
+    "nome": "Arranjo das Salas de Controle, Salas de Painéis, Salas de Engenharia e Salas de Servidores",
+    "origem": "LD!392",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-52a0c3e66d3ae88e9de9",
+    "nome": "Lógicas de Intertravamento e Controle",
+    "origem": "LD!393",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-6748b790233f6b12cb95",
+    "nome": "Listas de Instrumentos",
+    "origem": "LD!394",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-b1b35ab13f95f358229f",
+    "nome": "Diagrama de Configuração de Sistemas de Automação",
+    "origem": "LD!395",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-aa51d31d42da5230912c",
+    "nome": "Listas de Equipamentos de Automação ",
+    "origem": "LD!396",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-e39dd8dfdfb83ecb9506",
+    "nome": "Lista de Softwares de Automação",
+    "origem": "LD!397",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-54899f7304ac05ccbd6b",
+    "nome": "Levantamento de Entradas e Saídas",
+    "origem": "LD!398",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-52769ae7c8ac66825700",
+    "nome": "Lista de Alimentação de Cargas Elétricas da Automação",
+    "origem": "LD!399",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-4600d9c9dace49cf5160",
+    "nome": "Planilha de Quantidades",
+    "origem": "LD!400",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-f9dd0d0495a05f908fa2",
+    "nome": "Especificações Técnicas",
+    "origem": "LD!401",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-99e0a52025460f54192e",
+    "nome": "Folhas de Dados",
+    "origem": "LD!402",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-fd0e045e01d80f5b468e",
+    "nome": "Especificações de Serviço ",
+    "origem": "LD!403",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-e3b94231052f4e8a1ac7",
+    "nome": "Requisições Técnicas",
+    "origem": "LD!404",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-880754639cc5d2d86ed0",
+    "nome": "Memoriais Descritivos de Configuração de Sistemas de Automação",
+    "origem": "LD!405",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-9a0309127f326c7ae366",
+    "nome": "Relatório Técnico ",
+    "origem": "LD!406",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-53f8eb6461ad5e218d64",
+    "nome": "Lista de Materiais de Instalação",
+    "origem": "LD!407",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-78f8c0985cc20ad28978",
+    "nome": "Levantamento de campo",
+    "origem": "LD!410",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-e17179e0f84e0b5f6661",
+    "nome": "Análise da documentação existente",
+    "origem": "LD!411",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-e59b69e22006026e98f0",
+    "nome": "Reuniões internas",
+    "origem": "LD!412",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-a4c46621cd6ee05cf743",
+    "nome": "Reuniões com clientes",
+    "origem": "LD!413",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-cdbe2203ab2b3225b656",
+    "nome": "Apoio ao CAPEX",
+    "origem": "LD!414",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-7f2cbe05dcc5a0116450",
+    "nome": "Critérios de Projeto ",
+    "origem": "LD!418",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-09edba9c17f42cce8c25",
+    "nome": "Diagramas de Configuração de Telecomunicações",
+    "origem": "LD!419",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-41e7f0920d38c990d9f5",
+    "nome": "Lista de Equipamentos de Telecomunicações",
+    "origem": "LD!420",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-e1165f68455575c8a564",
+    "nome": "Folha de Dados de Equipamentos e Sistemas de Telecomunicações",
+    "origem": "LD!421",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-0451ce9b2d7b9511bfd7",
+    "nome": "Memorial Descritivo do Projeto Básico do Sistema de Telecomunicações",
+    "origem": "LD!422",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-39ccad43ac5d15e19342",
+    "nome": "Especificação Funcional de Telecomunicações ",
+    "origem": "LD!423",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-0a50199ff1a166d317c9",
+    "nome": "Especificações Técnicas ",
+    "origem": "LD!424",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-b29d4a5e70cde5534653",
+    "nome": "Planilha de Quantidades de Telecomunicações ",
+    "origem": "LD!425",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-d6250c81cb2d34816907",
+    "nome": "Requisições Técnicas de Telecomunicações",
+    "origem": "LD!426",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-92776e4134a511622cb0",
+    "nome": "Planta de Locação de Equipamentos de Telecomunicações",
+    "origem": "LD!427",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-3d5020d475df21e8323c",
+    "nome": "Análise da documentação existente",
+    "origem": "LD!430",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-9e46657d47f50b7aecc5",
+    "nome": "Reuniões internas",
+    "origem": "LD!431",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-fd9c1dcf51f9de74e104",
+    "nome": "Reuniões com clientes",
+    "origem": "LD!432",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-0f32966ec6cb23c5b5b2",
+    "nome": "Apoio ao CAPEX",
+    "origem": "LD!433",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-8df00767cb993eaf8ad7",
+    "nome": "Critérios de Projeto",
+    "origem": "LD!437",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-3d91dc8bafb5c7a97735",
+    "nome": "Diagrama de Blocos - Sistemas de Utilidades",
+    "origem": "LD!438",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-665938d244a67867c6cc",
+    "nome": "Fluxograma de Processos com balanço de massa e energia - Sistemas de Utilidades",
+    "origem": "LD!439",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-8643e0e5c894ac5783b5",
+    "nome": "Fluxograma de Engenharia - P&ID",
+    "origem": "LD!440",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-efc22c3a3e19e56f50ef",
+    "nome": "Memória de Cálculo - Dimensionamento de utilidades",
+    "origem": "LD!441",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-abe55ab120be88d49a99",
+    "nome": "Memória de Cálculo - Dimensionamento HVAC",
+    "origem": "LD!442",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-8f1fefb3c966e0ce1825",
+    "nome": "Memorial Descritivo",
+    "origem": "LD!443",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-e7c4183c76c2272bd117",
+    "nome": "Especificação Técnica",
+    "origem": "LD!444",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-4178f76d673d75746c19",
+    "nome": "Folha de Dados",
+    "origem": "LD!445",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-3fc05749e4f807f3e17e",
+    "nome": "Lista de Tie-Ins",
+    "origem": "LD!446",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-a5cc37637b688ff3433b",
+    "nome": "Lista de Linhas",
+    "origem": "LD!447",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-3a8e1e4a49e80fa78d48",
+    "nome": "Análise da documentação existente",
+    "origem": "LD!450",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-94151248ecb74ad284d1",
+    "nome": "Reuniões internas",
+    "origem": "LD!451",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-9a99818759a2a3e3af31",
+    "nome": "Reuniões com clientes",
+    "origem": "LD!452",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-8a55da150ad70b8db269",
+    "nome": "Apoio ao CAPEX",
+    "origem": "LD!453",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-0d3bf01395aaa5d0be1a",
+    "nome": "Modelo 3D",
+    "origem": "LD!454",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-6ca75b79527f3bb18351",
+    "nome": "Critérios de Projeto",
+    "origem": "LD!458",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-c57a3dd1708238d25e3c",
+    "nome": "Especificação de Materiais",
+    "origem": "LD!459",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-197aa8534f5479bc26c2",
+    "nome": "Relatório de Levantamentos de Campo",
+    "origem": "LD!460",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-c08aa6c59edef4528f60",
+    "nome": "Rotas Básicas - Plantas, Cortes e Perfis",
+    "origem": "LD!461",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-ab338fd354d29f8e56d7",
+    "nome": "Planilha de Quantidades",
+    "origem": "LD!462",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-a9a15810f8ea500f9f87",
+    "nome": "Levantamento de campo",
+    "origem": "LD!465",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-df4370d181bf2e8e0141",
+    "nome": "Análise da documentação existente",
+    "origem": "LD!466",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-e94444a51e97090feeac",
+    "nome": "Reuniões internas",
+    "origem": "LD!467",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-8aefb9ca2bd37cd563c1",
+    "nome": "Reuniões com clientes",
+    "origem": "LD!468",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-4f761abedb39494d0776",
+    "nome": "Apoio ao CAPEX",
+    "origem": "LD!469",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-97a53d44e2c887f1c3df",
+    "nome": "Modelo 3D",
+    "origem": "LD!470",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-574f8e09319b833eeb48",
+    "nome": "Critérios de Projeto",
+    "origem": "LD!474",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-4e03145703f0a6a26247",
+    "nome": "Plano Diretor",
+    "origem": "LD!475",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-3fb51b6ce63ab61f0ddb",
+    "nome": "Arranjos Gerais - Plantas e Cortes",
+    "origem": "LD!476",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-b0bf36a8d56c548ac276",
+    "nome": "Memorial de Cálculo - Dimensionamento de Equipamentos Mecânicos",
+    "origem": "LD!477",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-6602b142f7cabfd71052",
+    "nome": "Memorial de Cálculo - Dimensionamento de Caldeirarias",
+    "origem": "LD!478",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-393779acc0d10885f45b",
+    "nome": "Arranjos - Plantas e Cortes",
+    "origem": "LD!479",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-5a36a6f793c0755de083",
+    "nome": "Planos de Cargas",
+    "origem": "LD!480",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-40837fa1d86c6f909185",
+    "nome": "Critérios de Medição de Serviços Mecânicos de Montagem Eletromecânica",
+    "origem": "LD!481",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-87be1d64ea20167da9e9",
+    "nome": "Lista de Equipamentos",
+    "origem": "LD!482",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-5877a2b53a182e89cbe2",
+    "nome": "Planilha de Quantidades",
+    "origem": "LD!483",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-80694d54946fde5ad8c6",
+    "nome": "Especificação Técnica",
+    "origem": "LD!484",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-6c9ffe699ee520c49f10",
+    "nome": "Folhas de Dados",
+    "origem": "LD!485",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-210fe5b6cb6c439a8407",
+    "nome": "Requisições Técnicas",
+    "origem": "LD!486",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-662a9284e0075134bd5f",
+    "nome": "Memorial Descritivo",
+    "origem": "LD!487",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-57016ce8361d232951b3",
+    "nome": "Análise Técnica de Propostas",
+    "origem": "LD!488",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-3e1d959ca4c4a1f1c93c",
+    "nome": "Levantamento de campo",
+    "origem": "LD!491",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-b8eaf5445089e1c3b37c",
+    "nome": "Análise da documentação existente",
+    "origem": "LD!492",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-b48e3d7392f0a810cce5",
+    "nome": "Reuniões internas",
+    "origem": "LD!493",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-4f582ad2835502d431de",
+    "nome": "Reuniões com clientes",
+    "origem": "LD!494",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-b6814e64119dd7d034d9",
+    "nome": "Apoio ao CAPEX",
+    "origem": "LD!495",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-0a713c67489b30bbea0e",
+    "nome": "Modelo 3D",
+    "origem": "LD!496",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-bb0852dfaa3fbc304bcd",
+    "nome": "Laser Scan - Aluguel de Equipamento",
+    "origem": "LD!497",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-fbc9e8fb7fc16492ea28",
+    "nome": "Laser Scan",
+    "origem": "LD!498",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-441a744e80c37bf4f520",
+    "nome": "Tratamento da Nuvem de Pontos",
+    "origem": "LD!499",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-06c4c427b1f3c8bb85c2",
+    "nome": "Modelo 3D da Nuvem de Pontos",
+    "origem": "LD!500",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-1ebad749e030f6feaf21",
+    "nome": "Gerenciamento do Projeto",
+    "origem": "LD!508",
+    "hh_total_ld": "108",
+    "hh_total_lido": "108",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-996d5cf84a875c87d305",
+    "nome": "Doc Control",
+    "origem": "LD!509",
+    "hh_total_ld": "592.25",
+    "hh_total_lido": "592.25",
+    "diferenca_total_ld": "0.00",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-185160f4cd2738fe402b",
+    "nome": "Medição e apoio Técnico",
+    "origem": "LD!510",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-96a2b7b6fa87357f1b83",
+    "nome": "Qualidade",
+    "origem": "LD!511",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-2a47c478c736042c473e",
+    "nome": "Planejamento",
+    "origem": "LD!512",
+    "hh_total_ld": "204",
+    "hh_total_lido": "204",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-9662b6a26470e4b2dfb1",
+    "nome": "Lista de Documentos",
+    "origem": "LD!516",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-f97aa9af9ab0d6486732",
+    "nome": "Cronograma de Engenharia",
+    "origem": "LD!517",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-fee6b2437ed801376847",
+    "nome": "Norma de Coordenação",
+    "origem": "LD!518",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-7d53c235bbc30ac91aae",
+    "nome": "Abrigo Compressores - SPCI",
+    "origem": "LD!519",
+    "hh_total_ld": "18",
+    "hh_total_lido": "18",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-a029a62692262b6c33cd",
+    "nome": "Sala Elétrica - SPCI",
+    "origem": "LD!520",
+    "hh_total_ld": "18",
+    "hh_total_lido": "18",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-46dbde3014286ed4d202",
+    "nome": "Reforma Vestiário - SPCI",
+    "origem": "LD!521",
+    "hh_total_ld": "18",
+    "hh_total_lido": "18",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-92814c1521341805c63f",
+    "nome": "Sala de Controle - SPCI",
+    "origem": "LD!522",
+    "hh_total_ld": "18",
+    "hh_total_lido": "18",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-2d1b1bb37cc1cfef8734",
+    "nome": "Planilha de Quantidades - SPCI",
+    "origem": "LD!523",
+    "hh_total_ld": "8",
+    "hh_total_lido": "8.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-e39ce8f9f70a0df550c2",
+    "nome": "Memorial Descritivo - SPCI",
+    "origem": "LD!524",
+    "hh_total_ld": "12",
+    "hh_total_lido": "12.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-01f079bd4afa3601e1c1",
+    "nome": "Plantas de Tubulação - SPCI",
+    "origem": "LD!525",
+    "hh_total_ld": "96",
+    "hh_total_lido": "96",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-5f565e2b777691f91c03",
+    "nome": "Isométricos - SPCI",
+    "origem": "LD!526",
+    "hh_total_ld": "64",
+    "hh_total_lido": "64.00",
+    "diferenca_total_ld": "0.00",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-7a14fa36b4bbd7940800",
+    "nome": "Lista de Materiais por Linha - SPCI",
+    "origem": "LD!527",
+    "hh_total_ld": "22",
+    "hh_total_lido": "22.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-8df78167a027317033b7",
+    "nome": "Coordenação de Engenharia",
+    "origem": "LD!530",
+    "hh_total_ld": "244",
+    "hh_total_lido": "244",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-f61711fbb02d020c2627",
+    "nome": "Modelo 3D",
+    "origem": "LD!531",
+    "hh_total_ld": "24",
+    "hh_total_lido": "24",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-68a3b5f650a9fd546169",
+    "nome": "Relatório de Desktop Review da Engenharia Básica",
+    "origem": "LD!535",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-1a5ffeda155b9d990c26",
+    "nome": "Engenharia Digital Documentos / Consultoria",
+    "origem": "LD!544",
+    "hh_total_ld": "301",
+    "hh_total_lido": "301",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-9c662c08000830f56611",
+    "nome": "Memória de Cálculo de Dimensionamento de Processo - Forno (Reemissão)",
+    "origem": "LD!548",
+    "hh_total_ld": "15",
+    "hh_total_lido": "15.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-5c53d849650504222d7b",
+    "nome": "Folha de Dados - Forno (Reemissão)",
+    "origem": "LD!549",
+    "hh_total_ld": "12",
+    "hh_total_lido": "12.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-03c661bb090fccfc18b7",
+    "nome": "Análise da documentação existente",
+    "origem": "LD!552",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-df8b755f234cef365211",
+    "nome": "Reuniões internas",
+    "origem": "LD!553",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-6034036d73e021dfc1c3",
+    "nome": "Reuniões com clientes",
+    "origem": "LD!554",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-f430b19fc9b0330cf386",
+    "nome": "Sala Elétrica / Sala dos Transformadores - Desenhos de Arquitetura",
+    "origem": "LD!558",
+    "hh_total_ld": "54",
+    "hh_total_lido": "54",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-d6df7b093e424b3a0a34",
+    "nome": "Reforma Vestiário - Desenhos de Arquitetura - Demolições",
+    "origem": "LD!559",
+    "hh_total_ld": "18",
+    "hh_total_lido": "18",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-6f38e0088e745ab7473a",
+    "nome": "Reforma Vestiário - Desenhos de Arquitetura - Planta, Cortes e Detalhes",
+    "origem": "LD!560",
+    "hh_total_ld": "36",
+    "hh_total_lido": "36",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-3c92b27f36ca9f38f2ca",
+    "nome": "Sala de Controle - Desenhos de Arquitetura - Demolições",
+    "origem": "LD!561",
+    "hh_total_ld": "18",
+    "hh_total_lido": "18",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-7be75ff863324da159c5",
+    "nome": "Sala de Controle - Desenhos de Arquitetura - Planta Cortes e Detalhes",
+    "origem": "LD!562",
+    "hh_total_ld": "36",
+    "hh_total_lido": "36",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-92f25b9464809666fd4e",
+    "nome": "Sala de Manutenção de Canhões - Desenhos de Arquitetura - Demolições",
+    "origem": "LD!563",
+    "hh_total_ld": "18",
+    "hh_total_lido": "18",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-fa392c2591222150a513",
+    "nome": "Sala de Manutenção de Canhões - Desenhos de Arquitetura - Planta, Cortes e Detalhes",
+    "origem": "LD!564",
+    "hh_total_ld": "18",
+    "hh_total_lido": "18",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-4744ba5f19ea03f39b63",
+    "nome": "Abrigo Compressores - Desenhos de Arquitetura / Detalhamento Alambrados",
+    "origem": "LD!565",
+    "hh_total_ld": "36",
+    "hh_total_lido": "36",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-8b019173be342f844bd0",
+    "nome": "Planilha de Quantidades",
+    "origem": "LD!566",
+    "hh_total_ld": "12",
+    "hh_total_lido": "12.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-47f23c9cac435366f62d",
+    "nome": "Memorial Descritivo",
+    "origem": "LD!567",
+    "hh_total_ld": "12",
+    "hh_total_lido": "12.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-93a894fc60c9e70038f7",
+    "nome": "Análise da documentação existente",
+    "origem": "LD!570",
+    "hh_total_ld": "16",
+    "hh_total_lido": "16",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-ad74857de22f1a334e8e",
+    "nome": "Reuniões internas",
+    "origem": "LD!571",
+    "hh_total_ld": "26",
+    "hh_total_lido": "26",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-46fe216702388bdd4a31",
+    "nome": "Reuniões com clientes",
+    "origem": "LD!572",
+    "hh_total_ld": "26",
+    "hh_total_lido": "26",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-51b99b249c2540e4370e",
+    "nome": "Reuniões Design Review Interno",
+    "origem": "LD!573",
+    "hh_total_ld": "12",
+    "hh_total_lido": "12",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-a6dcc2f17cfbf9d5920a",
+    "nome": "Reuniões Design Review Externo",
+    "origem": "LD!574",
+    "hh_total_ld": "12",
+    "hh_total_lido": "12",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-1dcab6267eac6b4d39cd",
+    "nome": "Apoio - Relatório de Desktop Review da Engenharia Básica",
+    "origem": "LD!575",
+    "hh_total_ld": "48",
+    "hh_total_lido": "48",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-cdb6c5551c89d11e209c",
+    "nome": "Modelo 3D",
+    "origem": "LD!576",
+    "hh_total_ld": "88",
+    "hh_total_lido": "88",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-52e149dccf116f03aa68",
+    "nome": "Galpão Anexo / Sala Elétrica / Sala dos Transformadores - Instalações Hidráulicas/Sanitárias - Drenagem de Cobertura",
+    "origem": "LD!580",
+    "hh_total_ld": "36",
+    "hh_total_lido": "36",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-5afc819d2fc933dd2efb",
+    "nome": "Abrigo Compressores - Instalações Hidráulicas/Sanitárias - Drenagem de Cobertura",
+    "origem": "LD!581",
+    "hh_total_ld": "18",
+    "hh_total_lido": "18",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-7892a14105c023fa4ed5",
+    "nome": "Reforma Vestiário - Instalações Hidráulicas/Sanitárias - Água Fria",
+    "origem": "LD!582",
+    "hh_total_ld": "36",
+    "hh_total_lido": "36",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-97e64fef6c23b182b8c1",
+    "nome": "Reforma Vestiário - Instalações Hidráulicas/Sanitárias - Esgoto",
+    "origem": "LD!583",
+    "hh_total_ld": "36",
+    "hh_total_lido": "36",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-17f95d04aa86541dbf41",
+    "nome": "Planilha de Quantidades",
+    "origem": "LD!584",
+    "hh_total_ld": "8",
+    "hh_total_lido": "8.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-f1ebd97f5c8a20e93b33",
+    "nome": "Memória de Cálculo",
+    "origem": "LD!585",
+    "hh_total_ld": "24",
+    "hh_total_lido": "24.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-91a3ef16bc5ab919ea8d",
+    "nome": "Modelo 3D",
+    "origem": "LD!588",
+    "hh_total_ld": "64",
+    "hh_total_lido": "64",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-fed4492a1ae09ce596c1",
+    "nome": "Galpão Anexo / Sala Elétrica / Sala dos Transformadores - Geometria / Terraplenagem",
+    "origem": "LD!592",
+    "hh_total_ld": "36",
+    "hh_total_lido": "36",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-70ebcd8c1e3a1065ba7f",
+    "nome": "Área Externa Chiller / Trocador de Calor - Geometria / Terraplenagem",
+    "origem": "LD!593",
+    "hh_total_ld": "36",
+    "hh_total_lido": "36",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-8ba908a3c281f03c1289",
+    "nome": "Galpão Anexo / Sala Elétrica - Drenagem Pluvial",
+    "origem": "LD!594",
+    "hh_total_ld": "18",
+    "hh_total_lido": "18",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-7fc4cb163942a3ce1957",
+    "nome": "Área Externa Chiller / Trocador de Calor - Drenagem Pluvial",
+    "origem": "LD!595",
+    "hh_total_ld": "18",
+    "hh_total_lido": "18",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-0c242ae6dfa64ce27eec",
+    "nome": "Galpão Anexo / Sala Elétrica / Sala dos Transformadores - Acessos e Sinalização Interna / Seguros",
+    "origem": "LD!596",
+    "hh_total_ld": "36",
+    "hh_total_lido": "36",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-fc7d8002f7c6e9c56183",
+    "nome": "Galpão Existente - Acessos e Sinalização Interna / Caminhos Seguros",
+    "origem": "LD!597",
+    "hh_total_ld": "36",
+    "hh_total_lido": "36",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-a4183cad274e22906465",
+    "nome": "Areas Externas - Acessos e Sinalização / Faixas / Caminhos Seguros",
+    "origem": "LD!598",
+    "hh_total_ld": "36",
+    "hh_total_lido": "36",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-a027b35e1b06776aebbc",
+    "nome": "Memória de Cálculo - Drenagem",
+    "origem": "LD!599",
+    "hh_total_ld": "16",
+    "hh_total_lido": "16.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-e8cf91af771ceb36367b",
+    "nome": "Notas de Serviço",
+    "origem": "LD!600",
+    "hh_total_ld": "8",
+    "hh_total_lido": "8.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-942f359a96cb79cdc1df",
+    "nome": "Memorial Descritivo",
+    "origem": "LD!601",
+    "hh_total_ld": "12",
+    "hh_total_lido": "12.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-5ba6d55be608a807e771",
+    "nome": "Planilha de Quantidades",
+    "origem": "LD!602",
+    "hh_total_ld": "4",
+    "hh_total_lido": "4.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-06aff7bb5ce5a83344c1",
+    "nome": "Análise da documentação existente",
+    "origem": "LD!605",
+    "hh_total_ld": "16",
+    "hh_total_lido": "16",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-07f1b6a6803e21191228",
+    "nome": "Reuniões internas",
+    "origem": "LD!606",
+    "hh_total_ld": "26",
+    "hh_total_lido": "26",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-300248faeb238e00c4ea",
+    "nome": "Reuniões com clientes",
+    "origem": "LD!607",
+    "hh_total_ld": "26",
+    "hh_total_lido": "26",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-a5d8c5fa5fe898d2ab6b",
+    "nome": "Reuniões Design Review Interno",
+    "origem": "LD!608",
+    "hh_total_ld": "12",
+    "hh_total_lido": "12",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-4596a88c8354e3b3e2e0",
+    "nome": "Reuniões Design Review Externo",
+    "origem": "LD!609",
+    "hh_total_ld": "12",
+    "hh_total_lido": "12",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-4c739c1e7fcf5ecc3720",
+    "nome": "Apoio - Relatório de Desktop Review da Engenharia Básica",
+    "origem": "LD!610",
+    "hh_total_ld": "24",
+    "hh_total_lido": "24",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-63fcc8fc88f7b664f0af",
+    "nome": "Modelo 3D",
+    "origem": "LD!611",
+    "hh_total_ld": "92",
+    "hh_total_lido": "92",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-eb0de1604350b3936bfc",
+    "nome": "Relatório de Levantamentos de Campo",
+    "origem": "LD!615",
+    "hh_total_ld": "84",
+    "hh_total_lido": "84.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-f38356c84f1c034a50f2",
+    "nome": "Memória de Cálculo - Novo Forno / Equipamentos e Estruturas",
+    "origem": "LD!616",
+    "hh_total_ld": "72",
+    "hh_total_lido": "72.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-fc2dcc4c61806a12ee0a",
+    "nome": "Memória de Cálculo - Galpão Anexo / Sala Elétrica / Sala dos Transformadores",
+    "origem": "LD!617",
+    "hh_total_ld": "72",
+    "hh_total_lido": "72.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-6cd67c5c0853c8e5331d",
+    "nome": "Memória de Cálculo - Tanques / Chiller / Trocador de Calor / Gerador",
+    "origem": "LD!618",
+    "hh_total_ld": "36",
+    "hh_total_lido": "36.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-5c3f1cc9436179895689",
+    "nome": "Memória de Cálculo - Suportes de Tubulações",
+    "origem": "LD!619",
+    "hh_total_ld": "28",
+    "hh_total_lido": "28.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-85d677c54cd6958c0d46",
+    "nome": "Memória de Cálculo - Galpão Existente - Estruturas de Concreto / Fundações",
+    "origem": "LD!620",
+    "hh_total_ld": "72",
+    "hh_total_lido": "72.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-2a2effdb77a7746dd980",
+    "nome": "Memória de Cálculo - Sala Manutenção de Canhões - Estruturas de Concreto / Fundações",
+    "origem": "LD!621",
+    "hh_total_ld": "32",
+    "hh_total_lido": "32.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-c2378f5961b0e0877f69",
+    "nome": "Memória de Cálculo - Pipe Rack Existente - Fundações",
+    "origem": "LD!622",
+    "hh_total_ld": "32",
+    "hh_total_lido": "32.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-306963aadf3289cf7d83",
+    "nome": "Demolição Paredes - Intaerface Existente / Novo - Plantas e Cortes",
+    "origem": "LD!623",
+    "hh_total_ld": "36",
+    "hh_total_lido": "36",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-0edf8d9355ff70a4a8fc",
+    "nome": "Novo Forno / Equipamentos e Estruturas - Locação e Forma",
+    "origem": "LD!624",
+    "hh_total_ld": "126",
+    "hh_total_lido": "126",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-b612ad2cf0c9bd52b60b",
+    "nome": "Novo Forno / Equipamentos e Estruturas - Armação",
+    "origem": "LD!625",
+    "hh_total_ld": "126",
+    "hh_total_lido": "126",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-6f084269a5a01643dc54",
+    "nome": "Galpão Anexo / Sala Elétrica / Sala dos Transformadores - Locação e Forma",
+    "origem": "LD!626",
+    "hh_total_ld": "126",
+    "hh_total_lido": "126",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-05c7695f7b73d728d156",
+    "nome": "Galpão Anexo / Sala Elétrica / Sala dos Transformadores - Armação",
+    "origem": "LD!627",
+    "hh_total_ld": "126",
+    "hh_total_lido": "126",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-ea2f51c1f5fa2436f742",
+    "nome": "Tanques / Chiller / Trocador de Calor / Gerador - Locação e Forma",
+    "origem": "LD!628",
+    "hh_total_ld": "72",
+    "hh_total_lido": "72",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-1dea80046e0c7cf69f12",
+    "nome": "Tanques / Chiller / Trocador de Calor / Gerador - Armação",
+    "origem": "LD!629",
+    "hh_total_ld": "72",
+    "hh_total_lido": "72",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-f81c7928817aaa6021f3",
+    "nome": "Suportes de Tubulações - Locação e Forma",
+    "origem": "LD!630",
+    "hh_total_ld": "36",
+    "hh_total_lido": "36",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-45b155a34d605067b79a",
+    "nome": "Suportes de Tubulações - Armação",
+    "origem": "LD!631",
+    "hh_total_ld": "18",
+    "hh_total_lido": "18",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-b242820a904a2c4b87e8",
+    "nome": "Galpão Existente - Estruturas de Concreto / Fundações - Reforços Estruturais - Forma e Armação",
+    "origem": "LD!632",
+    "hh_total_ld": "54",
+    "hh_total_lido": "54",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-9a2a71d396a8f9e93015",
+    "nome": "Sala de Manutenção de Canhões - Estruturas de Concreto / Fundações - Reforços Estruturais - Forma e Armação",
+    "origem": "LD!633",
+    "hh_total_ld": "18",
+    "hh_total_lido": "18",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-e962cf8cc95eed0c3df6",
+    "nome": "Pipe Rack Existente - Estruturas de Concreto / Fundações - Reforços Estruturais - Forma e Armação",
+    "origem": "LD!634",
+    "hh_total_ld": "18",
+    "hh_total_lido": "18",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-222336408f74b47df24b",
+    "nome": "Planilha de Quantidades",
+    "origem": "LD!635",
+    "hh_total_ld": "24",
+    "hh_total_lido": "24.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-5b407316a1976959bd4a",
+    "nome": "Análise da documentação existente",
+    "origem": "LD!638",
+    "hh_total_ld": "48",
+    "hh_total_lido": "48",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-ed2de4a986df86c087a5",
+    "nome": "Reuniões internas",
+    "origem": "LD!639",
+    "hh_total_ld": "26",
+    "hh_total_lido": "26",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-7b93c37105029964bef3",
+    "nome": "Reuniões com clientes",
+    "origem": "LD!640",
+    "hh_total_ld": "26",
+    "hh_total_lido": "26",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-330aca41dd03eb33b784",
+    "nome": "Reuniões Design Review Interno",
+    "origem": "LD!641",
+    "hh_total_ld": "12",
+    "hh_total_lido": "12",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-35f1b72c3d018cb8f12b",
+    "nome": "Reuniões Design Review Externo",
+    "origem": "LD!642",
+    "hh_total_ld": "12",
+    "hh_total_lido": "12",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-a4549987d338484eefa8",
+    "nome": "Apoio - Relatório de Desktop Review da Engenharia Básica",
+    "origem": "LD!643",
+    "hh_total_ld": "48",
+    "hh_total_lido": "48",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-b2a8208e8ff24ab0b2a4",
+    "nome": "Modelo 3D",
+    "origem": "LD!644",
+    "hh_total_ld": "210",
+    "hh_total_lido": "210",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-61dac6902b12400c6844",
+    "nome": "Memória de Cálculo - Novo Forno / Plataforma Metálica",
+    "origem": "LD!648",
+    "hh_total_ld": "48",
+    "hh_total_lido": "48.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-307fcc74522855042092",
+    "nome": "Memória de Cálculo - Galpão Anexo / Sala Elétrica / Sala dos Transformadores",
+    "origem": "LD!649",
+    "hh_total_ld": "80",
+    "hh_total_lido": "80.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-c671d7484a7f6b9f6fa3",
+    "nome": "Memória de Cálculo - Abrigo Compressores - Área Chiller",
+    "origem": "LD!650",
+    "hh_total_ld": "32",
+    "hh_total_lido": "32.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-2b53343f4c0a6b12ff54",
+    "nome": "Memória de Cálculo - Suportes de Tubulações",
+    "origem": "LD!651",
+    "hh_total_ld": "32",
+    "hh_total_lido": "32.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-6df9ef772c0a177b4c0a",
+    "nome": "Memória de Cálculo - Plataforma Tanques Horizontais",
+    "origem": "LD!652",
+    "hh_total_ld": "40",
+    "hh_total_lido": "40.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-7fff2f20fd20a0225597",
+    "nome": "Memória de Cálculo - Galpão Existente - Verificação Estrutural",
+    "origem": "LD!653",
+    "hh_total_ld": "80",
+    "hh_total_lido": "80.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-ffa4e6bff5c5b3c4d469",
+    "nome": "Memória de Cálculo - Pipe Rack Existente - Verificação Estrutural",
+    "origem": "LD!654",
+    "hh_total_ld": "32",
+    "hh_total_lido": "32.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-c575b65ba4e71557f1c9",
+    "nome": "Novo Forno / Plataforma Metálica - Quadro de Cargas / Plano de Bases",
+    "origem": "LD!655",
+    "hh_total_ld": "18",
+    "hh_total_lido": "18",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-d131f460ff07084b8a66",
+    "nome": "Novo Forno / Plataforma Metálica - Plano da Plataforma - Planta",
+    "origem": "LD!656",
+    "hh_total_ld": "18",
+    "hh_total_lido": "18",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-23ddcedeb91d6b735b4d",
+    "nome": "Novo Forno / Plataforma Metálica - Elevações - Filas e Eixos",
+    "origem": "LD!657",
+    "hh_total_ld": "36",
+    "hh_total_lido": "36",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-bb06fb44aa08943917b1",
+    "nome": "Novo Forno / Plataforma Metálica - Escadas - Planta, Cortes e Detalhes",
+    "origem": "LD!658",
+    "hh_total_ld": "18",
+    "hh_total_lido": "18",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-e369762b3975268f852c",
+    "nome": "Novo Forno / Plataforma Metálica - Detalhes e Ligações",
+    "origem": "LD!659",
+    "hh_total_ld": "36",
+    "hh_total_lido": "36",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-25d84c7aec6d5c8eb9bd",
+    "nome": "Ponte Rolante - Galpão Existente - Linha de Vida",
+    "origem": "LD!660",
+    "hh_total_ld": "18",
+    "hh_total_lido": "18",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-96b55fcac7cc98c6b5b4",
+    "nome": "Galpão Anexo / Sala Elétrica / Sala dos Transformadores - Plano de Bases",
+    "origem": "LD!661",
+    "hh_total_ld": "18",
+    "hh_total_lido": "18",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-9f4b48807ae44f4fd24a",
+    "nome": "Galpão Anexo / Sala Elétrica / Sala dos Transformadores - Quadro de Cargas",
+    "origem": "LD!662",
+    "hh_total_ld": "18",
+    "hh_total_lido": "18",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-ff771c45b039a8c4100d",
+    "nome": "Galpão Anexo / Sala Elétrica / Sala dos Transformadores - Elevações - Filas",
+    "origem": "LD!663",
+    "hh_total_ld": "36",
+    "hh_total_lido": "36",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-5383856727b353804a62",
+    "nome": "Galpão Anexo / Sala Elétrica / Sala dos Transformadores - Elevações - Eixos",
+    "origem": "LD!664",
+    "hh_total_ld": "36",
+    "hh_total_lido": "36",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-c1dc80d8cb51bdf4ce29",
+    "nome": "Galpão Anexo / Sala Elétrica / Sala dos Transformadores - Plano Viga de Rolamento",
+    "origem": "LD!665",
+    "hh_total_ld": "18",
+    "hh_total_lido": "18",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-ccdaf1f9a347f00480dc",
+    "nome": "Galpão Anexo / Sala Elétrica / Sala dos Transformadores - Plano de Tesouras e Plano de Cobertura",
+    "origem": "LD!666",
+    "hh_total_ld": "36",
+    "hh_total_lido": "36",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-8616b3df8e9bca1e5d43",
+    "nome": "Galpão Anexo / Sala Elétrica / Sala dos Transformadores - Linha de Vida",
+    "origem": "LD!667",
+    "hh_total_ld": "18",
+    "hh_total_lido": "18",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-15e8d3db1806915371ec",
+    "nome": "Galpão Anexo / Sala Elétrica / Sala dos Transformadores - Tapamentos - Eixos e Filas",
+    "origem": "LD!668",
+    "hh_total_ld": "36",
+    "hh_total_lido": "36",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-f772f1163953c742608c",
+    "nome": "Galpão Anexo / Sala Elétrica / Sala dos Transformadores - Escadas - Planta, Cortes e Detalhes",
+    "origem": "LD!669",
+    "hh_total_ld": "36",
+    "hh_total_lido": "36",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-9bf9be04f31e3ea67394",
+    "nome": "Galpão Anexo / Sala Elétrica / Sala dos Transformadores - Detalhes",
+    "origem": "LD!670",
+    "hh_total_ld": "36",
+    "hh_total_lido": "36",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-5f83c09f03c07f5384bb",
+    "nome": "Galpão Anexo / Sala Elétrica / Sala dos Transformadores - Paginação de Telhas de Tapamentos, Cobertura, Rufos e Calhas ",
+    "origem": "LD!671",
+    "hh_total_ld": "162",
+    "hh_total_lido": "162",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-a6c3f5c566a2e2d31bb7",
+    "nome": "Abrigo Compressores - Quadro de Cargas e Plano de Bases",
+    "origem": "LD!672",
+    "hh_total_ld": "18",
+    "hh_total_lido": "18",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-5b1e2e77c6f3c80026c6",
+    "nome": "Abrigo Compressores - Plano de Cobertura, Tapamentos e Linhas de Vida",
+    "origem": "LD!673",
+    "hh_total_ld": "18",
+    "hh_total_lido": "18",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-4809fb5a295fabc20699",
+    "nome": "Abrigo Compressores - Eixos, Filas e Detalhes",
+    "origem": "LD!674",
+    "hh_total_ld": "18",
+    "hh_total_lido": "18",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-56bc52263c428357fd9d",
+    "nome": "Abrigo Compressores - Paginação de Telhas de Tapamentos, Cobertura, Rufos e Calhas",
+    "origem": "LD!675",
+    "hh_total_ld": "36",
+    "hh_total_lido": "36",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-37ea33dbbca015385489",
+    "nome": "Suportes de Tubulações - Plano de Bases e Quadro de Cargas",
+    "origem": "LD!676",
+    "hh_total_ld": "36",
+    "hh_total_lido": "36",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-1999bf5a9cde25dfa272",
+    "nome": "Suportes de Tubulações - Elevações e Detalhes",
+    "origem": "LD!677",
+    "hh_total_ld": "18",
+    "hh_total_lido": "18",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-48b8cbc5514673da4a6e",
+    "nome": "Apoio do Tanques Horizontais - Plano da Plataforma - Planta",
+    "origem": "LD!678",
+    "hh_total_ld": "18",
+    "hh_total_lido": "18",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-023ffe6ae3323e7349d4",
+    "nome": "Apoio do Tanques Horizontais - Cortes e Detalhes",
+    "origem": "LD!679",
+    "hh_total_ld": "18",
+    "hh_total_lido": "18",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-9537a35e448e027e22eb",
+    "nome": "Apoio do Tanques Horizontais - Escadas - Planta, Cortes e Detalhes",
+    "origem": "LD!680",
+    "hh_total_ld": "18",
+    "hh_total_lido": "18",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-32e1060a17deec2e7df6",
+    "nome": "Escada Fixa Vertical de Acesso ao Tanque de Água de Serviço - Detalhes e Linha de Vida",
+    "origem": "LD!681",
+    "hh_total_ld": "18",
+    "hh_total_lido": "18",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-d8b9b6f5a322f07085ec",
+    "nome": "Galpão Existente - Reforços Estruturais / Relocação Contraventamento - Plantas, Detalhes e Ligações",
+    "origem": "LD!682",
+    "hh_total_ld": "72",
+    "hh_total_lido": "72",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-bfe51557c59765b0d895",
+    "nome": "Pipe Rack Existente - Novas Estruturas",
+    "origem": "LD!683",
+    "hh_total_ld": "54",
+    "hh_total_lido": "54",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-ef3eb24e91169f5bbb7c",
+    "nome": "Galpão Existente - Reforços Estruturais",
+    "origem": "LD!684",
+    "hh_total_ld": "54",
+    "hh_total_lido": "54",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-22edb63b341da1bbb5e0",
+    "nome": "Lista de Materiais",
+    "origem": "LD!685",
+    "hh_total_ld": "16",
+    "hh_total_lido": "16.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-ff1e4855d8bca7ec552b",
+    "nome": "Análise da documentação existente",
+    "origem": "LD!688",
+    "hh_total_ld": "32",
+    "hh_total_lido": "32",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-e6f860f435f08e3e19d9",
+    "nome": "Reuniões internas",
+    "origem": "LD!689",
+    "hh_total_ld": "26",
+    "hh_total_lido": "26",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-b25c38d96e17e09322ab",
+    "nome": "Reuniões com clientes",
+    "origem": "LD!690",
+    "hh_total_ld": "26",
+    "hh_total_lido": "26",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-51cccb9a3e6136a1af80",
+    "nome": "Reuniões Design Review Interno",
+    "origem": "LD!691",
+    "hh_total_ld": "12",
+    "hh_total_lido": "12",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-f357ad47a96c23205192",
+    "nome": "Reuniões Design Review Externo",
+    "origem": "LD!692",
+    "hh_total_ld": "12",
+    "hh_total_lido": "12",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-3c4bd4d13a8f15c225ee",
+    "nome": "Apoio - Relatório de Desktop Review da Engenharia Básica",
+    "origem": "LD!693",
+    "hh_total_ld": "48",
+    "hh_total_lido": "48",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-00a3517f7169148b5b5a",
+    "nome": "Modelo 3D",
+    "origem": "LD!694",
+    "hh_total_ld": "160",
+    "hh_total_lido": "160",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-81d3bf0dae4316e1e210",
+    "nome": "Relatório de Levantamentos de Campo",
+    "origem": "LD!699",
+    "hh_total_ld": "40",
+    "hh_total_lido": "40.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-06777ae5896d7bff2c33",
+    "nome": "Análise Técnica de Propostas",
+    "origem": "LD!700",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-87ef7a81a7d7652020db",
+    "nome": "Arranjo da Subestação - Existente - Planta, cortes e detalhes",
+    "origem": "LD!701",
+    "hh_total_ld": "22",
+    "hh_total_lido": "22",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-1d83e5a5f3634547af5c",
+    "nome": "Arranjo da Subestação (nova) / Sala Elétrica - Planta, cortes e detalhes",
+    "origem": "LD!702",
+    "hh_total_ld": "22",
+    "hh_total_lido": "22",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-f2482a18935b9908ca8f",
+    "nome": "Rota de Cabos Elétricos - Atualização",
+    "origem": "LD!703",
+    "hh_total_ld": "80",
+    "hh_total_lido": "80",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-3d7b435580142d69ed6b",
+    "nome": "Diagramas Unifilares - Geral (Atualização)",
+    "origem": "LD!704",
+    "hh_total_ld": "100",
+    "hh_total_lido": "100",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-3e09e838d4210639a867",
+    "nome": "Projetos de Aterramento e SPDA - Nova Subestação / Sala Elétrica - Planta, cortes e detalhes",
+    "origem": "LD!705",
+    "hh_total_ld": "36",
+    "hh_total_lido": "36",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-7f8810c863ae1d47ed2d",
+    "nome": "Projetos de Aterramento e SPDA - Nova Edificação anexa Sala Elétrica - Planta, cortes e detalhes",
+    "origem": "LD!706",
+    "hh_total_ld": "36",
+    "hh_total_lido": "36",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-b38c60f6417eeb70ddc9",
+    "nome": "Projetos de Aterramento e SPDA - Áreas do Chiller, Torre de Resfriamento, Trocadores de Calor e Geradores - Planta, cortes e detalhes",
+    "origem": "LD!707",
+    "hh_total_ld": "54",
+    "hh_total_lido": "54",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-76266b514ab718d5f9d6",
+    "nome": "Projetos de Redes de Dutos, Eletroutos e Leitos para Cabos Elétricos - Nova Subestação / Sala Elétrica - Planta, cortes e detalhes",
+    "origem": "LD!708",
+    "hh_total_ld": "54",
+    "hh_total_lido": "54",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-5d2427a34a51b8613f48",
+    "nome": "Projetos de Redes de Dutos, Eletroutos e Leitos para Cabos Elétricos - Nova Edificação anexa Sala Elétrica - Planta, cortes e detalhes",
+    "origem": "LD!709",
+    "hh_total_ld": "36",
+    "hh_total_lido": "36",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-f5878dfeca299be7e4c8",
+    "nome": "Projetos de Redes de Dutos, Eletroutos e Leitos para Cabos Elétricos - Áreas do Chiller, Torre de Resfriamento, Trocadores de Calor, Geradores e Área Externa - Planta, cortes e detalhes",
+    "origem": "LD!710",
+    "hh_total_ld": "72",
+    "hh_total_lido": "72",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-52050557d6961f93c74c",
+    "nome": "Projetos de Redes de Dutos, Eletroutos e Leitos para Cabos Elétricos - Prédio Existente - Planta, cortes e detalhes",
+    "origem": "LD!711",
+    "hh_total_ld": "54",
+    "hh_total_lido": "54",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-2b17bb9040229c78343f",
+    "nome": "Projetos de Embutidos Elétricos",
+    "origem": "LD!712",
+    "hh_total_ld": "13.5",
+    "hh_total_lido": "13.50",
+    "diferenca_total_ld": "0.00",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-bac22425a2e00872a1a9",
+    "nome": "Projetos de Iluminação - Nova Subestação / Sala Elétrica - Planta, cortes e detalhes",
+    "origem": "LD!713",
+    "hh_total_ld": "44",
+    "hh_total_lido": "44",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-bad46a1a47abfdd05804",
+    "nome": "Projetos de Iluminação - Nova Subestação / Sala Elétrica - Quadro de Carga e Diagrama Trifilar",
+    "origem": "LD!714",
+    "hh_total_ld": "22",
+    "hh_total_lido": "22",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-3a838ec5efb2586d37c2",
+    "nome": "Memória de Cálculo de Iluminação - Nova Subestação / Sala Elétrica (Revisão apenas das áreas alteradas no projeto detalhado)",
+    "origem": "LD!715",
+    "hh_total_ld": "15",
+    "hh_total_lido": "15.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-f417113a2c61af446834",
+    "nome": "Relatório do Estudo de Estimativa de Demanda (Atualização)",
+    "origem": "LD!716",
+    "hh_total_ld": "18",
+    "hh_total_lido": "18.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-0381dad8989d211edfd1",
+    "nome": "Relatório de Seletividade e Coordenação da  Proteção",
+    "origem": "LD!717",
+    "hh_total_ld": "32",
+    "hh_total_lido": "32.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-658b07776dbefda9d547",
+    "nome": "Relatório do Estudo da Filtragem de Harmônicas e Correção do Fator de Potência",
+    "origem": "LD!718",
+    "hh_total_ld": "32",
+    "hh_total_lido": "32.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-3189a0d6b70982aee94a",
+    "nome": "Memorial Descritivo do Projeto Elétrico (Atualização)",
+    "origem": "LD!719",
+    "hh_total_ld": "16",
+    "hh_total_lido": "16.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-e5a7725a9990cbac229a",
+    "nome": "Projetos de Tomadas e Força",
+    "origem": "LD!720",
+    "hh_total_ld": "242",
+    "hh_total_lido": "242",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-c12fb31e0651bc486923",
+    "nome": "Especificação Técnica para Tomada de Preços - Serviços EIA (Elétrica, Instrumentação e Automação)",
+    "origem": "LD!721",
+    "hh_total_ld": "24",
+    "hh_total_lido": "24.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-c938843e7300e2938a95",
+    "nome": "Projetos de Iluminação - Nova Edificação anexa Sala Elétrica - Planta, cortes e detalhes",
+    "origem": "LD!722",
+    "hh_total_ld": "44",
+    "hh_total_lido": "44",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-d148ce0fe86bc8de8c06",
+    "nome": "Projetos de Iluminação - Nova Edificação anexa Sala Elétrica - Quadro de Carga e Diagrama Trifilar",
+    "origem": "LD!723",
+    "hh_total_ld": "22",
+    "hh_total_lido": "22",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-103c3008ac35bac6b57e",
+    "nome": "Memória de Cálculo de Iluminação - Nova Edificação anexa Sala Elétrica (Revisão apenas das áreas alteradas no projeto detalhado)",
+    "origem": "LD!724",
+    "hh_total_ld": "15",
+    "hh_total_lido": "15.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-b6b210bdfd5a59c75d55",
+    "nome": "Projetos de Iluminação - Áreas do Chiller, Torre de Resfriamento, Trocadores de Calor e Geradores - Planta, cortes e detalhes",
+    "origem": "LD!725",
+    "hh_total_ld": "66",
+    "hh_total_lido": "66",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-cb6432601e3be137918b",
+    "nome": "Projetos de Iluminação - Áreas do Chiller, Torre de Resfriamento, Trocadores de Calor e Geradores - Quadro de Carga e Diagrama Trifilar",
+    "origem": "LD!726",
+    "hh_total_ld": "44",
+    "hh_total_lido": "44",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-f7a70e3febe7521a448b",
+    "nome": "Memória de Cálculo de Iluminação - Áreas do Chiller, Torre de Resfriamento, Trocadores de Calor e Geradores",
+    "origem": "LD!727",
+    "hh_total_ld": "30",
+    "hh_total_lido": "30.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-af331daabd85f68a9764",
+    "nome": "Relatório Luminotécnico (Atualização)",
+    "origem": "LD!728",
+    "hh_total_ld": "16",
+    "hh_total_lido": "16.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-78d730dc87bab50b46a1",
+    "nome": "Memória de Cálculo do Dimensionamento de Equipamentos Elétricos  (Atualização)",
+    "origem": "LD!729",
+    "hh_total_ld": "20",
+    "hh_total_lido": "20.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-850e2161990cd665d108",
+    "nome": "Plano de Corte de Cabos (Força)",
+    "origem": "LD!730",
+    "hh_total_ld": "22",
+    "hh_total_lido": "22.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-e81daf10e843f34b46bf",
+    "nome": "Planilha de Quantidades",
+    "origem": "LD!731",
+    "hh_total_ld": "40",
+    "hh_total_lido": "40.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-043115c448870f8a3b26",
+    "nome": "Listas de Materiais Elétricos por Desenho - Força",
+    "origem": "LD!732",
+    "hh_total_ld": "80",
+    "hh_total_lido": "80.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-077bcc54fa0247684980",
+    "nome": "Listas de Materiais Elétricos por Desenho - Iluminação e Tomadas",
+    "origem": "LD!733",
+    "hh_total_ld": "80",
+    "hh_total_lido": "80.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-da1c0a210a73b46a99c8",
+    "nome": "Listas de Materiais Elétricos por Desenho - Aterramento e SPDA",
+    "origem": "LD!734",
+    "hh_total_ld": "80",
+    "hh_total_lido": "80.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-609763e9fc4fed3abe1c",
+    "nome": "Listas de Materiais Elétricos para Compra",
+    "origem": "LD!735",
+    "hh_total_ld": "80",
+    "hh_total_lido": "80.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-b313ef93714c73423fe9",
+    "nome": "Listas de Cabos Elétricos",
+    "origem": "LD!736",
+    "hh_total_ld": "48",
+    "hh_total_lido": "48.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-67de9fdb9b1904c74cfa",
+    "nome": "Listas de Cabos Elétricos \"De/Para\"",
+    "origem": "LD!737",
+    "hh_total_ld": "48",
+    "hh_total_lido": "48.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-f39b182965f6d2d4fcd6",
+    "nome": "Listas de Equipamentos Elétricos (Atualização)",
+    "origem": "LD!738",
+    "hh_total_ld": "16.5",
+    "hh_total_lido": "16.500",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-6801629cf2c849477955",
+    "nome": "Diagrama de Interligação",
+    "origem": "LD!739",
+    "hh_total_ld": "54",
+    "hh_total_lido": "54.00",
+    "diferenca_total_ld": "0.00",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-b7d9a26e2a8e5c5b1b7d",
+    "nome": "Detalhes Típicos de Elétrica Específicos",
+    "origem": "LD!740",
+    "hh_total_ld": "15",
+    "hh_total_lido": "15.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-2e295abccd0befedeebb",
+    "nome": "Folha de Dados de Elétrica - (Atualização)",
+    "origem": "LD!741",
+    "hh_total_ld": "42",
+    "hh_total_lido": "42.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-a3d3de2d8408cf4cb65f",
+    "nome": "Transformadores ALD - Alteração de Layout ou Posição",
+    "origem": "LD!742",
+    "hh_total_ld": "44",
+    "hh_total_lido": "44",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-8c6670e5b2d9ea813557",
+    "nome": "Análise da documentação existente",
+    "origem": "LD!746",
+    "hh_total_ld": "32",
+    "hh_total_lido": "32",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-7132095c0ef630d5d16b",
+    "nome": "Reuniões internas",
+    "origem": "LD!747",
+    "hh_total_ld": "26",
+    "hh_total_lido": "26",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-ad9c37839e5c126b5627",
+    "nome": "Reuniões com clientes",
+    "origem": "LD!748",
+    "hh_total_ld": "26",
+    "hh_total_lido": "26",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-b1ba7dcbf0cbf4909579",
+    "nome": "Reuniões Design Review Interno",
+    "origem": "LD!749",
+    "hh_total_ld": "12",
+    "hh_total_lido": "12",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-da9e7b01ecd7f920d24c",
+    "nome": "Reuniões Design Review Externo",
+    "origem": "LD!750",
+    "hh_total_ld": "12",
+    "hh_total_lido": "12",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-d010787299c75659ee63",
+    "nome": "Análise de DF's - Apoio - Pacote Bombas de Água",
+    "origem": "LD!751",
+    "hh_total_ld": "4",
+    "hh_total_lido": "4",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-6a3f771ddc2ad737d978",
+    "nome": "Análise de DF's - Apoio - Pacote Chiller",
+    "origem": "LD!752",
+    "hh_total_ld": "8",
+    "hh_total_lido": "8",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-5ae5e1f0e36c426a1712",
+    "nome": "Análise de DF's - Apoio - Pacote Torre de Resfriamento",
+    "origem": "LD!753",
+    "hh_total_ld": "8",
+    "hh_total_lido": "8",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-4a83a49082f6152f0b6d",
+    "nome": "Apoio - Parecer Técnico - 5 Pacotes",
+    "origem": "LD!754",
+    "hh_total_ld": "40",
+    "hh_total_lido": "40",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-cd4fe95869b82559abf8",
+    "nome": "Apoio - Relatório de Desktop Review da Engenharia Básica",
+    "origem": "LD!755",
+    "hh_total_ld": "48",
+    "hh_total_lido": "48",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-026c39bc2c45fd0329a9",
+    "nome": "Modelo 3D",
+    "origem": "LD!756",
+    "hh_total_ld": "200",
+    "hh_total_lido": "200",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-e270059dfef5978f913d",
+    "nome": "Consultoria estudos elétricos - R$ 40.000,00",
+    "origem": "LD!757",
+    "hh_total_ld": null,
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-dafac046e480bdd1fd07",
+    "nome": "Listas de Instrumentos (Atualização)",
+    "origem": "LD!761",
+    "hh_total_ld": "16",
+    "hh_total_lido": "16.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-0312063422d41ba48fbb",
+    "nome": "Descritivo Funcional do Sistema de Controle",
+    "origem": "LD!762",
+    "hh_total_ld": "64",
+    "hh_total_lido": "64.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-85752342f8bf31a84856",
+    "nome": "Desenhos de Arranjo - Sala de Controle - Planta, cortes e detalhes",
+    "origem": "LD!763",
+    "hh_total_ld": "20",
+    "hh_total_lido": "20",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-d70db2ec3a09c34f0c26",
+    "nome": "Planta de Locação de Equipamentos Instrumentos e Painéis de Campo - Nova Edificação anexa Sala Elétrica - Planta, cortes e detalhes",
+    "origem": "LD!764",
+    "hh_total_ld": "16",
+    "hh_total_lido": "16",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-8c77ce6b1bb384ce0acf",
+    "nome": "Planta de Locação de Equipamentos Instrumentos e Painéis de Campo - Áreas do Chiller, Torre de Resfriamento, Trocadores de Calor e Geradores - Planta, cortes e detalhes",
+    "origem": "LD!765",
+    "hh_total_ld": "16",
+    "hh_total_lido": "16",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-0f2595f2d911af1026dd",
+    "nome": "Planta de Locação de Equipamentos Instrumentos e Painéis de Campo - Prédio Existente - Planta, cortes e detalhes",
+    "origem": "LD!766",
+    "hh_total_ld": "16",
+    "hh_total_lido": "16",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-d854fc60ed3e9a4ab610",
+    "nome": "Listas de Equipamentos (Atualização)",
+    "origem": "LD!767",
+    "hh_total_ld": "6",
+    "hh_total_lido": "6.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-b0db0838f37e12319b6a",
+    "nome": "Lista de Materiais - Automação / Instrumentação",
+    "origem": "LD!768",
+    "hh_total_ld": "20",
+    "hh_total_lido": "20.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-fb3c120dfcf2d34c6107",
+    "nome": "Planilha de Quantidades (Atualização)",
+    "origem": "LD!769",
+    "hh_total_ld": "15",
+    "hh_total_lido": "15.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-c1a32e1b1880cdf05c2a",
+    "nome": "Lista de Alimentação de Cargas Elétricas da Automação, Instrumentação e Sistemas Auxiliares",
+    "origem": "LD!770",
+    "hh_total_ld": "7",
+    "hh_total_lido": "7.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-06c6723e68928d364df5",
+    "nome": "Lista de Cabos (Atualização)",
+    "origem": "LD!771",
+    "hh_total_ld": "20",
+    "hh_total_lido": "20.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-50f4e683e7ee38f0fb21",
+    "nome": "Detalhes Típicos de Instalação",
+    "origem": "LD!772",
+    "hh_total_ld": "20",
+    "hh_total_lido": "20.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-3c34407664a16368e00f",
+    "nome": "Relação de Entradas e Saídas (Atualização)",
+    "origem": "LD!773",
+    "hh_total_ld": "16",
+    "hh_total_lido": "16.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-0a52f7fd2050e3b40c28",
+    "nome": "Diagrama de Interligação",
+    "origem": "LD!774",
+    "hh_total_ld": "240",
+    "hh_total_lido": "240.00",
+    "diferenca_total_ld": "0.00",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-286826995c019de28373",
+    "nome": "Arquitetura do Sistema de Controle - Diagrama de Configuração do Sistema de Automação (Atualização)",
+    "origem": "LD!775",
+    "hh_total_ld": "40",
+    "hh_total_lido": "40",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-c2ed397c935f9a878cae",
+    "nome": "Arquitetura de Segurança - NR-12 (Atualização)",
+    "origem": "LD!776",
+    "hh_total_ld": "40",
+    "hh_total_lido": "40.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-9b5b418c878b17a99513",
+    "nome": "Fluxogramas de Engenharia P&D (Atualização)",
+    "origem": "LD!777",
+    "hh_total_ld": "120",
+    "hh_total_lido": "120",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-66125a38e662b65991dc",
+    "nome": "Folhas de Dados (Atualização)",
+    "origem": "LD!778",
+    "hh_total_ld": "28",
+    "hh_total_lido": "28.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-81ca81bb6e045e98bca1",
+    "nome": "Memorial Descritivo do Processo",
+    "origem": "LD!779",
+    "hh_total_ld": "96",
+    "hh_total_lido": "96.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-6ec080a8b7124a85c810",
+    "nome": "Análise da documentação existente",
+    "origem": "LD!783",
+    "hh_total_ld": "32",
+    "hh_total_lido": "32",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-2b7d7aded83129b30139",
+    "nome": "Reuniões internas",
+    "origem": "LD!784",
+    "hh_total_ld": "26",
+    "hh_total_lido": "26",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-6484296d18d0e6691f3d",
+    "nome": "Reuniões com clientes",
+    "origem": "LD!785",
+    "hh_total_ld": "26",
+    "hh_total_lido": "26",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-1c08a58804f1f35280d0",
+    "nome": "Reuniões Design Review Interno",
+    "origem": "LD!786",
+    "hh_total_ld": "12",
+    "hh_total_lido": "12",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-ada2826a0de0d3ed94da",
+    "nome": "Reuniões Design Review Externo",
+    "origem": "LD!787",
+    "hh_total_ld": "12",
+    "hh_total_lido": "12",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-a193db7915481e72c78a",
+    "nome": "Apoio - Parecer Técnico - 5 Pacotes",
+    "origem": "LD!788",
+    "hh_total_ld": "40",
+    "hh_total_lido": "40",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-e58d87dc7991e836eff3",
+    "nome": "Apoio - Relatório de Desktop Review da Engenharia Básica",
+    "origem": "LD!789",
+    "hh_total_ld": "48",
+    "hh_total_lido": "48",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-1f5bb8ae0bbd9afb74be",
+    "nome": "Consultoria NR12 - R$ 40.000,00",
+    "origem": "LD!790",
+    "hh_total_ld": null,
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-5ab79bd949ed50f7254e",
+    "nome": "Arquitetura dos Sistemas Auxiliares (TI/Wi-fi/Alta-voz)",
+    "origem": "LD!794",
+    "hh_total_ld": "20",
+    "hh_total_lido": "20",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-a53b64b61522dcf3bb08",
+    "nome": "Arquitetura dos Sistemas Auxiliares (Controle de Acesso/CFTV)",
+    "origem": "LD!795",
+    "hh_total_ld": "20",
+    "hh_total_lido": "20",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-cd0b8e1d59d1f25b8c34",
+    "nome": "Lista de Equipamentos - Sistemas Auxiliares",
+    "origem": "LD!796",
+    "hh_total_ld": "18",
+    "hh_total_lido": "18.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-9e78a1a0ace5953efdb5",
+    "nome": "Planta de Locação de Equipamentos, Instrumentos e Painéis de Campo - Nova Edificação anexa Sala Elétrica - Planta, cortes e detalhes",
+    "origem": "LD!797",
+    "hh_total_ld": "16",
+    "hh_total_lido": "16",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-1e188057dbf3795124e7",
+    "nome": "Planta de Locação de Equipamentos, Instrumentos e Painéis de Campo - Áreas do Chiller, Torre de Resfriamento, Trocadores de Calor e Geradores - Planta, cortes e detalhes",
+    "origem": "LD!798",
+    "hh_total_ld": "16",
+    "hh_total_lido": "16",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-04693b7701547fc44c26",
+    "nome": "Planta de Locação de Equipamentos, Instrumentos e Painéis de Campo - Prédio Existente - Planta, cortes e detalhes",
+    "origem": "LD!799",
+    "hh_total_ld": "16",
+    "hh_total_lido": "16",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-dcc2304f52fdadffea97",
+    "nome": "Diagrama de Interligação ",
+    "origem": "LD!800",
+    "hh_total_ld": "160",
+    "hh_total_lido": "160.00",
+    "diferenca_total_ld": "0.00",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-934b4c4d0150ac193ebc",
+    "nome": "Detalhes Típicos de Instalação",
+    "origem": "LD!801",
+    "hh_total_ld": "20",
+    "hh_total_lido": "20.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-620d4b8f16c7f137aa7a",
+    "nome": "Lista de Materiais",
+    "origem": "LD!802",
+    "hh_total_ld": "24",
+    "hh_total_lido": "24.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-019c1575cd9bac010632",
+    "nome": "Lista de Alimentação de Cargas Elétricas dos Sistemas Auxiliares",
+    "origem": "LD!803",
+    "hh_total_ld": "7",
+    "hh_total_lido": "7.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-d8202f7a0c7a2d042b93",
+    "nome": "Análise da documentação existente",
+    "origem": "LD!806",
+    "hh_total_ld": "32",
+    "hh_total_lido": "32",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-617b780233a19d70094e",
+    "nome": "Reuniões internas",
+    "origem": "LD!807",
+    "hh_total_ld": "26",
+    "hh_total_lido": "26",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-8b606bff8db8f296ecb5",
+    "nome": "Reuniões com clientes",
+    "origem": "LD!808",
+    "hh_total_ld": "26",
+    "hh_total_lido": "26",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-a8889088c3efef43d0f1",
+    "nome": "Reuniões Design Review Interno",
+    "origem": "LD!809",
+    "hh_total_ld": "12",
+    "hh_total_lido": "12",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-3803304719a2fc43d601",
+    "nome": "Reuniões Design Review Externo",
+    "origem": "LD!810",
+    "hh_total_ld": "12",
+    "hh_total_lido": "12",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-29867925bd09f0031b42",
+    "nome": "Apoio - Parecer Técnico - 5 Pacotes",
+    "origem": "LD!811",
+    "hh_total_ld": "40",
+    "hh_total_lido": "40",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-fcec16c2197b38a386a5",
+    "nome": "Apoio - Relatório de Desktop Review da Engenharia Básica",
+    "origem": "LD!812",
+    "hh_total_ld": "16",
+    "hh_total_lido": "16",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-5a20f25ad2f94d99031d",
+    "nome": "Modelo 3D",
+    "origem": "LD!813",
+    "hh_total_ld": "0",
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-f92794e55e2141b8e1ad",
+    "nome": "Critérios de Projeto (Atualização)",
+    "origem": "LD!817",
+    "hh_total_ld": "16",
+    "hh_total_lido": "16.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-1e6ed8f340b0632a8158",
+    "nome": "Fluxograma de Processo (Atualização)",
+    "origem": "LD!818",
+    "hh_total_ld": "60",
+    "hh_total_lido": "60",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-02a8b5af0d0a7cb661bd",
+    "nome": "Fluxograma de Engenharia - P&ID (atualização com DF's)",
+    "origem": "LD!819",
+    "hh_total_ld": "36",
+    "hh_total_lido": "36",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-9c39e85ff161cb04b50f",
+    "nome": "Memorial Descritivo - Sistemas de Utilidades",
+    "origem": "LD!820",
+    "hh_total_ld": "30",
+    "hh_total_lido": "30.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-e69be87ff649463408f6",
+    "nome": "Memoria de Cálculo (Atualização) - Sistema de Água de Serviço e Água Potável",
+    "origem": "LD!821",
+    "hh_total_ld": "16",
+    "hh_total_lido": "16.0000000000000011000",
+    "diferenca_total_ld": "1.1000E-15",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-dce70ca395695d9f0f2c",
+    "nome": "Memoria de Cálculo (Atualização) - Sistema de Resfriamento dos Trocadores de Calor e Make up da Torre",
+    "origem": "LD!822",
+    "hh_total_ld": "16",
+    "hh_total_lido": "16.0000000000000011000",
+    "diferenca_total_ld": "1.1000E-15",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-c42e482665381c026be5",
+    "nome": "Memoria de Cálculo (Atualização) - Trocadores de calor, sistema de distribuição de água para o forno e sistema de água de emergência",
+    "origem": "LD!823",
+    "hh_total_ld": "16",
+    "hh_total_lido": "16.0000000000000011000",
+    "diferenca_total_ld": "1.1000E-15",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-264198f0083ef4b5dc6d",
+    "nome": "Memoria de Cálculo (Atualização) - Sistema de Ar Comprimido",
+    "origem": "LD!824",
+    "hh_total_ld": "16",
+    "hh_total_lido": "16.0000000000000011000",
+    "diferenca_total_ld": "1.1000E-15",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-bb9c85e415a038900a7d",
+    "nome": "Memoria de Cálculo (Atualização) - Sistema de Argônio",
+    "origem": "LD!825",
+    "hh_total_ld": "16",
+    "hh_total_lido": "16.0000000000000011000",
+    "diferenca_total_ld": "1.1000E-15",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-d435c8a3ba1fffd188a1",
+    "nome": "Memoria de Cálculo - Isolamento Térmico de Tubulações",
+    "origem": "LD!826",
+    "hh_total_ld": "40",
+    "hh_total_lido": "40.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-27f74e09dfd84a0d12e8",
+    "nome": "Lista de Linhas (Atualização)",
+    "origem": "LD!827",
+    "hh_total_ld": "42",
+    "hh_total_lido": "42.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-58b1c9822275181c218b",
+    "nome": "Análise da documentação existente",
+    "origem": "LD!830",
+    "hh_total_ld": "16",
+    "hh_total_lido": "16",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-81f3e957c33103b79352",
+    "nome": "Reuniões internas",
+    "origem": "LD!831",
+    "hh_total_ld": "26",
+    "hh_total_lido": "26",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-c21cf18d0bb87f475017",
+    "nome": "Reuniões com clientes",
+    "origem": "LD!832",
+    "hh_total_ld": "26",
+    "hh_total_lido": "26",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-25f6d9dc4c26af98e70b",
+    "nome": "Reuniões Design Review Interno",
+    "origem": "LD!833",
+    "hh_total_ld": "12",
+    "hh_total_lido": "12",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-7b005a0245a5a2676894",
+    "nome": "Reuniões Design Review Externo",
+    "origem": "LD!834",
+    "hh_total_ld": "12",
+    "hh_total_lido": "12",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-ad0f51d1a7e97a857522",
+    "nome": "Análise de DF's - Pacote Bombas de Água (Resfriamento e Emergência)",
+    "origem": "LD!835",
+    "hh_total_ld": "40",
+    "hh_total_lido": "40",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-148ea4a3fd7710f4636c",
+    "nome": "Análise de DF's - Pacote Chiller",
+    "origem": "LD!836",
+    "hh_total_ld": "16",
+    "hh_total_lido": "16",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-b74ae2710b66095a6bc2",
+    "nome": "Análise de DF's - Pacote Torre de Resfriamento e Ventiladores",
+    "origem": "LD!837",
+    "hh_total_ld": "16",
+    "hh_total_lido": "16",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-cf62363a50c511a0bf39",
+    "nome": "Análise de DF's - Pacote Sistema de Ar Comprimido (Compressor e Tanque Pulmão Condensado)",
+    "origem": "LD!838",
+    "hh_total_ld": "16",
+    "hh_total_lido": "16",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-89854643ffc2f2b0aed8",
+    "nome": "Análise de DF's - Pacote Trocadores de Calor",
+    "origem": "LD!839",
+    "hh_total_ld": "16",
+    "hh_total_lido": "16",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-669482dd36a6f68a4778",
+    "nome": "Análise de DF's - Pacote Tanques de Emergência / Água Desmineralizada",
+    "origem": "LD!840",
+    "hh_total_ld": "16",
+    "hh_total_lido": "16",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-51e75de47861158a3665",
+    "nome": "Apoio - Relatório de Desktop Review da Engenharia Básica",
+    "origem": "LD!841",
+    "hh_total_ld": "40",
+    "hh_total_lido": "40",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-ffa2bbf54e44ad0297d9",
+    "nome": "Relatório de Levantamentos de Campo 1/2",
+    "origem": "LD!845",
+    "hh_total_ld": "56",
+    "hh_total_lido": "56.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-498658f112991cf802c1",
+    "nome": "Relatório de Levantamentos de Campo 2/2",
+    "origem": "LD!846",
+    "hh_total_ld": "56",
+    "hh_total_lido": "56.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-522a3afcb6681f6eeee0",
+    "nome": "Planta Geral de Articulação",
+    "origem": "LD!847",
+    "hh_total_ld": "14",
+    "hh_total_lido": "14",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-0233a3078aaf6ad3b90d",
+    "nome": "Planta - Área do Forno 173-FF-003",
+    "origem": "LD!848",
+    "hh_total_ld": "48",
+    "hh_total_lido": "48",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-35eb5a5980f8155b5c24",
+    "nome": "Cortes e Detalhes - Área do Forno 173-FF-003",
+    "origem": "LD!849",
+    "hh_total_ld": "72",
+    "hh_total_lido": "72",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-9584baf48220d02e17df",
+    "nome": "Planta - Torre Resfriamento - Chiller - Trocadores de Calor",
+    "origem": "LD!850",
+    "hh_total_ld": "24",
+    "hh_total_lido": "24",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-89c14693a7b87f04e243",
+    "nome": "Cortes e Detalhes - Torre Resfriamento - Chiller - Trocadores de Calor",
+    "origem": "LD!851",
+    "hh_total_ld": "72",
+    "hh_total_lido": "72",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-3715def3a90f466fd384",
+    "nome": "Planta - Casa de Compressores - Tanque de Água Desmi",
+    "origem": "LD!852",
+    "hh_total_ld": "48",
+    "hh_total_lido": "48",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-cae51fd7d8ae93dbd0f6",
+    "nome": "Cortes e Detalhes - Casa de Compressores - Tanque de Água Desmi",
+    "origem": "LD!853",
+    "hh_total_ld": "72",
+    "hh_total_lido": "72",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-1671296177a13f175d62",
+    "nome": "Cortes e Detalhes - Gerais",
+    "origem": "LD!854",
+    "hh_total_ld": "96",
+    "hh_total_lido": "96",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-66ee7f2f4cdd40701ad8",
+    "nome": "Isométricos",
+    "origem": "LD!855",
+    "hh_total_ld": "192",
+    "hh_total_lido": "192.00",
+    "diferenca_total_ld": "0.00",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-31cde6ffaa7ea4591592",
+    "nome": "Suportes de Tubulação",
+    "origem": "LD!856",
+    "hh_total_ld": "120",
+    "hh_total_lido": "120.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-a6028bc55bab3a3023d5",
+    "nome": "Relatório de Análise de Flexibilidade",
+    "origem": "LD!857",
+    "hh_total_ld": "32",
+    "hh_total_lido": "32.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-991d7fe9e457a19e4d11",
+    "nome": "Plano de Cargas de Tubulações",
+    "origem": "LD!858",
+    "hh_total_ld": "48",
+    "hh_total_lido": "48.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-f40eba75adcbd37de901",
+    "nome": "Lista de Materiais de Tubulação por Linha",
+    "origem": "LD!859",
+    "hh_total_ld": "36",
+    "hh_total_lido": "36.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-23bfd5c34ed9694ac486",
+    "nome": "Planilha de Quantidades Geral",
+    "origem": "LD!860",
+    "hh_total_ld": "6",
+    "hh_total_lido": "6.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-f3768d3b9f4da6df245f",
+    "nome": "Análise da documentação existente",
+    "origem": "LD!863",
+    "hh_total_ld": "32",
+    "hh_total_lido": "32",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-a688f38413326614781f",
+    "nome": "Reuniões internas",
+    "origem": "LD!864",
+    "hh_total_ld": "26",
+    "hh_total_lido": "26",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-b6f23a4080bc318902f6",
+    "nome": "Reuniões com clientes",
+    "origem": "LD!865",
+    "hh_total_ld": "26",
+    "hh_total_lido": "26",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-e791e35f04b7cd51def2",
+    "nome": "Reuniões Design Review Interno",
+    "origem": "LD!866",
+    "hh_total_ld": "12",
+    "hh_total_lido": "12",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-785bd577b299e1b8c167",
+    "nome": "Reuniões Design Review Externo",
+    "origem": "LD!867",
+    "hh_total_ld": "12",
+    "hh_total_lido": "12",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-63a9fa4f8822b8ef9185",
+    "nome": "Análise de DF's - Apoio - Pacote Bombas de Água",
+    "origem": "LD!868",
+    "hh_total_ld": "16",
+    "hh_total_lido": "16",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-d48c9368c1a363375f29",
+    "nome": "Análise de DF's - Apoio - Pacote Chiller",
+    "origem": "LD!869",
+    "hh_total_ld": "8",
+    "hh_total_lido": "8",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-f28b01034e50ba02f360",
+    "nome": "Análise de DF's - Apoio - Pacote Torre de Resfriamento",
+    "origem": "LD!870",
+    "hh_total_ld": "8",
+    "hh_total_lido": "8",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-0bc05d5df0108f87bd65",
+    "nome": "Análise de DF's - Apoio - Pacote Sistema de Ar Comprimido",
+    "origem": "LD!871",
+    "hh_total_ld": "8",
+    "hh_total_lido": "8",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-3359ef6cb69287c4cd7a",
+    "nome": "Análise de DF's - Apoio - Pacote Trocadores de Calor",
+    "origem": "LD!872",
+    "hh_total_ld": "4",
+    "hh_total_lido": "4",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-aaf034d3dbea9f8a654a",
+    "nome": "Apoio - Relatório de Desktop Review da Engenharia Básica",
+    "origem": "LD!873",
+    "hh_total_ld": "48",
+    "hh_total_lido": "48",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-b1866414644f329b514f",
+    "nome": "Modelo 3D",
+    "origem": "LD!874",
+    "hh_total_ld": "280",
+    "hh_total_lido": "280",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-2ebf7b593ded83932961",
+    "nome": "VERBA PARA ANÁLISE DE FLEXIBILIDADE (R$10.000,00)",
+    "origem": "LD!875",
+    "hh_total_ld": null,
+    "hh_total_lido": null,
+    "diferenca_total_ld": null,
+    "conferencia_total_ld": "sem_hh_planejadas"
+  },
+  {
+    "registro_id": "REG-08cfd20d179004aedb1e",
+    "nome": "Critérios de Projeto",
+    "origem": "LD!879",
+    "hh_total_ld": "16",
+    "hh_total_lido": "16.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-51776a11e2147b00d1d2",
+    "nome": "Relatório de Levantamentos de Campo",
+    "origem": "LD!880",
+    "hh_total_ld": "56",
+    "hh_total_lido": "56.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-f0a8a191c33494c0c368",
+    "nome": "Plano Diretor (Atualização)",
+    "origem": "LD!881",
+    "hh_total_ld": "32",
+    "hh_total_lido": "32",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-9086f65524080a166e50",
+    "nome": "Arranjos Gerais - Plantas e Cortes (atualizado com DF)",
+    "origem": "LD!882",
+    "hh_total_ld": "16",
+    "hh_total_lido": "16",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-7631b4e32af48d5c2980",
+    "nome": "Arranjos de Equipamentos Mecânicos - Plantas e Cortes (atualizado com DF)",
+    "origem": "LD!883",
+    "hh_total_ld": "128",
+    "hh_total_lido": "128",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-52210661ea8f8fe16c79",
+    "nome": "Arranjos de Equipamentos Mecânicos - Relocação de Equipamentos",
+    "origem": "LD!884",
+    "hh_total_ld": "32",
+    "hh_total_lido": "32",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-c6d2d37ee4859e2cc850",
+    "nome": "Diagrama de Montagem - Forno 173-FF-003",
+    "origem": "LD!885",
+    "hh_total_ld": "48",
+    "hh_total_lido": "48",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-8d3958e2c81a94d5b813",
+    "nome": "Diagrama de Montagem - Torre de Resfriamento e Chiller",
+    "origem": "LD!886",
+    "hh_total_ld": "24",
+    "hh_total_lido": "24",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-5579d94d0b698799335e",
+    "nome": "Diagrama de Montagem - Trocadores de Calor",
+    "origem": "LD!887",
+    "hh_total_ld": "24",
+    "hh_total_lido": "24",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-31c3e5a98e8dc7d88976",
+    "nome": "Diagrama de Montagem - Sistema de Ar Comprimido",
+    "origem": "LD!888",
+    "hh_total_ld": "24",
+    "hh_total_lido": "24",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-f69647463dcd48486def",
+    "nome": "Diagrama de Montagem - Tanque de Água Desmi",
+    "origem": "LD!889",
+    "hh_total_ld": "24",
+    "hh_total_lido": "24",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-b7d830f2edecd3a32a7c",
+    "nome": "Diagrama de Montagem - Tanques de Emergência",
+    "origem": "LD!890",
+    "hh_total_ld": "24",
+    "hh_total_lido": "24",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-c5ccc9e37d69934c2329",
+    "nome": "Diagrama de Montagem - Relocação de Equipamentos",
+    "origem": "LD!891",
+    "hh_total_ld": "24",
+    "hh_total_lido": "24",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-b263169964e77ca99c73",
+    "nome": "Desenhos e Arranjos de Caldeiraria e Pequenas Estruturas ",
+    "origem": "LD!892",
+    "hh_total_ld": "72",
+    "hh_total_lido": "72",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-31a39464ab76d5e19081",
+    "nome": "Planos de Cargas de Mecânica",
+    "origem": "LD!893",
+    "hh_total_ld": "192",
+    "hh_total_lido": "192",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-6e865e37995d4c36065d",
+    "nome": "Lista de Equipamentos (atualizada com DF)",
+    "origem": "LD!894",
+    "hh_total_ld": "24",
+    "hh_total_lido": "24.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-bf815b3f761bf4e23f5d",
+    "nome": "Planilha de Quantidades (atualizada com DF)",
+    "origem": "LD!895",
+    "hh_total_ld": "24",
+    "hh_total_lido": "24.000",
+    "diferenca_total_ld": "0.000",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-54a4d556a4fbe97c87cf",
+    "nome": "Análise da documentação existente",
+    "origem": "LD!898",
+    "hh_total_ld": "32",
+    "hh_total_lido": "32",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-3084763d37648bb55874",
+    "nome": "Reuniões internas",
+    "origem": "LD!899",
+    "hh_total_ld": "26",
+    "hh_total_lido": "26",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-415d3ce9d837114d9b9d",
+    "nome": "Reuniões com clientes",
+    "origem": "LD!900",
+    "hh_total_ld": "26",
+    "hh_total_lido": "26",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-71990e8a96acbe13b357",
+    "nome": "Reuniões Design Review Interno",
+    "origem": "LD!901",
+    "hh_total_ld": "12",
+    "hh_total_lido": "12",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-30733e8fb053071ad270",
+    "nome": "Reuniões Design Review Externo",
+    "origem": "LD!902",
+    "hh_total_ld": "12",
+    "hh_total_lido": "12",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-4eff433a353c49e8a12d",
+    "nome": "Análise de DF's - Pacote Tanques de emergência/Água Desmineralizada - PRFV",
+    "origem": "LD!903",
+    "hh_total_ld": "16",
+    "hh_total_lido": "16",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-4ac54251101abd8d7ff2",
+    "nome": "Análise de DF's - Pacote Forno",
+    "origem": "LD!904",
+    "hh_total_ld": "16",
+    "hh_total_lido": "16",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-627f3c6365c837598aec",
+    "nome": "Análise de DF's - Pacote Talhas Elétricas",
+    "origem": "LD!905",
+    "hh_total_ld": "16",
+    "hh_total_lido": "16",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-9066e7f5db516eb3479b",
+    "nome": "Análise de DF's - Apoio - Pacote Bombas de Água",
+    "origem": "LD!906",
+    "hh_total_ld": "16",
+    "hh_total_lido": "16",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-069c01d3fb216b0a6632",
+    "nome": "Análise de DF's - Apoio - Pacote Chiller",
+    "origem": "LD!907",
+    "hh_total_ld": "16",
+    "hh_total_lido": "16",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-5e9410f10073c91f61a4",
+    "nome": "Análise de DF's - Apoio - Pacote Torre de Resfriamento",
+    "origem": "LD!908",
+    "hh_total_ld": "16",
+    "hh_total_lido": "16",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-9cbd4e5b98e21e158c50",
+    "nome": "Análise de DF's - Apoio - Pacote Sistema de Ar Comprimido",
+    "origem": "LD!909",
+    "hh_total_ld": "16",
+    "hh_total_lido": "16",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-ff6185d99dc3759b9ed1",
+    "nome": "Análise de DF's - Apoio - Pacote Trocadores de Calor",
+    "origem": "LD!910",
+    "hh_total_ld": "16",
+    "hh_total_lido": "16",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-f4ae1183632f8126f483",
+    "nome": "Análise de DF's - Apoio - Balança de piso",
+    "origem": "LD!911",
+    "hh_total_ld": "16",
+    "hh_total_lido": "16",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-ecd598ed9436ab39c5fa",
+    "nome": "Apoio - Relatório de Desktop Review da Engenharia Básica",
+    "origem": "LD!912",
+    "hh_total_ld": "48",
+    "hh_total_lido": "48",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  },
+  {
+    "registro_id": "REG-14d7e9ac6b3884d412c8",
+    "nome": "Modelo 3D",
+    "origem": "LD!913",
+    "hh_total_ld": "176",
+    "hh_total_lido": "176",
+    "diferenca_total_ld": "0",
+    "conferencia_total_ld": "conferido"
+  }
+]

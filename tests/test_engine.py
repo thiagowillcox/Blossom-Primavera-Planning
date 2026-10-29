@@ -11,6 +11,7 @@ from blossom.relationships import build_links
 from blossom.validation import topology, validate_config
 from blossom.schedule import estimate
 from blossom.__main__ import run
+from blossom.common import number
 
 ROOT=Path(__file__).resolve().parents[1]
 
@@ -94,6 +95,84 @@ def test_ld_units_empty_and_stable_ids(tmp_path):
     write_ld(path,True)
     reordered,_,_=read_ld(path)
     assert ids=={r['nome']:r['id'] for r in reordered}
+
+
+@pytest.mark.parametrize('placeholder', [' ', '\u00a0', r'\xa0'])
+def test_ld_blank_role_placeholders_preserve_hours(tmp_path, config, placeholder):
+    path=tmp_path/'LD.xlsx';write_ld(path)
+    workbook=openpyxl.load_workbook(path);sheet=workbook['LD']
+    sheet['L9']=placeholder
+    sheet['R9']=16
+    sheet['H11']=placeholder
+    workbook.save(path);workbook.close()
+    records,_,issues=read_ld(path)
+    assert records[0]['hh']=={'EPleno':D(16)}
+    assert not records[2]['hh']
+    assert not any(i['codigo']=='DADO_NAO_RESOLVIDO' for i in issues)
+    activities,_,_,_=distribute(records,config)
+    assert len(activities)==5
+    assert sum(a['hh'] for a in activities)==D('35.2')
+
+
+def test_ld_unknown_role_text_still_blocks_record(tmp_path):
+    path=tmp_path/'LD.xlsx';write_ld(path)
+    workbook=openpyxl.load_workbook(path)
+    workbook['LD']['L9']='a confirmar'
+    workbook.save(path);workbook.close()
+    records,_,issues=read_ld(path)
+    assert not records[0]['hh']
+    assert any(i['codigo']=='DADO_NAO_RESOLVIDO' and i['origem']=='LD!9' for i in issues)
+
+
+@pytest.mark.parametrize('value,expected', [
+    ('12', '12'), (' 12,50 ', '12.5'), ('12.50', '12.5'),
+    ('1.234,50', '1234.5'), ('1,234.50', '1234.5'),
+    ('0.0625', '0.0625'), ('\ufeff\u200b', None),
+])
+def test_numeric_text_unambiguous(value, expected):
+    assert number(value) == (D(expected) if expected is not None else None)
+
+
+@pytest.mark.parametrize('value', ['1.234', '1,234', 'a confirmar', '#VALUE!', '-2', True, float('nan')])
+def test_numeric_text_ambiguous_or_invalid(value):
+    with pytest.raises(ValueError):
+        number(value)
+
+
+def test_ld_normalized_labels_and_numeric_text_preserve_sources(tmp_path):
+    path=tmp_path/'LD.xlsx';write_ld(path)
+    workbook=openpyxl.load_workbook(path);sheet=workbook['LD'];sheet.title=' ld '
+    sheet['B9']=' dd ';sheet['D9']=' Documento A ';sheet['F9']=' a1 '
+    sheet['E9']='2';sheet['K9']='8,50';sheet['R9']='17,00'
+    sheet['H4']=' Gerente\u00a0'
+    workbook.save(path);workbook.close()
+    records,_,issues=read_ld(path)
+    assert records[0]['hh']=={'EPleno':D(17)}
+    assert records[0]['nome']==' Documento A '
+    assert ' dd ' in records[0]['originais']
+    assert not any(i['codigo']=='DADO_NAO_RESOLVIDO' for i in issues)
+
+
+def test_ld_total_without_role_mix_is_flagged(tmp_path):
+    path=tmp_path/'LD.xlsx';write_ld(path)
+    workbook=openpyxl.load_workbook(path);workbook['LD']['R11']=20
+    workbook.save(path);workbook.close()
+    records,_,issues=read_ld(path)
+    assert not records[2]['hh']
+    assert any(i['codigo']=='DADO_NAO_RESOLVIDO' and i['origem']=='LD!11' for i in issues)
+
+
+@pytest.mark.parametrize('mode', ['missing_sheet', 'empty_sheet', 'no_records', 'duplicate_roles'])
+def test_ld_incompatible_layout_explained(tmp_path, mode):
+    path=tmp_path/'LD.xlsx';write_ld(path)
+    workbook=openpyxl.load_workbook(path);sheet=workbook['LD']
+    if mode=='missing_sheet':sheet.title='Orçamento'
+    elif mode=='empty_sheet':sheet.delete_rows(1,sheet.max_row)
+    elif mode=='no_records':sheet.delete_rows(9,3)
+    else:sheet['I4']=sheet['H4'].value
+    workbook.save(path);workbook.close()
+    with pytest.raises(ValueError,match='aba LD|cabeçalho|Nenhum|Cabeçalho'):
+        read_ld(path)
 
 
 def test_no_automatic_ambiguous_relationship(config):

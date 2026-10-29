@@ -11,12 +11,24 @@ def test_app_starts_and_requires_uploads():
     app = AppTest.from_file(str(ROOT/'app.py')).run(timeout=30)
     assert not app.exception
     assert app.button[0].disabled
+    assert len(app.get('file_uploader'))==2
+    assert len(app.toggle)==0
+    app.radio[0].set_value('Configuração').run()
+    assert not app.exception
+    assert len(app.selectbox)==0
     assert app.number_input[0].value == 8.0
     assert app.number_input[1].value is None
     assert app.number_input[2].value is None
     app.text_input[0].set_value('Projeto de teste').run()
-    assert not app.exception
+    app.number_input[0].set_value(6.0).run()
+    app.radio[0].set_value('Arquivos').run()
+    app.radio[0].set_value('Configuração').run()
+    assert app.text_input[0].value == 'Projeto de teste'
+    assert app.number_input[0].value == 6.0
+    assert len(app.toggle)==0
     assert app.button[0].disabled
+    assert not app.exception
+
 
 
 def test_web_requires_inputs():
@@ -34,3 +46,35 @@ def test_web_real_uploads():
     assert files['pre_cronograma.xlsx'].startswith(b'PK')
     assert len(json.loads(files['pendencias.json']))>0
     assert all(r['diferenca']==0 for r in tables['Auditoria_HH'])
+
+    app = AppTest.from_file(str(ROOT/'app.py'))
+    app.session_state['workflow_version'] = 'ld-manual-v2'
+    app.session_state['result'] = (tables, files)
+    app.session_state['navigation'] = 'Resultados'
+    app.run(timeout=30)
+    assert not app.exception
+    assert len(app.expander) == 5
+    assert len(app.metric) == 4
+    assert not app.exception
+    assert len(app.metric) == 4
+    assert any('1 - Emissão Inicial' in item.value for item in app.markdown)
+    app.radio[0].set_value('Arquivos').run()
+    app.radio[0].set_value('Resultados').run()
+    assert len(app.metric) == 4
+    assert not app.exception
+
+
+def test_upgrade_removes_legacy_reference_settings():
+    app=AppTest.from_file(str(ROOT/'app.py'))
+    app.session_state['settings']={'profile':'Reprocessar referência Wardi','project':'Humberto',
+        'daily':8.0,'comments':3.0,'approval':3.0}
+    app.session_state['reference_result']=(b'old',{})
+    app.session_state['navigation']='Configuração'
+    app.run(timeout=30)
+    assert not app.exception
+    assert app.text_input[0].value==''
+    assert app.number_input[1].value is None
+    assert app.number_input[2].value is None
+    assert len(app.toggle)==0
+    assert len(app.selectbox)==0
+    assert 'reference_result' not in app.session_state

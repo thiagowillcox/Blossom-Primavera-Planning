@@ -18,7 +18,9 @@ def distribute(records, config):
             activities.append({'id': aid, 'registro_id': rec['id'], 'wbs_id': rec['wbs_id'],
                                'nome': rec['nome']+' — '+label, 'tipo': rec['tipo'],
                                'etapa': stage, 'percentual': factor, 'hh': sum(hours.values()),
-                               'duracao_dias': days, 'inicio_dia': None, 'fim_dia': None,
+                               'duracao_dias': days,
+                               'base_duracao': 'prazo_cliente' if stage in (2,4) else 'capacidade_funcoes',
+                               'inicio_dia': None, 'fim_dia': None,
                                'origem': rec['origem']})
             if days is None:
                 issues.append(issue('DURACAO_PENDENTE', aid, 'Definir prazo do cliente ou capacidade das funções no JSON.'))
