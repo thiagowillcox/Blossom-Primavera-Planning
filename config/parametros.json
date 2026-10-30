@@ -7,5 +7,7 @@
   "percentuais": [0.8, 0.1, 0.2, 0.1],
   "encadeamento": [[1, 2], [2, 3], [3, 4]],
   "relacionamentos_aprovados": [],
-  "identidades": {}
+  "identidades": {},
+  "aplicar_regras_explicitas": true,
+  "marco_informacao_consolidada": 1
 }

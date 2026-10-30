@@ -206,7 +206,10 @@ def test_real_workbook_reproducibility(tmp_path):
         assert all(r.get('predecessora') is None and r.get('sucessora') is None
                    for r in tables['Matriz_Regras'] if r['natureza']=='evidencia_nao_interpretada')
         assert len(tables['Atividades'])==952
-        assert len(tables['Relacionamentos'])==639
+        assert len(tables['Relacionamentos'])==655
+        assert len([r for r in tables['Relacionamentos'] if r['origem'].startswith('REGRA-')])==16
+        assert any(r['contexto_imagem']=='fluxo_disciplina' and r['disciplina']=='PROCESSO MINERAL'
+                   for r in tables['Matriz_Regras'] if '!R227C2' in r.get('origem','') and 'FEL 4' in r.get('fase',''))
         assert abs(sum(a['hh_original'] for a in tables['Auditoria_HH'])-D('13442.25'))<D('0.000001')
         assert abs(sum(a['hh_planejada'] for a in tables['Auditoria_HH'])-D('15199.65'))<D('0.000001')
         assert any(p['origem']=='LD!790' and p['codigo']=='DADO_NAO_RESOLVIDO' for p in tables['Pendencias'])

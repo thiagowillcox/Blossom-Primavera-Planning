@@ -4,6 +4,10 @@ import math
 
 
 def validate_config(c):
+    if not isinstance(c.get('aplicar_regras_explicitas',True),bool):
+        raise ValueError('A aplicação de regras explícitas deve ser verdadeira ou falsa.')
+    if c.get('marco_informacao_consolidada') is not None and (type(c['marco_informacao_consolidada']) is not int or c['marco_informacao_consolidada'] not in (1,2,3,4)):
+        raise ValueError('O marco da informação consolidada deve ser uma etapa de 1 a 4 ou null.')
     def positive(value, zero=False):
         return isinstance(value, (int,float)) and not isinstance(value,bool) and math.isfinite(value) and (value>=0 if zero else value>0)
     if c.get('metodo_duracao', 'capacidade_funcoes') != 'capacidade_funcoes':

@@ -57,7 +57,7 @@ A duração calculável é `max(HH_funcao / (jornada × capacidade_funcao))`: fu
 2. `Atividades`: etapas, esforço e durações/dias relativos quando calculáveis.
 3. `Atribuicoes_Funcoes`: HH por atividade e função.
 4. `Relacionamentos`: encadeamento documental e vínculos obrigatórios aprovados.
-5. `Matriz_Regras`: inventário das figuras FEL e observações visuais preliminares.
+5. `Matriz_Regras`: 26 regras textuais revisadas, quatro observações visuais preliminares e 317 evidências de figuras; mostra aplicação e candidatos por LD.
 6. `Parametros`: configuração e hashes dos insumos.
 7. `Pendencias`: HH ausentes, durações, evidências em imagem e outras decisões necessárias. Pendências dos registros da LD carregam seu ID, dados originais e cache, inclusive quando não há HH calculáveis.
 8. `Auditoria_HH`: original, planejado, esperado e diferença por registro/função, com código, descrição, WBS, quantidade, unidade, A1 e dados originais/cache para rastreabilidade.
@@ -67,6 +67,8 @@ Também são gerados `resultado.json`, `matriz_regras.json`, `pendencias.json` e
 ## Manual e limites desta versão
 
 Leia [a inspeção dos arquivos](docs/inspecao.md). Os fluxogramas SIPOC e as orientações são majoritariamente figuras rasterizadas. O motor extrai e cataloga as figuras com hash e posição; isso não equivale a interpretar automaticamente suas setas.
+
+`config/regras_manual.json` contém 26 regras derivadas de trechos textuais verificáveis, separando obrigação, referência, condição e informação externa. Veja [a revisão das ligações](docs/revisao_relacionamentos.md). A premissa editável `marco_informacao_consolidada` começa em 1 (Emissão Inicial), conforme definição do usuário. Exigências explícitas de aprovação prevalecem.
 
 `config/observacoes_manual.json` contém quatro observações extraídas visualmente de dois fluxos da Engenharia Detalhada, separando informação externa, referência técnica e condição. O campo `natureza` separa `observacao_preliminar` de `evidencia_nao_interpretada`; nas evidências os campos de predecessora/sucessora ficam vazios. Essas observações só são aceitas para o hash exato do manual inspecionado. Nenhuma foi aprovada como dependência temporal obrigatória. As demais figuras ficam explicitamente `a_validar`. Não há tradução automática de fornecedor/entrada SIPOC para relação FS.
 
@@ -99,7 +101,7 @@ py -3.12 -m venv .venv
 .\.venv\Scripts\python.exe -m blossom
 ```
 
-O Excel atualizado já acompanha a pasta `output` no GitHub. As LDs comerciais de entrada não estão versionadas; o manual fixo está em `resources`. Não extraia uma nova entrega por cima de alterações locais sem preservá-las.
+Os arquivos de exemplo em `output` podem corresponder a versões anteriores. Gere novamente sua LD para obter a versão atual. As LDs comerciais de entrada não estão versionadas; o manual fixo está em `resources`. Não extraia uma nova entrega por cima de alterações locais sem preservá-las.
 
 ## Interface web Blossom
 
@@ -134,7 +136,7 @@ No site, a aba Atividades usa a mesma ordem hierárquica, com recuo visual e cla
 
 ## Novo visual e navegação do Blossom Planning
 
-- **Arquivos:** envie LD e manual pelos cartões rosados, sem renomear arquivos.
+- **Arquivos:** envie somente a LD pelo cartão rosado; o manual de referência já está configurado.
 - **Configuração:** informe projeto, jornada, capacidade e prazos; campos sem definição continuam vazios.
 - **Resultados:** veja primeiro o resumo, baixe o Excel e abra somente as tabelas desejadas. Tabelas grandes são paginadas com 100 linhas por página, preservando a sequência hierárquica.
 - O site abre diretamente no tema escuro; não há seletor de tema.

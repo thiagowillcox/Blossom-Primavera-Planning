@@ -1,0 +1,1104 @@
+{
+  "versao": "manual-rev02-revisao-textual-v2",
+  "regras": [
+    {
+      "id": "REGRA-44f1527aa6372a896e36",
+      "versao": "manual-rev02-revisao-textual-v2",
+      "manual_sha256": "cbd1da49a5afb5f33baac8b32cb377f38ffaf6ff2d3deab5db4181515d1671ac",
+      "fase": "2.3.1 Eng. Conceitual - FEL 2",
+      "aplica_fel": [
+        2,
+        3,
+        4
+      ],
+      "natureza": "regra_textual_revisada",
+      "classe": "obrigatoria",
+      "predecessora": "CRITÉRIOS DE PROJETO",
+      "sucessora": "DEMAIS DOCUMENTOS DA DISCIPLINA MECÂNICA",
+      "seletor_predecessora": {
+        "documentos": [
+          "CRITÉRIOS DE PROJETO",
+          "CRITÉRIO DE PROJETO"
+        ],
+        "disciplinas": [
+          "MECÂNICA"
+        ]
+      },
+      "seletor_sucessora": {
+        "disciplinas": [
+          "MECÂNICA"
+        ],
+        "outros_documentos": true
+      },
+      "origem": "2.3.1 Eng. Conceitual - FEL 2!B541",
+      "celula_fonte": "B541",
+      "evidencia": "Define todos os critérios e dados básicos necessários para desenvolvimento do projeto da disciplina de Mecânica em todas as fases do projeto de engenharia. Deve ser verificada a consistência com os demais critérios e premissas das disciplinas processo, tubulação, sistemas, estruturas metálicas e de concreto, arquitetura, infraestrutura, elétrica, automação industrial e telecomunicações. O Cliente deve comentar e aprovar esse documento antes da elaboração dos demais documentos da disciplina.",
+      "status": "interpretada_requer_mapeamento",
+      "automatica": true,
+      "condicao": "",
+      "etapa_predecessora": 4,
+      "etapa_sucessora": 1,
+      "justificativa_etapas": "O cliente deve comentar e aprovar antes da elaboração; aprovação final (4) antecede o início da emissão inicial/elaboração (1). O texto declara aplicação em todas as fases.",
+      "requer_validacao_mapeamento": false
+    },
+    {
+      "id": "REGRA-83fb6e6361226bce3887",
+      "versao": "manual-rev02-revisao-textual-v2",
+      "manual_sha256": "cbd1da49a5afb5f33baac8b32cb377f38ffaf6ff2d3deab5db4181515d1671ac",
+      "fase": "2.3.1 Eng. Conceitual - FEL 2",
+      "aplica_fel": [
+        2
+      ],
+      "natureza": "regra_textual_revisada",
+      "classe": "obrigatoria",
+      "predecessora": "DIMENSIONAMENTO DE EQUIPAMENTOS DE PROCESSO",
+      "sucessora": "ARRANJO MECÂNICO / MODELO BIM",
+      "seletor_predecessora": {
+        "documentos": [
+          "MEMÓRIA DE CÁLCULO - DIMENSIONAMENTO DE EQUIPAMENTOS DE PROCESSO"
+        ],
+        "disciplinas": [
+          "PROCESSO",
+          "PROCESSO MINERAL",
+          "PROCESSO HIDRÁULICO"
+        ]
+      },
+      "seletor_sucessora": {
+        "documentos": [
+          "ARRANJO MECÂNICO / MODELO BIM"
+        ],
+        "disciplinas": [
+          "MECÂNICA"
+        ]
+      },
+      "origem": "2.3.1 Eng. Conceitual - FEL 2!K594",
+      "celula_fonte": "K594",
+      "evidencia": "Deverá ser elaborado após o dimensionamento de equipamentos de processo e em conjunto com o dimensionamento de equipamentos mecânicos.",
+      "status": "interpretada_requer_mapeamento",
+      "automatica": false,
+      "condicao": "",
+      "etapa_predecessora": null,
+      "etapa_sucessora": 1,
+      "requer_validacao_mapeamento": false
+    },
+    {
+      "id": "REGRA-00bd70565dd067b844db",
+      "versao": "manual-rev02-revisao-textual-v2",
+      "manual_sha256": "cbd1da49a5afb5f33baac8b32cb377f38ffaf6ff2d3deab5db4181515d1671ac",
+      "fase": "2.3.1 Eng. Conceitual - FEL 2",
+      "aplica_fel": [
+        2
+      ],
+      "natureza": "regra_textual_revisada",
+      "classe": "referencia_tecnica",
+      "predecessora": "DIMENSIONAMENTO DE EQUIPAMENTOS MECÂNICOS",
+      "sucessora": "ARRANJO MECÂNICO / MODELO BIM",
+      "seletor_predecessora": {
+        "documentos": [
+          "MEMÓRIA DE CÁLCULO"
+        ],
+        "disciplinas": [
+          "MECÂNICA"
+        ]
+      },
+      "seletor_sucessora": {
+        "documentos": [
+          "ARRANJO MECÂNICO / MODELO BIM"
+        ],
+        "disciplinas": [
+          "MECÂNICA"
+        ]
+      },
+      "origem": "2.3.1 Eng. Conceitual - FEL 2!K594",
+      "celula_fonte": "K594",
+      "evidencia": "Deverá ser elaborado após o dimensionamento de equipamentos de processo e em conjunto com o dimensionamento de equipamentos mecânicos.",
+      "status": "interpretada_requer_mapeamento",
+      "automatica": false,
+      "condicao": "Em conjunto; não interpretar como FS.",
+      "etapa_predecessora": null,
+      "etapa_sucessora": null,
+      "requer_validacao_mapeamento": false
+    },
+    {
+      "id": "REGRA-3f214a2ff700c7483fe6",
+      "versao": "manual-rev02-revisao-textual-v2",
+      "manual_sha256": "cbd1da49a5afb5f33baac8b32cb377f38ffaf6ff2d3deab5db4181515d1671ac",
+      "fase": "2.3.2 Eng. Básica - FEL 3",
+      "aplica_fel": [
+        3
+      ],
+      "natureza": "regra_textual_revisada",
+      "classe": "obrigatoria",
+      "predecessora": "FLUXOGRAMA DE ENGENHARIA",
+      "sucessora": "LISTA DE EQUIPAMENTOS",
+      "seletor_predecessora": {
+        "documentos": [
+          "FLUXOGRAMAS DE ENGENHARIA",
+          "FLUXOGRAMA DE ENGENHARIA",
+          "FLUXOGRAMAS DE ENGENHARIA / FLUXOGRAMAS INTELIGENTES"
+        ],
+        "disciplinas": [
+          "PROCESSO",
+          "PROCESSO MINERAL",
+          "PROCESSO HIDRÁULICO"
+        ]
+      },
+      "seletor_sucessora": {
+        "documentos": [
+          "LISTA DE EQUIPAMENTOS"
+        ],
+        "disciplinas": [
+          "MECÂNICA"
+        ]
+      },
+      "origem": "2.3.2 Eng. Básica - FEL 3!K946",
+      "celula_fonte": "K946",
+      "evidencia": "Deverá ser elaborado após a emissão do fluxograma de engenharia, uma vez que a memória de cálculo já tenha sido finalizada. ",
+      "status": "interpretada_requer_mapeamento",
+      "automatica": false,
+      "condicao": "",
+      "etapa_predecessora": null,
+      "etapa_sucessora": 1,
+      "requer_validacao_mapeamento": false
+    },
+    {
+      "id": "REGRA-740b621d19f6d88595e5",
+      "versao": "manual-rev02-revisao-textual-v2",
+      "manual_sha256": "cbd1da49a5afb5f33baac8b32cb377f38ffaf6ff2d3deab5db4181515d1671ac",
+      "fase": "2.3.2 Eng. Básica - FEL 3",
+      "aplica_fel": [
+        3
+      ],
+      "natureza": "regra_textual_revisada",
+      "classe": "obrigatoria",
+      "predecessora": "MEMÓRIA DE CÁLCULO FINALIZADA",
+      "sucessora": "LISTA DE EQUIPAMENTOS",
+      "seletor_predecessora": {
+        "documentos": [
+          "MEMÓRIA DE CÁLCULO"
+        ],
+        "disciplinas": []
+      },
+      "seletor_sucessora": {
+        "documentos": [
+          "LISTA DE EQUIPAMENTOS"
+        ],
+        "disciplinas": [
+          "MECÂNICA"
+        ]
+      },
+      "origem": "2.3.2 Eng. Básica - FEL 3!K946",
+      "celula_fonte": "K946",
+      "evidencia": "Deverá ser elaborado após a emissão do fluxograma de engenharia, uma vez que a memória de cálculo já tenha sido finalizada. ",
+      "status": "interpretada_requer_mapeamento",
+      "automatica": false,
+      "condicao": "Confirmar a disciplina e o marco que representa memória finalizada.",
+      "etapa_predecessora": null,
+      "etapa_sucessora": 1,
+      "requer_validacao_mapeamento": true
+    },
+    {
+      "id": "REGRA-170af0da43ea4a37c24c",
+      "versao": "manual-rev02-revisao-textual-v2",
+      "manual_sha256": "cbd1da49a5afb5f33baac8b32cb377f38ffaf6ff2d3deab5db4181515d1671ac",
+      "fase": "2.3.2 Eng. Básica - FEL 3",
+      "aplica_fel": [
+        3
+      ],
+      "natureza": "regra_textual_revisada",
+      "classe": "obrigatoria",
+      "predecessora": "LISTA DE INSTRUMENTOS",
+      "sucessora": "LISTA DE ENTRADAS / SAÍDAS",
+      "seletor_predecessora": {
+        "documentos": [
+          "LISTA DE INSTRUMENTOS"
+        ],
+        "disciplinas": [
+          "AUTOMAÇÃO",
+          "AUTOMAÇÃO, INSTRUMENTAÇÃO E TELECOMUNICAÇÕES"
+        ],
+        "familias": [
+          "LISTA DE INSTRUMENTOS"
+        ]
+      },
+      "seletor_sucessora": {
+        "documentos": [
+          "LISTA DE ENTRADAS / SAÍDAS",
+          "RELAÇÃO DE ENTRADAS E SAÍDAS"
+        ],
+        "disciplinas": [
+          "AUTOMAÇÃO, INSTRUMENTAÇÃO E TELECOMUNICAÇÕES"
+        ]
+      },
+      "origem": "2.3.2 Eng. Básica - FEL 3!K3019",
+      "celula_fonte": "K3019",
+      "evidencia": "Este documento deverá ser desenvolvido após o levantamento da lista de instrumentos e da lista de equipamentos mecânicos e em paralelo com a arquitetura do sistema de automação e controle.",
+      "status": "interpretada_requer_mapeamento",
+      "automatica": false,
+      "condicao": "",
+      "etapa_predecessora": null,
+      "etapa_sucessora": 1,
+      "requer_validacao_mapeamento": false
+    },
+    {
+      "id": "REGRA-cfc65b1131974d5ea354",
+      "versao": "manual-rev02-revisao-textual-v2",
+      "manual_sha256": "cbd1da49a5afb5f33baac8b32cb377f38ffaf6ff2d3deab5db4181515d1671ac",
+      "fase": "2.3.2 Eng. Básica - FEL 3",
+      "aplica_fel": [
+        3
+      ],
+      "natureza": "regra_textual_revisada",
+      "classe": "obrigatoria",
+      "predecessora": "LISTA DE EQUIPAMENTOS MECÂNICOS",
+      "sucessora": "LISTA DE ENTRADAS / SAÍDAS",
+      "seletor_predecessora": {
+        "documentos": [
+          "LISTA DE EQUIPAMENTOS",
+          "LISTA DE EQIUPAMENTOS"
+        ],
+        "disciplinas": [
+          "MECÂNICA"
+        ],
+        "familias": [
+          "LISTA DE EQUIPAMENTOS",
+          "LISTA DE EQIUPAMENTOS"
+        ]
+      },
+      "seletor_sucessora": {
+        "documentos": [
+          "LISTA DE ENTRADAS / SAÍDAS",
+          "RELAÇÃO DE ENTRADAS E SAÍDAS"
+        ],
+        "disciplinas": [
+          "AUTOMAÇÃO, INSTRUMENTAÇÃO E TELECOMUNICAÇÕES"
+        ]
+      },
+      "origem": "2.3.2 Eng. Básica - FEL 3!K3019",
+      "celula_fonte": "K3019",
+      "evidencia": "Este documento deverá ser desenvolvido após o levantamento da lista de instrumentos e da lista de equipamentos mecânicos e em paralelo com a arquitetura do sistema de automação e controle.",
+      "status": "interpretada_requer_mapeamento",
+      "automatica": false,
+      "condicao": "",
+      "etapa_predecessora": null,
+      "etapa_sucessora": 1,
+      "requer_validacao_mapeamento": false
+    },
+    {
+      "id": "REGRA-f1fdcd03ad2a126a5ab6",
+      "versao": "manual-rev02-revisao-textual-v2",
+      "manual_sha256": "cbd1da49a5afb5f33baac8b32cb377f38ffaf6ff2d3deab5db4181515d1671ac",
+      "fase": "2.3.2 Eng. Básica - FEL 3",
+      "aplica_fel": [
+        3
+      ],
+      "natureza": "regra_textual_revisada",
+      "classe": "referencia_tecnica",
+      "predecessora": "ARQUITETURA DO SISTEMA DE AUTOMAÇÃO E CONTROLE",
+      "sucessora": "LISTA DE ENTRADAS / SAÍDAS",
+      "seletor_predecessora": {
+        "documentos": [
+          "ARQUITETURA DO SISTEMA DE AUTOMAÇÃO E CONTROLE",
+          "ARQUITETURA DO SISTEMA DE AUTOMAÇÃO"
+        ],
+        "disciplinas": [
+          "AUTOMAÇÃO",
+          "AUTOMAÇÃO, INSTRUMENTAÇÃO E TELECOMUNICAÇÕES"
+        ]
+      },
+      "seletor_sucessora": {
+        "documentos": [
+          "LISTA DE ENTRADAS / SAÍDAS",
+          "RELAÇÃO DE ENTRADAS E SAÍDAS"
+        ],
+        "disciplinas": [
+          "AUTOMAÇÃO, INSTRUMENTAÇÃO E TELECOMUNICAÇÕES"
+        ]
+      },
+      "origem": "2.3.2 Eng. Básica - FEL 3!K3019",
+      "celula_fonte": "K3019",
+      "evidencia": "Este documento deverá ser desenvolvido após o levantamento da lista de instrumentos e da lista de equipamentos mecânicos e em paralelo com a arquitetura do sistema de automação e controle.",
+      "status": "interpretada_requer_mapeamento",
+      "automatica": false,
+      "condicao": "Em paralelo; sem impor término para início.",
+      "etapa_predecessora": null,
+      "etapa_sucessora": null,
+      "requer_validacao_mapeamento": false
+    },
+    {
+      "id": "REGRA-16f676c0dee67cbc6e03",
+      "versao": "manual-rev02-revisao-textual-v2",
+      "manual_sha256": "cbd1da49a5afb5f33baac8b32cb377f38ffaf6ff2d3deab5db4181515d1671ac",
+      "fase": "2.3.2 Eng. Básica - FEL 3",
+      "aplica_fel": [
+        3
+      ],
+      "natureza": "regra_textual_revisada",
+      "classe": "obrigatoria",
+      "predecessora": "CRITÉRIOS DE PROJETO DE AUTOMAÇÃO INDUSTRIAL",
+      "sucessora": "LISTA DE INSTRUMENTOS",
+      "seletor_predecessora": {
+        "documentos": [
+          "CRITÉRIOS DE PROJETO",
+          "CRITÉRIO DE PROJETO",
+          "CRITÉRIOS DE PROJETO DE AUTOMAÇÃO INDUSTRIAL"
+        ],
+        "disciplinas": [
+          "AUTOMAÇÃO",
+          "AUTOMAÇÃO, INSTRUMENTAÇÃO E TELECOMUNICAÇÕES"
+        ],
+        "familias": [
+          "CRITÉRIOS DE PROJETO",
+          "CRITÉRIO DE PROJETO",
+          "CRITÉRIOS DE PROJETO DE AUTOMAÇÃO INDUSTRIAL"
+        ]
+      },
+      "seletor_sucessora": {
+        "documentos": [
+          "LISTA DE INSTRUMENTOS"
+        ],
+        "disciplinas": [
+          "AUTOMAÇÃO, INSTRUMENTAÇÃO E TELECOMUNICAÇÕES"
+        ]
+      },
+      "origem": "2.3.2 Eng. Básica - FEL 3!K3046",
+      "celula_fonte": "K3046",
+      "evidencia": "Este documento deverá ser desenvolvido após a consolidação dos critérios de projeto de automação industrial e em paralelo à elaboração dos fluxogramas de engenharia.",
+      "status": "interpretada_requer_mapeamento",
+      "automatica": false,
+      "condicao": "",
+      "etapa_predecessora": null,
+      "etapa_sucessora": 1,
+      "requer_validacao_mapeamento": false
+    },
+    {
+      "id": "REGRA-f68ced0cb354c7182361",
+      "versao": "manual-rev02-revisao-textual-v2",
+      "manual_sha256": "cbd1da49a5afb5f33baac8b32cb377f38ffaf6ff2d3deab5db4181515d1671ac",
+      "fase": "2.3.2 Eng. Básica - FEL 3",
+      "aplica_fel": [
+        3
+      ],
+      "natureza": "regra_textual_revisada",
+      "classe": "referencia_tecnica",
+      "predecessora": "FLUXOGRAMAS DE ENGENHARIA",
+      "sucessora": "LISTA DE INSTRUMENTOS",
+      "seletor_predecessora": {
+        "documentos": [
+          "FLUXOGRAMAS DE ENGENHARIA",
+          "FLUXOGRAMA DE ENGENHARIA"
+        ],
+        "disciplinas": [
+          "PROCESSO",
+          "PROCESSO MINERAL",
+          "PROCESSO HIDRÁULICO"
+        ]
+      },
+      "seletor_sucessora": {
+        "documentos": [
+          "LISTA DE INSTRUMENTOS"
+        ],
+        "disciplinas": [
+          "AUTOMAÇÃO, INSTRUMENTAÇÃO E TELECOMUNICAÇÕES"
+        ]
+      },
+      "origem": "2.3.2 Eng. Básica - FEL 3!K3046",
+      "celula_fonte": "K3046",
+      "evidencia": "Este documento deverá ser desenvolvido após a consolidação dos critérios de projeto de automação industrial e em paralelo à elaboração dos fluxogramas de engenharia.",
+      "status": "interpretada_requer_mapeamento",
+      "automatica": false,
+      "condicao": "Em paralelo; não criar FS nem ciclo.",
+      "etapa_predecessora": null,
+      "etapa_sucessora": null,
+      "requer_validacao_mapeamento": false
+    },
+    {
+      "id": "REGRA-dbdf27bd67bb25a19103",
+      "versao": "manual-rev02-revisao-textual-v2",
+      "manual_sha256": "cbd1da49a5afb5f33baac8b32cb377f38ffaf6ff2d3deab5db4181515d1671ac",
+      "fase": "2.3.2 Eng. Básica - FEL 3",
+      "aplica_fel": [
+        3
+      ],
+      "natureza": "regra_textual_revisada",
+      "classe": "obrigatoria",
+      "predecessora": "CRITÉRIOS DE PROJETO DE AUTOMAÇÃO INDUSTRIAL",
+      "sucessora": "MEMORIAL DESCRITIVO DO PROJETO",
+      "seletor_predecessora": {
+        "documentos": [
+          "CRITÉRIOS DE PROJETO",
+          "CRITÉRIO DE PROJETO",
+          "CRITÉRIOS DE PROJETO DE AUTOMAÇÃO INDUSTRIAL"
+        ],
+        "disciplinas": [
+          "AUTOMAÇÃO",
+          "AUTOMAÇÃO, INSTRUMENTAÇÃO E TELECOMUNICAÇÕES"
+        ],
+        "familias": [
+          "CRITÉRIOS DE PROJETO",
+          "CRITÉRIO DE PROJETO",
+          "CRITÉRIOS DE PROJETO DE AUTOMAÇÃO INDUSTRIAL"
+        ]
+      },
+      "seletor_sucessora": {
+        "documentos": [
+          "MEMORIAL DESCRITIVO DO PROJETO"
+        ],
+        "disciplinas": [
+          "AUTOMAÇÃO, INSTRUMENTAÇÃO E TELECOMUNICAÇÕES"
+        ],
+        "familias": [
+          "MEMORIAL DESCRITIVO"
+        ]
+      },
+      "origem": "2.3.2 Eng. Básica - FEL 3!K3235",
+      "celula_fonte": "K3235",
+      "evidencia": "Deverá ser elaborado após a definição dos critérios de projeto de automação industrial específico, dos critérios de projeto de automação e instrumentação específico, e dos fluxogramas de processo PFD’s.",
+      "status": "interpretada_requer_mapeamento",
+      "automatica": false,
+      "condicao": "",
+      "etapa_predecessora": null,
+      "etapa_sucessora": 1,
+      "requer_validacao_mapeamento": false
+    },
+    {
+      "id": "REGRA-f1778dbca73a18455145",
+      "versao": "manual-rev02-revisao-textual-v2",
+      "manual_sha256": "cbd1da49a5afb5f33baac8b32cb377f38ffaf6ff2d3deab5db4181515d1671ac",
+      "fase": "2.3.2 Eng. Básica - FEL 3",
+      "aplica_fel": [
+        3
+      ],
+      "natureza": "regra_textual_revisada",
+      "classe": "obrigatoria",
+      "predecessora": "CRITÉRIOS DE PROJETO DE AUTOMAÇÃO E INSTRUMENTAÇÃO",
+      "sucessora": "MEMORIAL DESCRITIVO DO PROJETO",
+      "seletor_predecessora": {
+        "documentos": [
+          "CRITÉRIOS DE PROJETO DE AUTOMAÇÃO E INSTRUMENTAÇÃO"
+        ],
+        "disciplinas": [
+          "AUTOMAÇÃO",
+          "AUTOMAÇÃO, INSTRUMENTAÇÃO E TELECOMUNICAÇÕES"
+        ],
+        "familias": [
+          "CRITÉRIOS DE PROJETO DE AUTOMAÇÃO E INSTRUMENTAÇÃO"
+        ]
+      },
+      "seletor_sucessora": {
+        "documentos": [
+          "MEMORIAL DESCRITIVO DO PROJETO"
+        ],
+        "disciplinas": [
+          "AUTOMAÇÃO, INSTRUMENTAÇÃO E TELECOMUNICAÇÕES"
+        ],
+        "familias": [
+          "MEMORIAL DESCRITIVO"
+        ]
+      },
+      "origem": "2.3.2 Eng. Básica - FEL 3!K3235",
+      "celula_fonte": "K3235",
+      "evidencia": "Deverá ser elaborado após a definição dos critérios de projeto de automação industrial específico, dos critérios de projeto de automação e instrumentação específico, e dos fluxogramas de processo PFD’s.",
+      "status": "interpretada_requer_mapeamento",
+      "automatica": false,
+      "condicao": "",
+      "etapa_predecessora": null,
+      "etapa_sucessora": 1,
+      "requer_validacao_mapeamento": false
+    },
+    {
+      "id": "REGRA-fbe1d94f80091399ae4e",
+      "versao": "manual-rev02-revisao-textual-v2",
+      "manual_sha256": "cbd1da49a5afb5f33baac8b32cb377f38ffaf6ff2d3deab5db4181515d1671ac",
+      "fase": "2.3.2 Eng. Básica - FEL 3",
+      "aplica_fel": [
+        3
+      ],
+      "natureza": "regra_textual_revisada",
+      "classe": "obrigatoria",
+      "predecessora": "FLUXOGRAMAS DE PROCESSO PFD",
+      "sucessora": "MEMORIAL DESCRITIVO DO PROJETO",
+      "seletor_predecessora": {
+        "documentos": [
+          "FLUXOGRAMA DE PROCESSO - BALANÇO DE MASSA, ÁGUA E ENERGIA",
+          "FLUXOGRAMAS DE PROCESSO COM BALANÇO DE MASSAS E ENERGIA"
+        ],
+        "disciplinas": [
+          "PROCESSO",
+          "PROCESSO MINERAL",
+          "PROCESSO HIDRÁULICO"
+        ]
+      },
+      "seletor_sucessora": {
+        "documentos": [
+          "MEMORIAL DESCRITIVO DO PROJETO"
+        ],
+        "disciplinas": [
+          "AUTOMAÇÃO, INSTRUMENTAÇÃO E TELECOMUNICAÇÕES"
+        ],
+        "familias": [
+          "MEMORIAL DESCRITIVO"
+        ]
+      },
+      "origem": "2.3.2 Eng. Básica - FEL 3!K3235",
+      "celula_fonte": "K3235",
+      "evidencia": "Deverá ser elaborado após a definição dos critérios de projeto de automação industrial específico, dos critérios de projeto de automação e instrumentação específico, e dos fluxogramas de processo PFD’s.",
+      "status": "interpretada_requer_mapeamento",
+      "automatica": false,
+      "condicao": "",
+      "etapa_predecessora": null,
+      "etapa_sucessora": 1,
+      "requer_validacao_mapeamento": false
+    },
+    {
+      "id": "REGRA-d999ca4038321c167bda",
+      "versao": "manual-rev02-revisao-textual-v2",
+      "manual_sha256": "cbd1da49a5afb5f33baac8b32cb377f38ffaf6ff2d3deab5db4181515d1671ac",
+      "fase": "2.3.3 Eng. Detalhada - FEL 4",
+      "aplica_fel": [
+        4
+      ],
+      "natureza": "regra_textual_revisada",
+      "classe": "condicional",
+      "predecessora": "ARRANJOS GERAIS MECÂNICOS",
+      "sucessora": "MEMÓRIA DE CÁLCULO",
+      "seletor_predecessora": {
+        "documentos": [
+          "ARRANJO GERAL",
+          "ARRANJO MECÂNICO / MODELO BIM",
+          "ARRANJO GERAL / MODELO BIM"
+        ],
+        "disciplinas": [
+          "MECÂNICA"
+        ]
+      },
+      "seletor_sucessora": {
+        "documentos": [
+          "MEMÓRIA DE CÁLCULO"
+        ],
+        "disciplinas": [
+          "CONCRETO"
+        ],
+        "familias": [
+          "MEMÓRIA DE CÁLCULO"
+        ]
+      },
+      "origem": "2.3.3 Eng. Detalhada - FEL 4!L2012",
+      "celula_fonte": "L2012",
+      "evidencia": "Este documento deverá ser elaborado após a consolidação dos arranjos gerais mecânica, do plano de bases de estruturas metálicas e do recebimento dos DFs de equipamentos com planos de cargas, quando aplicáveis.",
+      "status": "interpretada_requer_mapeamento",
+      "automatica": false,
+      "condicao": "O texto diz \"quando aplicáveis\"; confirmar a aplicabilidade e o marco de consolidação de cada entrada.",
+      "etapa_predecessora": null,
+      "etapa_sucessora": null,
+      "requer_validacao_mapeamento": false
+    },
+    {
+      "id": "REGRA-63b61ff45c9d1dd989d6",
+      "versao": "manual-rev02-revisao-textual-v2",
+      "manual_sha256": "cbd1da49a5afb5f33baac8b32cb377f38ffaf6ff2d3deab5db4181515d1671ac",
+      "fase": "2.3.3 Eng. Detalhada - FEL 4",
+      "aplica_fel": [
+        4
+      ],
+      "natureza": "regra_textual_revisada",
+      "classe": "condicional",
+      "predecessora": "PLANO DE BASES DE ESTRUTURAS METÁLICAS",
+      "sucessora": "MEMÓRIA DE CÁLCULO",
+      "seletor_predecessora": {
+        "documentos": [
+          "PLANO DE BASES E QUADRO DE CARGAS"
+        ],
+        "disciplinas": [
+          "ESTRUTURA METÁLICA",
+          "CIVIL ESTRUTURA METÁLICA"
+        ]
+      },
+      "seletor_sucessora": {
+        "documentos": [
+          "MEMÓRIA DE CÁLCULO"
+        ],
+        "disciplinas": [
+          "CONCRETO"
+        ],
+        "familias": [
+          "MEMÓRIA DE CÁLCULO"
+        ]
+      },
+      "origem": "2.3.3 Eng. Detalhada - FEL 4!L2012",
+      "celula_fonte": "L2012",
+      "evidencia": "Este documento deverá ser elaborado após a consolidação dos arranjos gerais mecânica, do plano de bases de estruturas metálicas e do recebimento dos DFs de equipamentos com planos de cargas, quando aplicáveis.",
+      "status": "interpretada_requer_mapeamento",
+      "automatica": false,
+      "condicao": "O texto diz \"quando aplicáveis\"; confirmar a aplicabilidade e o marco de consolidação de cada entrada.",
+      "etapa_predecessora": null,
+      "etapa_sucessora": null,
+      "requer_validacao_mapeamento": false
+    },
+    {
+      "id": "REGRA-d480f6dd027b8e38cd31",
+      "versao": "manual-rev02-revisao-textual-v2",
+      "manual_sha256": "cbd1da49a5afb5f33baac8b32cb377f38ffaf6ff2d3deab5db4181515d1671ac",
+      "fase": "2.3.3 Eng. Detalhada - FEL 4",
+      "aplica_fel": [
+        4
+      ],
+      "natureza": "regra_textual_revisada",
+      "classe": "informacao_externa",
+      "predecessora": "DFs DE EQUIPAMENTOS COM PLANOS DE CARGAS",
+      "sucessora": "MEMÓRIA DE CÁLCULO",
+      "seletor_predecessora": {
+        "documentos": [],
+        "disciplinas": []
+      },
+      "seletor_sucessora": {
+        "documentos": [
+          "MEMÓRIA DE CÁLCULO"
+        ],
+        "disciplinas": [
+          "CONCRETO"
+        ],
+        "familias": [
+          "MEMÓRIA DE CÁLCULO"
+        ]
+      },
+      "origem": "2.3.3 Eng. Detalhada - FEL 4!L2012",
+      "celula_fonte": "L2012",
+      "evidencia": "Este documento deverá ser elaborado após a consolidação dos arranjos gerais mecânica, do plano de bases de estruturas metálicas e do recebimento dos DFs de equipamentos com planos de cargas, quando aplicáveis.",
+      "status": "interpretada_requer_mapeamento",
+      "automatica": false,
+      "condicao": "Documento de fornecedor; confirmar necessidade e recebimento, sem criar atividade com HH inventadas.",
+      "etapa_predecessora": null,
+      "etapa_sucessora": null,
+      "requer_validacao_mapeamento": false
+    },
+    {
+      "id": "REGRA-8c590d8fbdc3800cf1d4",
+      "versao": "manual-rev02-revisao-textual-v2",
+      "manual_sha256": "cbd1da49a5afb5f33baac8b32cb377f38ffaf6ff2d3deab5db4181515d1671ac",
+      "fase": "2.3.3 Eng. Detalhada - FEL 4",
+      "aplica_fel": [
+        4
+      ],
+      "natureza": "regra_textual_revisada",
+      "classe": "referencia_tecnica",
+      "predecessora": "DIAGRAMAS UNIFILARES",
+      "sucessora": "DIAGRAMA DE INTERLIGAÇÃO",
+      "seletor_predecessora": {
+        "documentos": [
+          "DIAGRAMA UNIFILAR",
+          "DIAGRAMAS UNIFILARES (REVISÃO COM DFS)"
+        ],
+        "disciplinas": [
+          "ELÉTRICA"
+        ]
+      },
+      "seletor_sucessora": {
+        "documentos": [
+          "DIAGRAMA DE INTERLIGAÇÃO"
+        ],
+        "disciplinas": [
+          "AUTOMAÇÃO, INSTRUMENTAÇÃO E TELECOMUNICAÇÕES"
+        ]
+      },
+      "origem": "2.3.3 Eng. Detalhada - FEL 4!K2817",
+      "celula_fonte": "K2817",
+      "evidencia": "Este documento deverá ser elaborado com base nos unifilares, P&IDs e após a consolidação da lista de instrumentos e relações de entradas e saídas.",
+      "status": "interpretada_requer_mapeamento",
+      "automatica": false,
+      "condicao": "O texto diz \"com base\"; não especifica marco temporal para esta entrada.",
+      "etapa_predecessora": null,
+      "etapa_sucessora": null,
+      "requer_validacao_mapeamento": false
+    },
+    {
+      "id": "REGRA-2026bf3fe48fde7e89e4",
+      "versao": "manual-rev02-revisao-textual-v2",
+      "manual_sha256": "cbd1da49a5afb5f33baac8b32cb377f38ffaf6ff2d3deab5db4181515d1671ac",
+      "fase": "2.3.3 Eng. Detalhada - FEL 4",
+      "aplica_fel": [
+        4
+      ],
+      "natureza": "regra_textual_revisada",
+      "classe": "referencia_tecnica",
+      "predecessora": "P&IDs",
+      "sucessora": "DIAGRAMA DE INTERLIGAÇÃO",
+      "seletor_predecessora": {
+        "documentos": [
+          "FLUXOGRAMA DE ENGENHARIA",
+          "FLUXOGRAMAS DE ENGENHARIA / FLUXOGRAMAS INTELIGENTES"
+        ],
+        "disciplinas": [
+          "PROCESSO",
+          "PROCESSO MINERAL",
+          "PROCESSO HIDRÁULICO"
+        ]
+      },
+      "seletor_sucessora": {
+        "documentos": [
+          "DIAGRAMA DE INTERLIGAÇÃO"
+        ],
+        "disciplinas": [
+          "AUTOMAÇÃO, INSTRUMENTAÇÃO E TELECOMUNICAÇÕES"
+        ]
+      },
+      "origem": "2.3.3 Eng. Detalhada - FEL 4!K2817",
+      "celula_fonte": "K2817",
+      "evidencia": "Este documento deverá ser elaborado com base nos unifilares, P&IDs e após a consolidação da lista de instrumentos e relações de entradas e saídas.",
+      "status": "interpretada_requer_mapeamento",
+      "automatica": false,
+      "condicao": "O texto diz \"com base\"; não especifica marco temporal para esta entrada.",
+      "etapa_predecessora": null,
+      "etapa_sucessora": null,
+      "requer_validacao_mapeamento": false
+    },
+    {
+      "id": "REGRA-32543fddbab834e2f400",
+      "versao": "manual-rev02-revisao-textual-v2",
+      "manual_sha256": "cbd1da49a5afb5f33baac8b32cb377f38ffaf6ff2d3deab5db4181515d1671ac",
+      "fase": "2.3.3 Eng. Detalhada - FEL 4",
+      "aplica_fel": [
+        4
+      ],
+      "natureza": "regra_textual_revisada",
+      "classe": "obrigatoria",
+      "predecessora": "LISTA DE INSTRUMENTOS",
+      "sucessora": "DIAGRAMA DE INTERLIGAÇÃO",
+      "seletor_predecessora": {
+        "documentos": [
+          "LISTA DE INSTRUMENTOS"
+        ],
+        "disciplinas": [
+          "AUTOMAÇÃO",
+          "AUTOMAÇÃO, INSTRUMENTAÇÃO E TELECOMUNICAÇÕES"
+        ],
+        "familias": [
+          "LISTA DE INSTRUMENTOS"
+        ]
+      },
+      "seletor_sucessora": {
+        "documentos": [
+          "DIAGRAMA DE INTERLIGAÇÃO"
+        ],
+        "disciplinas": [
+          "AUTOMAÇÃO, INSTRUMENTAÇÃO E TELECOMUNICAÇÕES"
+        ]
+      },
+      "origem": "2.3.3 Eng. Detalhada - FEL 4!K2817",
+      "celula_fonte": "K2817",
+      "evidencia": "Este documento deverá ser elaborado com base nos unifilares, P&IDs e após a consolidação da lista de instrumentos e relações de entradas e saídas.",
+      "status": "interpretada_requer_mapeamento",
+      "automatica": false,
+      "condicao": "",
+      "etapa_predecessora": null,
+      "etapa_sucessora": 1,
+      "requer_validacao_mapeamento": false
+    },
+    {
+      "id": "REGRA-d52523d870155f9e3007",
+      "versao": "manual-rev02-revisao-textual-v2",
+      "manual_sha256": "cbd1da49a5afb5f33baac8b32cb377f38ffaf6ff2d3deab5db4181515d1671ac",
+      "fase": "2.3.3 Eng. Detalhada - FEL 4",
+      "aplica_fel": [
+        4
+      ],
+      "natureza": "regra_textual_revisada",
+      "classe": "obrigatoria",
+      "predecessora": "RELAÇÕES DE ENTRADAS E SAÍDAS",
+      "sucessora": "DIAGRAMA DE INTERLIGAÇÃO",
+      "seletor_predecessora": {
+        "documentos": [
+          "LISTA DE ENTRADAS / SAÍDAS",
+          "LISTA DE ENTRADAS E SAÍDAS",
+          "LISTA DE PONTOS I/O",
+          "RELAÇÃO DE ENTRADAS E SAÍDAS"
+        ],
+        "disciplinas": [
+          "AUTOMAÇÃO",
+          "AUTOMAÇÃO, INSTRUMENTAÇÃO E TELECOMUNICAÇÕES"
+        ],
+        "familias": [
+          "LISTA DE ENTRADAS / SAÍDAS",
+          "LISTA DE ENTRADAS E SAÍDAS",
+          "LISTA DE PONTOS I/O",
+          "RELAÇÃO DE ENTRADAS E SAÍDAS"
+        ]
+      },
+      "seletor_sucessora": {
+        "documentos": [
+          "DIAGRAMA DE INTERLIGAÇÃO"
+        ],
+        "disciplinas": [
+          "AUTOMAÇÃO, INSTRUMENTAÇÃO E TELECOMUNICAÇÕES"
+        ]
+      },
+      "origem": "2.3.3 Eng. Detalhada - FEL 4!K2817",
+      "celula_fonte": "K2817",
+      "evidencia": "Este documento deverá ser elaborado com base nos unifilares, P&IDs e após a consolidação da lista de instrumentos e relações de entradas e saídas.",
+      "status": "interpretada_requer_mapeamento",
+      "automatica": false,
+      "condicao": "",
+      "etapa_predecessora": null,
+      "etapa_sucessora": 1,
+      "requer_validacao_mapeamento": false
+    },
+    {
+      "id": "REGRA-2e6dece5f8ff8c11886e",
+      "versao": "manual-rev02-revisao-textual-v2",
+      "manual_sha256": "cbd1da49a5afb5f33baac8b32cb377f38ffaf6ff2d3deab5db4181515d1671ac",
+      "fase": "2.3.3 Eng. Detalhada - FEL 4",
+      "aplica_fel": [
+        4
+      ],
+      "natureza": "regra_textual_revisada",
+      "classe": "informacao_externa",
+      "predecessora": "DOCUMENTAÇÃO DE FORNECEDOR DOS EQUIPAMENTOS E INSTRUMENTOS",
+      "sucessora": "DETALHES TÍPICOS DE MONTAGEM",
+      "seletor_predecessora": {
+        "documentos": [],
+        "disciplinas": []
+      },
+      "seletor_sucessora": {
+        "documentos": [
+          "DETALHES TÍPICOS DE MONTAGEM",
+          "DETALHES TÍPICOS DE INSTALAÇÃO"
+        ],
+        "disciplinas": [
+          "AUTOMAÇÃO, INSTRUMENTAÇÃO E TELECOMUNICAÇÕES"
+        ]
+      },
+      "origem": "2.3.3 Eng. Detalhada - FEL 4!K2871",
+      "celula_fonte": "K2871",
+      "evidencia": "Deverá ser elaborado após o recebimento da documentação de fornecedor (df) dos equipamentos e instrumentos.",
+      "status": "interpretada_requer_mapeamento",
+      "automatica": false,
+      "condicao": "Recebimento é requisito explícito; marco externo precisa ser informado, não inferido.",
+      "etapa_predecessora": null,
+      "etapa_sucessora": null,
+      "requer_validacao_mapeamento": false
+    },
+    {
+      "id": "REGRA-5238f4e9d03f5ceb1ff2",
+      "versao": "manual-rev02-revisao-textual-v2",
+      "manual_sha256": "cbd1da49a5afb5f33baac8b32cb377f38ffaf6ff2d3deab5db4181515d1671ac",
+      "fase": "2.3.3 Eng. Detalhada - FEL 4",
+      "aplica_fel": [
+        4
+      ],
+      "natureza": "regra_textual_revisada",
+      "classe": "obrigatoria",
+      "predecessora": "ARRANJO GERAL DE EQUIPAMENTOS — MECÂNICA",
+      "sucessora": "PLANTA DE LOCAÇÃO DE INSTRUMENTOS / EQUIPAMENTOS",
+      "seletor_predecessora": {
+        "documentos": [
+          "ARRANJO GERAL",
+          "ARRANJO GERAL DE EQUIPAMENTOS",
+          "ARRANJO MECÂNICO / MODELO BIM",
+          "ARRANJO GERAL / MODELO BIM"
+        ],
+        "disciplinas": [
+          "MECÂNICA"
+        ]
+      },
+      "seletor_sucessora": {
+        "documentos": [
+          "PLANTA DE LOCAÇÃO DE INSTRUMENTOS / EQUIPAMENTOS"
+        ],
+        "disciplinas": [
+          "AUTOMAÇÃO, INSTRUMENTAÇÃO E TELECOMUNICAÇÕES"
+        ],
+        "familias": [
+          "PLANTA DE LOCAÇÃO DE EQUIPAMENTOS INSTRUMENTOS E PAINÉIS DE CAMPO",
+          "PLANTA DE LOCAÇÃO DE INSTRUMENTOS",
+          "LOCAÇÃO DE INSTRUMENTOS"
+        ]
+      },
+      "origem": "2.3.3 Eng. Detalhada - FEL 4!K2898",
+      "celula_fonte": "K2898",
+      "evidencia": "Deverá ser elaborado após a consolidação do arranjo geral de equipamentos (tubulação, mecânica e elétrica), recebimento de documentos de fornecedor e fluxograma de engenharia.",
+      "status": "interpretada_requer_mapeamento",
+      "automatica": false,
+      "condicao": "",
+      "etapa_predecessora": null,
+      "etapa_sucessora": 1,
+      "requer_validacao_mapeamento": false
+    },
+    {
+      "id": "REGRA-a10568c1407f0fc0d643",
+      "versao": "manual-rev02-revisao-textual-v2",
+      "manual_sha256": "cbd1da49a5afb5f33baac8b32cb377f38ffaf6ff2d3deab5db4181515d1671ac",
+      "fase": "2.3.3 Eng. Detalhada - FEL 4",
+      "aplica_fel": [
+        4
+      ],
+      "natureza": "regra_textual_revisada",
+      "classe": "obrigatoria",
+      "predecessora": "ARRANJO GERAL DE EQUIPAMENTOS — TUBULAÇÃO",
+      "sucessora": "PLANTA DE LOCAÇÃO DE INSTRUMENTOS / EQUIPAMENTOS",
+      "seletor_predecessora": {
+        "documentos": [
+          "ARRANJO GERAL",
+          "ARRANJO GERAL DE EQUIPAMENTOS",
+          "ARRANJO MECÂNICO / MODELO BIM",
+          "ARRANJO GERAL / MODELO BIM"
+        ],
+        "disciplinas": [
+          "TUBULAÇÃO"
+        ]
+      },
+      "seletor_sucessora": {
+        "documentos": [
+          "PLANTA DE LOCAÇÃO DE INSTRUMENTOS / EQUIPAMENTOS"
+        ],
+        "disciplinas": [
+          "AUTOMAÇÃO, INSTRUMENTAÇÃO E TELECOMUNICAÇÕES"
+        ],
+        "familias": [
+          "PLANTA DE LOCAÇÃO DE EQUIPAMENTOS INSTRUMENTOS E PAINÉIS DE CAMPO",
+          "PLANTA DE LOCAÇÃO DE INSTRUMENTOS",
+          "LOCAÇÃO DE INSTRUMENTOS"
+        ]
+      },
+      "origem": "2.3.3 Eng. Detalhada - FEL 4!K2898",
+      "celula_fonte": "K2898",
+      "evidencia": "Deverá ser elaborado após a consolidação do arranjo geral de equipamentos (tubulação, mecânica e elétrica), recebimento de documentos de fornecedor e fluxograma de engenharia.",
+      "status": "interpretada_requer_mapeamento",
+      "automatica": false,
+      "condicao": "",
+      "etapa_predecessora": null,
+      "etapa_sucessora": 1,
+      "requer_validacao_mapeamento": false
+    },
+    {
+      "id": "REGRA-f3a75233839c35e3634b",
+      "versao": "manual-rev02-revisao-textual-v2",
+      "manual_sha256": "cbd1da49a5afb5f33baac8b32cb377f38ffaf6ff2d3deab5db4181515d1671ac",
+      "fase": "2.3.3 Eng. Detalhada - FEL 4",
+      "aplica_fel": [
+        4
+      ],
+      "natureza": "regra_textual_revisada",
+      "classe": "obrigatoria",
+      "predecessora": "ARRANJO GERAL DE EQUIPAMENTOS — ELÉTRICA",
+      "sucessora": "PLANTA DE LOCAÇÃO DE INSTRUMENTOS / EQUIPAMENTOS",
+      "seletor_predecessora": {
+        "documentos": [
+          "ARRANJO GERAL",
+          "ARRANJO GERAL DE EQUIPAMENTOS",
+          "ARRANJO MECÂNICO / MODELO BIM",
+          "ARRANJO GERAL / MODELO BIM"
+        ],
+        "disciplinas": [
+          "ELÉTRICA"
+        ]
+      },
+      "seletor_sucessora": {
+        "documentos": [
+          "PLANTA DE LOCAÇÃO DE INSTRUMENTOS / EQUIPAMENTOS"
+        ],
+        "disciplinas": [
+          "AUTOMAÇÃO, INSTRUMENTAÇÃO E TELECOMUNICAÇÕES"
+        ],
+        "familias": [
+          "PLANTA DE LOCAÇÃO DE EQUIPAMENTOS INSTRUMENTOS E PAINÉIS DE CAMPO",
+          "PLANTA DE LOCAÇÃO DE INSTRUMENTOS",
+          "LOCAÇÃO DE INSTRUMENTOS"
+        ]
+      },
+      "origem": "2.3.3 Eng. Detalhada - FEL 4!K2898",
+      "celula_fonte": "K2898",
+      "evidencia": "Deverá ser elaborado após a consolidação do arranjo geral de equipamentos (tubulação, mecânica e elétrica), recebimento de documentos de fornecedor e fluxograma de engenharia.",
+      "status": "interpretada_requer_mapeamento",
+      "automatica": false,
+      "condicao": "",
+      "etapa_predecessora": null,
+      "etapa_sucessora": 1,
+      "requer_validacao_mapeamento": false
+    },
+    {
+      "id": "REGRA-099be503b7a23d500fe0",
+      "versao": "manual-rev02-revisao-textual-v2",
+      "manual_sha256": "cbd1da49a5afb5f33baac8b32cb377f38ffaf6ff2d3deab5db4181515d1671ac",
+      "fase": "2.3.3 Eng. Detalhada - FEL 4",
+      "aplica_fel": [
+        4
+      ],
+      "natureza": "regra_textual_revisada",
+      "classe": "informacao_externa",
+      "predecessora": "DOCUMENTOS DE FORNECEDOR",
+      "sucessora": "PLANTA DE LOCAÇÃO DE INSTRUMENTOS / EQUIPAMENTOS",
+      "seletor_predecessora": {
+        "documentos": [],
+        "disciplinas": []
+      },
+      "seletor_sucessora": {
+        "documentos": [
+          "PLANTA DE LOCAÇÃO DE INSTRUMENTOS / EQUIPAMENTOS"
+        ],
+        "disciplinas": [
+          "AUTOMAÇÃO, INSTRUMENTAÇÃO E TELECOMUNICAÇÕES"
+        ],
+        "familias": [
+          "PLANTA DE LOCAÇÃO DE EQUIPAMENTOS INSTRUMENTOS E PAINÉIS DE CAMPO",
+          "PLANTA DE LOCAÇÃO DE INSTRUMENTOS",
+          "LOCAÇÃO DE INSTRUMENTOS"
+        ]
+      },
+      "origem": "2.3.3 Eng. Detalhada - FEL 4!K2898",
+      "celula_fonte": "K2898",
+      "evidencia": "Deverá ser elaborado após a consolidação do arranjo geral de equipamentos (tubulação, mecânica e elétrica), recebimento de documentos de fornecedor e fluxograma de engenharia.",
+      "status": "interpretada_requer_mapeamento",
+      "automatica": false,
+      "condicao": "Informação externa sem atividade automaticamente criada.",
+      "etapa_predecessora": null,
+      "etapa_sucessora": null,
+      "requer_validacao_mapeamento": false
+    },
+    {
+      "id": "REGRA-ca2f8944ab250270a28e",
+      "versao": "manual-rev02-revisao-textual-v2",
+      "manual_sha256": "cbd1da49a5afb5f33baac8b32cb377f38ffaf6ff2d3deab5db4181515d1671ac",
+      "fase": "2.3.3 Eng. Detalhada - FEL 4",
+      "aplica_fel": [
+        4
+      ],
+      "natureza": "regra_textual_revisada",
+      "classe": "obrigatoria",
+      "predecessora": "FLUXOGRAMA DE ENGENHARIA",
+      "sucessora": "PLANTA DE LOCAÇÃO DE INSTRUMENTOS / EQUIPAMENTOS",
+      "seletor_predecessora": {
+        "documentos": [
+          "FLUXOGRAMA DE ENGENHARIA",
+          "FLUXOGRAMAS DE ENGENHARIA / FLUXOGRAMAS INTELIGENTES"
+        ],
+        "disciplinas": [
+          "PROCESSO",
+          "PROCESSO MINERAL",
+          "PROCESSO HIDRÁULICO"
+        ]
+      },
+      "seletor_sucessora": {
+        "documentos": [
+          "PLANTA DE LOCAÇÃO DE INSTRUMENTOS / EQUIPAMENTOS"
+        ],
+        "disciplinas": [
+          "AUTOMAÇÃO, INSTRUMENTAÇÃO E TELECOMUNICAÇÕES"
+        ],
+        "familias": [
+          "PLANTA DE LOCAÇÃO DE EQUIPAMENTOS INSTRUMENTOS E PAINÉIS DE CAMPO",
+          "PLANTA DE LOCAÇÃO DE INSTRUMENTOS",
+          "LOCAÇÃO DE INSTRUMENTOS"
+        ]
+      },
+      "origem": "2.3.3 Eng. Detalhada - FEL 4!K2898",
+      "celula_fonte": "K2898",
+      "evidencia": "Deverá ser elaborado após a consolidação do arranjo geral de equipamentos (tubulação, mecânica e elétrica), recebimento de documentos de fornecedor e fluxograma de engenharia.",
+      "status": "interpretada_requer_mapeamento",
+      "automatica": false,
+      "condicao": "",
+      "etapa_predecessora": null,
+      "etapa_sucessora": 1,
+      "requer_validacao_mapeamento": false
+    }
+  ]
+}

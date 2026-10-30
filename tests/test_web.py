@@ -16,7 +16,8 @@ def test_app_starts_and_requires_uploads():
     assert len(app.toggle)==0
     app.radio[0].set_value('Configuração').run()
     assert not app.exception
-    assert len(app.selectbox)==0
+    assert len(app.selectbox)==1
+    assert app.selectbox[0].value==1
     assert app.number_input[0].value == 8.0
     assert app.number_input[1].value is None
     assert app.number_input[2].value is None
@@ -50,13 +51,13 @@ def test_web_real_uploads():
     assert next(r['valor'] for r in tables['Parametros'] if r['parametro']=='manual_sha256')==MANUAL_SHA256
 
     app = AppTest.from_file(str(ROOT/'app.py'))
-    app.session_state['workflow_version'] = 'ld-fixed-manual-v3'
+    app.session_state['workflow_version'] = 'ld-relacoes-v4'
     app.session_state['result'] = (tables, files)
     app.session_state['navigation'] = 'Resultados'
     app.run(timeout=30)
     assert not app.exception
 
-    assert len(app.expander) == 5
+    assert len(app.expander) == 7
     assert len(app.metric) == 4
     assert not app.exception
     assert len(app.metric) == 4
@@ -86,7 +87,7 @@ def test_upgrade_removes_legacy_reference_settings():
     assert app.number_input[1].value is None
     assert app.number_input[2].value is None
     assert len(app.toggle)==0
-    assert len(app.selectbox)==0
+    assert len(app.selectbox)==1
     assert 'reference_result' not in app.session_state
 
 

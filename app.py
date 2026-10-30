@@ -15,7 +15,7 @@ ss=st.session_state
 if 'settings' not in ss:
     ss.settings={'project':'','daily':8.0,'comments':None,'approval':None,
                  **{'cap_'+role:None for role in ROLES}}
-if ss.get('workflow_version') != 'ld-fixed-manual-v3':
+if ss.get('workflow_version') != 'ld-relacoes-v4':
     previous_profile=ss.settings.pop('profile',None)
     if previous_profile and previous_profile!='Capacidade por função':
         ss.settings={'project':'','daily':8.0,'comments':None,'approval':None,
@@ -24,7 +24,7 @@ if ss.get('workflow_version') != 'ld-fixed-manual-v3':
             if key.startswith('field_'):ss.pop(key,None)
     for legacy in ('result','result_key','reference_result','reference_file','manual_file','upload_manual','field_profile','field_project','field_daily','field_comments','field_approval'):
         ss.pop(legacy,None)
-    ss.workflow_version='ld-fixed-manual-v3'
+    ss.workflow_version='ld-relacoes-v4'
 if '_go' in ss:
     ss.navigation=ss.pop('_go')
 
@@ -60,9 +60,13 @@ with st.sidebar:
     st.caption('Processamento local · sem envio ao Oracle')
 
 settings=ss.settings
+settings.setdefault('manual_rules',True)
+settings.setdefault('manual_stage',1)
 config=json.loads((ROOT/'config/parametros.json').read_text(encoding='utf-8'))
 config.update(projeto=settings['project'].strip() or 'Projeto não identificado',
               jornada_hh_dia=settings['daily'],
+              aplicar_regras_explicitas=settings['manual_rules'],
+              marco_informacao_consolidada=settings['manual_stage'],
               capacidade_profissionais={role:settings['cap_'+role] for role in ROLES if settings['cap_'+role] is not None},
               duracao_cliente_dias={'2':settings['comments'],'4':settings['approval']})
 ld_hash=hashlib.sha256(ss.ld_file[1]).hexdigest() if ss.get('ld_file') else None
@@ -128,6 +132,14 @@ elif page=='Configuração':
                 st.number_input(role,min_value=0.01,value=settings[name],step=0.5,
                                 key='field_'+name,on_change=save_setting,args=(name,))
     st.markdown('<div class="notice"><strong>Distribuição por documento</strong><br>80% emissão inicial · 10% comentários · 20% atendimento · 10% aprovação.<br>Atividades auxiliares preservam 100% das HH originais.</div>',unsafe_allow_html=True)
+    st.checkbox('Aplicar dependências explícitas do manual',value=settings['manual_rules'],
+                key='field_manual_rules',on_change=save_setting,args=('manual_rules',))
+    st.caption('Somente regras com documentos e etapas definidos. Referências técnicas, condições e entradas externas continuam para revisão; não geram vínculos automaticamente.')
+    stages={None:'Deixar para revisão por ligação',1:'1 — Emissão Inicial',2:'2 — Comentários do Cliente',3:'3 — Atendimento de Comentários',4:'4 — Aprovação Final'}
+    st.selectbox('Quando a informação consolidada fica disponível?',options=list(stages),
+                 index=list(stages).index(settings['manual_stage']),format_func=lambda value:stages[value],
+                 key='field_manual_stage',on_change=save_setting,args=('manual_stage',))
+    st.caption('Premissa do projeto para regras obrigatórias com correspondência exata e única. Exigências explícitas de aprovação do cliente prevalecem. Documentos de fornecedor sem data continuam pendentes.')
     decisions_ready=True
     if ss.get('ld_file'):
         try:
@@ -198,7 +210,9 @@ else:
         st.download_button('↓ Baixar pré-cronograma Excel',files['pre_cronograma.xlsx'],'pre_cronograma.xlsx',
                            'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',type='primary')
         sections=[('Estrutura WBS','WBS',[('codigo','Código'),('nome','Nome'),('origem','Origem')]),
-                  ('Atividades e etapas','Atividades',[('nome','Nome'),('tipo_linha','Tipo'),('codigo_wbs','WBS'),('hh','HH'),('duracao_dias','Duração (dias)')]),
+                  ('Atividades e etapas','Atividades',[('nome','Nome'),('tipo_linha','Tipo'),('codigo_wbs','WBS'),('hh','HH'),('duracao_dias','Duração (dias)'),('prerequisitos_tecnicos_pendentes','Entradas técnicas a validar')]),
+                  ('Ligações entre atividades','Relacionamentos',[('predecessora_nome','Predecessora'),('sucessora_nome','Sucessora'),('tipo','Tipo'),('origem','Regra / origem')]),
+                  ('Regras do manual e sua aplicação','Matriz_Regras',[('predecessora','Entrada / predecessora'),('sucessora','Documento / sucessora'),('classe','Classe'),('status_mapeamento','Aplicação nesta LD'),('predecessoras_identificadas','Predecessoras na LD'),('sucessoras_identificadas','Sucessoras na LD'),('quantidade_ligacoes_aplicadas','Ligações aplicadas'),('origem','Fonte'),('evidencia','Trecho / evidência')]),
                   ('Pendências para revisão','Pendencias',[('codigo','Categoria'),('origem','Origem'),('descricao','Descrição')]),
                   ('Auditoria de horas','Auditoria_HH',[('nome','Documento / auxiliar'),('funcao','Função'),('hh_original','HH originais da função'),('hh_planejada','HH planejadas'),('diferenca','Diferença do planejamento'),('hh_total_ld','Total do registro na LD'),('hh_total_lido','Total do registro lido'),('diferenca_total_ld','Diferença com a LD'),('conferencia_total_ld','Conferência LD')])]
         for title,name,columns in sections:
@@ -206,6 +220,7 @@ else:
                 rows=activity_hierarchy(tables) if name=='Atividades' else tables[name]
                 if name=='Auditoria_HH':st.caption('Os totais do documento aparecem em cada função. Não some esses totais entre as linhas; o relatório de conferência traz uma linha por registro da LD.')
                 if name=='Atividades':st.caption('Fase → disciplina → documento → etapas. O Excel inclui grupos recolhíveis.')
+                if name=='Matriz_Regras':st.caption('As regras textuais revisadas aparecem primeiro. As figuras catalogadas nas páginas seguintes ainda precisam de interpretação; uma entrada SIPOC não é automaticamente uma predecessora FS.')
                 table(rows,columns,name)
         with st.expander('Relatórios complementares'):
             if 'conferencia_ld.json' in files:

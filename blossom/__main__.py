@@ -11,6 +11,7 @@ from .validation import validate_config, validate_result
 from .export import save
 from .source_audit import reconcile_ld
 from .fixed_manual import FIXED_MANUAL
+from .manual_rules import map_manual_rules, confirm_applied_rules, mark_pending_inputs, RULES_PATH
 
 
 def run(ld, manual, config_path, output, reviewed=None):
@@ -19,13 +20,16 @@ def run(ld, manual, config_path, output, reviewed=None):
     records,wbs,issues=read_ld(ld,config.get('identidades'),config.get('ajustes_wbs'))
     rules,manual_issues=extract_manual(manual,output/'manual_figuras',reviewed)
     activities,assignments,audit,hour_issues=distribute(records,config)
-    links=build_links(activities,config,rules)
+    rules,automatic_links,rule_issues=map_manual_rules(rules,records,wbs,activities,config)
+    links=build_links(activities,config,rules,automatic_links)
+    rule_issues=confirm_applied_rules(rules,links,activities,rule_issues,config)
+    mark_pending_inputs(rules,links,activities)
     estimate(activities,links)
-    issues+=manual_issues+hour_issues
+    issues+=manual_issues+hour_issues+rule_issues
     issues.append(issue('IDENTIFICACAO_PROJETO','LD', 'Confirmar a identificação do projeto configurada para esta LD.'))
     issues.append(issue('SEM_NIVELAMENTO','motor','Não há nivelamento global de recursos nem calendário/data-base.'))
     params=[{'parametro':k,'valor':v} for k,v in config.items()]
-    metadata={'ld_sha256':digest(ld),'manual_sha256':digest(manual),'config_sha256':digest(config_path),'versao_motor':'0.4.0'}
+    metadata={'ld_sha256':digest(ld),'manual_sha256':digest(manual),'config_sha256':digest(config_path),'versao_motor':'0.5.0','regras_revisadas_sha256':digest(RULES_PATH)}
     if reviewed:metadata['observacoes_sha256']=digest(reviewed)
     params += [{'parametro':k,'valor':v} for k,v in metadata.items()]
     # WBS contains hierarchy only. Traceability belongs with effort and

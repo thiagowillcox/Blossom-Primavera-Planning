@@ -11,7 +11,7 @@ def estimate(activities, links):
     for aid in topology(activities, links):
         a=by_id[aid]
         predecessors=incoming[aid]
-        if any(by_id[r['predecessora']]['fim_dia'] is None for r in predecessors):
+        if a.get('prerequisitos_tecnicos_pendentes') or any(by_id[r['predecessora']]['fim_dia'] is None for r in predecessors):
             start=None
         else:
             start=max((by_id[r['predecessora']]['fim_dia']+Decimal(str(r['defasagem_dias'])) for r in predecessors),default=Decimal(0))
