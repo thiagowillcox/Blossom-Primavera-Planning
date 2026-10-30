@@ -1,1 +1,1 @@
-"""Namespace reservado à futura integração Oracle. Sem rede ou escrita nesta fase."""
+"""Teste local da API Oracle; envio de cronogramas ainda não implementado."""

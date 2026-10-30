@@ -1,6 +1,6 @@
 # Blossom Primavera Planning
 
-Versão preliminar de um motor Python de pré-cronogramas de engenharia a partir da LD comercial e do Manual de Engenharia. Primeira versão independente de Oracle Primavera Cloud e BMS; não faz chamadas de rede nem escreve na API Oracle.
+Versão preliminar de um motor Python de pré-cronogramas de engenharia a partir da LD comercial e do Manual de Engenharia. O motor de planejamento é independente de Oracle Primavera Cloud e BMS e não escreve na API Oracle. Há um teste local de autenticação e conexão, separado do gerador: [Testar Primavera](docs/teste_primavera.md).
 
 Para hospedar em servidor próprio, fora do Streamlit Community Cloud, consulte
 [Hospedagem própria](docs/hospedagem_propria.md). Inclui Docker, HTTPS e uma
@@ -84,7 +84,7 @@ A equipe deve revisar as figuras, completar a matriz, mapear documentos do manua
 - `relationships.py` e `schedule.py`: vínculos aprovados e estimativa relativa.
 - `validation.py`: parâmetros, integridade, IDs e ciclos.
 - `export.py`: Excel/JSON determinísticos.
-- `oracle/`: namespace reservado, sem implementação de integração.
+- `oracle/`: teste local de autenticação e conexão, sem envio de cronogramas.
 
 Os testes cobrem distribuição por função/etapa, auxiliares, paralelismo, prazos do cliente, IDs, vínculos inválidos/cíclicos, registros vazios, parâmetros inválidos e reprodução dos resultados dos arquivos reais. O teste de integração fica explicitamente `skipped` se os arquivos comerciais não estiverem disponíveis; uma execução sem esse teste não comprova validação da LD real.
 
