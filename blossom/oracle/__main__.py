@@ -16,10 +16,11 @@ def main():
     group.add_argument('--listar-projetos',action='store_true')
     group.add_argument('--preparar-envio',action='store_true')
     group.add_argument('--enviar-rascunho',action='store_true')
+    group.add_argument('--retomar-rascunho',action='store_true')
     args=parser.parse_args()
-    if args.enviar_rascunho:
+    if args.enviar_rascunho or args.retomar_rascunho:
         from .draft_cli import send_draft
-        return send_draft()
+        return send_draft(resume=args.retomar_rascunho)
     if args.preparar_envio:
         from .preview import prepare_preview
         print('Prévia local do envio — nenhuma chamada ao Oracle será realizada.')

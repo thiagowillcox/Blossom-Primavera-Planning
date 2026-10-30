@@ -24,6 +24,14 @@ def text(value, limit):
     return value
 
 
+def field_equal(key, actual, expected):
+    # Oracle trims ASCII spaces at name boundaries. Preserve accents, case,
+    # punctuation and internal whitespace, and never normalize IDs/codes.
+    if key in ('wbsName','activityName') and isinstance(actual,str) and isinstance(expected,str):
+        return actual.strip(' ')==expected.strip(' ')
+    return actual==expected
+
+
 def build_draft(workbook_path, selection_path, preview_path):
     """Revalidate workbook and bind to the exact offline preview already reviewed."""
     old=json.loads(Path(preview_path).read_text(encoding='utf-8'))
@@ -112,12 +120,12 @@ class DraftSession(ReadSession):
         for w in plan['wbs']:
             row=actual_groups[journal['wbs'][w['local_id']]]
             parent=journal['wbs'][w['local_parent']] if w['local_parent'] else root_id
-            if row.get('parentId')!=parent or any(row.get(k)!=v for k,v in w['payload'].items() if k!='description'):
+            if row.get('parentId')!=parent or any(not field_equal(k,row.get(k),v) for k,v in w['payload'].items() if k!='description'):
                 raise ConnectionFailure('Hierarquia ou nomes das WBS diferem na leitura de conferência.')
         actual_activities={a['activityId']:a for a in activities}
         for a in plan['activities']:
             row=actual_activities[journal['atividades'][a['local_id']]]
-            if row.get('wbsId')!=journal['wbs'][a['local_wbs']] or any(row.get(k)!=v for k,v in a['payload'].items()):
+            if row.get('wbsId')!=journal['wbs'][a['local_wbs']] or any(not field_equal(k,row.get(k),v) for k,v in a['payload'].items()):
                 raise ConnectionFailure('Uma atividade difere na leitura de conferência.')
         expected={(journal['atividades'][r['predecessor']],journal['atividades'][r['successor']]):r['payload'] for r in plan['relationships']}
         for row in relations:
@@ -129,6 +137,9 @@ class DraftSession(ReadSession):
         if route not in ('wbs','activity/batch','relationship/batch'):
             raise ConnectionFailure('Operação de escrita não permitida por este iniciador.')
         if not self._token:raise ConnectionFailure('Sessão encerrada.')
+        # Only request names are trimmed; the source workbook and plan remain intact.
+        def clean(row):return {k:(v.strip(' ') if k in ('wbsName','activityName') and isinstance(v,str) else v) for k,v in row.items()}
+        payload=[clean(row) for row in payload] if isinstance(payload,list) else clean(payload)
         request=urllib.request.Request(SERVER+'/api/restapi/'+route,method='POST',
             data=json.dumps(payload,ensure_ascii=False,allow_nan=False).encode('utf-8'),
             headers={'Authorization':'Bearer '+self._token,'Accept':'application/json','Content-Type':'application/json'})
@@ -143,16 +154,25 @@ def durable_write(path, data, *, exclusive=False):
         stream.write(payload);stream.flush();os.fsync(stream.fileno())
 
 
-def upload_draft(session, plan, root_id, journal_path, progress=print):
+def upload_draft(session, plan, root_id, journal_path, progress=print, *, resume=False):
     """Caller must display the plan and obtain explicit confirmation before calling."""
     path=Path(journal_path);path.parent.mkdir(parents=True,exist_ok=True)
-    if path.exists():
-        raise ConnectionFailure('Já existe um registro de envio para esse projeto. Não repita nem apague o registro: precisamos conferir o Oracle antes de continuar.')
-    journal={'servidor':SERVER,'projectId':plan['projeto']['projectId'],'origem':plan['origem'],
-        'plan_sha256':hashlib.sha256(json.dumps(plan,sort_keys=True,ensure_ascii=False).encode()).hexdigest(),
-        'estado':'em_andamento','wbs':{},'atividades':{},'relacionamentos':[], 'solicitacao_pendente':None,
-        'aviso':'Rascunho sem HH atribuídas e sem prazos validados. Não agendar automaticamente.'}
-    durable_write(path,journal,exclusive=True)
+    if resume:
+        inspected_root,journal=reconcile_wbs(session,plan,path)
+        if inspected_root!=root_id:raise ConnectionFailure('A raiz mudou antes da continuação.')
+        before=json.loads(path.read_text(encoding='utf-8'))
+        backup=path.with_name(path.stem+'.backup_'+hashlib.sha256(json.dumps(before,sort_keys=True).encode()).hexdigest()[:16]+'.json')
+        if not backup.exists():durable_write(backup,before,exclusive=True)
+        journal['estado']='em_andamento';journal['solicitacao_pendente']=None
+        durable_write(path,journal)
+    else:
+        if path.exists():
+            raise ConnectionFailure('Já existe um registro de envio para esse projeto. Não repita nem apague o registro: precisamos conferir o Oracle antes de continuar.')
+        journal={'servidor':SERVER,'projectId':plan['projeto']['projectId'],'origem':plan['origem'],
+            'plan_sha256':hashlib.sha256(json.dumps(plan,sort_keys=True,ensure_ascii=False).encode()).hexdigest(),
+            'estado':'em_andamento','wbs':{},'atividades':{},'relacionamentos':[], 'solicitacao_pendente':None,
+            'aviso':'Rascunho sem HH atribuídas e sem prazos validados. Não agendar automaticamente.'}
+        durable_write(path,journal,exclusive=True)
     def request(route,payload,keys):
         journal['solicitacao_pendente']={'rota':route,'chaves':keys}
         durable_write(path,journal)
@@ -162,9 +182,11 @@ def upload_draft(session, plan, root_id, journal_path, progress=print):
         journal['solicitacao_pendente']=None;durable_write(path,journal)
     try:
         for i,w in enumerate(plan['wbs'],1):
+            if w['local_id'] in journal['wbs']:
+                progress(f"Grupo já conferido, preservado: {i}/{len(plan['wbs'])}");continue
             payload=dict(w['payload'],parentId=journal['wbs'][w['local_parent']] if w['local_parent'] else positive_id(root_id))
             result=request('wbs',payload,[w['local_id']])
-            if not isinstance(result,dict) or any(result.get(k)!=payload[k] for k in ('projectId','wbsCode','wbsName','parentId')):
+            if not isinstance(result,dict) or any(not field_equal(k,result.get(k),payload[k]) for k in ('projectId','wbsCode','wbsName','parentId')):
                 raise ConnectionFailure('Resposta da WBS diferente do esperado.')
             identifier=positive_id(result.get('wbsId'))
             if identifier in journal['wbs'].values():raise ConnectionFailure('ID de WBS repetido na resposta.')
@@ -179,7 +201,7 @@ def upload_draft(session, plan, root_id, journal_path, progress=print):
             for item in result:
                 if not isinstance(item,dict):raise ConnectionFailure('Resposta de atividade não reconhecida.')
                 key=item.get('activityCode');p=expected.get(key)
-                if not p or key in seen or any(item.get(k)!=p[k] for k in ('projectId','wbsId','activityName')):
+                if not p or key in seen or any(not field_equal(k,item.get(k),p[k]) for k in ('projectId','wbsId','activityName')):
                     raise ConnectionFailure('Lote de atividades não corresponde à solicitação.')
                 identifier=positive_id(item.get('activityId'))
                 if identifier in journal['atividades'].values():raise ConnectionFailure('ID de atividade repetido na resposta.')
@@ -209,3 +231,60 @@ def upload_draft(session, plan, root_id, journal_path, progress=print):
         journal['estado']='interrompido_conferir_oracle_antes_de_repetir'
         durable_write(path,journal)
         raise
+
+
+def reconcile_wbs(session, plan, journal_path):
+    """Read-only reconciliation of a WBS-only prefix plus one uncertain created WBS.
+
+    Never resume an activity batch or adopt unrelated entities by name alone.
+    """
+    journal=json.loads(Path(journal_path).read_text(encoding='utf-8'))
+    digest=hashlib.sha256(json.dumps(plan,sort_keys=True,ensure_ascii=False).encode()).hexdigest()
+    pid=plan['projeto']['projectId']
+    if (plan.get('servidor')!=SERVER or journal.get('servidor')!=SERVER or journal.get('projectId')!=pid
+        or journal.get('plan_sha256')!=digest or not str(journal.get('estado','')).startswith('interrompido')
+        or journal.get('atividades') or journal.get('relacionamentos')):
+        raise ConnectionFailure('Esse registro não permite continuação automática de WBS. Preserve os arquivos para conferência.')
+    project=plan['projeto']
+    if not str(project.get('projectName','')).strip().upper().startswith('TESTE'):
+        raise ConnectionFailure('A continuação exige projeto de teste.')
+    actual=session._read_json('project/'+str(positive_id(pid)))
+    if not isinstance(actual,dict) or any(actual.get(k)!=project.get(k) for k in ('projectId','projectName','projectCode','workspaceId') if project.get(k) is not None):
+        raise ConnectionFailure('O destino da continuação difere do plano.')
+    text(actual.get('projectCode'),60);text(actual.get('workspaceCode'),60)
+    activities=session._read_json('activity/project/'+str(pid))
+    if not isinstance(activities,list) or activities:
+        raise ConnectionFailure('Já há atividades no projeto. A continuação de WBS foi bloqueada.')
+    groups=session._read_json('wbs/project/'+str(pid))
+    if not isinstance(groups,list) or any(not isinstance(w,dict) or w.get('projectId')!=pid for w in groups):
+        raise ConnectionFailure('Consulta de WBS não reconhecida.')
+    roots=[w for w in groups if w.get('parentId') in (None,0)]
+    if len(roots)!=1:raise ConnectionFailure('Raiz do projeto não reconhecida.')
+    root=positive_id(roots[0].get('wbsId'))
+    recorded=journal.get('wbs',{})
+    if not isinstance(recorded,dict):raise ConnectionFailure('Registro de WBS inválido.')
+    rows=plan['wbs'];count=len(recorded)
+    if count>=len(rows) or set(recorded)!={w['local_id'] for w in rows[:count]}:
+        raise ConnectionFailure('O registro não corresponde à sequência original de WBS.')
+    pending=journal.get('solicitacao_pendente') or {}
+    if pending.get('rota')!='wbs' or pending.get('chaves')!=[rows[count]['local_id']]:
+        raise ConnectionFailure('A solicitação interrompida não é a próxima WBS da sequência.')
+    used={root};mapping={}
+    for index,w in enumerate(rows[:count+1]):
+        parent=mapping[w['local_parent']] if w['local_parent'] else root
+        payload=dict(w['payload'],parentId=parent)
+        if index<count:
+            identifier=positive_id(recorded[w['local_id']])
+            candidates=[g for g in groups if g.get('wbsId')==identifier]
+        else:
+            candidates=[g for g in groups if g.get('wbsCode')==payload['wbsCode'] and g.get('parentId')==parent]
+        if len(candidates)!=1 or any(not field_equal(k,candidates[0].get(k),payload[k]) for k in ('projectId','wbsCode','wbsName','parentId')):
+            raise ConnectionFailure('Uma WBS existente difere do plano ou não foi encontrada de forma única. Nada será repetido.')
+        identifier=positive_id(candidates[0].get('wbsId'))
+        if identifier in used:raise ConnectionFailure('ID de WBS duplicado na conferência.')
+        used.add(identifier);mapping[w['local_id']]=identifier
+    if len(groups)!=len(used) or {g.get('wbsId') for g in groups}!=used:
+        raise ConnectionFailure('Existem outras WBS ou a consulta está incompleta. Continuação bloqueada.')
+    journal['wbs']=mapping
+    session._project=actual
+    return root,journal

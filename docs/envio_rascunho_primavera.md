@@ -105,3 +105,30 @@ repositório público. Não inclui credenciais ou respostas completas da API.
 O plano precisa ter o mesmo hash registrado no envio para autorizar a consulta.
 A ferramenta não retoma nem repete gravações. A causa da divergência depende
 desse relatório; não deve ser presumida apenas pela mensagem de erro.
+
+## Continuar após o Oracle remover espaços no fim de um nome
+
+A criação real revelou que o Oracle remove espaços ASCII no começo/fim dos
+nomes. A comparação de `wbsName` e `activityName` agora aceita apenas essa
+normalização. Códigos, IDs, hierarquia, acentos, caixa e espaços internos continuam
+sendo conferidos. Os nomes das solicitações são aparados, sem alterar o Excel,
+o plano original ou seu hash.
+
+`Retomar_Envio_Primavera.bat` permite uma continuação restrita à fase de WBS:
+
+- O mesmo Excel, seleção e plano originais precisam coincidir com o hash
+  registrado antes da interrupção.
+- Nenhuma atividade ou ligação pode ter sido registrada/criada.
+- Os grupos confirmados precisam formar o início exato da sequência do plano.
+- A solicitação pendente precisa ser a próxima WBS e essa WBS precisa existir
+  uma única vez no Oracle, com código, nome e pai corretos.
+- A consulta precisa conter somente a raiz, os grupos confirmados e esse grupo
+  pendente. Qualquer grupo extra ou diferença real bloqueia a continuação.
+
+A ferramenta consulta o projeto antes da confirmação e novamente antes de
+continuar. Ela mostra quantos grupos serão preservados e quantos faltam.
+Somente após `ENVIAR <ID>` salva uma cópia do registro anterior como
+`output/envio_rascunho_<ID>.backup_<hash>.json`, registra o ID do grupo reconciliado
+e cria o restante, sem repetir os grupos existentes. O plano original é preservado.
+Não há exclusões ou atualizações de grupos. Interrupções em lotes de atividades
+ou ligações continuam bloqueadas para conferência separada.
