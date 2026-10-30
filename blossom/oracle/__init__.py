@@ -1,1 +1,1 @@
-"""Teste local da API Oracle; envio de cronogramas ainda não implementado."""
+"""Autenticação, consultas locais e prévia offline; sem envio de cronogramas."""

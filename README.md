@@ -1,5 +1,8 @@
 # Blossom Primavera Planning
 
+Para localizar um projeto Oracle e revisar um Excel antes da implementação do
+envio, veja [Consulta de projetos e prévia local](docs/consulta_primavera.md).
+
 Versão preliminar de um motor Python de pré-cronogramas de engenharia a partir da LD comercial e do Manual de Engenharia. O motor de planejamento é independente de Oracle Primavera Cloud e BMS e não escreve na API Oracle. Há um teste local de autenticação e conexão, separado do gerador: [Testar Primavera](docs/teste_primavera.md).
 
 Para hospedar em servidor próprio, fora do Streamlit Community Cloud, consulte
