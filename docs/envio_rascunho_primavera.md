@@ -87,3 +87,21 @@ Validação local: 139 testes passaram na suíte completa; o módulo de envio
 passou em 13 cenários após acrescentar a confirmação positiva no console.
 As quatro saídas comerciais disponíveis também foram processadas em simulação
 de criação e conferência, sem chamadas à conta real e sem publicar essas saídas.
+
+## Diagnosticar uma interrupção na criação de WBS
+
+Se aparecer `Resposta da WBS diferente do esperado`, preserve o registro e o
+plano locais. A solicitação pode ter criado a WBS antes da divergência.
+Atualize os arquivos do programa preservando `output` e abra
+`Diagnosticar_Envio_Primavera.bat`. O diagnóstico usa somente autenticação e GET
+para consultar o projeto, suas WBS e atividades. Ele não chama os endpoints de
+criação, atualização ou exclusão.
+
+O relatório `output/diagnostico_rascunho_primavera.json` compara os campos
+esperados com os encontrados no Oracle, incluindo o grupo da solicitação
+interrompida. O relatório também contém os nomes/IDs das WBS desse projeto de
+teste: compartilhe-o apenas com quem está tratando a integração, não em um
+repositório público. Não inclui credenciais ou respostas completas da API.
+O plano precisa ter o mesmo hash registrado no envio para autorizar a consulta.
+A ferramenta não retoma nem repete gravações. A causa da divergência depende
+desse relatório; não deve ser presumida apenas pela mensagem de erro.
