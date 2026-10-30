@@ -1,7 +1,9 @@
 # Consulta local e prévia — integração Oracle
 
 A autenticação e o endpoint `util/testConnection` foram confirmados pelo usuário
-no Oracle Primavera Cloud. A gravação de cronogramas ainda não está implementada.
+no Oracle Primavera Cloud. A consulta de projetos também foi confirmada pelo
+usuário. O envio completo de cronogramas continua pendente; há um iniciador
+separado para [rascunhos estruturais](envio_rascunho_primavera.md), sem HH e prazos.
 
 ## 1. Consultar o destino
 
@@ -16,7 +18,7 @@ all Projects by Name**, fornecida pelo usuário em 30/10/2026:
 https://docs.oracle.com/en/industries/construction-engineering/primavera-cloud/opcap/api-project.html
 A tentativa anterior de `GET /api/restapi/project` retornou HTTP 405 no ambiente
 real e foi substituída. Não há tentativa de escrita nem criação como alternativa.
-O formato da resposta e a consulta corrigida ainda precisam de validação real.
+O usuário executou a consulta corrigida com sucesso e selecionou o destino.
 A consulta mostra somente os resultados recebidos; não afirma que todas
 as páginas ou todos os projetos foram lidos.
 
@@ -45,23 +47,21 @@ conta durações/entradas técnicas pendentes e registra o resumo em
 `output/previa_envio_primavera.json`.
 
 O JSON é uma prévia interna, **não é um payload válido da API Oracle**.
-`pronto_para_envio` e `envio_implementado` permanecem falsos. Mesmo que todas
-as durações estejam preenchidas, ainda é necessário confirmar os endpoints,
-os campos, as unidades, o calendário/data-base e o mapeamento de funções para
-recursos/papéis do Oracle antes de implementar a escrita.
+`pronto_para_envio` e `envio_implementado` permanecem falsos para o envio
+completo com HH, recursos e prazos. O campo `envio_estrutural_disponivel` informa
+que existe um iniciador separado de rascunho. Sua execução exige uma nova
+conferência do destino e confirmação explícita do resumo exibido.
+
+## 3. Criar o rascunho estrutural
+
+Veja [Enviar uma estrutura de teste ao Oracle](envio_rascunho_primavera.md).
+Essa operação pode criar dados reais no projeto vazio selecionado; a prévia e a
+consulta, isoladamente, continuam sem gravar entidades no Oracle.
 
 ## Situação da validação
 
-Testes automatizados usam respostas simuladas; a autenticação/teste de conexão
-real foram executados pelo usuário. A consulta de projetos ainda precisa ser
-executada no ambiente real, e os iniciadores Windows precisam ser conferidos
-no computador do usuário. Nenhum projeto, WBS, atividade, recurso ou
-relacionamento é criado ou alterado por essas ferramentas.
-
-A documentação oficial completa da API (especialmente projetos, WBS,
-atividades, atribuições e relacionamentos) é necessária para a próxima etapa.
-
-Validação do código após corrigir a consulta por nome: 127 testes passaram. A prévia offline também foi executada
-nas quatro saídas comerciais disponíveis, usando um destino simulado e sem
-nenhuma chamada de rede. Isso não valida o endpoint de projetos no tenant real
-nem os campos de uma futura solicitação de criação no Oracle.
+O usuário executou autenticação, consulta por nome, seleção e prévia offline.
+O contrato de criação foi conferido no OpenAPI oficial fornecido pelo usuário.
+Os testes de escrita são simulados; ainda não houve criação real confirmada.
+O motor de planejamento e as regras da LD/manual não foram alterados por essa
+integração. As atribuições de recursos/HH e os prazos permanecem para outra etapa.

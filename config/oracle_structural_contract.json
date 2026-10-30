@@ -1,0 +1,620 @@
+{
+  "source": "Oracle Primavera Cloud REST API openapi.json fornecido pelo usuário",
+  "source_sha256": "27d1ea55a6e16b554533ca8ae1713500e230d8290fb9260dd7e8e0c3cb8584ca",
+  "info": {
+    "title": "Oracle Primavera Cloud REST API",
+    "version": "2026.10.02",
+    "description": "The Oracle Primavera Cloud REST API provides a flexible interface to Oracle Primavera Cloud functionality.",
+    "x-summary": "The Oracle Primavera Cloud REST API provides a flexible interface to Oracle Primavera Cloud functionality."
+  },
+  "paths": {
+    "/wbs": {
+      "post": {
+        "summary": "Create a WBS",
+        "requestBody": {
+          "title": "ApiEntityWBSInput",
+          "$ref": "#/components/schemas/ApiEntityWBSInput"
+        },
+        "responses": {
+          "400": null,
+          "201": {
+            "title": "ApiEntityWBS",
+            "$ref": "#/components/schemas/ApiEntityWBS"
+          }
+        }
+      }
+    },
+    "/activity/batch": {
+      "post": {
+        "summary": "Batch Create Activities",
+        "requestBody": {
+          "title": "List<ApiEntityActivityInput>",
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/ApiEntityActivityInput"
+          },
+          "types": [
+            "array"
+          ]
+        },
+        "responses": {
+          "400": null,
+          "201": {
+            "title": "List<ApiEntityActivity>",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ApiEntityActivity"
+            },
+            "types": [
+              "array"
+            ]
+          }
+        }
+      }
+    },
+    "/relationship/batch": {
+      "post": {
+        "summary": "Batch Create Activity Relationships",
+        "requestBody": {
+          "title": "List<ApiEntityRelationshipInput>",
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/ApiEntityRelationshipInput"
+          },
+          "types": [
+            "array"
+          ]
+        },
+        "responses": {
+          "400": null,
+          "201": {
+            "title": "List<ApiEntityRelationship>",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ApiEntityRelationship"
+            },
+            "types": [
+              "array"
+            ]
+          }
+        }
+      }
+    },
+    "/project/{projectId}": {
+      "get": {
+        "summary": "View a Project",
+        "requestBody": null,
+        "responses": {
+          "200": {
+            "title": "ApiEntityProject",
+            "$ref": "#/components/schemas/ApiEntityProject"
+          },
+          "404": null
+        }
+      }
+    },
+    "/wbs/project/{projectId}": {
+      "get": {
+        "summary": "View all WBS by Project",
+        "requestBody": null,
+        "responses": {
+          "404": null,
+          "204": null,
+          "200": {
+            "title": "List<ApiEntityWBS>",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ApiEntityWBS"
+            },
+            "types": [
+              "array"
+            ]
+          }
+        }
+      }
+    },
+    "/activity/project/{projectId}": {
+      "get": {
+        "summary": "View all Activities by Project ",
+        "requestBody": null,
+        "responses": {
+          "404": null,
+          "204": null,
+          "200": {
+            "title": "List<ApiEntityActivity>",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ApiEntityActivity"
+            },
+            "types": [
+              "array"
+            ]
+          }
+        }
+      }
+    },
+    "/relationship/projectRelationshipCode": {
+      "get": {
+        "summary": "View all Project Relationships by Parent",
+        "required_query_parameters": [
+          "workspaceCode",
+          "projectCode"
+        ]
+      }
+    }
+  },
+  "schemas": {
+    "ApiEntityWBSInput": {
+      "required": [
+        "projectId"
+      ],
+      "properties": {
+        "description": {
+          "type": "string",
+          "maxLength": 4000,
+          "minLength": 0
+        },
+        "workspaceCode": {
+          "type": "string",
+          "maxLength": 60,
+          "minLength": 0
+        },
+        "projectId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "codeValues": {
+          "type": "array"
+        },
+        "sequenceNumber": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "parentId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "managerId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "projectCode": {
+          "type": "string",
+          "maxLength": 60,
+          "minLength": 1
+        },
+        "configuredFields": {
+          "type": "array"
+        },
+        "wbsCode": {
+          "type": "string",
+          "maxLength": 60,
+          "minLength": 1
+        },
+        "wbsId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "wbsName": {
+          "type": "string",
+          "maxLength": 255,
+          "minLength": 1
+        },
+        "parentWBSCodes": {
+          "type": "array"
+        }
+      }
+    },
+    "ApiEntityActivityInput": {
+      "required": [
+        "projectId"
+      ],
+      "properties": {
+        "owner": {
+          "type": "string",
+          "maxLength": 255
+        },
+        "calendar": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "durationType": {
+          "type": "string",
+          "enum": [
+            "FIXED_RATE",
+            "FIXED_QUANTITY",
+            "FIXED_DURATION_AND_UNITS",
+            "FIXED_DURATION"
+          ]
+        },
+        "constraintDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "activityUncertainties": {
+          "type": "array"
+        },
+        "activityPercentComplete": {
+          "type": "number",
+          "format": "double"
+        },
+        "constraintType": {
+          "type": "string",
+          "enum": [
+            "NONE",
+            "START_ON",
+            "START_ON_OR_BEFORE",
+            "START_ON_OR_AFTER",
+            "FINISH_ON",
+            "FINISH_ON_OR_BEFORE",
+            "FINISH_ON_OR_AFTER",
+            "AS_LATE_AS_POSSIBLE",
+            "MANDATORY_START",
+            "MANDATORY_FINISH"
+          ]
+        },
+        "workPackageCode": {
+          "type": "string",
+          "maxLength": 60,
+          "minLength": 1
+        },
+        "workPackageName": {
+          "type": "string",
+          "maxLength": 255,
+          "minLength": 1
+        },
+        "workPackageId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "targetFinishDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "plannedDuration": {
+          "type": "number",
+          "format": "double",
+          "minimum": 0,
+          "maximum": 10000000
+        },
+        "lateStart": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "lateFinish": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "earlyStart": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "earlyFinish": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "remainingFinish": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "remainingStart": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "expectedFinish": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "remainingLateStart": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "remainingLateFinish": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "floatPath": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "plannedStart": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "plannedFinish": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "actualStart": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "actualFinish": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "calendarName": {
+          "type": "string",
+          "maxLength": 255,
+          "minLength": 0
+        },
+        "activityId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "activityStatus": {
+          "type": "string",
+          "enum": [
+            "NOT_STARTED",
+            "IN_PROGRESS",
+            "COMPLETED"
+          ]
+        },
+        "startDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "finishDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "remainingDuration": {
+          "type": "number",
+          "format": "double",
+          "minimum": 0,
+          "maximum": 10000000
+        },
+        "activityCode": {
+          "type": "string",
+          "maxLength": 60,
+          "minLength": 0
+        },
+        "activityName": {
+          "type": "string",
+          "maxLength": 255,
+          "minLength": 1
+        },
+        "activityType": {
+          "type": "string",
+          "enum": [
+            "ACTIVITY",
+            "RESOURCE_DEPENDENT",
+            "LEVEL_OF_EFFORT",
+            "START_MILESTONE",
+            "FINISH_MILESTONE",
+            "WBS_SUMMARY"
+          ]
+        },
+        "atCompletionDuration": {
+          "type": "number",
+          "format": "double",
+          "minimum": 0,
+          "maximum": 10000000
+        },
+        "resumeDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "secondaryConstraintDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "secondaryConstraintType": {
+          "type": "string",
+          "enum": [
+            "NONE",
+            "START_ON",
+            "START_ON_OR_BEFORE",
+            "START_ON_OR_AFTER",
+            "FINISH_ON",
+            "FINISH_ON_OR_BEFORE",
+            "FINISH_ON_OR_AFTER",
+            "AS_LATE_AS_POSSIBLE",
+            "MANDATORY_START",
+            "MANDATORY_FINISH"
+          ]
+        },
+        "suspendDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "workspaceCode": {
+          "type": "string",
+          "maxLength": 60,
+          "minLength": 0
+        },
+        "projectId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "sequenceNumber": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "projectCode": {
+          "type": "string",
+          "maxLength": 60,
+          "minLength": 1
+        },
+        "activityFinancial": {},
+        "configuredFields": {
+          "type": "array"
+        },
+        "programMilestone": {
+          "type": "boolean"
+        },
+        "floatPathOrder": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "atCompletionLaborUnits": {
+          "type": "number",
+          "format": "double"
+        },
+        "plannedLaborUnits": {
+          "type": "number",
+          "format": "double"
+        },
+        "remainingLaborUnits": {
+          "type": "number",
+          "format": "double"
+        },
+        "plannedNonLaborUnits": {
+          "type": "number",
+          "format": "double"
+        },
+        "activityPriority": {
+          "type": "string",
+          "enum": [
+            "TOP",
+            "HIGH",
+            "NORMAL",
+            "LOW",
+            "LOWEST"
+          ]
+        },
+        "physicalPercentComplete": {
+          "type": "number",
+          "format": "double"
+        },
+        "actualNonLaborUnits": {
+          "type": "number",
+          "format": "double"
+        },
+        "actualLaborUnits": {
+          "type": "number",
+          "format": "double"
+        },
+        "remainingNonLaborUnits": {
+          "type": "number",
+          "format": "double"
+        },
+        "percentCompleteType": {
+          "type": "string",
+          "enum": [
+            "PHYSICAL",
+            "DURATION",
+            "UNITS",
+            "SCOPE"
+          ]
+        },
+        "wbsId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "codeValuesActivity": {
+          "type": "array"
+        },
+        "wbscodes": {
+          "type": "array"
+        },
+        "atCompletionNonLaborUnits": {
+          "type": "number",
+          "format": "double"
+        },
+        "percentCompleteWeightedBy": {
+          "type": "string",
+          "enum": [
+            "COST",
+            "QUANTITY",
+            "HOURS",
+            "MANUAL"
+          ]
+        },
+        "actualThisPeriodLaborUnits": {
+          "type": "number",
+          "format": "double"
+        },
+        "actualThisPeriodNonLaborUnits": {
+          "type": "number",
+          "format": "double"
+        },
+        "accountingVarianceLaborUnits": {
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
+    "ApiEntityRelationshipInput": {
+      "required": [
+        "predActivityId",
+        "succActivityId"
+      ],
+      "properties": {
+        "critical": {
+          "type": "boolean"
+        },
+        "relationshipId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "relationshipType": {
+          "type": "string",
+          "enum": [
+            "START_TO_START",
+            "START_TO_FINISH",
+            "FINISH_TO_START",
+            "FINISH_TO_FINISH"
+          ]
+        },
+        "lagHours": {
+          "type": "number",
+          "format": "double",
+          "minimum": "-99999999999",
+          "maximum": "99999999999"
+        },
+        "predActivityId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "succActivityId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "predActivityCode": {
+          "type": "string",
+          "maxLength": 60,
+          "minLength": 0
+        },
+        "succActivityCode": {
+          "type": "string",
+          "maxLength": 60,
+          "minLength": 0
+        },
+        "predProjectCode": {
+          "type": "string",
+          "maxLength": 60,
+          "minLength": 1
+        },
+        "succProjectCode": {
+          "type": "string",
+          "maxLength": 60,
+          "minLength": 1
+        },
+        "drivingRelationship": {
+          "type": "boolean"
+        },
+        "predProjectId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "succProjectId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "succWorkspaceCode": {
+          "type": "string",
+          "maxLength": 60,
+          "minLength": 0
+        },
+        "predWorkspaceCode": {
+          "type": "string",
+          "maxLength": 60,
+          "minLength": 0
+        },
+        "predActivity": {},
+        "succActivity": {}
+      }
+    }
+  }
+}

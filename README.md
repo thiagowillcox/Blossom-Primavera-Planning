@@ -1,7 +1,9 @@
 # Blossom Primavera Planning
 
-Para localizar um projeto Oracle e revisar um Excel antes da implementação do
-envio, veja [Consulta de projetos e prévia local](docs/consulta_primavera.md).
+Para localizar um projeto Oracle e revisar um Excel, veja
+[Consulta de projetos e prévia local](docs/consulta_primavera.md). Para criar uma
+estrutura em um projeto de teste vazio, veja
+[Envio de rascunho estrutural](docs/envio_rascunho_primavera.md), sem HH e prazos.
 
 Versão preliminar de um motor Python de pré-cronogramas de engenharia a partir da LD comercial e do Manual de Engenharia. O motor de planejamento é independente de Oracle Primavera Cloud e BMS e não escreve na API Oracle. Há um teste local de autenticação e conexão, separado do gerador: [Testar Primavera](docs/teste_primavera.md).
 
@@ -108,7 +110,7 @@ Os arquivos de exemplo em `output` podem corresponder a versões anteriores. Ger
 
 ## Interface web Blossom
 
-A interface em `app.py` permite enviar somente a LD, usar automaticamente o manual fixo, preencher jornada/capacidades/prazos, gerar e baixar o Excel e consultar WBS, atividades, pendências e auditoria no navegador. Campos vazios continuam pendentes. Não há login, publicação na internet, histórico persistente ou integração Oracle nesta entrega.
+A interface em `app.py` permite enviar somente a LD, usar automaticamente o manual fixo, preencher jornada/capacidades/prazos, gerar e baixar o Excel e consultar WBS, atividades, pendências e auditoria no navegador. Campos vazios continuam pendentes. A interface não possui login, histórico persistente ou envio ao Oracle. A integração de rascunho estrutural usa um iniciador local separado.
 
 ### Windows: abrir sem digitar comandos
 

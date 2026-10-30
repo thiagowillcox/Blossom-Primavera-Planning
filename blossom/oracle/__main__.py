@@ -11,11 +11,15 @@ def label(value):
 
 
 def main():
-    parser=argparse.ArgumentParser(description='Consulta local ao Primavera, sem gravar cronogramas.')
+    parser=argparse.ArgumentParser(description='Consulta, prévia e envio separado de rascunho estrutural ao Primavera.')
     group=parser.add_mutually_exclusive_group()
     group.add_argument('--listar-projetos',action='store_true')
     group.add_argument('--preparar-envio',action='store_true')
+    group.add_argument('--enviar-rascunho',action='store_true')
     args=parser.parse_args()
+    if args.enviar_rascunho:
+        from .draft_cli import send_draft
+        return send_draft()
     if args.preparar_envio:
         from .preview import prepare_preview
         print('Prévia local do envio — nenhuma chamada ao Oracle será realizada.')
@@ -26,7 +30,8 @@ def main():
             print('Contagens: '+json.dumps(report['contagens'],ensure_ascii=False))
             print('HH planejadas: '+report['hh_planejadas'])
             print('Atividades sem duração: '+str(report['atividades_sem_duracao']))
-            print('Prévia salva em output/previa_envio_primavera.json. O envio permanece desativado.')
+            print('Prévia salva em output/previa_envio_primavera.json. Nenhum envio realizado.')
+            print('Rascunho estrutural separado: Enviar_Rascunho_Primavera.bat (sem HH e prazos).')
             return 0
         except (ConnectionFailure,ValueError,OSError,KeyError):
             print('Não foi possível preparar a prévia. Confira o Excel gerado e a seleção do projeto. Nenhum dado foi enviado.')

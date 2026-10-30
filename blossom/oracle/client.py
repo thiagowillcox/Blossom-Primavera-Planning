@@ -17,10 +17,10 @@ class NoRedirect(urllib.request.HTTPRedirectHandler):
         raise ConnectionFailure('O Oracle redirecionou a chamada. Precisamos conferir a configuração de acesso à API.')
 
 
-def _exchange(opener, request, stage, limit=1048576, allow_empty=False):
+def _exchange(opener, request, stage, limit=1048576, allow_empty=False, expected=None):
     try:
         with opener.open(request, timeout=25) as response:
-            if response.status not in ((200,204) if allow_empty else (200,)):
+            if response.status not in (expected or ((200,204) if allow_empty else (200,))):
                 raise ConnectionFailure(stage+': o Oracle não confirmou a solicitação.')
             if 'text/html' in response.headers.get('Content-Type','').lower():
                 raise ConnectionFailure(stage+': o Oracle não confirmou uma resposta de API; recebeu uma página HTML.')

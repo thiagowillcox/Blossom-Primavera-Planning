@@ -63,6 +63,7 @@ def prepare_preview(workbook_path, selection_path, destination):
     params={r['parametro']:r['valor'] for r in tables['Parametros']}
     report={'tipo':'previa_interna_nao_e_payload_oracle','servidor':SERVER,'projeto_destino':project,
         'envio_implementado':False,'pronto_para_envio':False,
+        'envio_estrutural_disponivel':True,'observacao_envio':'Envio completo indisponível; rascunho estrutural usa iniciador separado, sem HH e prazos.',
         'contagens':{'wbs':len(tables['WBS']),'atividades':len(activities),
                      'atribuicoes_funcoes':len(tables['Atribuicoes_Funcoes']),
                      'relacionamentos':len(tables['Relacionamentos'])},
