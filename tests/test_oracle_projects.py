@@ -20,29 +20,29 @@ class ProjectsOracle(FakeOracle):
 def test_project_discovery_is_get_only_and_keeps_minimal_fields(wrapper):
     rows=[{'projectId':7,'projectName':'Projeto de teste','projectCode':'LAB','workspaceId':2,'other':'not retained'}]
     oracle=ProjectsOracle({wrapper:rows} if wrapper else rows)
-    projects=list_projects('test','fictional-password',opener=oracle)
+    projects=list_projects('test','fictional-password','Projeto de teste',opener=oracle)
     assert len(projects)==1 and projects[0]['projectId']==7
     assert 'other' not in projects[0]
     assert [r.get_method() for r in oracle.calls]==['POST','GET','GET']
-    assert oracle.calls[-1].full_url=='https://primavera-us2.oraclecloud.com/api/restapi/project'
+    assert oracle.calls[-1].full_url=='https://primavera-us2.oraclecloud.com/api/restapi/project/name/Projeto%20de%20teste'
 
 
 def test_empty_result_does_not_invent_a_project():
-    assert list_projects('test','password',opener=ProjectsOracle([]))==[]
+    assert list_projects('test','password','Projeto de teste',opener=ProjectsOracle([]))==[]
 
 
 def test_numeric_string_project_id_is_supported():
-    assert list_projects('test','password',opener=ProjectsOracle([{'projectId':'7','projectName':'Test'}]))[0]['projectId']==7
+    assert list_projects('test','password','Projeto de teste',opener=ProjectsOracle([{'projectId':'7','projectName':'Test'}]))[0]['projectId']==7
 
 
 @pytest.mark.parametrize('payload',[{'unknown':'body'},[{'name':'other_entity','id':7}],[{'projectId':True,'projectName':'bad'}]])
 def test_unexpected_responses_are_not_treated_as_projects(payload):
-    with pytest.raises(ConnectionFailure):list_projects('test','password',opener=ProjectsOracle(payload))
+    with pytest.raises(ConnectionFailure):list_projects('test','password','Projeto de teste',opener=ProjectsOracle(payload))
 
 
 def test_project_error_identifies_stage_without_credentials():
     with pytest.raises(ConnectionFailure,match='Consulta de projetos') as error:
-        list_projects('test','fictional-password',opener=ProjectsOracle([],code=405))
+        list_projects('test','fictional-password','Projeto de teste',opener=ProjectsOracle([],code=405))
     assert 'fictional-password' not in str(error.value)
 
 
@@ -50,3 +50,18 @@ def test_closed_session_cannot_be_reused():
     session=ReadSession('test','password',opener=FakeOracle())
     session.close()
     with pytest.raises(ConnectionFailure,match='encerrada'):session.test_connection()
+
+
+@pytest.mark.parametrize('name',['A/B ?#% ação','Nome & outro'])
+def test_project_name_is_one_encoded_path_segment(name):
+    from urllib.parse import quote
+    oracle=ProjectsOracle([])
+    list_projects('test','password',name,opener=oracle)
+    assert oracle.calls[-1].full_url.endswith('/project/name/'+quote(name,safe=''))
+
+
+@pytest.mark.parametrize('name',['','   ','test\nother',None])
+def test_invalid_project_name_fails_before_authentication(name):
+    oracle=ProjectsOracle([])
+    with pytest.raises(ConnectionFailure):list_projects('test','password',name,opener=oracle)
+    assert oracle.calls==[]

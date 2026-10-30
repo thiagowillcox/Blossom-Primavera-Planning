@@ -73,10 +73,12 @@ class ReadSession:
         self._get('util/testConnection','Teste de conexão',allow_empty=True)
         return True
 
-    def projects_first_page(self):
-        # Initial discovery route: validate against the tenant's live API.
-        # No automatic pagination or write fallback is attempted.
-        result=_json(self._get('project','Consulta de projetos',limit=4194304),'Consulta de projetos')
+    def projects_by_name(self, project_name):
+        # Oracle Project REST Endpoints: View all Projects by Name (GET).
+        # Encode the name as one path segment; never interpret it as a URL.
+        name=_project_name(project_name)
+        path='project/name/'+urllib.parse.quote(name,safe='')
+        result=_json(self._get(path,'Consulta de projetos',limit=4194304),'Consulta de projetos')
         if isinstance(result,dict):
             result=next((result[k] for k in ('items','data','projects','result') if isinstance(result.get(k),list)),None)
         if not isinstance(result,list):
@@ -104,9 +106,16 @@ def check_connection(username,password,*,opener=None):
     finally:session.close()
 
 
-def list_projects(username,password,*,opener=None):
+def _project_name(value):
+    if not isinstance(value,str) or not value.strip() or any(ord(c)<32 or 127<=ord(c)<=159 for c in value):
+        raise ConnectionFailure('Informe o nome completo do projeto para consultar. Nenhum projeto será alterado.')
+    return value.strip()
+
+
+def list_projects(username,password,project_name,*,opener=None):
+    name=_project_name(project_name)
     session=ReadSession(username,password,opener=opener)
     try:
         session.test_connection()
-        return session.projects_first_page()
+        return session.projects_by_name(name)
     finally:session.close()

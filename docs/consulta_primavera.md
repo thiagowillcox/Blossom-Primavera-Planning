@@ -7,17 +7,20 @@ no Oracle Primavera Cloud. A gravação de cronogramas ainda não está implemen
 
 No Windows com Python 3.12, extraia a main atual e abra
 `Listar_Projetos_Primavera.bat`. Informe login/senha no console local, como no
-teste anterior. O programa autentica, testa a conexão e faz uma consulta GET
-a `/api/restapi/project`.
+teste anterior. Informe também o nome completo do projeto. O programa autentica,
+testa a conexão e consulta `GET /api/restapi/project/name/{projectName}`, com o
+nome codificado como um único segmento do endereço.
 
-Essa é uma rota inicial de descoberta, ainda a validar no ambiente real.
-Se houver HTTP 404/405, formato diferente ou projeto ausente, precisamos
-confirmar a rota, os filtros e a paginação na documentação do ambiente. Não há
-tentativas de POST para listar projetos, nem fallback para criar projetos.
+A rota foi confirmada na documentação oficial **Project REST Endpoints → View
+all Projects by Name**, fornecida pelo usuário em 30/10/2026:
+https://docs.oracle.com/en/industries/construction-engineering/primavera-cloud/opcap/api-project.html
+A tentativa anterior de `GET /api/restapi/project` retornou HTTP 405 no ambiente
+real e foi substituída. Não há tentativa de escrita nem criação como alternativa.
+O formato da resposta e a consulta corrigida ainda precisam de validação real.
 A consulta mostra somente os resultados recebidos; não afirma que todas
 as páginas ou todos os projetos foram lidos.
 
-Digite o nome do projeto de teste para filtrar a resposta e depois escolha
+Confira o nome retornado e escolha
 o ID exibido. A seleção é salva somente em
 `output/consulta_primavera_local.json`. O programa retém apenas projectId,
 projectCode, projectName e workspaceId. Não salva token/senha ou o corpo
@@ -58,7 +61,7 @@ relacionamento é criado ou alterado por essas ferramentas.
 A documentação oficial completa da API (especialmente projetos, WBS,
 atividades, atribuições e relacionamentos) é necessária para a próxima etapa.
 
-Validação do código: 121 testes passaram. A prévia offline também foi executada
+Validação do código após corrigir a consulta por nome: 127 testes passaram. A prévia offline também foi executada
 nas quatro saídas comerciais disponíveis, usando um destino simulado e sem
 nenhuma chamada de rede. Isso não valida o endpoint de projetos no tenant real
 nem os campos de uma futura solicitação de criação no Oracle.

@@ -40,9 +40,9 @@ def main():
         password=getpass('Sua senha Oracle (não aparece ao digitar): ')
         if args.listar_projetos:
             Path('output/consulta_primavera_local.json').unlink(missing_ok=True)
-            projects=list_projects(username,password)
-            term=input('\nNome do projeto de teste (ou Enter para ver os retornados): ').strip().casefold()
-            matches=[p for p in projects if not term or term in p['projectName'].casefold()]
+            name=input('\nNome completo do projeto de teste, como aparece no Primavera: ').strip()
+            projects=list_projects(username,password,name)
+            matches=[p for p in projects if p['projectName'].strip().casefold()==name.casefold()]
             print(f'\nProjetos retornados nesta resposta: {len(projects)}. Correspondências: {len(matches)}.')
             print('A consulta pode estar paginada; esta resposta não garante uma lista completa.')
             for project in matches:

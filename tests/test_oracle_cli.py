@@ -13,8 +13,13 @@ def test_project_selection_is_explicit_local_and_has_no_credentials(tmp_path,mon
     monkeypatch.setattr('sys.argv',['oracle','--listar-projetos'])
     monkeypatch.setattr('builtins.input',lambda _:next(values))
     monkeypatch.setattr(cli,'getpass',lambda _:'fictional-password')
-    monkeypatch.setattr(cli,'list_projects',lambda *_:[{'projectId':7,'projectName':'Laboratório','projectCode':'LAB','workspaceId':2}])
+    calls=[]
+    def query(*args):
+        calls.append(args)
+        return [{'projectId':7,'projectName':'Laboratório','projectCode':'LAB','workspaceId':2}]
+    monkeypatch.setattr(cli,'list_projects',query)
     assert cli.main()==0
+    assert calls==[('test@example.org','fictional-password','Laboratório')]
     assert 'fictional-password' not in capsys.readouterr().out
     if choice=='7':
         data=json.loads(old.read_text())
