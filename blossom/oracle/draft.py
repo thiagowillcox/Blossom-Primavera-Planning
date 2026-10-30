@@ -1,5 +1,6 @@
 """Create-only structural drafts in empty test projects. Never schedule or assign HH."""
 import hashlib
+import html
 import json
 import os
 from pathlib import Path
@@ -25,10 +26,12 @@ def text(value, limit):
 
 
 def field_equal(key, actual, expected):
-    # Oracle trims ASCII spaces at name boundaries. Preserve accents, case,
-    # punctuation and internal whitespace, and never normalize IDs/codes.
+    # Oracle may HTML-escape response names and trim ASCII boundary spaces.
+    # Decode a response at most once; never decode the source name or IDs/codes.
+    # Keep case, accents, punctuation and internal whitespace significant.
     if key in ('wbsName','activityName') and isinstance(actual,str) and isinstance(expected,str):
-        return actual.strip(' ')==expected.strip(' ')
+        expected=expected.strip(' ')
+        return actual.strip(' ')==expected or html.unescape(actual).strip(' ')==expected
     return actual==expected
 
 

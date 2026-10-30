@@ -103,3 +103,55 @@ def test_resume_cli_preserves_original_plan_and_requires_confirmation(tmp_path,m
     else:
         assert journal.read_bytes()==original
         assert [r.get_method() for r in oracle.calls].count('POST')==1
+
+@pytest.mark.parametrize('actual,expected',[
+    ('CIVIL &#x2F; CONCRETO','CIVIL / CONCRETO'),
+    ('A &amp; B','A & B'),
+    ('&lt;Documento&gt;','<Documento>'),
+    ('Cliente&#39;s &quot;Documento&quot;', '''Cliente's "Documento"'''),
+    ('Literal &amp;amp;','Literal &amp;'),
+])
+def test_response_html_encoding_is_decoded_once_for_names(actual,expected):
+    for field in ('wbsName','activityName'):assert field_equal(field,actual,expected)
+    assert not field_equal('wbsCode',actual,expected)
+
+
+def test_source_literal_entities_are_preserved_and_not_recursively_decoded():
+    assert not field_equal('wbsName','A &amp; B','A &amp;amp; B')
+    assert not field_equal('wbsName','A &amp;amp; B','A & B')
+    assert not field_equal('wbsName','CIVIL &#x2F; AÇO','CIVIL / CONCRETO')
+
+
+def test_encoded_response_in_creation_and_readback(tmp_path):
+    import html
+    from test_oracle import Response
+    class EncodedOracle(DraftOracle):
+        def open(self,request,timeout):
+            response=super().open(request,timeout)
+            if '/primediscovery/' in request.full_url or request.full_url.endswith('util/testConnection'):
+                return response
+            data=json.loads(response.getvalue())
+            def encode(value):
+                if isinstance(value,list):return [encode(item) for item in value]
+                if isinstance(value,dict):return {k:(html.escape(v,quote=True).replace('/','&#x2F;') if k in ('wbsName','activityName') and isinstance(v,str) else encode(v)) for k,v in value.items()}
+                return value
+            return Response(json.dumps(encode(data)).encode(),status=response.status)
+    data=plan();data['wbs'][1]['payload']['wbsName']='CIVIL / CONCRETO '
+    data['activities'][0]['payload']['activityName']='Documento / Cliente & Fornecedor'
+    oracle=EncodedOracle();session=connect(oracle)
+    root=session.inspect_empty_project(data['projeto'])
+    result=upload_draft(session,data,root,tmp_path/'journal.json',lambda _:None)
+    assert result['estado']=='estrutura_conferida_prazos_e_hh_pendentes'
+    assert oracle.groups[-1]['wbsName']=='CIVIL / CONCRETO'
+
+
+def test_resume_accepts_encoded_name_of_pending_created_group(tmp_path):
+    data,path,oracle=interrupted(tmp_path)
+    data['wbs'][1]['payload']['wbsName']='CIVIL / CONCRETO'
+    record=json.loads(path.read_text())
+    record['plan_sha256']=hashlib.sha256(json.dumps(data,sort_keys=True,ensure_ascii=False).encode()).hexdigest()
+    path.write_text(json.dumps(record))
+    oracle.groups[-1]['wbsName']='CIVIL &#x2F; CONCRETO'
+    session=connect(oracle)
+    root,journal=reconcile_wbs(session,data,path)
+    assert root==100 and journal['wbs']['w2']==102

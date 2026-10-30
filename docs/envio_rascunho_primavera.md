@@ -132,3 +132,20 @@ Somente após `ENVIAR <ID>` salva uma cópia do registro anterior como
 e cria o restante, sem repetir os grupos existentes. O plano original é preservado.
 Não há exclusões ou atualizações de grupos. Interrupções em lotes de atividades
 ou ligações continuam bloqueadas para conferência separada.
+
+### Nomes codificados nas respostas Oracle
+
+A API real também retornou a barra `/` de um nome como `&#x2F;`. A conferência
+agora aceita a representação literal ou uma única decodificação HTML dos campos
+`wbsName` e `activityName`, junto ao tratamento de espaços nas extremidades.
+Isso vale para respostas de criação, leitura final e reconciliação de WBS.
+A decodificação se aplica somente à resposta: entidades escritas literalmente na
+LD não são decodificadas na origem nem processadas repetidamente. IDs, códigos,
+pais, tipos de relação e demais campos continuam com comparação exata.
+As solicitações enviam nomes em texto normal, sem codificar manualmente HTML.
+
+Validação desta correção: 35 testes específicos de envio/retomada passaram,
+incluindo respostas codificadas na criação e na leitura posterior, nomes com
+barra, ampersand e aspas, preservação de entidades literais e rejeição de nomes
+diferentes. Esses testes são simulados; a retomada real ainda depende de nova
+conferência e execução local pelo usuário.
