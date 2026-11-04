@@ -2,7 +2,8 @@
 
 **Fluxo completo pelo navegador, sem banco de histórico:** envie a LD, gere o
 pré-cronograma e faça a integração na seção Primavera, sem precisar baixar
-Excel/JSON ou executar `.bat` entre as etapas. [Guia de uso por link](docs/uso_por_link.md).
+Excel/JSON ou executar `.bat` entre as etapas. No destino Oracle, escolha um
+projeto existente ou crie um projeto de teste no workspace selecionado. [Guia de uso por link](docs/uso_por_link.md).
 
 Novas áreas no site: **Equipe e prazos** e **Primavera**, para revisar horas por
 função, preparar previsão de equipe e complementar a estrutura Oracle já enviada.

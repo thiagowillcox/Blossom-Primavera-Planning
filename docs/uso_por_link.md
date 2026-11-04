@@ -99,3 +99,49 @@ recuperação por leitura e bloqueio de repetição quando o lote está incomple
 Esses ensaios não acessaram nem alteraram a conta Oracle real. O endereço
 hospedado depende da configuração do app na conta Streamlit do proprietário;
 a confirmação da interface publicada precisa ser feita no próprio link.
+
+## Criar um projeto no workspace escolhido
+
+O nome em **Configuração** identifica o pré-cronograma e serve como sugestão de
+nome para um projeto novo. Gerar o Excel não cria um projeto automaticamente.
+
+Depois de conectar ao Oracle, a seção Primavera oferece dois destinos:
+
+- **Usar projeto existente:** busca o nome, pede a escolha do ID e utiliza o
+  workspace ao qual aquele projeto já pertence.
+- **Criar projeto novo em um workspace:** consulta os workspaces visíveis à conta,
+  mostra o caminho na hierarquia e pede uma seleção explícita.
+
+Para criar, preencha nome, código e data/horário inicial. O nome configurado na
+geração aparece sugerido, com `TESTE -` quando necessário para a proteção atual.
+O código é o identificador escolhido pelo usuário; o ID numérico é criado pelo
+Oracle. Nomes e códigos podem ser editados antes de preparar a prévia.
+
+É possível consultar os calendários do workspace e de seus ancestrais e escolher
+um calendário existente. Sem seleção explícita, o programa deixa o Oracle usar
+seu padrão. Não são criados nem modificados workspaces ou calendários.
+
+**Preparar criação do projeto** somente consulta e valida. A prévia mostra o
+workspace e seu ID, nome, código, início, calendário e status inicial Planejado.
+A data inicial também é enviada como data dos dados nessa criação. Após digitar
+`CRIAR <código>`, **Criar projeto no Oracle** chama o endpoint de criação uma vez
+e consulta o ID retornado para conferir nome, código e workspace. Um calendário
+explicitamente escolhido também precisa ser confirmado na leitura.
+
+O projeto criado fica selecionado para seguir pelo fluxo de estrutura, horas e
+prazos. A criação não envia a estrutura nem solicita agendamento automaticamente.
+A data também preenche a previsão de equipe se ela ainda estiver em branco.
+
+Um código já existente no workspace bloqueia uma nova criação; nenhum projeto
+é substituído. Antes da gravação, workspace e código são conferidos novamente.
+Se uma resposta se perder, o registro temporário da sessão permite consultar o
+projeto correspondente e reconhecê-lo sem repetir o POST. Se a consulta não
+confirmar o resultado, não há repetição automática. A criação depende das
+permissões da conta Oracle no workspace selecionado.
+
+A operação usa o OpenAPI oficial fornecido, com contrato resumido em
+`config/oracle_project_contract.json`: `GET /workspace`, consultas do workspace,
+projetos e calendários, `POST /project` e `GET /project/{projectId}`. O corpo de
+criação inclui todos os campos obrigatórios do schema. Os testes são simulados;
+a criação real precisa de validação na conta Oracle. As gravações continuam
+limitadas a nomes que começam com `TESTE` nesta versão.

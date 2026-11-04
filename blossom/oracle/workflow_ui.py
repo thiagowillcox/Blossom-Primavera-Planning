@@ -40,24 +40,8 @@ def render(st):
         filename,excel=ss.flow_imported_excel;st.caption('Arquivo desta sessão: '+filename)
     session=connection(st,IntegrationSession)
     if not session:return
-    st.subheader('Escolha o projeto de teste')
-    def remember_search():preferences['name']=ss.flow_search_name
-    name=st.text_input('Nome completo do projeto no Oracle',value=preferences.get('name',''),placeholder='Ex.: TESTE - Projeto',key='flow_search_name',on_change=remember_search)
-    if st.button('Buscar projeto no Oracle'):
-        try:
-            rows=session.projects_by_name(name)
-            ss.flow_candidates={p['projectId']:p for p in rows if p['projectName'].strip().casefold()==name.strip().casefold()}
-            ss.flow_search_message='Projetos correspondentes: '+str(len(ss.flow_candidates))
-        except ConnectionFailure as exc:
-            ss.flow_candidates={};ss.flow_search_message=str(exc)
-    if ss.get('flow_search_message'):st.info(ss.flow_search_message)
-    candidates=ss.get('flow_candidates',{})
-    if candidates:
-        options=[None]+sorted(candidates)
-        chosen=st.selectbox('Projeto que receberá o planejamento',options,index=0,
-            format_func=lambda pid:'Selecione…' if pid is None else html.unescape(candidates[pid]['projectName'])+' · ID '+str(pid),key='flow_choice')
-        if st.button('Usar este projeto',disabled=chosen is None):ss.flow_project=candidates[chosen]
-    project=ss.get('flow_project')
+    from .projects_ui import render as choose_project
+    project=choose_project(st,session,preferences)
     if not project:return
     scope=hashlib.sha256(excel+json.dumps(project,sort_keys=True).encode()).hexdigest()
     if ss.get('flow_scope')!=scope:
@@ -73,6 +57,7 @@ def render(st):
     storage=project_files(ss,pid,source);journal=storage/'registro_estrutura.json'
     st.subheader('Estrutura do projeto')
     st.write(html.unescape(project['projectName'])+' · ID '+str(pid))
+    st.caption('Workspace de destino: ID '+str(project.get('workspaceId')))
     st.write(f"Prévia: {len(plan['wbs'])} grupos, {len(plan['activities'])} atividades e {len(plan['relationships'])} ligações.")
     st.caption('Só criamos itens ausentes e compatíveis com a prévia. Grupos, atividades e ligações diferentes bloqueiam a operação; não são apagados nem substituídos.')
     if st.button('Conferir estrutura no Oracle (sem enviar)'):

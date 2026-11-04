@@ -1,0 +1,106 @@
+{
+  "source_sha256": "27d1ea55a6e16b554533ca8ae1713500e230d8290fb9260dd7e8e0c3cb8584ca",
+  "version": "2026.10.02",
+  "schema": {
+    "required": [
+      "dataDate",
+      "planStartDate",
+      "projectCode",
+      "projectName",
+      "workspaceId"
+    ],
+    "properties": {
+      "workspaceId": {
+        "type": "integer",
+        "description": "The unique identifier for the workspace.The workspace object can also be identified by its unique criteria.",
+        "format": "int64"
+      },
+      "projectCode": {
+        "maxLength": 60,
+        "minLength": 1,
+        "type": "string",
+        "description": "The unique identifier for a project set by the user who created the project."
+      },
+      "projectName": {
+        "maxLength": 255,
+        "minLength": 1,
+        "type": "string",
+        "description": "The name of the project."
+      },
+      "dataDate": {
+        "type": "string",
+        "description": "The progress point, or \"as-of date\", for activities in the project. Project status is up-to-date as of the data date. You can set the data date when you schedule the project, or you can set it manually. <br />The data date is also used for updating the dates of scope assignments and work packages when they are not linked to activities.",
+        "format": "date-time"
+      },
+      "planStartDate": {
+        "type": "string",
+        "description": "The start date for the time phased Planned Budget of the project. <br />Planned Budget cost spread will adjust when this date is changed. <br />The Project Planned Start also represents the earliest date that activities can occur within a project schedule.",
+        "format": "date-time"
+      },
+      "calendarId": {
+        "type": "integer",
+        "description": "The unique identifier for the calendar.",
+        "format": "int64"
+      },
+      "status": {
+        "type": "string",
+        "description": "The current status of a project. <br />Proposal: The project is a project proposal and has not been extensively planned nor accrued any costs. <br />Rejected: The project proposal has been rejected and will not be initiated as a project. <br />Planned: The project is currently planned for execution. Project managers input expected project costs and other project data during this stage. <br />Active: The project is currently active and being executed. <br />Inactive: The project has been rendered inactive and will temporarily accrue no costs. <br />Complete: The project has been successfully completed and will no longer accrue costs.",
+        "enum": [
+          "PROPOSAL",
+          "REJECTED",
+          "PLANNED",
+          "ACTIVE",
+          "INACTIVE",
+          "COMPLETE"
+        ]
+      }
+    }
+  },
+  "operations": {
+    "GET /workspace": {
+      "summary": "View all Workspaces",
+      "response_codes": [
+        "404",
+        "204",
+        "200"
+      ]
+    },
+    "GET /workspace/{workspaceId}": {
+      "summary": "View a Workspace",
+      "response_codes": [
+        "404",
+        "200"
+      ]
+    },
+    "GET /project/workspace/{workspaceId}": {
+      "summary": "View all Projects by Workspace ",
+      "response_codes": [
+        "404",
+        "204",
+        "200"
+      ]
+    },
+    "GET /calendar/workspace/{workspaceId}": {
+      "summary": "View Calendars by Workspace",
+      "response_codes": [
+        "404",
+        "204",
+        "200"
+      ]
+    },
+    "POST /project": {
+      "summary": "Create a Project",
+      "response_codes": [
+        "400",
+        "201"
+      ]
+    },
+    "GET /project/{projectId}": {
+      "summary": "View a Project",
+      "response_codes": [
+        "200",
+        "404"
+      ]
+    }
+  }
+}

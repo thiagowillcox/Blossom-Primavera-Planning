@@ -117,6 +117,7 @@ elif page=='Configuração':
         st.subheader('Dados do projeto')
         st.text_input('Nome do projeto',value=settings['project'],placeholder='Ex.: Forno III',
                       key='field_project',on_change=save_setting,args=('project',))
+        st.caption('Esse nome identifica o pré-cronograma e será sugerido ao criar um projeto. O destino no Oracle é escolhido na seção Primavera.')
         st.number_input('Jornada (HH por profissional/dia)',min_value=0.1,max_value=24.0,
                         value=settings['daily'],step=0.5,key='field_daily',on_change=save_setting,args=('daily',))
     with b,st.container(border=True,key="client_card"):
