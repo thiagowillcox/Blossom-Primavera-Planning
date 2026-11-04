@@ -97,3 +97,27 @@ def test_team_inputs_and_report_survive_navigation(tmp_path):
  assert app.date_input[0].value.isoformat()=='2026-10-13'
  assert next(w for w in app.number_input if w.label=='Profissionais — EPleno').value==2
  assert app.session_state['team_report']['hh_sem_previsao']==0
+
+
+def test_recovery_can_be_confirmed_after_preview_blocks_existing_default_hours(tmp_path,monkeypatch):
+ import blossom.oracle.web_ui as ui
+ from test_oracle_effort import interrupted_default_batch
+ package,oracle,session,plan,_=interrupted_default_batch(tmp_path)
+ (tmp_path/'hours.json').rename(tmp_path/'registro_horas.json')
+ monkeypatch.setattr(ui,'project_files',lambda *args:tmp_path)
+ app=AppTest.from_string('import streamlit as st\nfrom blossom.oracle.web_ui import render\nrender(st,package=st.session_state.test_package)')
+ app.session_state['test_package']=package;app.session_state['oracle_session']=session
+ app.run(timeout=30)
+ next(b for b in app.button if b.label=='Consultar projeto e funções disponíveis').click().run()
+ next(c for c in app.checkbox if c.label.startswith('Conferi a correspondência')).check().run()
+ next(b for b in app.button if b.label=='Preparar prévia das horas').click().run()
+ assert not app.session_state['oracle_hours_ready']
+ next(b for b in app.button if b.label=='Conferir situação das horas (sem enviar)').click().run()
+ next(t for t in app.text_input if t.label.startswith('Para gravar no projeto')).set_value('ENVIAR HORAS 7').run()
+ assert next(b for b in app.button if b.label=='Enviar e conferir horas no Oracle').disabled
+ next(c for c in app.checkbox if c.label.startswith('Corrigir as horas')).check().run()
+ assert not next(b for b in app.button if b.label=='Enviar e conferir horas no Oracle').disabled
+ next(b for b in app.button if b.label=='Enviar e conferir horas no Oracle').click().run(timeout=30)
+ assert not app.exception
+ assert app.session_state['oracle_hours_result']['estado']=='horas_conferidas'
+ assert len(oracle.assignments)==1 and oracle.assignments[0]['plannedUnits']==10

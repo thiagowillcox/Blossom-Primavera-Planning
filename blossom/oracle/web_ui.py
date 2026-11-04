@@ -122,8 +122,10 @@ def render(st,package=None):
         st.warning('O lote interrompido já existe no Oracle com horas diferentes. A correção altera somente as horas planejadas e restantes desse lote, se não houver avanço. Depois, o envio continua com as atribuições faltantes.')
         if st.checkbox('Corrigir as horas do lote interrompido conforme o diagnóstico e continuar',key='oracle_repair_'+digest):
             repair_snapshot=diagnostic
+    if diagnostic and diagnostic['resumo']['divergentes'] and not diagnostic.get('registro_compativel'):
+        st.info('Para recuperar o lote interrompido, carregue registro_horas_'+str(pid)+'.json no campo de registro anterior e clique novamente em Conferir situação das horas (sem enviar).')
     text=st.text_input('Para gravar no projeto, digite ENVIAR HORAS '+str(pid),key='oracle_confirm_'+digest)
-    if st.button('Enviar e conferir horas no Oracle',type='primary',disabled=not approved or not ss.get('oracle_hours_ready') or text.strip()!=f'ENVIAR HORAS {pid}'):
+    if st.button('Enviar e conferir horas no Oracle',type='primary',disabled=not approved or not (ss.get('oracle_hours_ready') or repair_snapshot is not None) or text.strip()!=f'ENVIAR HORAS {pid}'):
         ss.pop('oracle_hours_diagnostic',None)
         lock=storage.parent/'envio.lock'
         try:
