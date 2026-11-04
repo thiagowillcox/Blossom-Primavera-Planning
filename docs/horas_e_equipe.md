@@ -147,3 +147,23 @@ Também foram simulados criação, conferência e repetição sem duplicação d
 atribuições nas quatro saídas de LD já disponíveis. A previsão com ajuste à
 equipe conservou as horas e manteve as entradas técnicas pendentes separadas.
 Nenhum desses ensaios usou credenciais reais ou gravou no tenant Oracle.
+
+## Mensagens e diagnóstico de um envio interrompido
+
+As mensagens de prévia e erro são mantidas na sessão após atualizar campos ou
+baixar arquivos. Novas interrupções também guardam no registro uma mensagem
+sanitizada, sem senha, token ou corpo bruto da resposta Oracle. Registros antigos
+podem não conter o motivo da falha.
+
+Para conferir uma tentativa sem gravar, prepare a prévia e clique em
+**Conferir situação das horas (sem enviar)**. Essa ação usa apenas GET depois
+da autenticação. Ela consulta os dados atuais, compara as horas/funções com a
+prévia e permite baixar `diagnostico_horas_<ID>.json`. O relatório diferencia
+atribuições compatíveis, não encontradas e divergentes, e inclui os campos
+mínimos para conferir o lote interrompido quando o registro for compatível.
+Não há repetição de lotes ou alteração do registro de execução nessa consulta.
+
+O diagnóstico é diferente de `previa_horas_oracle.json`: a prévia contém as
+solicitações preparadas, enquanto o diagnóstico inclui a comparação com a
+leitura atual do Oracle. Uma consulta sem resultados não esclarece, sozinha,
+o motivo de uma falha passada nem libera automaticamente um lote incerto.

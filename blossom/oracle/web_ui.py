@@ -6,7 +6,7 @@ from pathlib import Path
 from tempfile import gettempdir
 import time
 from .client import ConnectionFailure
-from .effort import EffortSession,load_package,plan_hours,partition_hours,sync_hours,ROLE_CODES
+from .effort import EffortSession,load_package,plan_hours,partition_hours,sync_hours,ROLE_CODES,diagnose_hours
 from .draft import durable_write
 
 
@@ -30,7 +30,7 @@ def render(st):
     digest=hashlib.sha256(excel.getvalue()+record.getvalue()).hexdigest()
     ss=st.session_state
     if ss.get('oracle_package_key')!=digest:
-        for key in ('oracle_package','oracle_package_key','oracle_catalog','oracle_project','oracle_hours_plan','oracle_hours_result'):ss.pop(key,None)
+        for key in ('oracle_package','oracle_package_key','oracle_catalog','oracle_project','oracle_hours_plan','oracle_hours_result','oracle_hours_feedback','oracle_hours_diagnostic','oracle_hours_ready'):ss.pop(key,None)
         try:
             ss.oracle_package=load_package(excel.getvalue(),record.getvalue());ss.oracle_package_key=digest
         except (ConnectionFailure,ValueError,KeyError,TypeError,OSError):
@@ -87,16 +87,24 @@ def render(st):
         selected=st.selectbox('Função Oracle para '+role,options,index=options.index(suggested),
             format_func=lambda rid:'Selecione…' if rid is None else html.unescape(str(role_by_id[rid]['resourceName']))+' · '+str(role_by_id[rid]['resourceCode'])+' · ID '+str(rid),key='role_map_'+digest+'_'+role)
         if selected is not None:mapping[role]=selected
-    if ss.get('oracle_hours_plan') and ss.oracle_hours_plan['mapping']!=mapping:ss.pop('oracle_hours_plan',None)
+    if ss.get('oracle_hours_plan') and ss.oracle_hours_plan['mapping']!=mapping:
+        for key in ('oracle_hours_plan','oracle_hours_feedback','oracle_hours_diagnostic','oracle_hours_ready'):ss.pop(key,None)
     approved=st.checkbox('Conferi a correspondência de todas as funções',key='oracle_mapping_approved_'+digest)
     if st.button('Preparar prévia das horas',disabled=not approved):
+        ss.oracle_hours_ready=False
+        ss.pop('oracle_hours_diagnostic',None)
         try:
             session.binding(package)
             plan=plan_hours(package,mapping,catalog)
-            missing,found=partition_hours(plan,session.rows('assignment/project/'+str(pid)))
             ss.oracle_hours_plan=plan
-            st.success(f"Prévia: {len(missing)} atribuições para criar e {len(found)} já conferidas no Oracle.")
-        except (ConnectionFailure,ValueError,KeyError,TypeError) as exc:st.error(str(exc) if isinstance(exc,ConnectionFailure) else 'Não foi possível conferir a prévia de horas.')
+            missing,found=partition_hours(plan,session.rows('assignment/project/'+str(pid)))
+            ss.oracle_hours_ready=True
+            ss.oracle_hours_feedback=('success',f"Prévia: {len(missing)} atribuições para criar e {len(found)} já conferidas no Oracle.")
+        except (ConnectionFailure,ValueError,KeyError,TypeError) as exc:
+            ss.oracle_hours_feedback=('error',str(exc) if isinstance(exc,ConnectionFailure) else 'Não foi possível conferir a prévia de horas.')
+    if ss.get('oracle_hours_feedback'):
+        level,message=ss.oracle_hours_feedback
+        getattr(st,level)(message)
     plan=ss.get('oracle_hours_plan')
     if not plan:return
     st.subheader('Confira antes de enviar')
@@ -115,8 +123,22 @@ def render(st):
             if restored.get('servidor')!=plan['servidor'] or restored.get('projectId')!=pid or restored.get('source_sha256')!=package['source_sha256']:raise ValueError()
             durable_write(journal,restored,exclusive=True)
         except (ValueError,KeyError,OSError):st.error('Registro de horas incompatível.');return
+    if journal.exists():
+        try:
+            last=json.loads(journal.read_text())
+            if last.get('estado')=='interrompido_conferir_oracle':
+                st.warning('Último envio interrompido. '+(last.get('erro') or 'A versão anterior não registrou a mensagem do erro.'))
+        except (ValueError,OSError):st.error('O registro local não pôde ser lido. Preserve-o para conferência.')
+    if st.button('Conferir situação das horas (sem enviar)'):
+        try:
+            last=json.loads(journal.read_text()) if journal.exists() else None
+            with st.spinner('Consultando horas no Oracle, sem gravar…'):
+                ss.oracle_hours_diagnostic=diagnose_hours(session,package,plan,last)
+        except (ConnectionFailure,ValueError,KeyError,TypeError,OSError) as exc:
+            st.error(str(exc) if isinstance(exc,ConnectionFailure) else 'Não foi possível concluir a consulta. Nenhum envio realizado.')
     text=st.text_input('Para gravar no projeto, digite ENVIAR HORAS '+str(pid),key='oracle_confirm_'+digest)
-    if st.button('Enviar e conferir horas no Oracle',type='primary',disabled=not approved or text.strip()!=f'ENVIAR HORAS {pid}'):
+    if st.button('Enviar e conferir horas no Oracle',type='primary',disabled=not approved or not ss.get('oracle_hours_ready') or text.strip()!=f'ENVIAR HORAS {pid}'):
+        ss.pop('oracle_hours_diagnostic',None)
         lock=storage.parent/'envio.lock'
         try:
             lock.mkdir()
@@ -127,10 +149,19 @@ def render(st):
                 progress=st.empty()
                 result=sync_hours(session,package,plan,journal,progress.info)
                 ss.oracle_hours_result=result
-            st.success('Horas enviadas e conferidas por nova consulta: '+hh_label(result['hh_conferidas'])+' HH.')
+            message='Horas enviadas e conferidas por nova consulta: '+hh_label(result['hh_conferidas'])+' HH.'
+            ss.oracle_hours_feedback=('success',message);st.success(message)
         except (ConnectionFailure,ValueError,KeyError,TypeError,OSError) as exc:
-            st.error(str(exc) if isinstance(exc,ConnectionFailure) else 'Envio interrompido. Preserve o registro e consulte o Oracle antes de repetir.')
+            message=str(exc) if isinstance(exc,ConnectionFailure) else 'Envio interrompido. Preserve o registro e consulte o Oracle antes de repetir.'
+            ss.oracle_hours_feedback=('error',message);st.error(message)
         finally:lock.rmdir()
+    if ss.get('oracle_hours_feedback') and ss.oracle_hours_feedback[0]=='error':
+        st.error('Última mensagem: '+ss.oracle_hours_feedback[1])
+    if ss.get('oracle_hours_diagnostic'):
+        diagnostic=ss.oracle_hours_diagnostic;counts=diagnostic['resumo']
+        st.info(f"Consulta: {counts['compativeis']} compatíveis, {counts['nao_encontradas']} não encontradas e {counts['divergentes']} divergentes. Nenhum dado enviado.")
+        if diagnostic['problema_conferencia_global']:st.warning(diagnostic['problema_conferencia_global'])
+        st.download_button('Baixar diagnóstico das horas',json.dumps(diagnostic,ensure_ascii=False,indent=2),'diagnostico_horas_'+str(pid)+'.json','application/json')
     if journal.exists():
         st.download_button('Baixar registro do envio de horas',journal.read_bytes(),'registro_horas_'+str(pid)+'.json','application/json')
         st.caption('Guarde esse registro. O disco do Streamlit pode ser reiniciado e ainda não há histórico persistente neste programa.')

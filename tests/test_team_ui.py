@@ -68,8 +68,12 @@ def test_oracle_web_login_preview_and_confirmed_hours_upload(tmp_path,monkeypatc
  next(b for b in app.button if b.label=='Preparar prévia das horas').click().run(timeout=30)
  assert not app.exception
  assert not oracle.assignments
+ next(b for b in app.button if b.label=='Conferir situação das horas (sem enviar)').click().run(timeout=30)
+ assert not app.exception and not oracle.assignments
+ assert app.session_state['oracle_hours_diagnostic']['resumo']['nao_encontradas']==1
  assert next(b for b in app.button if b.label=='Enviar e conferir horas no Oracle').disabled
  next(t for t in app.text_input if t.label.startswith('Para gravar no projeto')).set_value('ENVIAR HORAS 7').run()
+ assert any('Prévia:' in item.value for item in app.success)
  next(b for b in app.button if b.label=='Enviar e conferir horas no Oracle').click().run(timeout=30)
  assert not app.exception and len(oracle.assignments)==1
  assert app.session_state['oracle_hours_result']['estado']=='horas_conferidas'

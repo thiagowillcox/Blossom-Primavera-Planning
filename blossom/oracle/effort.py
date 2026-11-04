@@ -4,6 +4,7 @@ import html
 import json
 import urllib.request
 from collections import defaultdict
+from datetime import datetime,timezone
 from decimal import Decimal
 from pathlib import Path
 from tempfile import TemporaryDirectory
@@ -234,5 +235,61 @@ def sync_hours(session,package,plan,journal_path,progress=lambda message:None):
         if abs(amount(state['hh_conferidas'])-amount(plan['hh_planejadas']))>TOL:raise ConnectionFailure('A soma final de HH não fecha.')
         state['estado']='horas_conferidas';durable_write(path,state)
         return state
-    except BaseException:
-        state['estado']='interrompido_conferir_oracle';durable_write(path,state);raise
+    except BaseException as exc:
+        state['estado']='interrompido_conferir_oracle'
+        state['erro']=str(exc) if isinstance(exc,ConnectionFailure) else 'Operação interrompida; confira o Oracle antes de repetir.'
+        durable_write(path,state);raise
+
+
+def diagnose_hours(session,package,plan,record=None):
+    """Read-only snapshot of expected role-hours and actual Oracle assignments.
+
+    This intentionally does not call sync_hours or modify the execution journal.
+    """
+    if plan.get('projectId')!=package['projectId'] or plan.get('source_sha256')!=package['source_sha256']:
+        raise ConnectionFailure('A prévia não corresponde ao Excel e ao projeto selecionados.')
+    session.binding(package)
+    existing=session.rows('assignment/project/'+str(package['projectId']))
+    codes=defaultdict(list);pairs=defaultdict(list)
+    for row in existing:
+        codes[row.get('assignmentCode')].append(row)
+        pairs[(row.get('activityId'),row.get('resourceId'))].append(row)
+    identity={k:plan[k] for k in ('projectId','source_sha256','mapping','payloads')}
+    sha=hashlib.sha256(json.dumps(identity,sort_keys=True,ensure_ascii=False).encode()).hexdigest()
+    record_ok=bool(record and record.get('servidor')==SERVER and record.get('projectId')==plan['projectId']
+        and record.get('source_sha256')==plan['source_sha256'] and record.get('plan_sha256')==sha)
+    pending=(record.get('pendente') or {}) if record_ok else {}
+    pending_codes=set(pending.get('codigos',[])) if pending.get('tipo')=='atribuicoes' else set()
+    counts={'compativeis':0,'nao_encontradas':0,'divergentes':0};details=[]
+    keep=('assignmentCode','assignmentId','projectId','activityId','resourceId','resourceClass','plannedUnits','remainingUnits','actualUnits')
+    def minimal(row):
+        return {k:(v if v is None or type(v) in (str,int,float,bool) else 'Formato não reconhecido') for k in keep if (v:=row.get(k)) is not None}
+    for expected in plan['payloads']:
+        code=expected['assignmentCode'];pair=(expected['activityId'],expected['resourceId'])
+        related=list(codes.get(code,[]))
+        related.extend(row for row in pairs.get(pair,[]) if row not in related)
+        problem=None
+        try:
+            missing,found=partition_hours(dict(plan,payloads=[expected]),related)
+            status='nao_encontradas' if missing else 'compativeis'
+        except (ConnectionFailure,ValueError,TypeError,KeyError) as exc:
+            status='divergentes';problem=str(exc) if isinstance(exc,ConnectionFailure) else 'Formato da resposta não reconhecido.'
+        counts[status]+=1
+        if status=='divergentes' or code in pending_codes:
+            details.append({'codigo':code,'situacao':status,'lote_interrompido':code in pending_codes,
+                'esperado':expected,'encontrados':[minimal(row) for row in related],'motivo':problem})
+    global_problem=None
+    try:partition_hours(plan,existing)
+    except (ConnectionFailure,ValueError,TypeError,KeyError) as exc:
+        global_problem=str(exc) if isinstance(exc,ConnectionFailure) else 'Formato de resposta não reconhecido.'
+    assigned=session.rows('resource/projectId/'+str(package['projectId']))
+    role_ids={r.get('resourceId') for r in assigned if r.get('resourceClass')=='ROLE'}
+    return {'tipo':'diagnostico_horas_somente_leitura','consultado_em_utc':datetime.now(timezone.utc).isoformat(),'servidor':SERVER,'projectId':plan['projectId'],
+        'source_sha256':plan['source_sha256'],'plan_sha256':sha,'atribuicoes_previstas':len(plan['payloads']),
+        'hh_previstas':plan['hh_planejadas'],'atribuicoes_retornadas_oracle':len(existing),'resumo':counts,
+        'funcoes_selecionadas_associadas':len(set(plan['mapping'].values())&role_ids),
+        'funcoes_selecionadas_nao_associadas':sorted(set(plan['mapping'].values())-role_ids),
+        'registro_compativel':record_ok,'estado_registro':record.get('estado') if record_ok else None,
+        'erro_ultimo_envio':record.get('erro') if record_ok else None,'solicitacao_pendente':pending,
+        'problema_conferencia_global':global_problem,'detalhes':details,
+        'aviso':'Somente consulta. Não confirma a causa de uma falha passada sem resposta registrada e não autoriza repetir um lote incerto.'}
