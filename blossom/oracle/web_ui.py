@@ -2,39 +2,43 @@
 import hashlib
 import html
 import json
-from pathlib import Path
 from tempfile import gettempdir
-import time
 from .client import ConnectionFailure
 from .effort import EffortSession,load_package,plan_hours,partition_hours,sync_hours,ROLE_CODES,diagnose_hours
 from .draft import durable_write
 
 
-def disconnect(ss):
-    session=ss.get('oracle_session')
-    if session:session.close()
-    for key in list(ss):
-        if key.startswith('oracle_') and key not in ('oracle_package','oracle_package_key'):ss.pop(key,None)
+from .connection_ui import disconnect,render as connection
+from ..session_files import project_files
 
 
-def render(st):
+def render(st,package=None):
     from ..ui import heading
     from ..team_ui import hh_label
-    heading('05 · PRIMAVERA','As horas de cada função na atividade certa.',
-        'Importe o cronograma já enviado, confira as funções e revise a prévia antes de gravar no Oracle.')
+    if package is None:
+        heading('05 · PRIMAVERA','As horas de cada função na atividade certa.',
+            'Importe o cronograma já enviado, confira as funções e revise a prévia antes de gravar no Oracle.')
+    else:st.subheader('Horas por função e atividade')
     st.caption('Esta etapa complementa a estrutura existente. Não recria grupos, atividades ou ligações.')
-    excel=st.file_uploader('Excel original usado no envio concluído',type=['xlsx'],key='hours_excel_upload')
-    record=st.file_uploader('Registro estrutural concluído — envio_rascunho_<ID>.json',type=['json'],key='hours_structure_upload')
-    if not excel or not record:
-        st.info('O registro está na pasta output do programa usado no seu computador. Precisamos dele para reconhecer os IDs já criados.');return
-    digest=hashlib.sha256(excel.getvalue()+record.getvalue()).hexdigest()
     ss=st.session_state
-    if ss.get('oracle_package_key')!=digest:
-        for key in ('oracle_package','oracle_package_key','oracle_catalog','oracle_project','oracle_hours_plan','oracle_hours_result','oracle_hours_feedback','oracle_hours_diagnostic','oracle_hours_ready'):ss.pop(key,None)
-        try:
-            ss.oracle_package=load_package(excel.getvalue(),record.getvalue());ss.oracle_package_key=digest
-        except (ConnectionFailure,ValueError,KeyError,TypeError,OSError):
-            st.error('O Excel e o registro não correspondem a um envio estrutural concluído. Use os mesmos arquivos originais.');return
+    integrated=package is not None
+    if package is None:
+        excel=st.file_uploader('Excel original usado no envio concluído',type=['xlsx'],key='hours_excel_upload')
+        record=st.file_uploader('Registro estrutural concluído — envio_rascunho_<ID>.json',type=['json'],key='hours_structure_upload')
+        if not excel or not record:
+            st.info('O registro está na pasta output do programa usado no seu computador. Precisamos dele para reconhecer os IDs já criados.');return
+        digest=hashlib.sha256(excel.getvalue()+record.getvalue()).hexdigest()
+        if ss.get('oracle_package_key')!=digest:
+            for key in ('oracle_package','oracle_package_key','oracle_catalog','oracle_project','oracle_hours_plan','oracle_hours_result','oracle_hours_feedback','oracle_hours_diagnostic','oracle_hours_ready'):ss.pop(key,None)
+            try:
+                ss.oracle_package=load_package(excel.getvalue(),record.getvalue());ss.oracle_package_key=digest
+            except (ConnectionFailure,ValueError,KeyError,TypeError,OSError):
+                st.error('O Excel e o registro não correspondem a um envio estrutural concluído. Use os mesmos arquivos originais.');return
+    else:
+        digest=hashlib.sha256((package['source_sha256']+str(package['projectId'])).encode()).hexdigest()
+        if ss.get('oracle_package_key')!=digest:
+            for key in ('oracle_catalog','oracle_project','oracle_hours_plan','oracle_hours_result','oracle_hours_feedback','oracle_hours_diagnostic','oracle_hours_ready'):ss.pop(key,None)
+        ss.oracle_package=package;ss.oracle_package_key=digest
     package=ss.oracle_package;pid=package['projectId']
     st.write('Projeto do registro: **'+str(pid)+'**')
     summary=[{'Função da LD':role,'HH planejadas':hh_label(value)} for role,value in package['hh_por_funcao'].items()]
@@ -43,30 +47,7 @@ def render(st):
     with st.expander('Horas por atividade e função'):
         names={a['id']:a['nome'] for a in package['tables']['Atividades']}
         st.dataframe([{'Atividade':names[a['atividade_id']],'Função':a['funcao'],'HH':hh_label(a['hh'])} for a in package['tables']['Atribuicoes_Funcoes']],hide_index=True)
-    def connect():
-        username=ss.get('oracle_login','');password=ss.get('oracle_password','')
-        ss.oracle_password=''
-        try:
-            old=ss.pop('oracle_session',None)
-            if old:old.close()
-            session=EffortSession(username,password);session.test_connection()
-            ss.oracle_session=session;ss.oracle_connected_at=time.time();ss.pop('oracle_message',None)
-            for key in ('oracle_catalog','oracle_project','oracle_hours_plan'):ss.pop(key,None)
-        except ConnectionFailure as exc:
-            if 'session' in locals():session.close()
-            ss.oracle_message=str(exc)
-    session=ss.get('oracle_session')
-    if session and time.time()-ss.get('oracle_connected_at',0)>1200:
-        disconnect(ss);session=None;st.info('A sessão de integração expirou. Entre novamente para continuar.')
-    with st.expander('Conexão Oracle',expanded=session is None):
-        st.caption('A senha é descartada após a autenticação. A conexão fica apenas nesta sessão e expira na próxima interação após 20 minutos. Não entra nos relatórios.')
-        with st.form('oracle_connection'):
-            st.text_input('Usuário / e-mail Oracle',key='oracle_login')
-            st.text_input('Senha Oracle',type='password',key='oracle_password')
-            st.form_submit_button('Conectar ao Oracle',on_click=connect)
-        if ss.get('oracle_message'):st.error(ss.oracle_message)
-        if session:st.button('Desconectar',on_click=disconnect,args=(ss,))
-    session=ss.get('oracle_session')
+    session=ss.get('oracle_session') if integrated else connection(st,EffortSession)
     if not session:return
     if st.button('Consultar projeto e funções disponíveis'):
         try:
@@ -113,8 +94,7 @@ def render(st):
     if plan['associar_funcoes']:st.info(str(len(plan['associar_funcoes']))+' funções existentes também serão associadas a este projeto.')
     st.caption('O envio não define prazos nem avanço. Custos eventualmente calculados pelo Oracle usam os cadastros existentes; não enviamos taxas.')
     st.download_button('Baixar prévia de horas',json.dumps(plan,ensure_ascii=False,indent=2),'previa_horas_oracle.json','application/json')
-    storage=Path(gettempdir())/'blossom-effort'/str(pid)/package['source_sha256']
-    storage.mkdir(parents=True,exist_ok=True)
+    storage=project_files(ss,pid,package['source_sha256'],gettempdir())
     journal=storage/'registro_horas.json'
     previous=st.file_uploader('Registro de horas anterior, se precisar recuperar uma tentativa (opcional)',type=['json'],key='hours_previous_upload')
     if previous and not journal.exists():
@@ -161,9 +141,19 @@ def render(st):
         diagnostic=ss.oracle_hours_diagnostic;counts=diagnostic['resumo']
         st.info(f"Consulta: {counts['compativeis']} compatíveis, {counts['nao_encontradas']} não encontradas e {counts['divergentes']} divergentes. Nenhum dado enviado.")
         if diagnostic['problema_conferencia_global']:st.warning(diagnostic['problema_conferencia_global'])
+        if diagnostic['detalhes']:
+            with st.expander('Ver o que foi encontrado no Oracle'):
+                rows=[]
+                for detail in diagnostic['detalhes'][:100]:
+                    actual=detail['encontrados']
+                    rows.append({'Atribuição':detail['codigo'],'Situação':detail['situacao'],'HH previstas':detail['esperado']['plannedUnits'],
+                        'HH planejadas no Oracle':actual[0].get('plannedUnits') if len(actual)==1 else None,
+                        'HH restantes no Oracle':actual[0].get('remainingUnits') if len(actual)==1 else None,
+                        'Motivo':detail['motivo'] or ('Não retornou na consulta' if not actual else 'Compatível')})
+                st.dataframe(rows,hide_index=True)
         st.download_button('Baixar diagnóstico das horas',json.dumps(diagnostic,ensure_ascii=False,indent=2),'diagnostico_horas_'+str(pid)+'.json','application/json')
     if journal.exists():
         st.download_button('Baixar registro do envio de horas',journal.read_bytes(),'registro_horas_'+str(pid)+'.json','application/json')
-        st.caption('Guarde esse registro. O disco do Streamlit pode ser reiniciado e ainda não há histórico persistente neste programa.')
+        st.caption('Esta sessão não tem histórico permanente. Você pode baixar uma cópia se quiser guardá-la.')
     from .timing_ui import render as timing
     timing(st,session,package,ss.get('team_report'),storage)

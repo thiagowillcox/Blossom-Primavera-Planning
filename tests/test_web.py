@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 def test_app_starts_and_requires_uploads():
     app = AppTest.from_file(str(ROOT/'app.py')).run(timeout=30)
     assert not app.exception
-    assert app.button[0].disabled
+    assert next(b for b in app.button if b.label.startswith(('Configurar projeto','Gerar pré-cronograma'))).disabled
     assert len(app.get('file_uploader'))==1
     assert len(app.toggle)==0
     app.radio[0].set_value('Configuração').run()
@@ -28,7 +28,7 @@ def test_app_starts_and_requires_uploads():
     assert app.text_input[0].value == 'Projeto de teste'
     assert app.number_input[0].value == 6.0
     assert len(app.toggle)==0
-    assert app.button[0].disabled
+    assert next(b for b in app.button if b.label.startswith(('Configurar projeto','Gerar pré-cronograma'))).disabled
     assert not app.exception
 
 

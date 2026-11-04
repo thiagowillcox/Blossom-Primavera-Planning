@@ -1,5 +1,9 @@
 # Blossom Primavera Planning
 
+**Fluxo completo pelo navegador, sem banco de histórico:** envie a LD, gere o
+pré-cronograma e faça a integração na seção Primavera, sem precisar baixar
+Excel/JSON ou executar `.bat` entre as etapas. [Guia de uso por link](docs/uso_por_link.md).
+
 Novas áreas no site: **Equipe e prazos** e **Primavera**, para revisar horas por
 função, preparar previsão de equipe e complementar a estrutura Oracle já enviada.
 Veja o [guia de horas, equipe e integração](docs/horas_e_equipe.md).
@@ -114,9 +118,9 @@ Os arquivos de exemplo em `output` podem corresponder a versões anteriores. Ger
 
 ## Interface web Blossom
 
-A interface em `app.py` permite enviar somente a LD, usar automaticamente o manual fixo, preencher jornada/capacidades/prazos, gerar e baixar o Excel e consultar WBS, atividades, pendências e auditoria no navegador. Campos vazios continuam pendentes. A área Primavera permite autenticação Oracle por sessão, prévia e envio complementar de horas, além de agendamento condicionado à revisão. A integração estrutural inicial usa os iniciadores locais. Ainda não há login corporativo do próprio site ou histórico persistente.
+A interface em `app.py` permite enviar somente a LD, usar automaticamente o manual fixo, preencher jornada/capacidades/prazos, gerar e baixar o Excel e consultar WBS, atividades, pendências e auditoria no navegador. Campos vazios continuam pendentes. A área Primavera permite autenticação Oracle por sessão, prévia e envio complementar de horas, além de agendamento condicionado à revisão. A integração estrutural inicial também está na seção Primavera, com reconhecimento dos itens já compatíveis no Oracle. Ainda não há login corporativo do próprio site ou histórico persistente.
 
-### Windows: abrir sem digitar comandos
+### Alternativa local no Windows
 
 Com Python 3.12 instalado, abra a pasta que contém `app.py` e dê dois cliques em **`Abrir_Blossom.bat`**. Na primeira execução o arquivo instala as dependências pela internet no ambiente curto `%LOCALAPPDATA%\BlossomPlanning\venv`. Depois inicia o site local e solicita ao navegador que o abra. Mantenha a janela do servidor aberta durante o uso. Se o navegador não abrir automaticamente, use `http://localhost:8501` no seu computador. Fechar a janela encerra o servidor.
 
@@ -133,7 +137,7 @@ Abra o endereço indicado no terminal. A interface aceita os nomes originais dos
 
 O Blossom Planning usa somente tema escuro, com fundo quase preto, cartões em rosa profundo, botões pink e logo de letras claras em `assets/logo-dark.png`. Não há alternância de tema na interface.
 
-Esta é uma aplicação local. Para disponibilizá-la por uma URL à equipe, ainda é necessário escolher hospedagem e definir autenticação, acesso aos documentos e limites de processamento. Não exponha o servidor local como se já fosse um serviço publicado.
+Para uso por um link compartilhável, utilize o app no Streamlit Community Cloud apontando para `main` e `app.py`, conforme o [guia de uso por link](docs/uso_por_link.md). O endereço localhost das instruções acima é apenas a alternativa local.
 
 ## Hierarquia visual do pré-cronograma
 
@@ -151,9 +155,9 @@ No site, a aba Atividades usa a mesma ordem hierárquica, com recuo visual e cla
 - O site abre diretamente no tema escuro; não há seletor de tema.
 - Arquivos e premissas permanecem durante a navegação entre seções. Alterar entradas ou parâmetros invalida o resultado anterior; navegar entre as seções não invalida a geração.
 - Fonte Nunito Sans incluída localmente, com licença em `assets/OFL.txt`. Não há busca de fontes durante o uso.
-- Os arquivos permanecem somente durante a sessão: não é um histórico persistente nem há contas/login nesta entrega.
+- Os arquivos permanecem somente durante a sessão. Não há histórico persistente ou contas próprias do aplicativo; a integração usa login Oracle por sessão.
 
-Para atualizar, feche o servidor anterior, extraia a nova versão em pasta curta fora do OneDrive e abra `Abrir_Blossom.bat` novamente. Recarregar só o navegador não substitui arquivos antigos do projeto.
+No site hospedado, as atualizações são disponibilizadas a partir da `main`, sem novos downloads por quem usa o link. Somente para a alternativa local, atualize os arquivos da instalação e reinicie o servidor.
 
 ## Conferência das horas pela LD
 

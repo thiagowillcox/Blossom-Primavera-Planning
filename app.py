@@ -58,6 +58,8 @@ with st.sidebar:
     st.caption('Do escopo ao próximo passo.')
     st.caption('Pré-cronograma para revisão da equipe. As precedências do manual ainda são preliminares.')
     st.caption('LD preservada · integração Oracle com prévia e confirmação')
+    from blossom.session_files import clear_session
+    st.button('Novo planejamento / limpar sessão',on_click=clear_session,args=(ss,))
 
 settings=ss.settings
 settings.setdefault('manual_rules',True)
@@ -238,5 +240,5 @@ elif page=='Equipe e prazos':
     render(st,config)
 
 elif page=='Primavera':
-    from blossom.oracle.web_ui import render
+    from blossom.oracle.workflow_ui import render
     render(st)

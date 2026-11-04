@@ -1,9 +1,12 @@
 # Horas por função, equipe e integração Oracle
 
+O fluxo principal agora está no [guia de uso por link](uso_por_link.md), sem
+exigir download/importação de registros. As instruções de arquivos abaixo
+continuam disponíveis na opção Importar registros antigos.
+
 A geração da LD e as oito abas originais permanecem preservadas. Esta entrega
-acrescenta duas áreas ao site: **Equipe e prazos** e **Primavera**. O envio inicial
-da estrutura continua disponível nos iniciadores locais já existentes; a nova
-área complementa um envio estrutural concluído.
+acrescenta duas áreas ao site: **Equipe e prazos** e **Primavera**. O envio inicial da estrutura também está no site, com os iniciadores locais
+como alternativa.
 
 ## Começar pelas horas no projeto já criado
 
@@ -126,10 +129,10 @@ Não existe transação única entre lotes. Uma falha pode deixar parte dos dado
 criada/atualizada. Preserve os registros e confira o Oracle antes de repetir.
 A exclusão de dados não faz parte deste fluxo.
 
-O Streamlit pode reiniciar seu disco. Os registros de execução no servidor não
-substituem histórico persistente: baixe os arquivos ao terminar ou interromper.
-Login corporativo do próprio site, banco de histórico e uma trilha de auditoria
-por usuário continuam sendo trabalhos separados.
+Os arquivos de execução são temporários e isolados por sessão, não um histórico.
+O fluxo integrado reconhece a estrutura compatível no Oracle sem exigir os JSONs
+locais. Downloads são opcionais para quem quiser guardar cópias. Não há banco
+de histórico; o login utilizado na integração é o da própria conta Oracle.
 
 A documentação foi conferida no `openapi.json` fornecido, versão 2026.10.02.
 O recorte do contrato está em `config/oracle_effort_contract.json`. Os testes de

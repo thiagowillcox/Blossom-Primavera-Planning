@@ -11,7 +11,7 @@ def test_new_pages_start_without_credentials_or_source_files():
  assert not app.exception and app.info
  app.radio[0].set_value('Primavera').run()
  assert not app.exception
- assert len(app.get('file_uploader'))==2
+ assert len(app.get('file_uploader'))==0
  assert not app.text_input # no password requested before a verified package
 
 
@@ -57,6 +57,7 @@ def test_oracle_web_login_preview_and_confirmed_hours_upload(tmp_path,monkeypatc
  app=AppTest.from_file(str(ROOT/'app.py'))
  app.session_state['workflow_version']='ld-relacoes-v4';app.session_state['navigation']='Primavera'
  app.run(timeout=30)
+ next(w for w in app.selectbox if w.label=='Base para integração').set_value('Importar registros antigos (opcional)').run(timeout=30)
  assert not app.exception
  app.text_input[0].set_value('test');app.text_input[1].set_value('fictional-password')
  next(b for b in app.button if b.label=='Conectar ao Oracle').click().run(timeout=30)

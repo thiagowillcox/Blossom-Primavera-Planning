@@ -47,7 +47,7 @@ def render(st,config):
     if st.session_state.get('oracle_package'):sources['Excel vinculado ao projeto Oracle']=st.session_state.oracle_package['tables']
     if not sources:
         st.info('Gere um pré-cronograma ou importe o Excel e seu registro na seção Primavera.');return
-    source=st.selectbox('Base da previsão',list(sources));tables=sources[source]
+    source=st.selectbox('Base da previsão',list(sources),index=list(sources).index('Excel vinculado ao projeto Oracle') if 'Excel vinculado ao projeto Oracle' in sources else 0);tables=sources[source]
     key=hashlib.sha256(json.dumps(tables,default=plain,sort_keys=True).encode()).hexdigest()
     saved=st.session_state.setdefault('workforce_inputs',{})
     def remember(name,key):saved[name]=st.session_state[key]
