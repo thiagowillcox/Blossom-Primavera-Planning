@@ -57,7 +57,7 @@ def test_web_real_uploads():
     app.run(timeout=30)
     assert not app.exception
 
-    assert len(app.expander) == 7
+    assert len(app.expander) == 8
     assert len(app.metric) == 4
     assert not app.exception
     assert len(app.metric) == 4

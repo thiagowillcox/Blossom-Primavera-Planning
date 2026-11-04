@@ -53,11 +53,11 @@ with st.sidebar:
     if logo.exists():st.image(str(logo),width=205)
     else:st.markdown('### Blossom')
     st.markdown('<div class="side-title">Blossom Planning</div><div class="side-sub">ENGENHARIA & PLANEJAMENTO</div>',unsafe_allow_html=True)
-    page=st.radio('Seu planejamento',['Arquivos','Configuração','Resultados'],key='navigation')
+    page=st.radio('Seu planejamento',['Arquivos','Configuração','Resultados','Equipe e prazos','Primavera'],key='navigation')
     st.divider()
     st.caption('Do escopo ao próximo passo.')
     st.caption('Pré-cronograma para revisão da equipe. As precedências do manual ainda são preliminares.')
-    st.caption('Processamento local · sem envio ao Oracle')
+    st.caption('LD preservada · integração Oracle com prévia e confirmação')
 
 settings=ss.settings
 settings.setdefault('manual_rules',True)
@@ -191,7 +191,7 @@ elif page=='Configuração':
             logging.exception('Falha na geração do pré-cronograma')
             st.error('Não foi possível processar as planilhas. Confira o formato e a integridade dos arquivos.')
 
-else:
+elif page=='Resultados':
     heading('03 · RESULTADOS','Pronto para o próximo passo.',
             'Consulte o resumo, revise as pendências e baixe o pré-cronograma para compartilhar com a equipe.')
     if 'result' not in ss:
@@ -222,8 +222,21 @@ else:
                 if name=='Atividades':st.caption('Fase → disciplina → documento → etapas. O Excel inclui grupos recolhíveis.')
                 if name=='Matriz_Regras':st.caption('As regras textuais revisadas aparecem primeiro. As figuras catalogadas nas páginas seguintes ainda precisam de interpretação; uma entrada SIPOC não é automaticamente uma predecessora FS.')
                 table(rows,columns,name)
+        with st.expander('Horas por função e atividade'):
+            by_activity={a['id']:a['nome'] for a in tables['Atividades']}
+            role_rows=[dict(a,atividade_nome=by_activity[a['atividade_id']]) for a in tables['Atribuicoes_Funcoes']]
+            table(role_rows,[('atividade_nome','Atividade / etapa'),('funcao','Função'),('hh','HH planejadas')],'Horas por função')
         with st.expander('Relatórios complementares'):
             if 'conferencia_ld.json' in files:
                 st.download_button('↓ Conferência das horas com a LD',files['conferencia_ld.json'],'conferencia_ld.json','application/json')
             st.download_button('↓ Relatório de pendências',files['pendencias.json'],'pendencias.json','application/json')
             st.download_button('↓ Matriz preliminar',files['matriz_regras.json'],'matriz_regras.json','application/json')
+
+
+elif page=='Equipe e prazos':
+    from blossom.team_ui import render
+    render(st,config)
+
+elif page=='Primavera':
+    from blossom.oracle.web_ui import render
+    render(st)

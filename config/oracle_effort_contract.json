@@ -1,0 +1,253 @@
+{
+  "source_sha256": "27d1ea55a6e16b554533ca8ae1713500e230d8290fb9260dd7e8e0c3cb8584ca",
+  "version": "2026.10.02",
+  "schemas": {
+    "ApiEntityAssignmentInput": {
+      "required": [
+        "activityId",
+        "resourceId"
+      ],
+      "properties": {
+        "assignmentCode": {
+          "maxLength": 60,
+          "minLength": 0,
+          "type": "string",
+          "description": "A unique identifier for the assignment."
+        },
+        "projectId": {
+          "type": "integer",
+          "description": "The unique identifier for the project.",
+          "format": "int64"
+        },
+        "activityId": {
+          "type": "integer",
+          "description": "The unique identifier for the activity.The activity object can also be identified by its unique criteria.",
+          "format": "int64"
+        },
+        "resourceId": {
+          "type": "integer",
+          "description": "The unique identifier for the resource.The resource object can also be identified by its unique criteria.",
+          "format": "int64"
+        },
+        "resourceClass": {
+          "type": "string",
+          "description": "The class of the resource of an assignment. ",
+          "enum": [
+            "RESOURCE",
+            "ROLE"
+          ]
+        },
+        "plannedUnits": {
+          "type": "number",
+          "description": "The planned units of work for the resource assignment on the activity.",
+          "format": "double"
+        },
+        "remainingUnits": {
+          "type": "number",
+          "description": "The remaining units of work to be performed by the resource on the activity.",
+          "format": "double"
+        },
+        "driveActivityDates": {
+          "type": "boolean",
+          "description": "Determines whether new resource or role assignments determine activity dates."
+        }
+      }
+    },
+    "ApiEntityActivityInput": {
+      "required": [
+        "projectId"
+      ],
+      "properties": {
+        "activityId": {
+          "type": "integer",
+          "description": "The unique identifier for the activity.",
+          "format": "int64"
+        },
+        "projectId": {
+          "type": "integer",
+          "description": "The unique identifier for the project.The project object can also be identified by its unique criteria.",
+          "format": "int64"
+        },
+        "plannedDuration": {
+          "maximum": 10000000,
+          "minimum": 0,
+          "type": "number",
+          "description": "The expected amount of time, in hours, required to complete an activity. <br />The planned working time is calculated using the activity's calendar. The duration is measured from the activity planned start date to the activity planned finish date.",
+          "format": "double"
+        },
+        "remainingDuration": {
+          "maximum": 10000000,
+          "minimum": 0,
+          "type": "number",
+          "description": "The total working time, in hours, from the activity remaining start date to the activity remaining finish date.",
+          "format": "double"
+        },
+        "durationType": {
+          "type": "string",
+          "description": "Determines how remaining duration, units, and units/time are calculated when you update an activity that has resources assigned. The valid values are Fixed Units/Time, Fixed Units, Fixed Duration &amp; Units, and Fixed Duration &amp; Units/Time.",
+          "enum": [
+            "FIXED_RATE",
+            "FIXED_QUANTITY",
+            "FIXED_DURATION_AND_UNITS",
+            "FIXED_DURATION"
+          ]
+        }
+      }
+    },
+    "ApiEntityProjectInput": {
+      "required": [
+        "dataDate",
+        "planStartDate",
+        "projectCode",
+        "projectName",
+        "workspaceId"
+      ],
+      "properties": {
+        "projectId": {
+          "type": "integer",
+          "description": "The unique identifier for the project.",
+          "format": "int64"
+        },
+        "planStartDate": {
+          "type": "string",
+          "description": "The start date for the time phased Planned Budget of the project. <br />Planned Budget cost spread will adjust when this date is changed. <br />The Project Planned Start also represents the earliest date that activities can occur within a project schedule.",
+          "format": "date-time"
+        },
+        "dataDate": {
+          "type": "string",
+          "description": "The progress point, or \"as-of date\", for activities in the project. Project status is up-to-date as of the data date. You can set the data date when you schedule the project, or you can set it manually. <br />The data date is also used for updating the dates of scope assignments and work packages when they are not linked to activities.",
+          "format": "date-time"
+        },
+        "projectCode": {
+          "maxLength": 60,
+          "minLength": 1,
+          "type": "string",
+          "description": "The unique identifier for a project set by the user who created the project."
+        },
+        "projectName": {
+          "maxLength": 255,
+          "minLength": 1,
+          "type": "string",
+          "description": "The name of the project."
+        },
+        "workspaceId": {
+          "type": "integer",
+          "description": "The unique identifier for the workspace.The workspace object can also be identified by its unique criteria.",
+          "format": "int64"
+        }
+      }
+    },
+    "ApiEntityProjectScheduleInput": {
+      "required": [],
+      "properties": {
+        "projectId": {
+          "type": "integer",
+          "description": "The unique identifier for the project.",
+          "format": "int64"
+        },
+        "dataDate": {
+          "type": "string",
+          "description": "The progress point, or \"as-of date\", for activities in the project. Project status is up-to-date as of the data date. You can set the data date when you schedule the project, or you can set it manually. <br />The data date is also used for updating the dates of scope assignments and work packages when they are not linked to activities.",
+          "format": "date-time"
+        }
+      }
+    }
+  },
+  "operations": {
+    "POST /assignment/batch": {
+      "summary": "Batch Create Assignments",
+      "response_codes": [
+        "400",
+        "201"
+      ]
+    },
+    "POST /resource/{resourceId}/assign/project/{projectId}": {
+      "summary": "Assign a Resource to a Project",
+      "response_codes": [
+        "404",
+        "204"
+      ]
+    },
+    "PUT /project": {
+      "summary": "Update a Project",
+      "response_codes": [
+        "400",
+        "204"
+      ]
+    },
+    "PUT /activity/batch": {
+      "summary": "Batch Update Activities",
+      "response_codes": [
+        "400",
+        "200"
+      ]
+    },
+    "POST /action/scheduleProject": {
+      "summary": "Schedule a Project",
+      "response_codes": [
+        "400",
+        "201"
+      ]
+    },
+    "GET /action/jobStatus/{jobId}": {
+      "summary": "View Job Status",
+      "response_codes": [
+        "404",
+        "200"
+      ]
+    },
+    "GET /resource/projectId/{projectId}": {
+      "summary": "View all Project Resources or Roles by Project ",
+      "response_codes": [
+        "404",
+        "204",
+        "200"
+      ]
+    },
+    "GET /resource/workspace/{workspaceId}": {
+      "summary": "View all Workspace Resources and Roles by Workspace ",
+      "response_codes": [
+        "404",
+        "204",
+        "200"
+      ]
+    },
+    "GET /workspace/{workspaceId}": {
+      "summary": "View a Workspace",
+      "response_codes": [
+        "404",
+        "200"
+      ]
+    },
+    "GET /assignment/project/{projectId}": {
+      "summary": "View all Assignments by Project ",
+      "response_codes": [
+        "404",
+        "204",
+        "200"
+      ]
+    },
+    "GET /calendar/{calendarId}": {
+      "summary": "View a Calendar",
+      "response_codes": [
+        "404",
+        "200"
+      ]
+    },
+    "GET /calendar/exception/{calendarId}": {
+      "summary": "View Calendar Exceptions",
+      "response_codes": [
+        "404",
+        "204",
+        "200"
+      ]
+    },
+    "GET /holidayList/{holidayListId}": {
+      "summary": "View a Holiday List ",
+      "response_codes": [
+        "404",
+        "200"
+      ]
+    }
+  }
+}

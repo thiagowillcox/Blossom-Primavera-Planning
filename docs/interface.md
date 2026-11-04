@@ -13,3 +13,9 @@ O logotipo oficial pode ser incluído em `assets/logo.png`; a referência anexad
 ## Manual fixo
 
 O visitante não envia nem escolhe um manual. A revisão 02 fornecida acompanha o aplicativo e sua integridade é conferida antes de cada geração. O hash continua registrado em Parametros e na matriz de regras. As regras preliminares e suas pendências não mudam. A interface solicita somente a LD. Isso também vale para o pacote Docker.
+
+
+As áreas Equipe e prazos e Primavera acrescentam previsão de recursos e integração
+com a estrutura já criada no Oracle. Consulte [Horas e equipe](horas_e_equipe.md)
+para o fluxo, prévias, confirmações, armazenamento temporário e limites de validação.
+A seção Resultados inclui uma tabela de HH por função e atividade.

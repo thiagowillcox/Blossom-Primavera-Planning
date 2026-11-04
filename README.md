@@ -1,5 +1,9 @@
 # Blossom Primavera Planning
 
+Novas áreas no site: **Equipe e prazos** e **Primavera**, para revisar horas por
+função, preparar previsão de equipe e complementar a estrutura Oracle já enviada.
+Veja o [guia de horas, equipe e integração](docs/horas_e_equipe.md).
+
 Para localizar um projeto Oracle e revisar um Excel, veja
 [Consulta de projetos e prévia local](docs/consulta_primavera.md). Para criar uma
 estrutura em um projeto de teste vazio, veja
@@ -91,7 +95,7 @@ A equipe deve revisar as figuras, completar a matriz, mapear documentos do manua
 - `relationships.py` e `schedule.py`: vínculos aprovados e estimativa relativa.
 - `validation.py`: parâmetros, integridade, IDs e ciclos.
 - `export.py`: Excel/JSON determinísticos.
-- `oracle/`: teste local de autenticação e conexão, sem envio de cronogramas.
+- `oracle/`: autenticação, integração estrutural, horas por função e agendamento explícito do projeto de teste.
 
 Os testes cobrem distribuição por função/etapa, auxiliares, paralelismo, prazos do cliente, IDs, vínculos inválidos/cíclicos, registros vazios, parâmetros inválidos e reprodução dos resultados dos arquivos reais. O teste de integração fica explicitamente `skipped` se os arquivos comerciais não estiverem disponíveis; uma execução sem esse teste não comprova validação da LD real.
 
@@ -110,7 +114,7 @@ Os arquivos de exemplo em `output` podem corresponder a versões anteriores. Ger
 
 ## Interface web Blossom
 
-A interface em `app.py` permite enviar somente a LD, usar automaticamente o manual fixo, preencher jornada/capacidades/prazos, gerar e baixar o Excel e consultar WBS, atividades, pendências e auditoria no navegador. Campos vazios continuam pendentes. A interface não possui login, histórico persistente ou envio ao Oracle. A integração de rascunho estrutural usa um iniciador local separado.
+A interface em `app.py` permite enviar somente a LD, usar automaticamente o manual fixo, preencher jornada/capacidades/prazos, gerar e baixar o Excel e consultar WBS, atividades, pendências e auditoria no navegador. Campos vazios continuam pendentes. A área Primavera permite autenticação Oracle por sessão, prévia e envio complementar de horas, além de agendamento condicionado à revisão. A integração estrutural inicial usa os iniciadores locais. Ainda não há login corporativo do próprio site ou histórico persistente.
 
 ### Windows: abrir sem digitar comandos
 
