@@ -138,6 +138,19 @@ class EffortSession(ReadSession):
         raw=_exchange(self._opener,request,'Envio de horas',limit=33554432,expected=expected)
         return _json(raw,'Envio de horas') if raw else None
 
+    def update_assignment_units(self,rows):
+        if not self._token:raise ConnectionFailure('Sessão Oracle encerrada.')
+        allowed={'assignmentId','activityId','resourceId','plannedUnits','remainingUnits'}
+        if not rows or any(set(r)!=allowed for r in rows):raise ConnectionFailure('Atualização de horas inválida.')
+        for r in rows:
+            for key in ('assignmentId','activityId','resourceId'):positive_id(r[key])
+            for key in ('plannedUnits','remainingUnits'):
+                if amount(r[key])<0:raise ConnectionFailure('Horas inválidas.')
+        request=urllib.request.Request(SERVER+'/api/restapi/assignment/batch',method='PUT',
+            data=json.dumps(rows,allow_nan=False).encode(),
+            headers={'Authorization':'Bearer '+self._token,'Accept':'application/json','Content-Type':'application/json'})
+        _exchange(self._opener,request,'Atualização de horas',limit=33554432,expected=(200,))
+
 
 def plan_hours(package,mapping,catalog):
     needed=set(package['hh_por_funcao'])
@@ -189,7 +202,32 @@ def partition_hours(plan,existing):
     return [p for code,p in expected.items() if code not in found],found
 
 
-def sync_hours(session,package,plan,journal_path,progress=lambda message:None):
+def initialize_hours(session,plan,rows,state,path):
+    """Set units only on this operation's newly created or explicitly reviewed batch."""
+    # Validate identities, uniqueness and zero progress using the existing strict checker.
+    targets={p['assignmentCode']:p for p in plan['payloads']}
+    adjusted=[]
+    for row in rows:
+        if row.get('assignmentCode') not in targets:
+            raise ConnectionFailure('O lote contém atribuição fora da prévia.')
+        adjusted.append(dict(row,plannedUnits=targets[row['assignmentCode']]['plannedUnits'],
+                             remainingUnits=targets[row['assignmentCode']]['remainingUnits']))
+    absent,_=partition_hours(plan,adjusted)
+    if absent:raise ConnectionFailure('A consulta não confirmou todas as identidades do lote.')
+    state.setdefault('inicializacoes_horas',[]).append({'antes':rows})
+    durable_write(path,state)
+    updates=[dict(assignmentId=positive_id(r['assignmentId']),activityId=r['activityId'],
+                  resourceId=r['resourceId'],plannedUnits=targets[r['assignmentCode']]['plannedUnits'],
+                  remainingUnits=targets[r['assignmentCode']]['remainingUnits']) for r in rows]
+    session.update_assignment_units(updates)
+    after=session.rows('assignment/project/'+str(plan['projectId']))
+    selected=[r for r in after if r.get('assignmentCode') in targets]
+    absent,found=partition_hours(plan,selected)
+    if absent:raise ConnectionFailure('A atualização das horas não foi confirmada por nova consulta.')
+    return found
+
+
+def sync_hours(session,package,plan,journal_path,progress=lambda message:None,*,repair_snapshot=None):
     # Revalidate live data and catalog at the moment of the explicit write confirmation.
     _,catalog=session.catalog(package)
     checked=plan_hours(package,plan['mapping'],catalog)
@@ -198,12 +236,38 @@ def sync_hours(session,package,plan,journal_path,progress=lambda message:None):
     pid=plan['projectId'];path=Path(journal_path)
     sha=hashlib.sha256(json.dumps({k:plan[k] for k in ('projectId','source_sha256','mapping','payloads')},sort_keys=True,ensure_ascii=False).encode()).hexdigest()
     existing=session.rows('assignment/project/'+str(pid))
+    old=json.loads(path.read_text()) if path.exists() else None
+    if repair_snapshot is not None:
+        pending=(old or {}).get('pendente') or {}
+        codes=set(pending.get('codigos',[]))
+        if (not old or old.get('plan_sha256')!=sha or pending.get('tipo')!='atribuicoes'
+            or not codes or repair_snapshot.get('plan_sha256')!=sha or not repair_snapshot.get('registro_compativel')):
+            raise ConnectionFailure('A recuperação exige diagnóstico e registro do mesmo lote interrompido.')
+        reviewed={d['codigo']:d['encontrados'] for d in repair_snapshot['detalhes'] if d['codigo'] in codes}
+        current=[r for r in existing if r.get('assignmentCode') in codes]
+        fields=('assignmentCode','assignmentId','projectId','activityId','resourceId','resourceClass','plannedUnits','remainingUnits','actualUnits')
+        minimal=lambda r:{k:r[k] for k in fields if r.get(k) is not None}
+        if set(reviewed)!=codes or any(len(reviewed[c])!=1 for c in codes) or len(current)!=len(codes) or any(minimal(r)!=reviewed[r['assignmentCode']][0] for r in current):
+            raise ConnectionFailure('As atribuições mudaram desde o diagnóstico. Consulte novamente antes de corrigir.')
+        partial=dict(plan,payloads=[p for p in plan['payloads'] if p['assignmentCode'] in codes])
+        # Reject any conflict outside the explicitly reviewed pending batch before writing.
+        desired={p['assignmentCode']:p for p in partial['payloads']}
+        checked_existing=[dict(r,plannedUnits=desired[r['assignmentCode']]['plannedUnits'],remainingUnits=desired[r['assignmentCode']]['remainingUnits']) if r.get('assignmentCode') in desired else r for r in existing]
+        partition_hours(plan,checked_existing)
+        try:
+            initialize_hours(session,partial,current,old,path)
+        except BaseException as exc:
+            old['estado']='interrompido_conferir_oracle';old['erro']=str(exc) if isinstance(exc,ConnectionFailure) else 'Correção interrompida; consulte novamente.'
+            durable_write(path,old);raise
+        old['pendente']=None;old['erro']=None;durable_write(path,old)
+        existing=session.rows('assignment/project/'+str(pid))
     missing,found=partition_hours(plan,existing)
     state={'servidor':SERVER,'projectId':pid,'source_sha256':package['source_sha256'],'plan_sha256':sha,
         'estado':'em_andamento','confirmadas':{k:r['assignmentId'] for k,r in found.items()},'pendente':None}
     if path.exists():
         old=json.loads(path.read_text())
         if old.get('plan_sha256')!=sha:raise ConnectionFailure('Há registro de horas de outra prévia. Preserve e confira antes de continuar.')
+        state['inicializacoes_horas']=old.get('inicializacoes_horas',[])
         pending=old.get('pendente')
         if pending:
             if pending['tipo']=='atribuicoes' and any(code not in found for code in pending['codigos']):
@@ -222,7 +286,18 @@ def sync_hours(session,package,plan,journal_path,progress=lambda message:None):
             result=session.mutation('assignment/batch',rows)
             if not isinstance(result,list) or len(result)!=len(rows):raise ConnectionFailure('Resposta de lote incompleta. Preserve o registro antes de repetir.')
             partial=dict(plan,payloads=rows)
-            absent,confirmed=partition_hours(partial,result)
+            try:
+                absent,confirmed=partition_hours(partial,result)
+            except ConnectionFailure:
+                # Creation may apply Oracle defaults. Initialize only the new IDs returned
+                # by this POST, after verifying their identities with a fresh GET.
+                live=session.rows('assignment/project/'+str(pid))
+                codes={p['assignmentCode'] for p in rows}
+                current=[r for r in live if r.get('assignmentCode') in codes]
+                returned={r.get('assignmentCode'):r.get('assignmentId') for r in result}
+                if len(returned)!=len(rows) or any(returned.get(r.get('assignmentCode'))!=r.get('assignmentId') for r in current):
+                    raise ConnectionFailure('As identidades criadas não correspondem à nova consulta.')
+                confirmed=initialize_hours(session,partial,current,state,path);absent=[]
             if absent:raise ConnectionFailure('O Oracle não confirmou todas as horas do lote.')
             state['confirmadas'].update({k:r['assignmentId'] for k,r in confirmed.items()})
             state['pendente']=None;durable_write(path,state)

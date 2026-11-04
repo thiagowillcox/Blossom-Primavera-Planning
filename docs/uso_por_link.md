@@ -145,3 +145,20 @@ projetos e calendários, `POST /project` e `GET /project/{projectId}`. O corpo d
 criação inclui todos os campos obrigatórios do schema. Os testes são simulados;
 a criação real precisa de validação na conta Oracle. As gravações continuam
 limitadas a nomes que começam com `TESTE` nesta versão.
+
+
+### Recuperar horas criadas com valores padrão do Oracle
+
+Se a criação de atribuições devolver horas diferentes da prévia, o programa grava as
+horas planejadas e restantes por `PUT /assignment/batch`, somente nas atribuições
+recém-criadas pela própria operação. Confere IDs, atividade, função e ausência de avanço
+antes da gravação, e lê as atribuições novamente para verificar os valores. A resposta
+do PUT, sozinha, não confirma o sucesso. Não altera taxas, horas realizadas ou datas.
+
+Para um lote interrompido por uma versão anterior, preserve o registro de horas.
+Na seção Primavera, restaure esse registro se a sessão foi reiniciada, consulte a
+situação das horas e confira o diagnóstico. Marque a opção de corrigir o lote
+interrompido e confirme o envio. A correção fica restrita aos códigos desse lote
+e aos valores da prévia original. Se os dados mudarem desde o diagnóstico, houver
+avanço ou faltar alguma atribuição do lote, a correção será bloqueada. Após conferir
+a correção, o programa continua criando somente as atribuições faltantes.

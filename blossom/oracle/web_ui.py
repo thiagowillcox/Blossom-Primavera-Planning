@@ -116,6 +116,12 @@ def render(st,package=None):
                 ss.oracle_hours_diagnostic=diagnose_hours(session,package,plan,last)
         except (ConnectionFailure,ValueError,KeyError,TypeError,OSError) as exc:
             st.error(str(exc) if isinstance(exc,ConnectionFailure) else 'Não foi possível concluir a consulta. Nenhum envio realizado.')
+    repair_snapshot=None
+    diagnostic=ss.get('oracle_hours_diagnostic')
+    if diagnostic and diagnostic.get('registro_compativel') and diagnostic['resumo']['divergentes'] and diagnostic.get('solicitacao_pendente',{}).get('tipo')=='atribuicoes':
+        st.warning('O lote interrompido já existe no Oracle com horas diferentes. A correção altera somente as horas planejadas e restantes desse lote, se não houver avanço. Depois, o envio continua com as atribuições faltantes.')
+        if st.checkbox('Corrigir as horas do lote interrompido conforme o diagnóstico e continuar',key='oracle_repair_'+digest):
+            repair_snapshot=diagnostic
     text=st.text_input('Para gravar no projeto, digite ENVIAR HORAS '+str(pid),key='oracle_confirm_'+digest)
     if st.button('Enviar e conferir horas no Oracle',type='primary',disabled=not approved or not ss.get('oracle_hours_ready') or text.strip()!=f'ENVIAR HORAS {pid}'):
         ss.pop('oracle_hours_diagnostic',None)
@@ -127,7 +133,7 @@ def render(st,package=None):
         try:
             with st.spinner('Enviando e conferindo horas…'):
                 progress=st.empty()
-                result=sync_hours(session,package,plan,journal,progress.info)
+                result=sync_hours(session,package,plan,journal,progress.info,repair_snapshot=repair_snapshot)
                 ss.oracle_hours_result=result
             message='Horas enviadas e conferidas por nova consulta: '+hh_label(result['hh_conferidas'])+' HH.'
             ss.oracle_hours_feedback=('success',message);st.success(message)

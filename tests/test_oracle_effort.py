@@ -126,3 +126,79 @@ def test_labor_role_mapping_requires_explicit_complete_selection(tmp_path):
  with pytest.raises(ConnectionFailure):plan_hours(p,{},catalog)
  with pytest.raises(ConnectionFailure):plan_hours(p,{'EPleno':999},catalog)
  assert all(r.get_method()=='GET' for r in oracle.calls[2:])
+
+
+class DefaultUnitsOracle(EffortOracle):
+ """Reproduce the tenant's observed POST defaults, then apply documented PUT units."""
+ def open(self,request,timeout):
+  if request.get_method()=='PUT':
+   assert request.full_url.endswith('/assignment/batch')
+   self.calls.append(request)
+   for payload in json.loads(request.data):
+    assert set(payload)=={'assignmentId','activityId','resourceId','plannedUnits','remainingUnits'}
+    target=next(r for r in self.assignments if r['assignmentId']==payload['assignmentId'])
+    target.update(payload)
+   return Response(b'{"links":{}}',status=200)
+  if request.full_url.endswith('/assignment/batch'):
+   result=super().open(request,timeout)
+   for row in self.assignments:row.update(plannedUnits=40,remainingUnits=40)
+   return Response(json.dumps(self.assignments).encode(),status=201)
+  return super().open(request,timeout)
+
+
+def test_creation_default_units_are_initialized_and_read_back_without_duplicate(tmp_path):
+ package=load_package(*files(tmp_path));oracle=DefaultUnitsOracle();s=session(oracle)
+ _,catalog=s.catalog(package);plan=plan_hours(package,{'EPleno':888},catalog)
+ path=tmp_path/'hours.json'
+ result=sync_hours(s,package,plan,path)
+ assert result['estado']=='horas_conferidas'
+ assert len(oracle.assignments)==1 and oracle.assignments[0]['plannedUnits']==10
+ assert len(result['inicializacoes_horas'])==1
+ assert result['inicializacoes_horas'][0]['antes'][0]['plannedUnits']==40
+ before=len(oracle.calls);sync_hours(s,package,plan,path)
+ assert all(r.get_method()=='GET' for r in oracle.calls[before:])
+
+
+def interrupted_default_batch(tmp_path):
+ from blossom.oracle.effort import diagnose_hours
+ package=load_package(*files(tmp_path));oracle=DefaultUnitsOracle();s=session(oracle)
+ _,catalog=s.catalog(package);plan=plan_hours(package,{'EPleno':888},catalog)
+ # Old version created the batch and stopped when it returned default units.
+ import blossom.oracle.effort as effort
+ original=effort.initialize_hours
+ try:
+  effort.initialize_hours=lambda *a:(_ for _ in ()).throw(ConnectionFailure('old check'))
+  with pytest.raises(ConnectionFailure):sync_hours(s,package,plan,tmp_path/'hours.json')
+ finally:effort.initialize_hours=original
+ record=json.loads((tmp_path/'hours.json').read_text())
+ diagnostic=diagnose_hours(s,package,plan,record)
+ assert diagnostic['resumo']['divergentes']==1
+ return package,oracle,s,plan,diagnostic
+
+
+def test_repair_requires_review_and_only_updates_pending_batch(tmp_path):
+ package,oracle,s,plan,diagnostic=interrupted_default_batch(tmp_path)
+ path=tmp_path/'hours.json';before=len(oracle.calls)
+ with pytest.raises(ConnectionFailure):sync_hours(s,package,plan,path)
+ assert all(r.get_method()=='GET' for r in oracle.calls[before:])
+ result=sync_hours(s,package,plan,path,repair_snapshot=diagnostic)
+ assert result['estado']=='horas_conferidas' and len(oracle.assignments)==1
+ assert oracle.assignments[0]['plannedUnits']==10
+
+
+@pytest.mark.parametrize('change',[{'actualUnits':1},{'plannedUnits':41},{'assignmentId':901}])
+def test_reviewed_batch_changed_since_diagnostic_cannot_be_repaired(tmp_path,change):
+ package,oracle,s,plan,diagnostic=interrupted_default_batch(tmp_path)
+ oracle.assignments[0].update(change);before=len(oracle.calls)
+ with pytest.raises(ConnectionFailure):sync_hours(s,package,plan,tmp_path/'hours.json',repair_snapshot=diagnostic)
+ assert all(r.get_method()=='GET' for r in oracle.calls[before:])
+
+
+def test_reviewed_batch_with_actual_progress_is_never_repaired(tmp_path):
+ from blossom.oracle.effort import diagnose_hours
+ package,oracle,s,plan,_=interrupted_default_batch(tmp_path)
+ oracle.assignments[0]['actualUnits']=1
+ path=tmp_path/'hours.json';diagnostic=diagnose_hours(s,package,plan,json.loads(path.read_text()))
+ before=len(oracle.calls)
+ with pytest.raises(ConnectionFailure):sync_hours(s,package,plan,path,repair_snapshot=diagnostic)
+ assert all(r.get_method()=='GET' for r in oracle.calls[before:])
