@@ -4,7 +4,7 @@ import html
 import json
 from tempfile import gettempdir
 from .client import ConnectionFailure
-from .effort import EffortSession,load_package,plan_hours,partition_hours,sync_hours,ROLE_CODES,diagnose_hours
+from .effort import EffortSession,load_package,plan_hours,partition_hours,sync_hours,ROLE_CODES,diagnose_hours,restore_hours_record
 from .draft import durable_write
 
 
@@ -99,10 +99,11 @@ def render(st,package=None):
     previous=st.file_uploader('Registro de horas anterior, se precisar recuperar uma tentativa (opcional)',type=['json'],key='hours_previous_upload')
     if previous and not journal.exists():
         try:
-            restored=json.loads(previous.getvalue())
-            if restored.get('servidor')!=plan['servidor'] or restored.get('projectId')!=pid or restored.get('source_sha256')!=package['source_sha256']:raise ValueError()
+            restored=restore_hours_record(json.loads(previous.getvalue()),plan)
             durable_write(journal,restored,exclusive=True)
-        except (ValueError,KeyError,OSError):st.error('Registro de horas incompatível.');return
+        except ConnectionFailure as exc:st.error(str(exc));return
+        except (ValueError,KeyError,TypeError):st.error('O arquivo não é um registro de horas válido.');return
+        except OSError:st.error('Não foi possível guardar o registro nesta sessão. Carregue o arquivo novamente.');return
     if journal.exists():
         try:
             last=json.loads(journal.read_text())

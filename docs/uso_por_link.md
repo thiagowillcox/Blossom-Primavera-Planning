@@ -162,3 +162,10 @@ interrompido e confirme o envio. A correção fica restrita aos códigos desse l
 e aos valores da prévia original. Se os dados mudarem desde o diagnóstico, houver
 avanço ou faltar alguma atribuição do lote, a correção será bloqueada. Após conferir
 a correção, o programa continua criando somente as atribuições faltantes.
+
+Se o Excel foi regenerado, a restauração do registro de horas também compara a
+assinatura da prévia completa original: projeto, IDs e códigos das atribuições,
+atividades, funções, horas e demais campos do envio. Somente se todos esses dados
+forem idênticos é permitido vincular o registro ao novo arquivo Excel. As assinaturas
+anteriores são preservadas no registro. Alterações de horas, funções ou atividades
+continuam bloqueadas; um arquivo apenas com o mesmo nome não comprova equivalência.

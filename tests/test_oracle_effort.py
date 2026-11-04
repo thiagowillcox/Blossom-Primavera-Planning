@@ -202,3 +202,32 @@ def test_reviewed_batch_with_actual_progress_is_never_repaired(tmp_path):
  before=len(oracle.calls)
  with pytest.raises(ConnectionFailure):sync_hours(s,package,plan,path,repair_snapshot=diagnostic)
  assert all(r.get_method()=='GET' for r in oracle.calls[before:])
+
+
+def test_regenerated_excel_can_restore_only_identical_original_hours_payload(tmp_path):
+ from blossom.oracle.effort import restore_hours_record
+ package,oracle,s,plan,diagnostic=interrupted_default_batch(tmp_path)
+ original=json.loads((tmp_path/'hours.json').read_text())
+ current=dict(plan,source_sha256='a'*64)
+ restored=restore_hours_record(original,current)
+ assert restored['source_sha256']=='a'*64
+ assert restored['pendente']==original['pendente']
+ assert restored['origens_equivalentes'][0]['plan_sha256']==original['plan_sha256']
+ assert original['source_sha256']!=restored['source_sha256']
+ assert restore_hours_record(restored,current)==restored
+
+
+@pytest.mark.parametrize('field,value',[('plannedUnits',11),('remainingUnits',11),('activityId',999),('resourceId',999),('assignmentCode','changed')])
+def test_regenerated_excel_with_changed_hours_or_identity_rejects_restore(tmp_path,field,value):
+ from blossom.oracle.effort import restore_hours_record
+ package,oracle,s,plan,diagnostic=interrupted_default_batch(tmp_path)
+ original=json.loads((tmp_path/'hours.json').read_text())
+ current=json.loads(json.dumps(plan));current['source_sha256']='a'*64;current['payloads'][0][field]=value
+ with pytest.raises(ConnectionFailure,match='diferem'):restore_hours_record(original,current)
+
+
+def test_record_from_another_project_cannot_be_rebound(tmp_path):
+ from blossom.oracle.effort import restore_hours_record
+ package,oracle,s,plan,diagnostic=interrupted_default_batch(tmp_path)
+ original=json.loads((tmp_path/'hours.json').read_text());original['projectId']=8
+ with pytest.raises(ConnectionFailure,match='outro projeto'):restore_hours_record(original,plan)

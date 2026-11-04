@@ -202,6 +202,25 @@ def partition_hours(plan,existing):
     return [p for code,p in expected.items() if code not in found],found
 
 
+def restore_hours_record(record,plan):
+    """Rebind regenerated workbook bytes only when the entire original hours plan matches."""
+    if not isinstance(record,dict) or record.get('servidor')!=plan['servidor'] or record.get('projectId')!=plan['projectId']:
+        raise ConnectionFailure('O registro de horas pertence a outro projeto ou servidor.')
+    old_source=record.get('source_sha256')
+    if not isinstance(old_source,str) or len(old_source)!=64 or set(old_source)-set('0123456789abcdef'):
+        raise ConnectionFailure('O registro não contém a identificação válida do Excel original.')
+    identity={k:plan[k] for k in ('projectId','source_sha256','mapping','payloads')}
+    def digest(value):
+        return hashlib.sha256(json.dumps(value,sort_keys=True,ensure_ascii=False).encode()).hexdigest()
+    if digest(dict(identity,source_sha256=old_source))!=record.get('plan_sha256'):
+        raise ConnectionFailure('As atividades, funções ou horas da prévia atual diferem do registro anterior. Use a mesma base e o mesmo mapeamento de funções.')
+    restored=json.loads(json.dumps(record))
+    if old_source!=plan['source_sha256']:
+        restored.setdefault('origens_equivalentes',[]).append({'source_sha256':old_source,'plan_sha256':record['plan_sha256']})
+        restored['source_sha256']=plan['source_sha256'];restored['plan_sha256']=digest(identity)
+    return restored
+
+
 def initialize_hours(session,plan,rows,state,path):
     """Set units only on this operation's newly created or explicitly reviewed batch."""
     # Validate identities, uniqueness and zero progress using the existing strict checker.
